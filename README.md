@@ -37,7 +37,7 @@ rubyの技術書で勉強している方がいた。
 
 
 ## チャレンジ要素一覧
-https://docs.google.com/spreadsheets/d/1nOtbKOEhYkcLXsklNgLzM1dDRuaOE5gJDA1Ie5T6-9E/edit?ts=6013abb3#gid=0
+https://docs.google.com/spreadsheets/d/1nOtbKOEhYkcLXsklNgLzM1dDRuaOE5gJDA1Ie5T6-9E/edit?usp=sharing
 
 
 ## 開発環境
