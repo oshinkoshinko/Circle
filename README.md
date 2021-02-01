@@ -36,7 +36,7 @@ rubyの技術書で勉強している方がいた。
 ## 設計書
 
 
-## チャレンジ要素一覧
+## 機能一覧
 https://docs.google.com/spreadsheets/d/1nOtbKOEhYkcLXsklNgLzM1dDRuaOE5gJDA1Ie5T6-9E/edit?usp=sharing
 
 
