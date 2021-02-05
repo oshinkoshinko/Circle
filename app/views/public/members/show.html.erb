@@ -1,0 +1,4 @@
+<div class="profile-field">
+  <%= attachment_image_tag @member, :profile_image, :fill, 60, 60, format: 'jpeg', fallback: "no_image.jpg" %>
+  <%= @member.account_name %>
+</div>

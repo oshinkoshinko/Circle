@@ -21,9 +21,9 @@ Rails.application.routes.draw do
 
   scope module: :public do
    root to: 'homes#top'
+   resources :members, only: [:show, :edit, :update]
    get 'members/unsubscribe' => 'members#unsubscribe'
    patch 'members/withdraw' => 'members#withdraw'
-   resource :members, only: [:show, :edit, :update]
   end
 
 end
