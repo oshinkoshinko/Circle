@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-   root to: 'public/homes#top'
+
+  devise_for :admins, controllers: {
+    sessions: 'admin/sessions'
+  }
 
 
   devise_for :members, skip: 'registrations', controllers: {
@@ -12,5 +15,12 @@ Rails.application.routes.draw do
     post '/members' => 'public/registrations#create'
   end
 
+  namespace :admin do
+    root to: 'members#index'
+  end
+
+  scope module: :public do
+   root to: 'homes#top'
+  end
 
 end

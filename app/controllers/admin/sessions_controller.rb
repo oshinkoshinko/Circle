@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Public::SessionsController < Devise::SessionsController
+class Admins::SessionsController < Devise::SessionsController
   # before_action :configure_sign_in_params, only: [:create]
 
   # GET /resource/sign_in
@@ -12,9 +12,6 @@ class Public::SessionsController < Devise::SessionsController
   # def create
   #   super
   # end
-  def after_sign_in_path_for(resource)
-    root_path
-  end
 
   # DELETE /resource/sign_out
   # def destroy
@@ -28,15 +25,12 @@ class Public::SessionsController < Devise::SessionsController
   #   devise_parameter_sanitizer.permit(:sign_in, keys: [:attribute])
   # end
 
-  protected
+  def after_sign_in_path_for(resource)
+    admin_root_path
+  end
 
-  def reject_member
-    @member = Member.find_by(email: params[:member][:email].downcase)
-    if @member
-      if (@mamber.valid_password?(params[:member][:password]) && (@member.active_for_authentication? == false))
-        redirect_to new_member_registration_path
-      end
-    end
+  def after_sign_out_path_for(resource)
+    new_admin_session_path
   end
 
 end
