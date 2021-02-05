@@ -1,12 +1,11 @@
 Rails.application.routes.draw do
 
-  devise_for :admins, controllers: {
-    sessions: 'admin/sessions'
-  }
-
-
   devise_for :members, skip: 'registrations', controllers: {
   sessions: 'public/sessions'
+  }
+
+  devise_for :admins, controllers: {
+    sessions: 'admin/sessions'
   }
 
   devise_scope :member do
