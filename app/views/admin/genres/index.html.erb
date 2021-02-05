@@ -21,7 +21,6 @@
   <h4>ジャンル作成</h4>
   <%= form_with model: [:admin, @genre], method: :post, local:true do |f| %>
     <div class="genre-form">
-      <%= f.label :name %>
       <%= f.text_field :name, :placeholder => "ジャンル名" %>
       <%= f.submit '登録' %>
     </div>
