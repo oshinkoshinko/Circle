@@ -14,6 +14,9 @@
     <ul class="nav-list">
     <% if member_signed_in? %>
       <li class="nav-list-item">
+        <%= link_to "マイページ", destroy_member_session_path %>
+      </li>
+      <li class="nav-list-item">
         <%= link_to "ログアウト", destroy_member_session_path, method: :delete %>
       </li>
     <% elsif admin_signed_in? %>

@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     get 'edit' => 'public/registrations#edit'
     get '/members/sign_up' => 'public/registrations#new', as: :new_member_registration
     post '/members' => 'public/registrations#create'
-  end
+     end
 
   namespace :admin do
     root to: 'members#index'
@@ -21,6 +21,9 @@ Rails.application.routes.draw do
 
   scope module: :public do
    root to: 'homes#top'
+   get 'members/unsubscribe' => 'members#unsubscribe'
+   patch 'members/withdraw' => 'members#withdraw'
+   resource :members, only: [:show, :edit, :update]
   end
 
 end
