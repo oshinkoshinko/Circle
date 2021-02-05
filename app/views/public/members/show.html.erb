@@ -1,6 +1,6 @@
 <div class="profile-field">
-  <%= attachment_image_tag @member, :profile_image, :fill, 60, 60, format: 'jpeg', fallback: "no_image.jpg" %>
+  <%= attachment_image_tag @member, :profile_image, :fill, 60, 60, format: 'jpeg', fallback: "no_image.jpg" %><br>
   <%= @member.account_name %>
-  <%= @member.introduction %>
+  <%= @member.introduction %><br>
   <%= link_to '編集', edit_member_path(@member) %>
 </div>
