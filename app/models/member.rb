@@ -4,6 +4,8 @@ class Member < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  has_many :actions, dependent: :destroy
+
   attachment :profile_image
 
 end
