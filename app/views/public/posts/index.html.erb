@@ -9,7 +9,7 @@
   　   <%= post.body %>
       /ジャンル：<%= post.genre.name %>
       <%= time_ago_in_words(post.created_at) %> ago
-      <%= link_to post_comment_path(post.member.id, post.id) do %>
+      <%= link_to post_comment_path(post.id) do %>
         <i class="far fa-comment-dots"></i>
       <% end %>
     <% if current_member.id == post.member.id %>

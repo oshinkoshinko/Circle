@@ -1,0 +1,27 @@
+<!--post内容-->
+<div class="post-content">
+  <%= attachment_image_tag @post.member, :profile_image, :fill, 30, 30, format: 'jpeg', fallback: "no_image.jpg" %>
+  <%= @post.body %>
+  /ジャンル：<%= @post.genre.name %>
+  <%= time_ago_in_words(@post.created_at) %> ago
+  <hr>
+</div>
+
+<!--comment一覧-->
+<div class="comment-lists">
+  <% @post_comments.each do |post_comment| %>
+    <%= attachment_image_tag post_comment.member, :profile_image, :fill, 30, 30, format: 'jpeg', fallback: "no_image.jpg" %><br>
+    <%= post_comment.member.account_name %>
+    <%= post_comment.comment %>
+  <% end %>
+</div>
+
+<!--comment投稿フォーム-->
+<div class="comment-form">
+  <%= form_with model: @post_comment, local:true do |f| %>
+    <%= f.text_area :comment, placeholder: "コメントを書きましょう" %>
+    <!--post_idをpost_commentに渡す-->
+    <%= f.hidden_field :post_id, :value => @post.id %>
+    <%= f.submit "コメント" %>
+  <% end %>
+</div>
