@@ -8,13 +8,13 @@
     <% end %>
   　   <%= post.body %>
       /ジャンル：<%= post.genre.name %>
-      <% if current_member.id == post.member.id %>
-    <%= link_to edit_post_path(post.id) do %>
-      <i class="fas fa-wrench"></i>
-    <% end %>
-    <%= link_to post_path(post.id), method: :delete do %>
-      <i class="far fa-trash-alt"></i>
-    <% end %>
+    <% if current_member.id == post.member.id %>
+      <%= link_to edit_post_path(post.id) do %>
+        <i class="fas fa-wrench"></i>
+      <% end %>
+      <%= link_to post_path(post.id), method: :delete do %>
+        <i class="far fa-trash-alt"></i>
+      <% end %>
     <% end %>
     <hr><br>
     </tr>

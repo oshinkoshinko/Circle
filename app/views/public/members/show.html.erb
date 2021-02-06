@@ -4,7 +4,9 @@
   <%= attachment_image_tag @member, :profile_image, :fill, 60, 60, format: 'jpeg', fallback: "no_image.jpg" %><br>
   <%= @member.account_name %>
   <%= @member.introduction %><br>
-  <%= link_to '編集', edit_member_path(@member) %>
+  <% if current_member.id == @member.id %>
+    <%= link_to '編集', edit_member_path(@member) %>
+  <% end %>
 </div>
 
 <!--自分の投稿タイムライン-->
@@ -15,11 +17,13 @@
     <%= attachment_image_tag post.member, :profile_image, :fill, 30, 30, format: 'jpeg', fallback: "no_image.jpg" %>
   　<%= post.body %>
     /ジャンル：<%= post.genre.name %>
-    <%= link_to edit_post_path(post.id) do %>
-      <i class="fas fa-wrench"></i>
-    <% end %>
-    <%= link_to post_path(post.id), method: :delete do %>
-      <i class="far fa-trash-alt"></i>
+    <% if current_member.id == post.member.id %>
+      <%= link_to edit_post_path(post.id) do %>
+        <i class="fas fa-wrench"></i>
+      <% end %>
+      <%= link_to post_path(post.id), method: :delete do %>
+        <i class="far fa-trash-alt"></i>
+      <% end %>
     <% end %>
     <hr><br>
     </tr>
@@ -27,6 +31,7 @@
 </div>
 
 <!--投稿フォーム-->
+<% if current_member.id == @member.id %>
 <div class="post-form">
   <h4>新規投稿</h4>
   <%= form_with model: @post, local: true do |f| %>
@@ -35,3 +40,4 @@
     <%= f.submit "投稿" %>
   <% end %>
 </div>
+<% end %>
