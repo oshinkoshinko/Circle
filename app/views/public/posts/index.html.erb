@@ -19,6 +19,11 @@
       <%= link_to post_path(post.id), method: :delete do %>
         <i class="far fa-trash-alt"></i>
       <% end %>
+    <% else %>
+      <%= form_with model: @post_request do |f| %>
+        <%= f.select :is_requested, options_for_select({"No request" => "false", "Requesting" => "true"}) %>
+        <%= f.submit "go!" %>
+      <% end %>
     <% end %>
     <hr><br>
     </tr>

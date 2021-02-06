@@ -26,6 +26,7 @@ Rails.application.routes.draw do
    patch 'members/withdraw' => 'members#withdraw'
    resources :posts, only: [:index, :create, :edit, :update, :destroy]
    resources :post_comments, only: [:show, :create, :destroy]
+   resources :post_request, only: [:update]
   end
 
 end

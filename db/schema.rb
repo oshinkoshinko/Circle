@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_06_064322) do
+ActiveRecord::Schema.define(version: 2021_02_06_095315) do
 
   create_table "actions", force: :cascade do |t|
     t.integer "member_id"
@@ -59,6 +59,15 @@ ActiveRecord::Schema.define(version: 2021_02_06_064322) do
     t.integer "member_id"
     t.integer "post_id"
     t.string "comment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "post_requests", force: :cascade do |t|
+    t.integer "member_id"
+    t.integer "post_id"
+    t.boolean "is_requested", default: false, null: false
+    t.boolean "is_accepted", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
