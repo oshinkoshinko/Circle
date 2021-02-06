@@ -1,0 +1,9 @@
+<div class="post-edit-form">
+  <!--モーダルウインドウにしたい-->
+  <h4>投稿編集</h4>
+  <%= form_with model: @post, local:true do |f| %>
+    <%= f.text_area :body %>
+    <%= f.collection_select(:genre_id, @genres, :id, :name) %>
+    <%= f.submit "編集" %>
+  <% end %>
+</div>
