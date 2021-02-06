@@ -1,3 +1,3 @@
 class Genre < ApplicationRecord
-  has_many :action
+  has_many :posts
 end

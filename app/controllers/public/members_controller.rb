@@ -2,6 +2,10 @@ class Public::MembersController < ApplicationController
 
   def show
     @member = Member.find(params[:id])
+    #post新規投稿、一覧表示用変数
+    @post = Post.new
+    @posts = @member.posts.all
+    @genres = Genre.all
   end
 
   def edit
@@ -19,6 +23,8 @@ class Public::MembersController < ApplicationController
 
   def withdraw
   end
+
+  private
 
   def member_params
     params.require(:member).permit(:name, :account_name, :profile_image, :introduction)

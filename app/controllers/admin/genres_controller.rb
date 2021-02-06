@@ -17,6 +17,8 @@ class Admin::GenresController < ApplicationController
     redirect_to request.referer
   end
 
+  private
+
   def genre_params
     params.require(:genre).permit(:name)
   end

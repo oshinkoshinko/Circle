@@ -1,6 +1,24 @@
+<!--プロフィール-->
 <div class="profile-field">
   <%= attachment_image_tag @member, :profile_image, :fill, 60, 60, format: 'jpeg', fallback: "no_image.jpg" %><br>
   <%= @member.account_name %>
   <%= @member.introduction %><br>
   <%= link_to '編集', edit_member_path(@member) %>
+</div>
+
+<!--自分の投稿タイムライン-->
+<div class="timeline">
+  <h4>タイムライン</h4>
+ <% @posts.each do |post| %>
+  <%= post.member.account_name %>
+ <% end %>
+</div>
+
+<!--投稿フォーム-->
+<div class="post-form">
+  <%= form_with url: post_path, local: true do |f| %>
+    <%= f.text_area :body %>
+    <%#= f.collection_select(:name, @genres, :id, :name) %>
+    <%= f.submit "投稿" %>
+  <% end %>
 </div>
