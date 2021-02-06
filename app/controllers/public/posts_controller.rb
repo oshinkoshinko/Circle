@@ -1,9 +1,9 @@
 class Public::PostsController < ApplicationController
 
  def create
-    #binding.pry
     @post = Post.new(post_params)
     @post.member_id = current_member.id
+    #binding.pry
     @post.save
     redirect_to request.referer
  end
@@ -20,7 +20,7 @@ class Public::PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:body)
+    params.require(:post).permit(:body, :genre_id, :member_id)
   end
 
 end

@@ -9,16 +9,17 @@
 <!--自分の投稿タイムライン-->
 <div class="timeline">
   <h4>タイムライン</h4>
- <% @posts.each do |post| %>
-  <%= post.member.account_name %>
- <% end %>
+   <% @posts.each do |post| %>
+    <%= post.body %>
+    <%= post.genre.name %>
+   <% end %>
 </div>
 
 <!--投稿フォーム-->
 <div class="post-form">
-  <%= form_with url: post_path, local: true do |f| %>
+  <%= form_with model: @post, local: true do |f| %>
     <%= f.text_area :body %>
-    <%#= f.collection_select(:name, @genres, :id, :name) %>
+    <%= f.collection_select(:genre_id, @genres, :id, :name) %>
     <%= f.submit "投稿" %>
   <% end %>
 </div>
