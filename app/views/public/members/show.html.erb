@@ -17,6 +17,10 @@
     <%= attachment_image_tag post.member, :profile_image, :fill, 30, 30, format: 'jpeg', fallback: "no_image.jpg" %>
   　<%= post.body %>
     /ジャンル：<%= post.genre.name %>
+    <%= time_ago_in_words(post.created_at) %> ago
+    <%= link_to post_comment_path(post.member.id, post.id) do %>
+      <i class="far fa-comment-dots"></i>
+    <% end %>
     <% if current_member.id == post.member.id %>
       <%= link_to edit_post_path(post.id) do %>
         <i class="fas fa-wrench"></i>
