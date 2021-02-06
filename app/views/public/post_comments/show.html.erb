@@ -13,6 +13,12 @@
     <%= attachment_image_tag post_comment.member, :profile_image, :fill, 30, 30, format: 'jpeg', fallback: "no_image.jpg" %><br>
     <%= post_comment.member.account_name %>
     <%= post_comment.comment %>
+    <% if current_member.id == post_comment.member.id %>
+      <%= link_to post_comment_path(post_comment.id), method: :delete do %>
+        <i class="far fa-trash-alt"></i>
+      <% end %>
+    <% end %>
+    <hr><br>
   <% end %>
 </div>
 
