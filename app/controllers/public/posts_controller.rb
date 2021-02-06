@@ -1,5 +1,9 @@
 class Public::PostsController < ApplicationController
 
+ def index
+   @posts = Post.all
+ end
+ 
  def create
     @post = Post.new(post_params)
     @post.member_id = current_member.id

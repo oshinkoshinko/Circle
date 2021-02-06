@@ -9,7 +9,7 @@
 
 <!--自分の投稿タイムライン-->
 <div class="timeline">
-  <h4>タイムライン</h4>
+  <h4>マイタイムライン</h4>
    <% @posts.each do |post| %>
     <tr>
     <%= attachment_image_tag post.member, :profile_image, :fill, 30, 30, format: 'jpeg', fallback: "no_image.jpg" %>
