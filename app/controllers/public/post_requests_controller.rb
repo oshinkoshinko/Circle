@@ -1,6 +1,11 @@
 class Public::PostRequestsController < ApplicationController
 
-  def index
+  #自分へのリクエスト一覧画面
+  def waiting
+    #自分の投稿データを取得
+    @posts = Post.where(member_id: current_member.id)
+    #自分の投稿データのなかでリクエストされたものを取得
+    @requested_posts = PostRequest.where(post_id: @posts.ids)
   end
 
   def create

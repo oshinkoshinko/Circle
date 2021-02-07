@@ -1,0 +1,13 @@
+<div class="request-lists">
+  <section class="requested-lists">
+    <!--マイページに凝縮？-->
+    <h4>承認待ちリクエスト</h4>
+    <% @requested_posts.each do |requested| %>
+      <%= requested.post.body %>
+      requested by
+      <%= attachment_image_tag requested.member, :profile_image, :fill, 30, 30, format: 'jpeg', fallback: "no_image.jpg" %>
+      <%= requested.member.account_name %>
+      <hr><br>
+    <% end %>
+  </section>
+</div>
