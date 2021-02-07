@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_07_124130) do
+ActiveRecord::Schema.define(version: 2021_02_07_151836) do
 
   create_table "actions", force: :cascade do |t|
     t.integer "member_id"
@@ -49,12 +49,12 @@ ActiveRecord::Schema.define(version: 2021_02_07_124130) do
     t.string "place"
     t.string "event_image_id"
     t.string "fee"
-    t.boolean "is_finished"
     t.datetime "started_at"
     t.datetime "finished_at"
     t.datetime "expired_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "is_finished", default: false, null: false
   end
 
   create_table "genres", force: :cascade do |t|
