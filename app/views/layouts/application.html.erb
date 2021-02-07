@@ -24,6 +24,9 @@
         <%= link_to "リクエスト一覧", post_requests_waiting_path %>
       </li>
       <li class="nav-list-item">
+        <%= link_to "イベント一覧", events_path %>
+      </li>
+      <li class="nav-list-item">
         <%= link_to "ログアウト", destroy_member_session_path, method: :delete %>
       </li>
     <% elsif admin_signed_in? %>
