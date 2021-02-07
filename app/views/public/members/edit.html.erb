@@ -1,0 +1,12 @@
+<div class="profile-edit-form">
+  <h4>編集</h4>
+  <%= form_with model: @member, local:true do |f| %>
+  <h6>アカウント名</h6>
+  <%= f.text_field :account_name %><br>
+  <h6>ひと言</h6>
+  <%= f.text_area :introduction %><br>
+  <%= attachment_image_tag @member, :profile_image, :fill, 60, 60, format: "jpeg", fallback: "no_image.jpg" %><br>
+  <%= f.attachment_field :profile_image, placeholder: "プロフィール画像" %>
+  <%= f.submit "編集" %>
+  <% end %>
+</div>

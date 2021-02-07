@@ -10,6 +10,40 @@
   </head>
 
   <body>
+    <header>
+    <ul class="nav-list">
+    <% if member_signed_in? %>
+      <li class="nav-list-item">
+        <%= link_to "マイページ", member_path(current_member) %>
+      </li>
+      <li class="nav-list-item">
+        <%= link_to "投稿一覧", posts_path %>
+      </li>
+      <li class="nav-list-item">
+        <%= link_to "リクエスト一覧", post_requests_waiting_path %>
+      </li>
+      <li class="nav-list-item">
+        <%= link_to "ログアウト", destroy_member_session_path, method: :delete %>
+      </li>
+    <% elsif admin_signed_in? %>
+      <li class="nav-list-item">
+        <%= link_to "ジャンル一覧", admin_genres_path %>
+      </li>
+      <li class="nav-list-item">
+        <%= link_to "ログアウト", destroy_admin_session_path, method: :delete %>
+      </li>
+    <% else %>
+      <li class="nav-list-item">
+        <%= link_to "新規登録", new_member_registration_path %>
+      </li>
+      <li class="nav-list-item">
+        <%= link_to "ログイン", new_member_session_path %>
+      </li>
+    <% end %>
+    </ul>
+    </header>
     <%= yield %>
+    <footer>
+    </footer>
   </body>
 </html>
