@@ -10,11 +10,13 @@ class Public::EventsController < ApplicationController
 
   def create
     @event = Event.new(event_params)
+    @event.member_id = current_member.id
     @event.save
     redirect_to events_myevent_path
   end
 
   def myevent
+    @events = Event.where(member_id: current_member.id)
   end
 
   private
