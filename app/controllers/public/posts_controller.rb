@@ -1,7 +1,7 @@
 class Public::PostsController < ApplicationController
 
  def index
-   @posts = Post.all
+    @posts = Post.all
  end
 
  def create
