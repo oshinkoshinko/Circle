@@ -18,7 +18,8 @@
       <%= attachment_image_tag @event, :event_image, :fill, 60, 60, format: "jpeg", fallback: "event_image.jpg", size:'200x100' %>
       <%= f.attachment_field :event_image, placeholder: "イベントイメージ" %><br>
       <%= f.label :expired_at, "応募締切日時" %><br>
-      <%= f.datetime_select :expired_at %>
+      <%= f.datetime_select :expired_at %><br>
+      <%= f.submit "開催" %>
     <% end %>
   </div>
 </section>

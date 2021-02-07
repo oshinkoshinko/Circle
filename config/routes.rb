@@ -29,10 +29,10 @@ Rails.application.routes.draw do
    end
    get 'post_requests/waiting' => 'post_requests#waiting'
    resources :post_comments, only: [:show, :create, :destroy]
+   get 'events/myevent' => 'events#myevent'
    resources :events do
     resources :event_members, only: [:new, :create, :show]
    end
-   get 'events/myevent' => 'events#myevent'
   end
 
 end
