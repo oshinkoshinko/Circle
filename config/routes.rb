@@ -25,11 +25,13 @@ Rails.application.routes.draw do
    get 'members/unsubscribe' => 'members#unsubscribe'
    patch 'members/withdraw' => 'members#withdraw'
    resources :posts, only: [:index, :create, :edit, :update, :destroy] do
-   resource :post_requests, only: [:index, :create, :destroy, :update]
+    resource :post_requests, only: [:index, :create, :destroy, :update]
    end
    get 'post_requests/waiting' => 'post_requests#waiting'
    resources :post_comments, only: [:show, :create, :destroy]
-   resources :events
+   resources :events do
+    resources :event_members, only: [:new, :create, :show]
+   end
    get 'events/myevent' => 'events#myevent'
   end
 
