@@ -6,6 +6,8 @@ class Public::PostRequestsController < ApplicationController
     @posts = Post.where(member_id: current_member.id)
     #自分の投稿データのなかでリクエストされたものを取得
     @requested_posts = PostRequest.where(post_id: @posts.ids)
+    #リクエストした投稿データを取得
+    @requesting_posts = PostRequest.where(member_id: current_member.id)
   end
 
   def create
