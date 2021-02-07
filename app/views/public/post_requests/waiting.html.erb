@@ -9,6 +9,11 @@
         <%= attachment_image_tag requested.member, :profile_image, :fill, 30, 30, format: 'jpeg', fallback: "no_image.jpg" %>
         <%= requested.member.account_name %>
       <% end %>
+      <% if requested.is_accepted == false %>
+        <%= button_to "承認", post_post_requests_path(requested.post.id), method: :patch, remote: true, params: {id: requested.id, is_accepted: true, is_requested: false} %>
+      <% else %>
+        <%= button_to "拒否", post_post_requests_path(requested.post.id), method: :patch, remote: true, params: {id: requested.id, is_accepted: false, is_requested: true} %>
+      <% end %>
       <hr><br>
     <% end %>
   </section>

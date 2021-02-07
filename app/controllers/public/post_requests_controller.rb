@@ -25,4 +25,10 @@ class Public::PostRequestsController < ApplicationController
     redirect_to request.referer
   end
 
+  def update
+    @post_request = PostRequest.find(params[:id])
+    @post_request.update(is_accepted: params[:is_accepted], is_requested: params[:is_requested])
+    redirect_to request.referer
+  end
+
 end
