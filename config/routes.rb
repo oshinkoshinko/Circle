@@ -32,7 +32,7 @@ Rails.application.routes.draw do
    get 'events/myevent' => 'events#myevent'
    resources :events do
     get 'event_members/complete' => 'event_members#complete'
-    resources :event_members, only: [:new, :create, :show]
+    resources :event_members, only: [:new, :create, :show, :update]
    end
   end
 

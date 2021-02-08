@@ -22,9 +22,10 @@
     <!--参加予定イベントの開催ステータスが終了(true)になっているイベント-->
       <% if joined_event.event.is_finished == true %>
         <%= link_to event_path(joined_event.event), local:true do %>
-        <%= attachment_image_tag joined_event.event, :event_image, :fill, 50, 25, format: "jpeg", fallback: "event_image.jpg", size:'50x25' %>
-        <%= joined_event.event.name %><br>
+          <%= attachment_image_tag joined_event.event, :event_image, :fill, 50, 25, format: "jpeg", fallback: "event_image.jpg", size:'50x25' %>
+          <%= joined_event.event.name %>
         <% end %>
+        <%= button_to "評価する", event_event_member_path(joined_event.event_id, joined_event.id), method: :get %><br>
       <% end %>
     <% end %>
   </div>

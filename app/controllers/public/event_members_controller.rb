@@ -11,6 +11,18 @@ class Public::EventMembersController < ApplicationController
     redirect_to event_event_members_complete_path
   end
 
+  #フィードバック投稿フォーム
+  def show
+    @event = Event.find(params[:event_id])
+    @event_member = EventMember.find(params[:id])
+  end
+
+  def update
+    @event_member = EventMember.find(params[:id])
+    @event_member.update(event_member_params)
+    redirect_to events_myevent_path
+  end
+
   def complete
   end
 
