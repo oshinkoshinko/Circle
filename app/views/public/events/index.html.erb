@@ -2,7 +2,7 @@
   <div class="event-lists">
     <h4>イベント一覧</h4>
     <div class="new-event-btn">
-      <%= link_to "イベントを作る", new_event_path, method: :get %>
+      <%= button_to "イベントを作る", new_event_path, method: :get %>
     </div>
     <div class="event-genre">
       <% @genres.each do |genre| %>
