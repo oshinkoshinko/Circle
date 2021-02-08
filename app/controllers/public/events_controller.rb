@@ -1,7 +1,8 @@
 class Public::EventsController < ApplicationController
 
   def index
-    @events = Event.all.limit(5).order("created_at DESC")
+    #新着イベント取得(開催中ステータス)
+    @events = Event.where(is_finished: false).limit(5).order("created_at DESC")
     @genres = Genre.all
   end
 
