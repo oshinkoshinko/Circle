@@ -4,6 +4,7 @@
   <div class="join-event">
     <h4>参加予定イベント</h4>
     <% @join_events.each do |join_event| %>
+      <!--参加予定イベントの開催ステータスが開催中(false)になっているイベント-->
       <% unless join_event.event.is_finished == true %>
         <%= link_to event_path(join_event.event), local:true do %>
           <%= attachment_image_tag join_event.event, :event_image, :fill, 50, 25, format: "jpeg", fallback: "event_image.jpg", size:'50x25' %>
@@ -18,6 +19,7 @@
   <div class="joined-event">
     <h4>参加済みイベント</h4>
     <% @join_events.each do |joined_event| %>
+    <!--参加予定イベントの開催ステータスが終了(true)になっているイベント-->
       <% if joined_event.event.is_finished == true %>
         <%= link_to event_path(joined_event.event), local:true do %>
         <%= attachment_image_tag joined_event.event, :event_image, :fill, 50, 25, format: "jpeg", fallback: "event_image.jpg", size:'50x25' %>

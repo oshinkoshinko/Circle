@@ -42,8 +42,6 @@ class Public::EventsController < ApplicationController
   def myevent
     #参加予定イベント取得
     @join_events = EventMember.where(member_id: current_member.id)
-    #参加済みイベント取得
-    #@joined_events = @join_events.events.where(is_finished: true)
     #ログインユーザの開催予定イベント取得
     @active_events = Event.where(member_id: current_member.id, is_finished: false)
     #ログインユーザの開催済みイベント取得

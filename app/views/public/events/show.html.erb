@@ -6,7 +6,11 @@
         <%= @event.member.account_name %>
       <% end %>さんのイベント<br>
       <div class="join-members">
-        ただいまの参加人数は<%= @event_members.count %>人です。<br>
+        <% if @event.is_finished == false %>
+          ただいまの参加人数は<%= @event_members.count %>人です。<br>
+        <% else %>
+          参加人数は<%= @event_members.count %>人でした。<br>
+        <% end %>
         <% @event_members.each do |event_member| %>
           <%= link_to member_path(event_member.member), local:true do %>
             <%= attachment_image_tag event_member.member, :profile_image, :fill, 30, 30, format: 'jpeg', fallback: "no_image.jpg", size:"30x30" %>
@@ -34,8 +38,10 @@
           <%= button_to "申し込む", new_event_event_member_path(@event.id), method: :get, params: {member_id: current_member.id} %>
         <% end %>
       <% else %>
-        <!--開催者には編集リンクを表示-->
-        <%= button_to "編集", edit_event_path(@event.id), method: :get %>
+        <!--開催者には編集リンクを表示 イベント終了後は編集不可-->
+        <% if @event.is_finished == false %>
+          <%= button_to "編集", edit_event_path(@event.id), method: :get %>
+        <% end %>
       <% end %>
     </div>
 </section>
