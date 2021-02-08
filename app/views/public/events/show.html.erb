@@ -33,9 +33,12 @@
     </div>
     <div class="apply-btn">
       <% if current_member != @event.member %>
-        <!--申し込んだ人には非表示にする-->
-        <% unless @event.applied_by?(current_member) %>
-          <%= button_to "申し込む", new_event_event_member_path(@event.id), method: :get, params: {member_id: current_member.id} %>
+        <!--イベントが開催中ステータスであるかどうか-->
+        <% if @event.is_finished == false %>
+          <!--申し込んだ人には非表示にする-->
+          <% unless @event.applied_by?(current_member) %>
+            <%= button_to "申し込む", new_event_event_member_path(@event.id), method: :get, params: {member_id: current_member.id} %>
+          <% end %>
         <% end %>
       <% else %>
         <!--開催者には編集リンクを表示 イベント終了後は編集不可-->
@@ -45,7 +48,6 @@
             <%= f.select :is_finished, { "開催中" => "false", "終了" => "true" } %>
             <%= f.submit "更新" %>
           <% end %>
-          <%#= button_to "イベント終了", event_path(@event.id), method: :patch, remote: true, params: {is_finished: true, member_id: current_member.id, id: @event.id} %>
         <% end %>
       <% end %>
     </div>
