@@ -1,10 +1,11 @@
 <section class="my-event">
   <h4>マイイベント</h4>
+  <%= link_to "イベントを開催する", new_event_path, local:true %>
   <div class="join-event">
-    <h5>参加予定イベント</h5>
+    <h4>参加予定イベント</h4>
   </div>
   <div class="host-event">
-    <h5>開催予定イベント</h5>
+    <h4>開催予定イベント</h4>
     <% @events.each do |event| %>
       <%= attachment_image_tag event, :event_image, :fill, 50, 25, format: "jpeg", fallback: "event_image.jpg", size:'50x25' %>
       <%= event.name %>
@@ -15,5 +16,8 @@
         <% end %>
       </p>
     <% end %>
+  </div>
+  <div class="finished-event">
+    <h4>開催済みイベント</h4>
   </div>
 </section>
