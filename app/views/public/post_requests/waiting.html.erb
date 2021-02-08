@@ -6,7 +6,7 @@
       <%= requested.post.body %>
       requested by
       <%= link_to member_path(requested.member.id) do %>
-        <%= attachment_image_tag requested.member, :profile_image, :fill, 30, 30, format: 'jpeg', fallback: "no_image.jpg" %>
+        <%= attachment_image_tag requested.member, :profile_image, :fill, 30, 30, format: 'jpeg', fallback: "no_image.jpg", size: "30x30" %>
         <%= requested.member.account_name %>
       <% end %>
       <% if requested.is_accepted == false %>
@@ -21,7 +21,7 @@
     <h4>リクエスト中</h4>
     <% @requesting_posts.each do |requesting| %>
       <%= link_to member_path(requesting.post.member.id) do %>
-        <%= attachment_image_tag requesting.post.member, :profile_image, :fill, 30, 30, format: 'jpeg', fallback: "no_image.jpg" %><br>
+        <%= attachment_image_tag requesting.post.member, :profile_image, :fill, 30, 30, format: 'jpeg', fallback: "no_image.jpg", size: "30x30" %><br>
         <%= requesting.post.member.account_name %>
       <% end %>
       <%= requesting.post.body %><br>
