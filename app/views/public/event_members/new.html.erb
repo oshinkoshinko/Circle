@@ -1,0 +1,23 @@
+<section class="Apply-form">
+  <h4>申し込みフォーム</h4>
+    <div class="apply-detail">
+      イベント名　　<%= @event.name %><br>
+      開催日時　　　<%= @event.started_at.strftime("%Y年%-m月%-d日 %H時%M分") %><br>
+      終了日時　　　<%= @event.finished_at.strftime("%Y年%-m月%-d日 %H時%M分") %><br>
+      イベント内容　<%= @event.content %><br>
+      場所　　　　　<%= @event.place %><br>
+      参加費　　　　<%= @event.fee %>円<br>
+      応募締切　　　<%= @event.expired_at.strftime("%Y年%-m月%-d日 %H時%M分") %><br>
+    </div>
+    <div class="card-form">
+      支払方法選択
+    </div>
+    <p>※ 確定されますとキャンセルはできませんのでご注意ください。</p>
+    <div class="confirm-btn">
+      <%= form_with url: event_event_members_path, model: @event_member, method: :post, local:true do |f| %>
+        <%= f.hidden_field :event_id, :value => @event.id %>
+        <%= f.hidden_field :member_id, :value => current_member.id %>
+        <%= f.submit "確定" %>
+      <% end %>
+    </div>
+</section>

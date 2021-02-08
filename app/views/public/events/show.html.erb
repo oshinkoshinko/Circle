@@ -1,0 +1,73 @@
+<section class="event">
+  <h4>イベント詳細</h4>
+    <div class="event-info">
+      <%= link_to member_path(@event.member.id) do %>
+        <%= attachment_image_tag @event.member, :profile_image, :fill, 30, 30, format: 'jpeg', fallback: "no_image.jpg" %>
+        <%= @event.member.account_name %>
+      <% end %>さんのイベント<br>
+      <div class="join-members">
+        <% if @event.is_finished == false %>
+          ただいまの参加人数は<%= @event_members.count %>人です。<br>
+        <% else %>
+          参加人数は<%= @event_members.count %>人でした。<br>
+        <% end %>
+        <% @event_members.each do |event_member| %>
+          <%= link_to member_path(event_member.member), local:true do %>
+            <%= attachment_image_tag event_member.member, :profile_image, :fill, 30, 30, format: 'jpeg', fallback: "no_image.jpg", size:"30x30" %>
+          <% end %>
+        <% end %><br>
+      </div>
+      <div class="event-detail">
+        イベント名　　<%= @event.name %><br>
+        開催日時　　　<%= @event.started_at.strftime("%Y年%-m月%-d日 %H時%M分") %><br>
+        終了日時　　　<%= @event.finished_at.strftime("%Y年%-m月%-d日 %H時%M分") %><br>
+        イベント内容　<%= @event.content %><br>
+        ジャンル　　　<%= @event.genre.name %><br>
+        場所　　　　　<%= @event.place %><br>
+        参加費　　　　<%= @event.fee %>円<br>
+        応募締切　　　<%= @event.expired_at.strftime("%Y年%-m月%-d日 %H時%M分") %><br>
+      </div>
+    </div>
+    <div class="event-image">
+      <%= attachment_image_tag @event, :event_image, :fill, 50, 25, format: "jpeg", fallback: "event_image.jpg", size:'300x200' %>
+    </div>
+    <div class="apply-btn">
+      <% if current_member != @event.member %>
+        <!--イベントが開催中ステータスであるかどうか-->
+        <% if @event.is_finished == false %>
+          <!--申し込んだ人には非表示にする-->
+          <% unless @event.applied_by?(current_member) %>
+            <%= button_to "申し込む", new_event_event_member_path(@event.id), method: :get, params: {member_id: current_member.id} %>
+          <% end %>
+        <% end %>
+      <% else %>
+        <!--開催者には編集リンクを表示 イベント終了後は編集不可-->
+        <% if @event.is_finished == false %>
+          <%= button_to "編集", edit_event_path(@event.id), method: :get %>
+          <%= form_with model: @event, method: :patch, local:true do |f| %>
+            <%= f.select :is_finished, { "開催中" => "false", "終了" => "true" } %>
+            <%= f.submit "更新" %>
+          <% end %>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="feedback-list">
+      <% @event_members.each do |event_member| %>
+        <div class="each-feedback">
+          <% if event_member.feedback.present? %>
+            <h4>参加者の声</h4>
+            <%= link_to member_path(event_member.member), local:true do %>
+              <%= attachment_image_tag event_member.member, :profile_image, :fill, 50, 50, format: 'jpeg', fallback: "no_image.jpg", size:"50x50" %><br>
+              <%= event_member.member.account_name %>さん<br>
+            <% end %>
+            <%= event_member.feedback %>
+            <% if current_member.id == event_member.member.id %>
+              <%= link_to event_event_member_path(event_member.event.id, event_member.id) do %>
+                <i class="fas fa-wrench"></i>
+              <% end %>
+            <% end %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+</section>

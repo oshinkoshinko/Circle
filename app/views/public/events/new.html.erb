@@ -1,0 +1,27 @@
+<section class="new-event">
+  <h4>イベント開催</h4>
+  <div class="event-form">
+    <%= form_with model: @event, local:true do |f| %>
+      <%= f.label :name, "イベント名" %><br>
+      <%= f.text_field :name %><br>
+      <%= f.label :started_at, "開催日時" %><br>
+      <%= f.datetime_select :started_at %><br>
+      <%= f.label :finished_at, "終了日時" %><br>
+      <%= f.datetime_select :finished_at %><br>
+      <%= f.label :content, "イベント内容" %><br>
+      <%= f.text_area :content %><br>
+      <%= f.label :place, "場所" %><br>
+      <%= f.text_field :place %><br>
+      <%= f.label :genre_id, "ジャンル" %><br>
+      <%= f.collection_select(:genre_id, @genres, :id, :name) %><br>
+      <%= f.label :fee, "参加費" %><br>
+      <%= f.text_field :fee %> 円<br>
+      <%= f.label :event_id, "イベントイメージ" %><br>
+      <%= attachment_image_tag @event, :event_image, :fill, 200, 100, format: "jpeg", fallback: "event_image.jpg", size:'200x100' %>
+      <%= f.attachment_field :event_image, placeholder: "イベントイメージ" %><br>
+      <%= f.label :expired_at, "応募締切日時" %><br>
+      <%= f.datetime_select :expired_at %><br>
+      <%= f.submit "開催" %>
+    <% end %>
+  </div>
+</section>

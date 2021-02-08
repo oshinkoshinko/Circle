@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_06_095315) do
+ActiveRecord::Schema.define(version: 2021_02_07_151836) do
 
   create_table "actions", force: :cascade do |t|
     t.integer "member_id"
@@ -30,6 +30,31 @@ ActiveRecord::Schema.define(version: 2021_02_06_095315) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_admins_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
+  end
+
+  create_table "event_members", force: :cascade do |t|
+    t.integer "event_id"
+    t.integer "member_id"
+    t.string "feedback"
+    t.integer "rate"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.integer "member_id"
+    t.integer "genre_id"
+    t.string "name"
+    t.string "content"
+    t.string "place"
+    t.string "event_image_id"
+    t.string "fee"
+    t.datetime "started_at"
+    t.datetime "finished_at"
+    t.datetime "expired_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean "is_finished", default: false, null: false
   end
 
   create_table "genres", force: :cascade do |t|

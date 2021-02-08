@@ -1,0 +1,37 @@
+<section class="event-edit">
+  <div class="event-edit-form">
+    <div class="event-form">
+      <%= form_with model: @event, method: :patch, local:true do |f| %>
+        <%= f.label :name, "イベント名" %><br>
+        <%= f.text_field :name %><br>
+        <%= f.label :started_at, "開催日時" %><br>
+        <%= f.datetime_select :started_at %><br>
+        <%= f.label :finished_at, "終了日時" %><br>
+        <%= f.datetime_select :finished_at %><br>
+        <%= f.label :content, "イベント内容" %><br>
+        <%= f.text_area :content %><br>
+        <%= f.label :place, "場所" %><br>
+        <%= f.text_field :place %><br>
+        <%= f.label :genre_id, "ジャンル" %><br>
+        <%= f.collection_select(:genre_id, @genres, :id, :name) %><br>
+        <%= f.label :fee, "参加費" %><br>
+        <% if @event_members.present? %>
+          <%= @event.fee %> 円
+          ※申し込みがあってからの参加費変更は受け付けておりません。<br>
+        <% else %>
+          <%= f.text_field :fee %> 円<br>
+        <% end %>
+        <%= f.label :event_id, "イベントイメージ" %><br>
+        <%= attachment_image_tag @event, :event_image, :fill, 200, 100, format: "jpeg", fallback: "event_image.jpg", size:'200x100' %>
+        <%= f.attachment_field :event_image, placeholder: "イベントイメージ" %><br>
+        <%= f.label :expired_at, "応募締切日時" %><br>
+        <%= f.datetime_select :expired_at %><br>
+        <%= f.submit "更新" %>
+      <% end %>
+    </div>
+    <div class="event-destroy-btn">
+      <%= button_to "イベントを中止する", event_path(@event), method: :delete %>
+      <!--参加予定者への返金処理が必要-->
+    </div>
+  </div>
+</section>

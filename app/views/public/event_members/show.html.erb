@@ -1,0 +1,21 @@
+<section class="feedback">
+  <h4>フィードバック</h4>
+    <div class="event-detail">
+      イベント名　　<%= @event.name %><br>
+      開催日時　　　<%= @event.started_at.strftime("%Y年%-m月%-d日 %H時%M分") %><br>
+      イベント内容　<%= @event.content %><br>
+      場所　　　　　<%= @event.place %><br>
+      参加費　　　　<%= @event.fee %>円<br>
+    </div>
+    <div class="event-image">
+      <%= attachment_image_tag @event, :event_image, :fill, 50, 25, format: "jpeg", fallback: "event_image.jpg", size:'300x200' %>
+    </div>
+    <div class="feedback-form">
+      <%= form_with url: event_event_member_path, model: @event_member, method: :patch, local:true do |f| %>
+        <%= f.label :feedback, "フィードバック" %><br>
+        <%= f.text_area :feedback %>
+        <!--自然言語処理でフィードバックからネガポジ判定予定-->
+        <%= f.submit "送信" %>
+      <% end %>
+    </div>
+</section>
