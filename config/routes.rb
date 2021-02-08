@@ -31,6 +31,7 @@ Rails.application.routes.draw do
    resources :post_comments, only: [:show, :create, :destroy]
    get 'events/myevent' => 'events#myevent'
    resources :events do
+    get 'event_members/complete' => 'event_members#complete'
     resources :event_members, only: [:new, :create, :show]
    end
   end

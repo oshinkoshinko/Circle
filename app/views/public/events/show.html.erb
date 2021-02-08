@@ -22,6 +22,6 @@
       <%= attachment_image_tag @event, :event_image, :fill, 50, 25, format: "jpeg", fallback: "event_image.jpg", size:'300x200' %>
     </div>
     <div class="apply-btn">
-      <%= button_to "申し込む", new_event_event_member_path(@event.id), method: :get %>
+      <%= button_to "申し込む", new_event_event_member_path(@event.id), method: :get, params: {member_id: current_member.id} %>
     </div>
 </section>
