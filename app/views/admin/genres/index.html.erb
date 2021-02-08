@@ -1,23 +1,11 @@
 <div class="genres">
   <h4>ジャンル一覧</h4>
-  <table class="genre-table">
-    <thead>
-      <tr>
-        <td>ジャンル名</td>
-        <td></td>
-      </tr>
-    </thead>
-    <tbody>
+    <div class="genre-list">
       <% @genres.each do |genre| %>
-      <tr>
-        <td><%= genre.name %></td>
-        <td>
-          <%= link_to "削除", admin_genre_path(genre), method: :delete %>
-        </td>
-      </tr>
+        <%= genre.name %>
+        <%= link_to "削除", admin_genre_path(genre), method: :delete %><br>
       <% end %>
-    </tbody>
-  </table>
+    </div>
   <h4>ジャンル作成</h4>
   <%= form_with model: [:admin, @genre], method: :post, local:true do |f| %>
     <div class="genre-form">
