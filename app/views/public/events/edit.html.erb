@@ -15,14 +15,17 @@
         <%= f.label :genre_id, "ジャンル" %><br>
         <%= f.collection_select(:genre_id, @genres, :id, :name) %><br>
         <%= f.label :fee, "参加費" %><br>
-        <%= f.text_field :fee %> 円<br>
+        <% if @event_members.present? %>
+          <%= @event.fee %> 円
+          ※申し込みがあってからの参加費変更は受け付けておりません。<br>
+        <% else %>
+          <%= f.text_field :fee %> 円<br>
+        <% end %>
         <%= f.label :event_id, "イベントイメージ" %><br>
         <%= attachment_image_tag @event, :event_image, :fill, 200, 100, format: "jpeg", fallback: "event_image.jpg", size:'200x100' %>
         <%= f.attachment_field :event_image, placeholder: "イベントイメージ" %><br>
         <%= f.label :expired_at, "応募締切日時" %><br>
         <%= f.datetime_select :expired_at %><br>
-        <%= f.label :is_finished, "イベントステータス" %><br>
-        <%= f.select :is_finished, { "開催中" => "false", "終了" => "true" } %><br>
         <%= f.submit "更新" %>
       <% end %>
     </div>

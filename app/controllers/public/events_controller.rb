@@ -23,6 +23,8 @@ class Public::EventsController < ApplicationController
   def edit
     @event = Event.find(params[:id])
     @genres = Genre.all
+    #申し込みがあってから参加費の変更を無効にする条件分岐
+    @event_members = EventMember.where(event_id: @event.id)
   end
 
   def update
