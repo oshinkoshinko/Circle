@@ -59,11 +59,11 @@
               <%= event_member.member.account_name %>さん<br>
             <% end %>
             <%= event_member.feedback %>
-            <%# if current_member.id == event_member.member.id %>
-              <%#= link_to edit_post_path(post.id) do %>
-                <!--<i class="fas fa-wrench"></i>-->
-              <%# end %>
-            <%# end %>
+            <% if current_member.id == event_member.member.id %>
+              <%= link_to event_event_member_path(event_member.event.id, event_member.id) do %>
+                <i class="fas fa-wrench"></i>
+              <% end %>
+            <% end %>
           <% end %>
         </div>
       <% end %>
