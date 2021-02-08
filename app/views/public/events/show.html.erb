@@ -1,27 +1,41 @@
-<section class="event-detail">
+<section class="event">
   <h4>イベント詳細</h4>
     <div class="event-info">
       <%= link_to member_path(@event.member.id) do %>
         <%= attachment_image_tag @event.member, :profile_image, :fill, 30, 30, format: 'jpeg', fallback: "no_image.jpg" %>
         <%= @event.member.account_name %>
       <% end %>さんのイベント<br>
-      ただいまの参加人数は<%#= @event_members.count %>人です。
-      <%# @event_members.each do |event_member| %>
-        <%#= attachment_image_tag event_member, :profile_image, :fill, 30, 30, format: 'jpeg', fallback: "no_image.jpg" %>
-      <%# end %><br>
-      イベント名　　<%= @event.name %><br>
-      開催日時　　　<%= @event.started_at.strftime("%Y年%-m月%-d日 %H時%M分") %><br>
-      終了日時　　　<%= @event.finished_at.strftime("%Y年%-m月%-d日 %H時%M分") %><br>
-      イベント内容　<%= @event.content %><br>
-      ジャンル　　　<%= @event.genre.name %><br>
-      場所　　　　　<%= @event.place %><br>
-      参加費　　　　<%= @event.fee %>円<br>
-      応募締切　　　<%= @event.expired_at.strftime("%Y年%-m月%-d日 %H時%M分") %><br>
+      <div class="join-members">
+        ただいまの参加人数は<%= @event_members.count %>人です。<br>
+        <% @event_members.each do |event_member| %>
+          <%= link_to member_path(event_member.member), local:true do %>
+            <%= attachment_image_tag event_member.member, :profile_image, :fill, 30, 30, format: 'jpeg', fallback: "no_image.jpg", size:"30x30" %>
+          <% end %>
+        <% end %><br>
+      </div>
+      <div class="event-detail">
+        イベント名　　<%= @event.name %><br>
+        開催日時　　　<%= @event.started_at.strftime("%Y年%-m月%-d日 %H時%M分") %><br>
+        終了日時　　　<%= @event.finished_at.strftime("%Y年%-m月%-d日 %H時%M分") %><br>
+        イベント内容　<%= @event.content %><br>
+        ジャンル　　　<%= @event.genre.name %><br>
+        場所　　　　　<%= @event.place %><br>
+        参加費　　　　<%= @event.fee %>円<br>
+        応募締切　　　<%= @event.expired_at.strftime("%Y年%-m月%-d日 %H時%M分") %><br>
+      </div>
     </div>
     <div class="event-image">
       <%= attachment_image_tag @event, :event_image, :fill, 50, 25, format: "jpeg", fallback: "event_image.jpg", size:'300x200' %>
     </div>
     <div class="apply-btn">
-      <%= button_to "申し込む", new_event_event_member_path(@event.id), method: :get, params: {member_id: current_member.id} %>
+      <% if current_member != @event.member %>
+        <!--申し込んだ人には非表示にする-->
+        <% unless @event.applied_by?(current_member) %>
+          <%= button_to "申し込む", new_event_event_member_path(@event.id), method: :get, params: {member_id: current_member.id} %>
+        <% end %>
+      <% else %>
+        <!--開催者には編集リンクを表示-->
+        <%= button_to "編集", edit_event_path(@event.id), method: :get %>
+      <% end %>
     </div>
 </section>

@@ -36,10 +36,12 @@ class Public::EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
+    @event_members = EventMember.where(event_id: @event.id)
   end
 
   def myevent
     @events = Event.where(member_id: current_member.id)
+    @join_events = EventMember.where(member_id: current_member.id)
   end
 
   private

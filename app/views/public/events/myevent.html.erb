@@ -3,7 +3,12 @@
   <%= link_to "イベントを開催する", new_event_path, local:true %>
   <div class="join-event">
     <h4>参加予定イベント</h4>
-
+    <% @join_events.each do |join_event| %>
+      <%= link_to event_path(join_event.event), local:true do %>
+      <%= attachment_image_tag join_event.event, :event_image, :fill, 50, 25, format: "jpeg", fallback: "event_image.jpg", size:'50x25' %>
+      <%= join_event.event.name %><br>
+      <% end %>
+    <% end %>
   </div>
   <div class="host-event">
     <h4>開催予定イベント</h4>
