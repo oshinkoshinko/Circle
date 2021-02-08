@@ -1,0 +1,20 @@
+<section class="events-index">
+  <div class="event-lists">
+    <h4>イベント一覧</h4>
+    <div class="new-event-btn">
+      <%= link_to "イベントを作る", new_event_path, method: :get %>
+    </div>
+    <div class="event-genre">
+      <% @genres.each do |genre| %>
+        <%= genre.name %><br>
+        <% genre.events.each do |event| %>
+          <%= link_to event_path(event), local:true do %>
+            <%= attachment_image_tag event, :event_image, :fill, 50, 25, format: "jpeg", fallback: "event_image.jpg", size:'50x25' %>
+            <%= event.name %>
+          <% end %>
+          <%= event.content %><br>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</section>
