@@ -41,18 +41,30 @@
         <!--開催者には編集リンクを表示 イベント終了後は編集不可-->
         <% if @event.is_finished == false %>
           <%= button_to "編集", edit_event_path(@event.id), method: :get %>
+          <%= form_with model: @event, method: :patch, local:true do |f| %>
+            <%= f.select :is_finished, { "開催中" => "false", "終了" => "true" } %>
+            <%= f.submit "更新" %>
+          <% end %>
+          <%#= button_to "イベント終了", event_path(@event.id), method: :patch, remote: true, params: {is_finished: true, member_id: current_member.id, id: @event.id} %>
         <% end %>
       <% end %>
     </div>
     <div class="feedback-list">
-      <h4>参加者の声</h4>
       <% @event_members.each do |event_member| %>
         <div class="each-feedback">
-          <%= link_to member_path(event_member.member), local:true do %>
-            <%= attachment_image_tag event_member.member, :profile_image, :fill, 50, 50, format: 'jpeg', fallback: "no_image.jpg", size:"50x50" %><br>
-            <%= event_member.member.account_name %>さん<br>
+          <% if event_member.feedback.present? %>
+            <h4>参加者の声</h4>
+            <%= link_to member_path(event_member.member), local:true do %>
+              <%= attachment_image_tag event_member.member, :profile_image, :fill, 50, 50, format: 'jpeg', fallback: "no_image.jpg", size:"50x50" %><br>
+              <%= event_member.member.account_name %>さん<br>
+            <% end %>
+            <%= event_member.feedback %>
+            <%# if current_member.id == event_member.member.id %>
+              <%#= link_to edit_post_path(post.id) do %>
+                <!--<i class="fas fa-wrench"></i>-->
+              <%# end %>
+            <%# end %>
           <% end %>
-          <%= event_member.feedback %>
         </div>
       <% end %>
     </div>
