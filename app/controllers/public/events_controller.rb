@@ -26,6 +26,10 @@ class Public::EventsController < ApplicationController
     redirect_to events_myevent_path
   end
 
+  def show
+    @event = Event.find(params[:id])
+  end
+
   def myevent
     @events = Event.where(member_id: current_member.id)
   end
