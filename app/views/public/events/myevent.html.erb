@@ -9,11 +9,12 @@
     <% @events.each do |event| %>
       <%= attachment_image_tag event, :event_image, :fill, 50, 25, format: "jpeg", fallback: "event_image.jpg", size:'50x25' %>
       <%= event.name %>
+      <%= link_to edit_event_path(event.id) do %>
+        <i class="fas fa-wrench"></i>
+      <% end %>
       <p>
-        開催日時：<%= event.started_at.strftime("%Y年%-m月%-d日 %-H時%-M分") %>
-        <%= link_to edit_event_path(event.id) do %>
-          <i class="fas fa-wrench"></i>
-        <% end %>
+        開催日時：<%= event.started_at.strftime("%Y年%-m月%-d日 %H時%M分") %><br>
+        終了日時：<%= event.finished_at.strftime("%Y年%-m月%-d日 %H時%M分") %>
       </p>
     <% end %>
   </div>

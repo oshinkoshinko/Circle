@@ -15,6 +15,17 @@ class Public::EventsController < ApplicationController
     redirect_to events_myevent_path
   end
 
+  def edit
+    @event = Event.find(params[:id])
+    @genres = Genre.all
+  end
+
+  def update
+    @event = Event.find(params[:id])
+    @event.update(event_params)
+    redirect_to events_myevent_path
+  end
+
   def myevent
     @events = Event.where(member_id: current_member.id)
   end
