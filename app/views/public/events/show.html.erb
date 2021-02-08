@@ -44,4 +44,16 @@
         <% end %>
       <% end %>
     </div>
+    <div class="feedback-list">
+      <h4>参加者の声</h4>
+      <% @event_members.each do |event_member| %>
+        <div class="each-feedback">
+          <%= link_to member_path(event_member.member), local:true do %>
+            <%= attachment_image_tag event_member.member, :profile_image, :fill, 50, 50, format: 'jpeg', fallback: "no_image.jpg", size:"50x50" %><br>
+            <%= event_member.member.account_name %>さん<br>
+          <% end %>
+          <%= event_member.feedback %>
+        </div>
+      <% end %>
+    </div>
 </section>
