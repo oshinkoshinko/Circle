@@ -15,6 +15,7 @@
     <p>※ 確定されますとキャンセルはできませんのでご注意ください。</p>
     <div class="confirm-btn">
       <%= form_with url: event_event_members_path, model: @event_member, method: :post, local:true do |f| %>
+        <%= f.hidden_field :event_id, :value => @event.id %>
         <%= f.hidden_field :member_id, :value => current_member.id %>
         <%= f.submit "確定" %>
       <% end %>

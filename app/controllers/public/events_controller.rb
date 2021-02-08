@@ -28,6 +28,12 @@ class Public::EventsController < ApplicationController
     redirect_to events_myevent_path
   end
 
+  def destroy
+    @event = Event.find(params[:id])
+    @event.destroy
+    redirect_to events_myevent_path
+  end
+
   def show
     @event = Event.find(params[:id])
   end

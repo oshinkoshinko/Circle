@@ -8,6 +8,7 @@ class Public::EventMembersController < ApplicationController
   def create
     @event_member = EventMember.new(event_member_params)
     @event_member.save
+     #binding.pry
     redirect_to event_event_members_complete_path
   end
 
