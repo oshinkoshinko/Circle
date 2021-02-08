@@ -2,7 +2,7 @@ class Public::EventsController < ApplicationController
 
   def index
     #新着イベント取得(開催中ステータス)
-    @events = Event.where(is_finished: false).limit(5).order("created_at DESC")
+    @new_events = Event.where(is_finished: false).limit(5).order("created_at DESC")
     @genres = Genre.all
   end
 
