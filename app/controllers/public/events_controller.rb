@@ -1,6 +1,7 @@
 class Public::EventsController < ApplicationController
 
   def index
+    @events = Event.all.limit(5).order("created_at DESC")
     @genres = Genre.all
   end
 
