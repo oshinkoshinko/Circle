@@ -4,7 +4,7 @@ class Public::MembersController < ApplicationController
     @member = Member.find(params[:id])
     #post新規投稿、一覧表示用変数
     @post = Post.new
-    @posts = Post.where(member_id: @member.id)
+    @posts = Post.where(member_id: @member.id).order("created_at DESC")
     #binding.pry
     @genres = Genre.all
   end
