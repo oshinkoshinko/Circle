@@ -52,10 +52,12 @@
       <% end %>
     </div>
     <div class="feedback-list">
+      <% if @event.is_finished == true %>
+        <h4>参加者の声</h4>
+      <% end %>
       <% @event_members.each do |event_member| %>
         <div class="each-feedback">
           <% if event_member.feedback.present? %>
-            <h4>参加者の声</h4>
             <%= link_to member_path(event_member.member), local:true do %>
               <%= attachment_image_tag event_member.member, :profile_image, :fill, 50, 50, format: 'jpeg', fallback: "no_image.jpg", size:"50x50" %><br>
               <%= event_member.member.account_name %>さん<br>
