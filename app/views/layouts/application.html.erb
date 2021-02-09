@@ -34,6 +34,12 @@
       </li>
     <% elsif admin_signed_in? %>
       <li class="nav-list-item">
+        <%= link_to "会員一覧", admin_root_path %>
+      </li>
+      <li class="nav-list-item">
+        <%= link_to "イベント一覧", admin_events_path %>
+      </li>
+      <li class="nav-list-item">
         <%= link_to "ジャンル一覧", admin_genres_path %>
       </li>
       <li class="nav-list-item">

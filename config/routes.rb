@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   namespace :admin do
     root to: 'members#index'
     resources :genres, only: [:index, :create, :destroy]
+    resources :events, only: [:index]
   end
 
   scope module: :public do
