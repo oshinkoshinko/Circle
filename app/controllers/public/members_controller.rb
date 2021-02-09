@@ -19,10 +19,14 @@ class Public::MembersController < ApplicationController
     redirect_to member_path(@member.id)
   end
 
-  def unsubscribe
+  def withdraw
   end
 
-  def withdraw
+  def unsubscribe
+    @member = current_member
+    @member.update(is_deleted: true)
+    reset_session
+    redirect_to root_path
   end
 
   private

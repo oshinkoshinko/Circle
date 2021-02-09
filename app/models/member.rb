@@ -11,10 +11,10 @@ class Member < ApplicationRecord
   has_many :event_members, dependent: :destroy
   has_many :follower, class_name: "Relationship", foreign_key: "follower_id", dependent: :destroy
   has_many :followed, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy
-  has_many :following_member, through: :follower, source: :followed
-  has_many :follower_member, through: :followed, source: :follower
-  has_many :chats
-  has_many :chat_rooms
+  has_many :following_member, through: :follower, source: :followed, dependent: :destroy
+  has_many :follower_member, through: :followed, source: :follower, dependent: :destroy
+  has_many :chats, dependent: :destroy
+  has_many :chat_rooms, dependent: :destroy
 
   def follow(member_id)
     follower.create(followed_id: member_id)
@@ -26,6 +26,10 @@ class Member < ApplicationRecord
 
   def following?(member)
     following_member.include?(member)
+  end
+
+  def active_for_authentication?
+    super && (self.is_deleted == false)
   end
 
   attachment :profile_image

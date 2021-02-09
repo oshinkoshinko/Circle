@@ -1,0 +1,8 @@
+<section class="unsubscribe">
+  <div class="unsubscribe-form">
+    <h4>退会手続き</h4>
+    <p>本当に退会してもよろしいですか？</p>
+    <%= link_to '退会しない', member_path(current_member) %>
+    <%= link_to '退会する', members_unsubscribe_path, "data-confirm" => "本当に退会しますか？", method: :patch %>
+  </div>
+</section>

@@ -1,0 +1,8 @@
+<section class="chat-lists">
+  <div class="chat-room">
+    <% @room_chats.each do |room_chat| %>
+      <%#= room_chat.member.account_name %>
+      <%= room_chat.room_id %><hr><br>
+    <% end %>
+  </div>
+</section>

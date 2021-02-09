@@ -21,13 +21,13 @@ Rails.application.routes.draw do
 
   scope module: :public do
    root to: 'homes#top'
+   patch 'members/unsubscribe' => 'members#unsubscribe'
+   get 'members/withdraw' => 'members#withdraw'
    resources :members, only: [:show, :edit, :update] do
     resource :relationships, only: [:create, :destroy]
     get 'follow' => 'relationships#follow'
     get 'unfollow' => 'relationships#unfollow'
    end
-   get 'members/unsubscribe' => 'members#unsubscribe'
-   patch 'members/withdraw' => 'members#withdraw'
    resources :posts, only: [:index, :create, :edit, :update, :destroy] do
     resource :post_requests, only: [:index, :create, :destroy, :update]
    end
@@ -40,6 +40,7 @@ Rails.application.routes.draw do
    end
    get 'chats/:id' => 'chats#show'
    resources :chats, only: [:create, :destroy]
+   get 'rooms' => 'rooms#index'
   end
 
 end

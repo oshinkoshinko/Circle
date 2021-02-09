@@ -2,6 +2,7 @@
 
 class Public::SessionsController < Devise::SessionsController
   # before_action :configure_sign_in_params, only: [:create]
+  before_action :reject_inactive_member, only: [:create]
 
   # GET /resource/sign_in
   # def new
@@ -30,10 +31,10 @@ class Public::SessionsController < Devise::SessionsController
 
   protected
 
-  def reject_member
-    @member = Member.find_by(email: params[:member][:email].downcase)
+  def reject_inactive_member
+    @member = Member.find_by(email: params[:member][:email])
     if @member
-      if (@mamber.valid_password?(params[:member][:password]) && (@member.active_for_authentication? == false))
+      if @member.valid_password?(params[:member][:password]) && @member.is_deleted
         redirect_to new_member_registration_path
       end
     end
