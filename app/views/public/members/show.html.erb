@@ -2,10 +2,31 @@
 <div class="profile-field">
   <h4>プロフィール</h4>
   <%= attachment_image_tag @member, :profile_image, :fill, 60, 60, format: 'jpeg', fallback: "no_image.jpg" %><br>
-  <%= @member.account_name %>
+  <%= @member.account_name %><br>
+  <div class="follow_count">
+    フォロー数: <%= render 'public/relationships/following_count', member: @member %>
+  </div>
+  <div class="follower_count">
+    フォロワー数: <%= render 'public/relationships/follower_count', member: @member %>
+  </div>
+  <div class="follow_form">
+    <% unless current_member == @member %>
+      <% unless current_member.following?(@member) %>
+        <%= render 'public/relationships/follow_btn', member: @member %>
+      <% else %>
+        <%= render 'public/relationships/unfollow_btn', member: @member %>
+      <% end %>
+    <% end %>
+  </div>
   <%= @member.introduction %><br>
   <% if current_member.id == @member.id %>
     <%= link_to '編集', edit_member_path(@member) %>
+  <% else %>
+    <%= link_to chat_path(@member) do %>
+      <button type="button" class="btn btn-secondary rounded-circle p-0" style="width:2rem;height:2rem;">
+        <i class="fas fa-envelope"></i>
+      </button>
+    <% end %>
   <% end %>
 </div>
 

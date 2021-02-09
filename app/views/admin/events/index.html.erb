@@ -1,0 +1,39 @@
+<section class="event">
+  <h4>イベント一覧 (全<%= @events.count %>件)</h4>
+  <table class="event-list">
+      <thead>
+        <tr>
+          <th>イベントID</th>
+          <th>イベント名</th>
+          <th>ジャンル</th>
+          <th>主催者</th>
+          <th>開催日</th>
+          <th>開催場所</th>
+          <th>参加費</th>
+          <th>参加人数</th>
+          <th>開催ステータス</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @events.each do |event| %>
+        <tr>
+          <td><%= event.id %></td>
+          <td><%= event.name %></td>
+          <td><%= event.genre.name %></td>
+          <td><%= event.member.name %></td>
+          <td><%= event.started_at.strftime("%Y年%-m月%-d日") %></td>
+          <td><%= event.place %></td>
+          <td><%= event.fee.to_i.to_s(:delimited) %> 円</td>
+          <td><%= event.event_members.count %>名</td>
+          <td>
+            <% if event.is_finished == false %>
+              開催中
+            <% else %>
+              終了
+            <% end %>
+          </td>
+        </tr>
+      </tbody>
+    <% end %>
+  </table>
+</section>

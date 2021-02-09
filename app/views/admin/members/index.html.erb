@@ -1,0 +1,33 @@
+<section class="member">
+  <h4>会員一覧 (有効会員 全<%= @active_members.count %>名)</h4>
+  <table class="member-list">
+      <thead>
+        <tr>
+          <th>会員ID</th>
+          <th>会員名</th>
+          <th>アカウント名</th>
+          <th>メールアドレス</th>
+          <th>会員登録日</th>
+          <th>会員ステータス</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @members.each do |member| %>
+        <tr>
+          <td><%= member.id %></td>
+          <td><%= member.name %></td>
+          <td><%= member.account_name %></td>
+          <td><%= member.email %></td>
+          <td><%= member.created_at.strftime("%Y年%-m月%-d日") %></td>
+          <td>
+            <% if member.is_deleted == false %>
+              有効
+            <% else %>
+              退会
+            <% end %>
+          </td>
+        </tr>
+      </tbody>
+    <% end %>
+  </table>
+</section>

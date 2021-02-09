@@ -1,0 +1,14 @@
+<section class="chat-lists">
+  <h4>未返信ボックス</h4>
+  <div class="chat-room">
+    <% @chat_rooms.each do |chat_room| %>
+      <% if chat_room.room.chats.last.member.id != current_member.id %>
+        <%= link_to chat_path(chat_room.room.chats.last.member.id) do %>
+          <%= attachment_image_tag chat_room.room.chats.last.member, :profile_image, :fill, 30, 30, format: 'jpeg', fallback: "no_image.jpg", size:"30x30" %>
+          <%= chat_room.room.chats.last.member.account_name %>
+        <%end %>
+        <%= chat_room.room.chats.last.message %><hr><br>
+      <% end %>
+    <% end %>
+  </div>
+</section>

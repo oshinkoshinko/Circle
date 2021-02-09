@@ -5,9 +5,9 @@ class Public::PostRequestsController < ApplicationController
     #自分の投稿データを取得
     @posts = Post.where(member_id: current_member.id)
     #自分の投稿データのなかでリクエストされたものを取得
-    @requested_posts = PostRequest.where(post_id: @posts.ids)
+    @requested_posts = PostRequest.where(post_id: @posts.ids).order("created_at DESC")
     #リクエストした投稿データを取得
-    @requesting_posts = PostRequest.where(member_id: current_member.id)
+    @requesting_posts = PostRequest.where(member_id: current_member.id).order("created_at DESC")
   end
 
   def create

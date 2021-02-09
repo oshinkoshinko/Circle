@@ -4,7 +4,7 @@ class Public::MembersController < ApplicationController
     @member = Member.find(params[:id])
     #post新規投稿、一覧表示用変数
     @post = Post.new
-    @posts = Post.where(member_id: @member.id)
+    @posts = Post.where(member_id: @member.id).order("created_at DESC")
     #binding.pry
     @genres = Genre.all
   end
@@ -19,10 +19,14 @@ class Public::MembersController < ApplicationController
     redirect_to member_path(@member.id)
   end
 
-  def unsubscribe
+  def withdraw
   end
 
-  def withdraw
+  def unsubscribe
+    @member = current_member
+    @member.update(is_deleted: true)
+    reset_session
+    redirect_to root_path
   end
 
   private
