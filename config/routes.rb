@@ -38,6 +38,8 @@ Rails.application.routes.draw do
     get 'event_members/complete' => 'event_members#complete'
     resources :event_members, only: [:new, :create, :show, :update]
    end
+   get 'chats/:id' => 'chats#show'
+   resources :chats, only: [:create, :destroy]
   end
 
 end
