@@ -70,4 +70,8 @@ class Public::EventsController < ApplicationController
       :genre_id)
   end
 
+  def search_params
+    params.require(:q).permit!
+  end
+
 end

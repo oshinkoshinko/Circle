@@ -24,7 +24,7 @@
         イベント内容　<%= @event.content %><br>
         ジャンル　　　<%= @event.genre.name %><br>
         場所　　　　　<%= @event.place %><br>
-        参加費　　　　<%= @event.fee %>円<br>
+        参加費　　　　<%= @event.fee.to_i.to_s(:delimited) %>円<br>
         応募締切　　　<%= @event.expired_at.strftime("%Y年%-m月%-d日 %H時%M分") %><br>
       </div>
     </div>

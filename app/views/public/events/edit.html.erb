@@ -16,7 +16,7 @@
         <%= f.collection_select(:genre_id, @genres, :id, :name) %><br>
         <%= f.label :fee, "参加費" %><br>
         <% if @event_members.present? %>
-          <%= @event.fee %> 円
+          <%= @event.fee.to_i.to_s(:delimited) %> 円<br>
           ※申し込みがあってからの参加費変更は受け付けておりません。<br>
         <% else %>
           <%= f.text_field :fee %> 円<br>
