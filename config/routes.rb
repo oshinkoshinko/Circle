@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     get 'edit' => 'public/registrations#edit'
     get '/members/sign_up' => 'public/registrations#new', as: :new_member_registration
     post '/members' => 'public/registrations#create'
+    post '/members/guest_sign_in', to: 'public/sessions#new_guest'
      end
 
   namespace :admin do

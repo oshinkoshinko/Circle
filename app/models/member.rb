@@ -32,6 +32,14 @@ class Member < ApplicationRecord
     super && (self.is_deleted == false)
   end
 
+  #ゲストログイン用アクション
+  def self.guest
+    #null: falseをつけているカラムは下記で指定する
+    find_or_create_by!(email: 'guest@example.com', name: 'guest', account_name: "ゲスト") do |member|
+      member.password = SecureRandom.urlsafe_base64
+    end
+  end
+
   attachment :profile_image
 
 end

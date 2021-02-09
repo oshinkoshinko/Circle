@@ -17,6 +17,11 @@ class Public::SessionsController < Devise::SessionsController
     root_path
   end
 
+  def new_guest
+    member = Member.guest
+    sign_in member
+    redirect_to root_path, notice: 'ゲストユーザーとしてログインしました。'
+  end
   # DELETE /resource/sign_out
   # def destroy
   #   super
