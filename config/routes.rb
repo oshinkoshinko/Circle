@@ -42,6 +42,7 @@ Rails.application.routes.draw do
    get 'chats/:id' => 'chats#show'
    resources :chats, only: [:create, :destroy]
    get 'rooms' => 'rooms#index'
+   get 'searches' => 'searches#index'
   end
 
 end

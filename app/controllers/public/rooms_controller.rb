@@ -7,8 +7,8 @@ class Public::RoomsController < ApplicationController
     @rooms = @chat_rooms.pluck(:room_id)
     #ログインユーザが存在するroomの中のメッセージを取得
     @room_chats = Chat.where(room_id: @rooms).order("created_at DESC")
-    @new_messages = @room_chats.where()
-    #@room_chats
+
+    @room_members = ChatRoom.where(room_id: @rooms)
     #binding.pry
     #@rooms = Room.where(id: @chats.room_id)
   end

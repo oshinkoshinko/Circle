@@ -1,0 +1,15 @@
+<%= search_form_for @q do |f| %>
+  <%= f.label :name_cont, '投稿内容' %>
+  <%= f.search_field :name_cont, placeholder: "キーワード" %>
+  <%= f.submit %>
+<% end %>
+<section class="Search">
+  <h4>検索結果</h4>
+  <div class="search-result">
+    <% @results.each do |name| %>
+      <tr>
+        <%= name %>
+      </tr>
+    <% end %>
+  </div>
+</section>
