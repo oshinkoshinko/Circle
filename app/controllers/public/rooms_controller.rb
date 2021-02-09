@@ -3,6 +3,8 @@ class Public::RoomsController < ApplicationController
   def index
     #ログインユーザが存在するchat_roomを取得
     @chat_rooms = ChatRoom.where(member_id: current_member.id)
+
+    #@chats = @chat_rooms.room.chats
     #ログインユーザが持つroomを取得
     @rooms = @chat_rooms.pluck(:room_id)
     #ログインユーザが存在するroomの中のメッセージを取得
