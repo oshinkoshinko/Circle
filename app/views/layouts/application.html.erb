@@ -33,6 +33,7 @@
         <%= link_to "ログアウト", destroy_member_session_path, method: :delete %>
       </li>
     <% elsif admin_signed_in? %>
+    <p>管理者様、今日もお疲れ様です！</p>
       <li class="nav-list-item">
         <%= link_to "会員一覧", admin_root_path %>
       </li>
