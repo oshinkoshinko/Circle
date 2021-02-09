@@ -2,6 +2,10 @@ class Public::PostsController < ApplicationController
 
  def index
     @posts = Post.all.order("created_at DESC")
+    #検索窓用変数定義
+    @q = Post.ransack(params[:q])
+    @genres = Genre.all
+    @posts = @q.result(distinct: true)
  end
 
  def create
@@ -32,6 +36,10 @@ class Public::PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:body, :genre_id, :member_id)
+  end
+
+  def search_params
+    params.require(:q).permit!
   end
 
 end

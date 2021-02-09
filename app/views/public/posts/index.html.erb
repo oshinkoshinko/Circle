@@ -1,5 +1,12 @@
-<div class="Timeline">
+<section class="Timeline">
+  <div class="search-form">
+    <%= search_form_for @q do |f| %>
+      <%= f.collection_select :genre_id_eq, @genres, :id, :name, :include_blank => '指定なし' %>
+      <%= f.submit %>
+    <% end %>
+  </div>
   <h4>タイムライン</h4>
+  <div class="timeline">
   <% @posts.each do |post| %>
     <tr>
     <%= link_to member_path(post.member.id) do %>
@@ -35,4 +42,5 @@
     <hr><br>
     </tr>
    <% end %>
-</div>
+   </div>
+</section>
