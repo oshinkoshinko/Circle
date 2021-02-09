@@ -35,7 +35,7 @@ class Member < ApplicationRecord
   #ゲストログイン用アクション
   def self.guest
     #null: falseをつけているカラムは下記で指定する
-    find_or_create_by!(email: 'guest@example.com', name: 'guest', account_name: "ゲスト") do |member|
+    find_or_create_by!(email: 'guest1@example.com', name: 'guest', account_name: "ゲスト") do |member|
       member.password = SecureRandom.urlsafe_base64
     end
   end
