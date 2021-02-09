@@ -1,0 +1,23 @@
+<div class="chat-to">
+  <h4><%= @member.account_name %>さんとのチャットルーム</h4>
+</div>
+<div class="message">
+  <% @chats.each do |chat| %>
+    <% if chat.member_id == current_member.id %>
+      <p style="text-align: right">
+        <%= chat.message %>
+        <%= attachment_image_tag chat.member , :profile_image, :fill, 30, 30, fallback: "no_image.jpg", size:"30x30" %>
+      </p>
+    <% else %>
+      <p style="text-align: left">
+        <%= attachment_image_tag chat.member , :profile_image, :fill, 30, 30, fallback: "no_image.jpg", size:"30x30" %>
+        <%= chat.message %>
+    <% end %>
+  <% end %>
+</div>
+<div class="message-form">
+    <%= form_with model: @chat do |f| %>
+    <%= f.text_field :message %>
+    <%= f.hidden_field :room_id %>
+    <% end %>
+</div>
