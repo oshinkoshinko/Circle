@@ -33,6 +33,9 @@
         <%= link_to "イベント一覧", events_path %>
       </li>
       <li class="nav-list-item">
+        <%= link_to "通知一覧", notifications_path %>
+      </li>
+      <li class="nav-list-item">
         <%= link_to "ログアウト", destroy_member_session_path, method: :delete %>
       </li>
     <% elsif admin_signed_in? %>

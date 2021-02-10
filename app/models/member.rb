@@ -15,6 +15,8 @@ class Member < ApplicationRecord
   has_many :follower_member, through: :followed, source: :follower, dependent: :destroy
   has_many :chats, dependent: :destroy
   has_many :chat_rooms, dependent: :destroy
+  has_many :active_notifications, class_name: 'Notification', foreign_key: 'visitor_id', dependent: :destroy
+  has_many :passive_notifications, class_name: 'Notification', foreign_key: 'visited_id', dependent: :destroy
 
   def follow(member_id)
     follower.create(followed_id: member_id)
@@ -37,6 +39,18 @@ class Member < ApplicationRecord
     #null: falseをつけているカラムは下記で指定する
     find_or_create_by!(email: 'guest1@example.com', name: 'guest', account_name: "ゲスト") do |member|
       member.password = SecureRandom.urlsafe_base64
+    end
+  end
+
+  #通知機能(フォロー)
+  def create_notification_follow!(current_member)
+    temp = Notification.where(["visitor_id = ? and visited_id = ? and action = ? ",current_member.id, id, 'follow'])
+    if temp.blank?
+      notification = current_member.active_notifications.new(
+        visited_id: id,
+        action: 'follow'
+      )
+      notification.save if notification.valid?
     end
   end
 

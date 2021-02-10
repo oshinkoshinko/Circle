@@ -35,7 +35,7 @@
   <h4>マイタイムライン</h4>
    <% @posts.each do |post| %>
     <tr>
-    <%= attachment_image_tag post.member, :profile_image, :fill, 30, 30, format: 'jpeg', fallback: "no_image.jpg" %>
+    <%= attachment_image_tag post.member, :profile_image, :fill, 30, 30, format: 'jpeg', fallback: "no_image.jpg", size:"30x30" %>
   　<%= post.body %>
     /ジャンル：<%= post.genre.name %>
     <%= time_ago_in_words(post.created_at) %> ago

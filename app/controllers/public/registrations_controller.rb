@@ -14,6 +14,10 @@ class Public::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
+  def create
+    super
+      UserNotifierMailer.send_signup_email(@member).deliver_now
+  end
   # GET /resource/edit
   # def edit
   #   super

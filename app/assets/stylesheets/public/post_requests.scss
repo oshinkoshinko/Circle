@@ -1,3 +1,24 @@
 // Place all the styles related to the public/PostRequests controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.waiting-list {
+  width: 500px;
+  height: 200px;
+  overflow: scroll;
+  margin-bottom: 30px;
+}
+
+.accept-list {
+  width: 500px;
+  height: 200px;
+  overflow: scroll;
+  margin-bottom: 30px;
+}
+
+.requesting-list {
+  width: 500px;
+  height: 200px;
+  overflow: scroll;
+  margin-bottom: 30px;
+}

@@ -5,7 +5,8 @@ class Public::PostRequestsController < ApplicationController
     #自分の投稿データを取得
     @posts = Post.where(member_id: current_member.id)
     #自分の投稿データのなかでリクエストされたものを取得
-    @requested_posts = PostRequest.where(post_id: @posts.ids).order("created_at DESC")
+    @requested_posts = PostRequest.where(post_id: @posts.ids, is_accepted: false).order("created_at DESC")
+    @accept_posts = PostRequest.where(post_id: @posts.ids, is_accepted: true).order("created_at DESC")
     #リクエストした投稿データを取得
     @requesting_posts = PostRequest.where(member_id: current_member.id).order("created_at DESC")
   end
@@ -14,8 +15,10 @@ class Public::PostRequestsController < ApplicationController
     @post = Post.find(params[:post_id])
     @post_request = current_member.post_requests.new(post_id: @post.id)
     @post_request.is_requested = true
-    #binding.pry
     @post_request.save
+    #通知機能↓
+    @post.create_notification_request!(current_member)
+
     redirect_to request.referer
   end
 
@@ -30,6 +33,10 @@ class Public::PostRequestsController < ApplicationController
   def update
     @post_request = PostRequest.find(params[:id])
     @post_request.update(is_accepted: params[:is_accepted], is_requested: params[:is_requested])
+
+    #承認通知機能できれば付けたい
+    #@post_request.post.create_notification_accept!(current_member)
+
     redirect_to request.referer
   end
 
