@@ -14,8 +14,11 @@ class Public::PostRequestsController < ApplicationController
     @post = Post.find(params[:post_id])
     @post_request = current_member.post_requests.new(post_id: @post.id)
     @post_request.is_requested = true
-    #binding.pry
     @post_request.save
+    #通知機能↓
+    post.create_notification_like!(current_member)
+    respond_to :js
+
     redirect_to request.referer
   end
 

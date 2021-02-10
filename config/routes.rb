@@ -44,6 +44,7 @@ Rails.application.routes.draw do
    resources :chats, only: [:create, :destroy]
    get 'rooms' => 'rooms#index'
    get 'searches' => 'searches#index'
+   resources :notifications, only: [:index]
   end
 
 end

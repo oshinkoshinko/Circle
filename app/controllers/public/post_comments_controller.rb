@@ -11,6 +11,11 @@ class Public::PostCommentsController < ApplicationController
     @post_comment = PostComment.new(post_comment_params)
     @post_comment.member_id = current_member.id
     @post_comment.save
+
+    #通知機能↓
+    @post.create_notification_comment!(current_member, @post_comment.id)
+    respond_to :js
+
     redirect_to request.referer
   end
 
