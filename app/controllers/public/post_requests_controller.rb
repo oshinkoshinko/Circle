@@ -32,6 +32,10 @@ class Public::PostRequestsController < ApplicationController
   def update
     @post_request = PostRequest.find(params[:id])
     @post_request.update(is_accepted: params[:is_accepted], is_requested: params[:is_requested])
+
+    #承認通知機能できれば付けたい
+    #@post_request.post.create_notification_accept!(current_member)
+
     redirect_to request.referer
   end
 

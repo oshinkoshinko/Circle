@@ -30,6 +30,8 @@ class Post < ApplicationRecord
     end
   end
 
+  #通知機能(リクエスト承認)できれば付けたい
+
   #通知機能(コメント)
   def create_notification_comment!(current_member, post_comment_id)
     # 自分以外にコメントしている人をすべて取得し、全員に通知を送る
