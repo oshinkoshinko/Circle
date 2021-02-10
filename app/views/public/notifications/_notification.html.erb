@@ -2,7 +2,7 @@
 <% visited = notification.visited %>
   <span>
     <%= link_to member_path(visitor), local:true do %>
-      <%= visitor.name %>
+      <%= visitor.account_name %>
     <% end %>
       さんが
     <% case notification.action %>
