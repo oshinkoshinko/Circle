@@ -1,0 +1,23 @@
+<% visitor = notification.visitor %>
+<% visited = notification.visited %>
+  <span>
+    <%= link_to member_path(visitor), local:true do %>
+      <%= visitor.name %>
+    <% end %>
+      さんが
+    <% case notification.action %>
+      <% when 'follow' then %>
+        あなたをフォローしました。
+      <% when 'request' then %>
+        あなたの投稿にリクエストを送りました。
+        <%= notification.post.body %>
+      <% when 'comment' then %>
+        <% if notification.post.member_id == visited.id %>
+          あなたの投稿
+        <% else %>
+          <%= notification.post.member.account_name %>の投稿
+        <% end %>
+        にコメントしました。
+    <% end %>
+    <%= time_ago_in_words(notification.created_at).downcase %> ago<br>
+  </span>

@@ -1,0 +1,12 @@
+<section class="notifications">
+  <h4>通知一覧</h4>
+  <div class="notification-list">
+    <% notifications = @notifications.where.not(visitor_id: current_member.id) %>
+    <% if notifications.exists? %>
+      <%= render notifications %>
+      <%= paginate notifications %>
+    <% else %>
+      <p>通知はありません。</p>
+    <% end %>
+  </div>
+</section>

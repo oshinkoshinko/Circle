@@ -12,7 +12,7 @@ class Post < ApplicationRecord
   end
 
   #通知機能(リクエスト)
-  def create_notification_like!(current_member)
+  def create_notification_request!(current_member)
     # すでにリクエストされているか検索 ?(プレースホルダー)で値を指定
     temp = Notification.where(["visitor_id = ? and visited_id = ? and post_id = ? and action = ? ", current_member.id, member_id, id, 'request'])
     # リクエストされていない場合のみ、通知レコードを作成
@@ -33,7 +33,7 @@ class Post < ApplicationRecord
   #通知機能(コメント)
   def create_notification_comment!(current_member, post_comment_id)
     # 自分以外にコメントしている人をすべて取得し、全員に通知を送る
-    temp_ids = Comment.select(:member_id).where(post_comment_id: id).where.not(member_id: current_member.id).distinct
+    temp_ids = PostComment.select(:member_id).where(post_id: id).where.not(member_id: current_member.id).distinct
     temp_ids.each do |temp_id|
       save_notification_comment!(current_member, post_comment_id, temp_id['member_id'])
     end

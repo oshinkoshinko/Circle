@@ -13,8 +13,8 @@ class Public::PostCommentsController < ApplicationController
     @post_comment.save
 
     #通知機能↓
+    @post = @post_comment.post
     @post.create_notification_comment!(current_member, @post_comment.id)
-    respond_to :js
 
     redirect_to request.referer
   end

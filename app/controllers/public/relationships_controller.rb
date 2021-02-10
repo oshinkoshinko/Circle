@@ -5,11 +5,8 @@ class Public::RelationshipsController < ApplicationController
     current_member.follow(params[:member_id])
 
     #通知機能↓
+    #binding.pry
     @member.create_notification_follow!(current_member)
-    respond_to do |format|
-      format.html { redirect_to @member }
-      format.js
-    end
 
   end
 

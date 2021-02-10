@@ -16,8 +16,7 @@ class Public::PostRequestsController < ApplicationController
     @post_request.is_requested = true
     @post_request.save
     #通知機能↓
-    post.create_notification_like!(current_member)
-    respond_to :js
+    @post.create_notification_request!(current_member)
 
     redirect_to request.referer
   end
