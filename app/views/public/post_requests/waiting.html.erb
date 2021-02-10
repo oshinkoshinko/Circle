@@ -1,7 +1,6 @@
-<div class="request-lists">
-  <section class="requested-lists">
-    <!--マイページに凝縮？-->
-    <h4>承認待ちリクエスト</h4>
+<section class="request">
+  <h4>承認待ちリクエスト</h4>
+  <div class="waiting-list">
     <% @requested_posts.each do |requested| %>
       <%= requested.post.body %>
       requested by
@@ -12,9 +11,9 @@
       <%= button_to "承認", post_post_requests_path(requested.post.id), method: :patch, remote: true, params: {id: requested.id, is_accepted: true, is_requested: true} %>
       <hr><br>
     <% end %>
-  </section>
-  <section class="accept-request">
-    <h4>承認済みリクエスト</h4>
+  </div>
+  <h4>承認済みリクエスト</h4>
+  <div class="accept-list">
     <% @accept_posts.each do |accept| %>
       <%= accept.post.body %>
       requested by
@@ -25,10 +24,9 @@
       <%= button_to "拒否", post_post_requests_path(accept.post.id), method: :patch, remote: true, params: {id: accept.id, is_accepted: false, is_requested: true} %>
       <hr><br>
     <% end %>
-  </section>
-
-  <section class="requesting-lists">
-    <h4>リクエスト中</h4>
+  </div>
+  <h4>リクエスト中</h4>
+  <div class="requesting-list">
     <% @requesting_posts.each do |requesting| %>
       <%= link_to member_path(requesting.post.member.id) do %>
         <%= attachment_image_tag requesting.post.member, :profile_image, :fill, 30, 30, format: 'jpeg', fallback: "no_image.jpg", size: "30x30" %><br>
@@ -42,5 +40,5 @@
       <% end %>
       <hr>
     <% end %>
-  </section>
-</div>
+  </div>
+</section>
