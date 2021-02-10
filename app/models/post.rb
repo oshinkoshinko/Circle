@@ -6,6 +6,10 @@ class Post < ApplicationRecord
   has_many :post_requests, dependent: :destroy
   has_many :notifications, dependent: :destroy
 
+  #Google map表示用 経度緯度取得
+  geocoded_by :address
+  after_validation :geocode, if: :address_changed?
+
   #リクエスト機能　すでにリクエストされたかどうか
   def requested_by?(member)
     post_requests.where(member_id: member.id).exists?

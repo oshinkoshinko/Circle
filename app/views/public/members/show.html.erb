@@ -61,7 +61,8 @@
   <h4>新規投稿</h4>
   <%= form_with model: @post, local: true do |f| %>
     <%= f.text_area :body %>
-    <%= f.collection_select(:genre_id, @genres, :id, :name) %>
+    <%= f.collection_select(:genre_id, @genres, :id, :name) %><br>
+    <%= f.text_field :address, placeholder: "位置情報" %>
     <%= f.submit "投稿" %>
   <% end %>
 </div>
