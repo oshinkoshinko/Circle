@@ -1,11 +1,10 @@
 class Public::EventsController < ApplicationController
 
   def index
-    #新着イベント取得(開催中ステータス)
-    @new_events = Event.where(is_finished: false).limit(5).order("created_at DESC")
+    #イベント取得(開催中ステータス)
+    @new_events = Event.where(is_finished: false).order("started_at ASC")
     #開催済みイベント取得
-    @finished_events = Event.where(is_finished: true).order("created_at DESC")
-    @genres = Genre.all
+    @finished_events = Event.where(is_finished: true).order("finished_at DESC")
   end
 
   def new
@@ -48,9 +47,9 @@ class Public::EventsController < ApplicationController
     #参加予定イベント取得
     @join_events = EventMember.where(member_id: current_member.id)
     #ログインユーザの開催予定イベント取得
-    @active_events = Event.where(member_id: current_member.id, is_finished: false)
+    @active_events = Event.where(member_id: current_member.id, is_finished: false).order("started_at ASC")
     #ログインユーザの開催済みイベント取得
-    @finished_events = Event.where(member_id: current_member.id, is_finished: true)
+    @finished_events = Event.where(member_id: current_member.id, is_finished: true).order("finished_at DESC")
   end
 
   private
