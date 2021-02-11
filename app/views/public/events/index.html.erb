@@ -1,4 +1,17 @@
 <section class="events-index">
+  <div class="genre-search-form">
+    <%= search_form_for @q do |f| %>
+      <%= f.collection_select :genre_id_eq, @genres, :id, :name, :include_blank => 'ジャンル検索' %>
+      <%= f.submit %>
+    <% end %>
+  </div>
+
+  <div class="address-search-form">
+    <%= search_form_for @q do |f| %>
+    <%= f.search_field :place_cont, placeholder: "場所で検索" %>
+    <%= f.submit %>
+    <% end %>
+  </div>
   <div class="event-lists">
     <div class="new-event-btn">
       <%= button_to "イベントを作る", new_event_path, method: :get %>

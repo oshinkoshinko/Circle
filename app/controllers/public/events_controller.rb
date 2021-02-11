@@ -1,10 +1,13 @@
 class Public::EventsController < ApplicationController
 
   def index
+    @q = Event.ransack(params[:q])
+    @genres = Genre.all
     #イベント取得(開催中ステータス)
-    @new_events = Event.where(is_finished: false).order("started_at ASC")
+    @new_events = @q.result(distinct: true).where(is_finished: false).order("started_at ASC")
     #開催済みイベント取得
     @finished_events = Event.where(is_finished: true).order("finished_at DESC")
+
   end
 
   def new
