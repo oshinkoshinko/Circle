@@ -81,10 +81,11 @@ let map
       geocoder = new google.maps.Geocoder()
 
       map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: 35.68123620000001, lng:139.7671248},
-          zoom: 12,
+          center: {lat: 39.68123620000001, lng:137.7671248},
+          zoom: 5,
       });
 
+      //each do をjs内で回すことで投稿データを取得
       <% @posts.each do |post| %>
           (function(){
           var contentString = "住所：<%= post.address %>";
