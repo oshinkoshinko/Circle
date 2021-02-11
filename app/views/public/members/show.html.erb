@@ -37,6 +37,7 @@
     <tr>
     <%= attachment_image_tag post.member, :profile_image, :fill, 30, 30, format: 'jpeg', fallback: "no_image.jpg", size:"30x30" %>
   　<%= post.body %>
+  　@<%= post.address %>
     /ジャンル：<%= post.genre.name %>
     <%= time_ago_in_words(post.created_at) %> ago
     <%= link_to post_comment_path(post.id) do %>
@@ -61,8 +62,11 @@
   <h4>新規投稿</h4>
   <%= form_with model: @post, local: true do |f| %>
     <%= f.text_area :body %>
-    <%= f.collection_select(:genre_id, @genres, :id, :name) %>
+    <%= f.collection_select(:genre_id, @genres, :id, :name) %><br>
+    <%= f.text_field :address, placeholder: "位置情報" %>
     <%= f.submit "投稿" %>
   <% end %>
 </div>
 <% end %>
+
+
