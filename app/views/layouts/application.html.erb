@@ -6,7 +6,7 @@
     <%= csp_meta_tag %>
 
     <%= include_gon %>
-    <!-- google map使用の為、turbolinksを無効化-->
+    <!-- google map使用の為、turbolinksを無効化?,,すると他ページで非同期処理できない、、、-->
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%#= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>

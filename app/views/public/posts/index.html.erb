@@ -13,7 +13,8 @@
       <%= attachment_image_tag post.member, :profile_image, :fill, 30, 30, format: 'jpeg', fallback: "no_image.jpg", size: "30x30" %><br>
       <%= post.member.account_name %>
     <% end %>
-  　   <%= post.body %>
+  　   <%= post.body %><br>
+  　   @<%= post.address %>
       /ジャンル：<%= post.genre.name %>
       <%= time_ago_in_words(post.created_at) %> ago
       <%= link_to post_comment_path(post.id) do %>
@@ -69,15 +70,21 @@ let map
               map: map,
               title: contentString
           });
+          var infoWindow = new google.maps.InfoWindow({
+              content: "<%= post.body %> by <a href='/members/<%= post.member.id %>'><%= post.member.account_name %></a><br><%= time_ago_in_words(post.created_at) %> ago"
+          });
+          //情報ウインドウを開くイベントアクション
+          google.maps.event.addListener(marker, 'click', function() {
+              infoWindow.open(map, marker);
+          });
 
           })();
       <% end %>
       }
+
+
+
 </script>
 
 <script async defer src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=<%= ENV['GOOGLE_API_KEY'] %>&callback=initMap">
 </script>
-
-<%# content_for(:body_attributes) do %>
-     <!--data-turbolinks="false"
-<%# end %>
