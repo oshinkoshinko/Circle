@@ -35,7 +35,7 @@ class Public::PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:body, :genre_id, :member_id)
+    params.require(:post).permit(:body, :address, :latitude, :longitude, :genre_id, :member_id)
   end
 
   def search_params
