@@ -20,13 +20,16 @@
       <h4>開催イベント</h4>
       <div class="new-event-list">
         <% @new_events.each do |new_event| %>
-          <%= link_to event_path(new_event), local:true do %>
-            <%= attachment_image_tag new_event, :event_image, :fill, 50, 25, format: "jpeg", fallback: "event_image.jpg", size:'50x25' %>
-            <%= new_event.name %>
+        <!--応募締め切りを過ぎたイベントは非表示-->
+          <% if new_event.expired_at > DateTime.now %>
+            <%= link_to event_path(new_event), local:true do %>
+              <%= attachment_image_tag new_event, :event_image, :fill, 50, 25, format: "jpeg", fallback: "event_image.jpg", size:'50x25' %>
+              <%= new_event.name %>
+            <% end %>
+            /<%= new_event.genre.name %>
+            @<%= new_event.place %>
+            開催日時:<%= new_event.started_at.strftime("%Y年%-m月%-d日 %H時%M分") %><br><hr>
           <% end %>
-          /<%= new_event.genre.name %>
-          @<%= new_event.place %>
-          開催日時:<%= new_event.started_at.strftime("%Y年%-m月%-d日 %H時%M分") %><br><hr>
         <% end %>
       </div>
     </div>

@@ -1,7 +1,9 @@
 class Public::EventsController < ApplicationController
 
   def index
+    #検索値を取得
     @q = Event.ransack(params[:q])
+    #ジャンル検索用変数
     @genres = Genre.all
     #イベント取得(開催中ステータス)
     @new_events = @q.result(distinct: true).where(is_finished: false).order("started_at ASC")
@@ -44,6 +46,8 @@ class Public::EventsController < ApplicationController
   def show
     @event = Event.find(params[:id])
     @event_members = EventMember.where(event_id: @event.id)
+    #イベント参加キャンセル用変数
+    @event_member = EventMember.find_by(event_id: @event.id, member_id: current_member.id)
   end
 
   def myevent

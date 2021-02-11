@@ -36,7 +36,9 @@
         <!--イベントが開催中ステータスであるかどうか-->
         <% if @event.is_finished == false %>
           <!--申し込んだ人には非表示にする-->
-          <% unless @event.applied_by?(current_member) %>
+          <% if @event.applied_by?(current_member) %>
+            <%= button_to "キャンセル", event_event_member_path(@event.id, @event_member.id), method: :delete %>
+          <% else %>
             <%= button_to "申し込む", new_event_event_member_path(@event.id), method: :get, params: {member_id: current_member.id} %>
           <% end %>
         <% end %>

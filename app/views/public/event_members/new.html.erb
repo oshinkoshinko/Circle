@@ -9,10 +9,6 @@
       参加費　　　　<%= @event.fee %>円<br>
       応募締切　　　<%= @event.expired_at.strftime("%Y年%-m月%-d日 %H時%M分") %><br>
     </div>
-    <div class="card-form">
-      支払方法選択
-    </div>
-    <p>※ 確定されますとキャンセルはできませんのでご注意ください。</p>
     <div class="confirm-btn">
       <%= form_with url: event_event_members_path, model: @event_member, method: :post, local:true do |f| %>
         <%= f.hidden_field :event_id, :value => @event.id %>

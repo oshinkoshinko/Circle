@@ -1,7 +1,6 @@
 class Public::PostsController < ApplicationController
 
  def index
-    #@posts = Post.all.order("created_at DESC") ransackで定義済み
     #検索窓用変数定義
     @q = Post.ransack(params[:q])
     @genres = Genre.all
