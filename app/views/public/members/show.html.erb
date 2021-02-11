@@ -37,9 +37,7 @@
     <tr>
     <%= attachment_image_tag post.member, :profile_image, :fill, 30, 30, format: 'jpeg', fallback: "no_image.jpg", size:"30x30" %>
   　<%= post.body %>
-  　<%= post.address %>
-  　<%= post.latitude %>
-  　<%= post.longitude %>
+  　@<%= post.address %>
     /ジャンル：<%= post.genre.name %>
     <%= time_ago_in_words(post.created_at) %> ago
     <%= link_to post_comment_path(post.id) do %>
@@ -85,7 +83,7 @@ let map
           zoom: 5,
       });
 
-      //each do をjs内で回すことで投稿データを取得
+      //each do をjs内で回すことで投稿ごとのデータを取得
       <% @posts.each do |post| %>
           (function(){
           var contentString = "住所：<%= post.address %>";
@@ -104,3 +102,6 @@ let map
 <script async defer src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=<%= ENV['GOOGLE_API_KEY'] %>&callback=initMap">
 </script>
 
+<%# content_for(:body_attributes) do %>
+     <!--data-turbolinks="false"
+<%# end %>
