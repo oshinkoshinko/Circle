@@ -4,7 +4,8 @@ class Public::PostsController < ApplicationController
     #検索窓用変数定義
     @q = Post.ransack(params[:q])
     @genres = Genre.all
-    @posts = @q.result(distinct: true).order("created_at DESC")
+    #24時間以内の投稿のみ表示
+    @posts = @q.result(distinct: true).order("created_at DESC").where(created_at: 24.hours.ago..Time.now)
  end
 
  def create
