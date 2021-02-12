@@ -2,6 +2,7 @@
   <div class="event-edit-form">
     <div class="event-form">
       <%= form_with model: @event, method: :patch, local:true do |f| %>
+        <%= render 'layouts/error', model: f.object%>
         <%= f.label :name, "イベント名" %><br>
         <%= f.text_field :name %><br>
         <%= f.label :started_at, "開催日時" %><br>

@@ -20,8 +20,13 @@ class Public::EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
     @event.member_id = current_member.id
-    @event.save
-    redirect_to events_myevent_path
+    if @event.save
+      redirect_to events_myevent_path
+    else
+      @genres = Genre.all
+      render :new
+    end
+
   end
 
   def edit
@@ -33,8 +38,12 @@ class Public::EventsController < ApplicationController
 
   def update
     @event = Event.find(params[:id])
-    @event.update(event_params)
-    redirect_to events_myevent_path
+    if @event.update(event_params)
+      redirect_to events_myevent_path
+    else
+      @genres = Genre.all
+      render 'edit'
+    end
   end
 
   def destroy
@@ -66,7 +75,7 @@ class Public::EventsController < ApplicationController
       :name,
       :content,
       :place,
-      :event_image_id,
+      :event_image,
       :fee,
       :is_finished,
       :started_at,
