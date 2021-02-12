@@ -75,3 +75,4 @@ gem 'ransack'
 gem 'geocoder'
 gem 'gon'
 gem 'rails-i18n'
+gem "bulma-rails", "~> 0.4.2"

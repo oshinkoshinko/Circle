@@ -16,7 +16,6 @@
     <div class="new-event-btn">
       <%= button_to "イベントを作る", new_event_path, method: :get %>
     </div>
-    <div class="new-events-list">
       <h4>開催イベント</h4>
       <div class="new-event-list">
         <% @new_events.each do |new_event| %>
@@ -32,7 +31,6 @@
           <% end %>
         <% end %>
       </div>
-    </div>
     <div class="finished-events-list">
       <h4>開催終了イベント</h4>
       <div class="finished-event-list">
