@@ -6,7 +6,7 @@
         <%= @event.member.account_name %>
       <% end %>さんのイベント<br>
       <div class="join-members">
-        <% if @event.is_finished == false %>
+        <% if @event.finished_at > DateTime.now %>
           ただいまの参加人数は<%= @event_members.count %>人です。<br>
         <% else %>
           参加人数は<%= @event_members.count %>人でした。<br>
@@ -33,8 +33,8 @@
     </div>
     <div class="apply-btn">
       <% if current_member != @event.member %>
-        <!--イベントが開催中ステータスであるかどうか-->
-        <% if @event.is_finished == false %>
+        <!--応募締め切り時間前かどうか-->
+        <% if @event.expired_at > DateTime.now %>
           <!--申し込んだ人には非表示にする-->
           <% if @event.applied_by?(current_member) %>
             <%= button_to "キャンセル", event_event_member_path(@event.id, @event_member.id), method: :delete %>
@@ -43,18 +43,14 @@
           <% end %>
         <% end %>
       <% else %>
-        <!--開催者には編集リンクを表示 イベント終了後は編集不可-->
-        <% if @event.is_finished == false %>
+        <!--開催者には編集リンクを表示 イベント応募締め切り後は編集不可-->
+        <% if @event.expired_at > DateTime.now %>
           <%= button_to "編集", edit_event_path(@event.id), method: :get %>
-          <%= form_with model: @event, method: :patch, local:true do |f| %>
-            <%= f.select :is_finished, { "開催中" => "false", "終了" => "true" } %>
-            <%= f.submit "更新" %>
-          <% end %>
         <% end %>
       <% end %>
     </div>
     <div class="feedback-list">
-      <% if @event.is_finished == true %>
+      <% if @event.finished_at < DateTime.now %>
         <h4>参加者の声</h4>
       <% end %>
       <% @event_members.each do |event_member| %>

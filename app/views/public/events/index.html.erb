@@ -37,13 +37,16 @@
       <h4>開催終了イベント</h4>
       <div class="finished-event-list">
         <% @finished_events.each do |finished_event| %>
-          <%= link_to event_path(finished_event), local:true do %>
-            <%= attachment_image_tag finished_event, :event_image, :fill, 50, 25, format: "jpeg", fallback: "event_image.jpg", size:'50x25' %>
-            <%= finished_event.name %>
+          <!--終了時間を過ぎたイベントを表示-->
+          <% if finished_event.finished_at < DateTime.now %>
+            <%= link_to event_path(finished_event), local:true do %>
+              <%= attachment_image_tag finished_event, :event_image, :fill, 50, 25, format: "jpeg", fallback: "event_image.jpg", size:'50x25' %>
+              <%= finished_event.name %>
+            <% end %>
+            /<%= finished_event.genre.name %>
+            @<%= finished_event.place %>
+            終了日:<%= finished_event.finished_at.strftime("%Y年%-m月%-d日 %H時%M分") %><br><hr>
           <% end %>
-          /<%= finished_event.genre.name %>
-          @<%= finished_event.place %>
-          終了日:<%= finished_event.finished_at.strftime("%Y年%-m月%-d日") %><br><hr>
         <% end %>
       </div>
     </div>
