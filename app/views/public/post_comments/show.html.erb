@@ -10,25 +10,13 @@
 </div>
 
 <!--comment一覧-->
-<div class="comment-lists">
-  <% @post_comments.each do |post_comment| %>
-    <%= link_to member_path(post_comment.member.id) do %>
-    <%= attachment_image_tag post_comment.member, :profile_image, :fill, 30, 30, format: 'jpeg', fallback: "no_image.jpg", size:"30x30" %><br>
-    <%= post_comment.member.account_name %>
-    <% end %>
-    <%= post_comment.comment %>
-    <% if current_member.id == post_comment.member.id %>
-      <%= link_to post_comment_path(post_comment.id), method: :delete do %>
-        <i class="far fa-trash-alt"></i>
-      <% end %>
-    <% end %>
-    <hr><br>
-  <% end %>
+<div id="comment-lists">
+  <%= render 'public/post_comments/comments', post_comments: @post_comments %>
 </div>
 
 <!--comment投稿フォーム-->
-<div class="comment-form">
-  <%= form_with model: @post_comment, local:true do |f| %>
+<div id="comment-form">
+  <%= form_with model: @post_comment do |f| %>
     <%= f.text_area :comment, placeholder: "コメントを書きましょう" %>
     <!--post_idをpost_commentに渡す-->
     <%= f.hidden_field :post_id, :value => @post.id %>
