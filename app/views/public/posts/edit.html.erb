@@ -2,8 +2,10 @@
   <!--モーダルウインドウにしたい-->
   <h4>投稿編集</h4>
   <%= form_with model: @post, local:true do |f| %>
+    <%= render 'layouts/error', model: f.object%>
     <%= f.text_area :body %>
-    <%= f.collection_select(:genre_id, @genres, :id, :name) %>
+    <%= f.collection_select(:genre_id, @genres, :id, :name) %><br>
+    <%= f.text_field :address, placeholder: "位置情報" %>
     <%= f.submit "編集" %>
   <% end %>
 </div>

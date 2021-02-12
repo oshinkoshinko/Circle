@@ -10,8 +10,14 @@ class Public::PostsController < ApplicationController
  def create
     @post = Post.new(post_params)
     @post.member_id = current_member.id
-    @post.save
-    redirect_to request.referer
+    if @post.save
+      redirect_to request.referer
+    else
+      @member = current_member
+      @posts = Post.where(member_id: @member.id).order("created_at DESC")
+      @genres = Genre.all
+      render 'public/members/show'
+    end
  end
 
   def edit
@@ -21,8 +27,12 @@ class Public::PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
-    @post.update(post_params)
-    redirect_to member_path
+    if @post.update(post_params)
+      redirect_to member_path(current_member.id)
+    else
+      @genres = Genre.all
+      render 'edit'
+    end
   end
 
   def destroy
