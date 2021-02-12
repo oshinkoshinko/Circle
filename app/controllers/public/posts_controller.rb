@@ -12,7 +12,7 @@ class Public::PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.member_id = current_member.id
     if @post.save
-      redirect_to request.referer
+      redirect_to request.referer, notice: "投稿されました！"
     else
       @member = current_member
       @posts = Post.where(member_id: @member.id).order("created_at DESC")
