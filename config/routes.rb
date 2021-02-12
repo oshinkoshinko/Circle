@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   end
 
   scope module: :public do
-   root to: 'homes#top'
+   root to: 'posts#index'
    patch 'members/unsubscribe' => 'members#unsubscribe'
    get 'members/withdraw' => 'members#withdraw'
    resources :members, only: [:show, :edit, :update] do
