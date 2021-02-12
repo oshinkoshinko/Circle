@@ -17,6 +17,7 @@
 
   <body>
     <header>
+    <div class="tabs">
     <ul class="nav-list">
     <% if member_signed_in? %>
     <p>welcome back! <%= current_member.account_name %> さん</p>
@@ -67,6 +68,7 @@
       </li>
     <% end %>
     </ul>
+    </div>
     </header>
     <%= yield %>
     <footer>
