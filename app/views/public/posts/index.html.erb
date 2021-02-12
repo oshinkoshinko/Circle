@@ -24,7 +24,7 @@
   　   <%= post.body %><br>
   　   @<%= post.address %>
       /ジャンル：<%= post.genre.name %>
-      <%= time_ago_in_words(post.created_at) %> ago
+      <%= time_ago_in_words(post.created_at) %>前
       <%= link_to post_comment_path(post.id) do %>
         <i class="far fa-comment-dots"></i>
       <% end %>
@@ -81,7 +81,7 @@ let map
               title: contentString
           });
           var infoWindow = new google.maps.InfoWindow({
-              content: "<%= post.body %> by <a href='/members/<%= post.member.id %>'><%= post.member.account_name %></a><br><%= time_ago_in_words(post.created_at) %> ago"
+              content: "<%= post.body %> by <a href='/members/<%= post.member.id %>'><%= post.member.account_name %></a><br><%= time_ago_in_words(post.created_at) %>前"
           });
           //情報ウインドウを開くイベントアクション
           google.maps.event.addListener(marker, 'click', function() {

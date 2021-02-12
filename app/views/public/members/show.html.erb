@@ -39,7 +39,7 @@
   　<%= post.body %>
   　@<%= post.address %>
     /ジャンル：<%= post.genre.name %>
-    <%= time_ago_in_words(post.created_at) %> ago
+    <%= time_ago_in_words(post.created_at) %>前
     <%= link_to post_comment_path(post.id) do %>
       <i class="far fa-comment-dots"></i>
     <% end %>
