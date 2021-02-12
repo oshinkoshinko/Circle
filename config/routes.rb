@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   end
 
   scope module: :public do
-   root to: 'homes#top'
+   root to: 'posts#index'
    patch 'members/unsubscribe' => 'members#unsubscribe'
    get 'members/withdraw' => 'members#withdraw'
    resources :members, only: [:show, :edit, :update] do
@@ -38,7 +38,7 @@ Rails.application.routes.draw do
    get 'events/myevent' => 'events#myevent'
    resources :events do
     get 'event_members/complete' => 'event_members#complete'
-    resources :event_members, only: [:new, :create, :show, :update]
+    resources :event_members, only: [:new, :create, :show, :update, :destroy]
    end
    get 'chats/:id' => 'chats#show'
    resources :chats, only: [:create, :destroy]

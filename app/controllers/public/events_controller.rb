@@ -1,11 +1,15 @@
 class Public::EventsController < ApplicationController
 
   def index
-    #新着イベント取得(開催中ステータス)
-    @new_events = Event.where(is_finished: false).limit(5).order("created_at DESC")
-    #開催済みイベント取得
-    @finished_events = Event.where(is_finished: true).order("created_at DESC")
+    #検索値を取得
+    @q = Event.ransack(params[:q])
+    #ジャンル検索用変数
     @genres = Genre.all
+    #イベント取得(開催中ステータス)
+    @new_events = @q.result(distinct: true).order("started_at ASC")
+    #開催済みイベント取得
+    @finished_events = Event.all.order("finished_at DESC")
+
   end
 
   def new
@@ -16,8 +20,13 @@ class Public::EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
     @event.member_id = current_member.id
-    @event.save
-    redirect_to events_myevent_path
+    if @event.save
+      redirect_to events_myevent_path
+    else
+      @genres = Genre.all
+      render :new
+    end
+
   end
 
   def edit
@@ -29,8 +38,12 @@ class Public::EventsController < ApplicationController
 
   def update
     @event = Event.find(params[:id])
-    @event.update(event_params)
-    redirect_to events_myevent_path
+    if @event.update(event_params)
+      redirect_to events_myevent_path
+    else
+      @genres = Genre.all
+      render 'edit'
+    end
   end
 
   def destroy
@@ -42,15 +55,17 @@ class Public::EventsController < ApplicationController
   def show
     @event = Event.find(params[:id])
     @event_members = EventMember.where(event_id: @event.id)
+    #イベント参加キャンセル用変数
+    @event_member = EventMember.find_by(event_id: @event.id, member_id: current_member.id)
   end
 
   def myevent
-    #参加予定イベント取得
+    #参加イベント取得
     @join_events = EventMember.where(member_id: current_member.id)
     #ログインユーザの開催予定イベント取得
-    @active_events = Event.where(member_id: current_member.id, is_finished: false)
+    @active_events = Event.where(member_id: current_member.id).order("started_at ASC")
     #ログインユーザの開催済みイベント取得
-    @finished_events = Event.where(member_id: current_member.id, is_finished: true)
+    @finished_events = Event.where(member_id: current_member.id).order("finished_at DESC")
   end
 
   private
@@ -60,7 +75,7 @@ class Public::EventsController < ApplicationController
       :name,
       :content,
       :place,
-      :event_image_id,
+      :event_image,
       :fee,
       :is_finished,
       :started_at,

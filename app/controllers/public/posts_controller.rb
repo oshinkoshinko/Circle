@@ -1,18 +1,24 @@
 class Public::PostsController < ApplicationController
 
  def index
-    #@posts = Post.all.order("created_at DESC") ransackで定義済み
     #検索窓用変数定義
     @q = Post.ransack(params[:q])
     @genres = Genre.all
-    @posts = @q.result(distinct: true).order("created_at DESC")
+    #24時間以内の投稿のみ表示
+    @posts = @q.result(distinct: true).order("created_at DESC").where(created_at: 24.hours.ago..Time.now)
  end
 
  def create
     @post = Post.new(post_params)
     @post.member_id = current_member.id
-    @post.save
-    redirect_to request.referer
+    if @post.save
+      redirect_to request.referer, notice: "投稿されました！"
+    else
+      @member = current_member
+      @posts = Post.where(member_id: @member.id).order("created_at DESC")
+      @genres = Genre.all
+      render 'public/members/show'
+    end
  end
 
   def edit
@@ -22,8 +28,12 @@ class Public::PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
-    @post.update(post_params)
-    redirect_to member_path
+    if @post.update(post_params)
+      redirect_to member_path(current_member.id)
+    else
+      @genres = Genre.all
+      render 'edit'
+    end
   end
 
   def destroy

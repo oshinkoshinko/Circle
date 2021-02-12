@@ -23,6 +23,13 @@ class Public::EventMembersController < ApplicationController
     redirect_to events_myevent_path
   end
 
+  def destroy
+    @event_member = EventMember.find(params[:id])
+    @event_member.member.id = current_member.id
+    @event_member.destroy
+    redirect_to events_myevent_path
+  end
+
   def complete
   end
 

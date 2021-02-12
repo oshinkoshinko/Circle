@@ -1,10 +1,18 @@
 <section class="Timeline">
-  <div class="search-form">
+  <div class="genre-search-form">
     <%= search_form_for @q do |f| %>
       <%= f.collection_select :genre_id_eq, @genres, :id, :name, :include_blank => 'ジャンル検索' %>
       <%= f.submit %>
     <% end %>
   </div>
+
+  <div class="address-search-form">
+    <%= search_form_for @q do |f| %>
+    <%= f.search_field :address_cont, placeholder: "場所で検索" %>
+    <%= f.submit %>
+    <% end %>
+  </div>
+
   <h4>タイムライン</h4>
   <div class="timeline">
   <% @posts.each do |post| %>
@@ -16,7 +24,7 @@
   　   <%= post.body %><br>
   　   @<%= post.address %>
       /ジャンル：<%= post.genre.name %>
-      <%= time_ago_in_words(post.created_at) %> ago
+      <%= time_ago_in_words(post.created_at) %>前
       <%= link_to post_comment_path(post.id) do %>
         <i class="far fa-comment-dots"></i>
       <% end %>
@@ -62,6 +70,8 @@ let map
 
       //each do をjs内で回すことで投稿ごとのデータを取得
       <% @posts.each do |post| %>
+        //取得不可の位置情報が投稿された際に地図が非表示になるのを防止
+        <% if post.latitude != nil %>
           (function(){
           var contentString = "住所：<%= post.address %>";
 
@@ -71,7 +81,7 @@ let map
               title: contentString
           });
           var infoWindow = new google.maps.InfoWindow({
-              content: "<%= post.body %> by <a href='/members/<%= post.member.id %>'><%= post.member.account_name %></a><br><%= time_ago_in_words(post.created_at) %> ago"
+              content: "<%= post.body %> by <a href='/members/<%= post.member.id %>'><%= post.member.account_name %></a><br><%= time_ago_in_words(post.created_at) %>前"
           });
           //情報ウインドウを開くイベントアクション
           google.maps.event.addListener(marker, 'click', function() {
@@ -79,6 +89,7 @@ let map
           });
 
           })();
+        <% end %>
       <% end %>
       }
 

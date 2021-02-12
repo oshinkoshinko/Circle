@@ -17,6 +17,7 @@
 </div>
 <div class="message-form">
     <%= form_with model: @chat do |f| %>
+    <%= render 'layouts/error', model: f.object%>
     <%= f.text_field :message %>
     <%= f.hidden_field :room_id %>
     <% end %>
