@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_12_081711) do
+ActiveRecord::Schema.define(version: 2021_02_12_083016) do
 
   create_table "actions", force: :cascade do |t|
     t.integer "member_id"
@@ -133,7 +133,7 @@ ActiveRecord::Schema.define(version: 2021_02_12_081711) do
     t.string "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "address", default: "日本"
+    t.string "address"
     t.float "latitude"
     t.float "longitude"
   end

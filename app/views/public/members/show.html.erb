@@ -64,7 +64,7 @@
     <%= render 'layouts/error', model: f.object%>
     <%= f.text_area :body %>
     <%= f.collection_select(:genre_id, @genres, :id, :name) %><br>
-    <%= f.text_field :address, placeholder: "位置情報" %>
+    <%= f.text_field :address, placeholder: "位置情報", value: "" %>
     <%= f.submit "投稿" %>
   <% end %>
 </div>

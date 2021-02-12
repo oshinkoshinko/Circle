@@ -70,6 +70,8 @@ let map
 
       //each do をjs内で回すことで投稿ごとのデータを取得
       <% @posts.each do |post| %>
+        //取得不可の位置情報が投稿された際に地図が非表示になるのを防止
+        <% if post.latitude != nil %>
           (function(){
           var contentString = "住所：<%= post.address %>";
 
@@ -87,6 +89,7 @@ let map
           });
 
           })();
+        <% end %>
       <% end %>
       }
 
