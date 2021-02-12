@@ -1,0 +1,19 @@
+ja:
+  activerecord:
+    models:
+      post: 投稿
+    attributes:
+      post:
+        body: 投稿内容
+        address: 場所
+        genre: ジャンル
+ja:
+  activerecord:
+    models:
+      event: イベント
+    attributes:
+      event:
+        name: イベント名
+        content: イベント内容
+        place: 開催地
+        fee: 参加費

@@ -74,3 +74,4 @@ gem "refile-mini_magick"
 gem 'ransack'
 gem 'geocoder'
 gem 'gon'
+gem 'rails-i18n'
