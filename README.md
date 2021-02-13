@@ -34,7 +34,7 @@ rubyの技術書で勉強している方がいた。
 →教えて欲しい人たちが集まる、参加費用を稼げる
 
 ## 設計書
-
+作成中
 
 ## 機能一覧
 https://docs.google.com/spreadsheets/d/1nOtbKOEhYkcLXsklNgLzM1dDRuaOE5gJDA1Ie5T6-9E/edit?usp=sharing
@@ -43,7 +43,7 @@ https://docs.google.com/spreadsheets/d/1nOtbKOEhYkcLXsklNgLzM1dDRuaOE5gJDA1Ie5T6
 ## 開発環境
 - OS：Linux(CentOS)
 - 言語：HTML,CSS,JavaScript,Ruby,SQL
-- フレームワーク：Ruby on Rails
+- フレームワーク：Ruby on Rails, Bulma
 - JSライブラリ：jQuery, vue.js
 - IDE：Cloud9
 
