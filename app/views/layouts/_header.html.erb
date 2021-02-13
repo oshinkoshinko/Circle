@@ -14,7 +14,7 @@
 
   <div id="navbarExampleTransparentExample" class="navbar-menu">
     <% if member_signed_in? %>
-      <div class="navbar-start">
+      <div class="navbar-end">
         <%= link_to "Home", root_path, class: "navbar-item" %>
         <div class="navbar-item has-dropdown is-hoverable">
           <%= link_to "Me", member_path(current_member), class: "navbar-link" %>
@@ -55,3 +55,12 @@
     <% end %>
   </div>
 </nav>
+
+<script>
+$(document).ready(function() {
+  $(".navbar-burger").click(function() {
+    $(".navbar-burger").toggleClass("is-active");
+    $(".navbar-menu").toggleClass("is-active");
+  });
+});
+</script>
