@@ -25,29 +25,50 @@
 
 header {
   width: 100%;
-  background-color: #0EA971;
+  background-color: #0d8358;
   color: #EDEDED;
 }
 
 footer {
   width: 100%;
-  background-color: #0EA971;
+  background-color: #0d8358;
   color: #EDEDED;
   height: 100px;
+  letter-spacing: .02em;
+}
+
+.main {
+  background-color: #0ea971;
+  color: #EDEDED;
+  font-family: "Noto Sans JP",Roboto,"Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;
+  letter-spacing: .02em;
 }
 
 .nav-list {
   text-align: right;
 }
 
-.nav-list-item {
-  list-style: none;
-  text-decoration: none;
-  display: inline-block;
-  margin-right: 5px;
-}
-
 #map {
   height: 500px;
   width: 50%;
+}
+
+//リンク
+a {
+    color: black;
+    cursor: pointer;
+    text-decoration: none;
+    transition: none 86ms ease-out;
+}
+
+//ヘッダーメニュー
+.tabs a {
+    align-items: center;
+    border-bottom: 1px solid #dbdbdb;
+    color: white;
+    display: flex;
+    justify-content: center;
+    margin-bottom: -1px;
+    padding: 0.5em 1em;
+    vertical-align: top;
 }
