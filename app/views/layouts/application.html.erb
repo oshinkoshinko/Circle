@@ -17,66 +17,13 @@
 
   <body>
     <header>
-    <div class="tabs">
-    <ul class="nav-list">
-    <% if member_signed_in? %>
-    <p>welcome back! <%= current_member.account_name %> さん</p>
-      <li class="nav-list-item">
-        <%= link_to "マイページ", member_path(current_member) %>
-      </li>
-      <li class="nav-list-item">
-        <%= link_to "マイイベント", events_myevent_path %>
-      </li>
-      <li class="nav-list-item">
-        <%= link_to "チャットルーム", rooms_path %>
-      </li>
-      <li class="nav-list-item">
-        <%= link_to "投稿一覧", posts_path %>
-      </li>
-      <li class="nav-list-item">
-        <%= link_to "リクエスト一覧", post_requests_waiting_path %>
-      </li>
-      <li class="nav-list-item">
-        <%= link_to "イベント一覧", events_path %>
-      </li>
-      <li class="nav-list-item">
-        <%= link_to "通知一覧", notifications_path %>
-      </li>
-      <li class="nav-list-item">
-        <%= link_to "ログアウト", destroy_member_session_path, method: :delete %>
-      </li>
-    <% elsif admin_signed_in? %>
-    <p>管理者様、今日もお疲れ様です！</p>
-      <li class="nav-list-item">
-        <%= link_to "会員一覧", admin_root_path %>
-      </li>
-      <li class="nav-list-item">
-        <%= link_to "イベント一覧", admin_events_path %>
-      </li>
-      <li class="nav-list-item">
-        <%= link_to "ジャンル一覧", admin_genres_path %>
-      </li>
-      <li class="nav-list-item">
-        <%= link_to "ログアウト", destroy_admin_session_path, method: :delete %>
-      </li>
-    <% else %>
-      <li class="nav-list-item">
-        <%= link_to "新規登録", new_member_registration_path %>
-      </li>
-      <li class="nav-list-item">
-        <%= link_to "ログイン", new_member_session_path %>
-      </li>
-    <% end %>
-    </ul>
-    </div>
+      <%= render "layouts/header" %>
     </header>
     <div class="main">
     <%= yield %>
     </div>
     <footer>
-      <div class="inquiry-btn">
-        <%= link_to "お問い合わせ", new_inquiry_path, method: :get, class: "button is-dark is-small" %>
-      </div>
+      <%= render "layouts/footer" %>
     </footer>
   </body>
 </html>
