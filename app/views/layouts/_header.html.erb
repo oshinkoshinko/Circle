@@ -34,60 +34,20 @@
             <%= link_to "News", notifications_path, class: "navbar-item" %>
           </div>
         </div>
+        <%= link_to "Logout", destroy_member_session_path, method: :delete, class: "navbar-item" %>
       </div>
     <% elsif admin_signed_in? %>
-
+      <div class="navbar-start">
+        <%= link_to "Members", admin_root_path, class: "navbar-item" %>
+        <%= link_to "Events", admin_events_path, class: "navbar-item" %>
+        <%= link_to "Genres", admin_genres_path, class: "navbar-item" %>
+        <%= link_to "Log Out", destroy_admin_session_path, method: :delete, class: "navbar-item" %>
+      </div>
+    <% else %>
+      <div class="navbar-start">
+        <%= link_to "Sign Up", new_member_registration_path, class: "navbar-item" %>
+        <%= link_to "Log In", new_member_session_path, class: "navbar-item" %>
+      </div>
     <% end %>
   </div>
-
-    <ul class="nav-list">
-    <% if member_signed_in? %>
-      <li class="nav-list-item">
-        <%= link_to "マイページ", member_path(current_member) %>
-      </li>
-      <li class="nav-list-item">
-        <%= link_to "マイイベント", events_myevent_path %>
-      </li>
-      <li class="nav-list-item">
-        <%= link_to "チャットルーム", rooms_path %>
-      </li>
-      <li class="nav-list-item">
-        <%= link_to "投稿一覧", posts_path %>
-      </li>
-      <li class="nav-list-item">
-        <%= link_to "リクエスト一覧", post_requests_waiting_path %>
-      </li>
-      <li class="nav-list-item">
-        <%= link_to "イベント一覧", events_path %>
-      </li>
-      <li class="nav-list-item">
-        <%= link_to "通知一覧", notifications_path %>
-      </li>
-      <li class="nav-list-item">
-        <%= link_to "ログアウト", destroy_member_session_path, method: :delete %>
-      </li>
-    <% elsif admin_signed_in? %>
-    <p>管理者様、今日もお疲れ様です！</p>
-      <li class="nav-list-item">
-        <%= link_to "会員一覧", admin_root_path %>
-      </li>
-      <li class="nav-list-item">
-        <%= link_to "イベント一覧", admin_events_path %>
-      </li>
-      <li class="nav-list-item">
-        <%= link_to "ジャンル一覧", admin_genres_path %>
-      </li>
-      <li class="nav-list-item">
-        <%= link_to "ログアウト", destroy_admin_session_path, method: :delete %>
-      </li>
-    <% else %>
-      <li class="nav-list-item">
-        <%= link_to "新規登録", new_member_registration_path %>
-      </li>
-      <li class="nav-list-item">
-        <%= link_to "ログイン", new_member_session_path %>
-      </li>
-    <% end %>
-    </ul>
-    </div>
 </nav>
