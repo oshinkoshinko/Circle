@@ -1,4 +1,45 @@
-    <div class="tabs">
+<nav class="navbar is-transparent">
+  <div class="navbar-brand">
+    <%= image_tag "/assets/Circle_logo.png", :size =>'100x100' %>
+    <div class="navbar-burger" data-target="navbarExampleTransparentExample">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+
+  <div id="navbarExampleTransparentExample" class="navbar-menu">
+    <% if member_signed_in? %>
+      <div class="navbar-start">
+        <%= link_to "Home", root_path, class: "navbar-item" %>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <%= link_to "Me", member_path(current_member), class: "navbar-link" %>
+          <div class="navbar-dropdown is boxed">
+            <%= link_to "My Page", member_path(current_member), class: "navbar-item" %>
+            <%= link_to "My Event", events_myevent_path, class: "navbar-item" %>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <%= link_to "Timeline", posts_path, class: "navbar-link" %>
+          <div class="navbar-dropdown is boxed">
+            <%= link_to "All Activities", posts_path, class: "navbar-item" %>
+            <%= link_to "All Events", events_path, class: "navbar-item" %>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <%= link_to "Infomation", notifications_path, class: "navbar-link" %>
+          <div class="navbar-dropdown is boxed">
+            <%= link_to "Requests", post_requests_waiting_path, class: "navbar-item" %>
+            <%= link_to "Messages", rooms_path, class: "navbar-item" %>
+            <%= link_to "News", notifications_path, class: "navbar-item" %>
+          </div>
+        </div>
+      </div>
+    <% elsif admin_signed_in? %>
+
+    <% end %>
+  </div>
+
     <ul class="nav-list">
     <% if member_signed_in? %>
       <li class="nav-list-item">
@@ -49,3 +90,4 @@
     <% end %>
     </ul>
     </div>
+</nav>
