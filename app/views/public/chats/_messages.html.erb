@@ -1,0 +1,12 @@
+  <% chats.each do |chat| %>
+    <% if chat.member_id == current_member.id %>
+      <p class="chat-sender">
+        <%= chat.message %>
+        <%= attachment_image_tag chat.member , :profile_image, :fill, 30, 30, fallback: "no_image.jpg", size:"30x30" %>
+      </p>
+    <% else %>
+      <p class="chat-receiver">
+        <%= attachment_image_tag chat.member , :profile_image, :fill, 30, 30, fallback: "no_image.jpg", size:"30x30" %>
+        <%= chat.message %>
+    <% end %>
+  <% end %>
