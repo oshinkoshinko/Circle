@@ -1,3 +1,5 @@
 トップページ
 
-<%= link_to 'ゲストログイン（閲覧用）', members_guest_sign_in_path, method: :post %>
+<% unless member_signed_in? %>
+  <%= link_to 'ゲストログイン（閲覧用）', members_guest_sign_in_path, method: :post %>
+<% end %>
