@@ -2,7 +2,7 @@
 class InquiryMailerPreview < ActionMailer::Preview
 
   def inquiry
-    inquiry = Inquiry.new(name: @member.name, message: "問い合わせメッセージ")
+    inquiry = Inquiry.new(name: @inquiry.name, message: "問い合わせメッセージ")
 
     InquiryMailer.send_mail(inquiry)
   end

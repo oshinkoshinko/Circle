@@ -1,0 +1,14 @@
+  <div class="contact_form text-center">
+    <%= form_with model: @inquiry, local:true do |f| %>
+    <%= render 'layouts/error', model: f.object %>
+      <h3>NAME</h3>
+      <%= f.text_field :name %>
+      <h3>EMAIL</h3>
+      <%= f.email_field :email %>
+      <h3>MESSAGE</h3>
+      <%= f.text_area :message %>
+    <div>
+      <p><%= f.submit "送信" %></p>
+    </div>
+    <% end %>
+  </div>

@@ -3,7 +3,7 @@ class InquiryMailer < ApplicationMailer
   def send_mail(inquiry)
     @inquiry = inquiry
     mail(
-      from: 'system@example.com',
+      from: @inquiry.email,
       to: ENV['SECRET_ADDRESS'],
       subject: 'お問い合わせ通知'
     )
