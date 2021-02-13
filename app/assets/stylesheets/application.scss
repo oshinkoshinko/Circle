@@ -23,6 +23,13 @@
   box-sizing: border-box;
 }
 
+body {
+  margin: 0;
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh;
+}
+
 header {
   width: 100%;
   background-color: #0d8358;
@@ -35,7 +42,7 @@ footer {
   background-color: #0d8358;
   color: #EDEDED;
   height: 100px;
-  letter-spacing: .02em;
+  letter-spacing: 2px;
 }
 
 .main {
@@ -43,6 +50,7 @@ footer {
   color: #383838;
   font-family: "Noto Sans JP",Roboto,"Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;
   letter-spacing: 1px;
+  flex: 1;
 }
 
 .nav-list {
