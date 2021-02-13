@@ -1,4 +1,5 @@
 class Public::PostsController < ApplicationController
+  before_action :authenticate_member!,except: [:top]
 
  def index
     #検索窓用変数定義

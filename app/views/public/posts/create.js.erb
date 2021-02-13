@@ -1,0 +1,2 @@
+$("#my-posts").html("<%= escape_javascript(render(partial: 'public/posts/post', locals: { posts: @posts})) %>");
+$("#post_body").val('');

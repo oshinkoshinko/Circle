@@ -1,4 +1,5 @@
 class Public::EventMembersController < ApplicationController
+  before_action :authenticate_member!,except: [:top]
 
   def new
     @event = Event.find(params[:event_id])

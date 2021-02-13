@@ -1,0 +1,66 @@
+<nav class="navbar is-transparent">
+  <div class="navbar-brand">
+    <!--<figure class="image">-->
+    <%= link_to root_path, local:true do %>
+      <%= image_tag "/assets/Circle_logo.png", size:"85x50" %>
+    <% end %>
+    <!--</figure>-->
+    <div class="navbar-burger" data-target="navbarExampleTransparentExample">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+
+  <div id="navbarExampleTransparentExample" class="navbar-menu">
+    <% if member_signed_in? %>
+      <div class="navbar-end">
+        <%= link_to "Home", root_path, class: "navbar-item" %>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <%= link_to "Me", member_path(current_member), class: "navbar-link" %>
+          <div class="navbar-dropdown is boxed">
+            <%= link_to "My Page", member_path(current_member), class: "navbar-item" %>
+            <%= link_to "My Event", events_myevent_path, class: "navbar-item" %>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <%= link_to "Timeline", posts_path, class: "navbar-link" %>
+          <div class="navbar-dropdown is boxed">
+            <%= link_to "All Activities", posts_path, class: "navbar-item" %>
+            <%= link_to "All Events", events_path, class: "navbar-item" %>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <%= link_to "Infomation", notifications_path, class: "navbar-link" %>
+          <div class="navbar-dropdown is boxed">
+            <%= link_to "Requests", post_requests_waiting_path, class: "navbar-item" %>
+            <%= link_to "Messages", rooms_path, class: "navbar-item" %>
+            <%= link_to "News", notifications_path, class: "navbar-item" %>
+          </div>
+        </div>
+        <%= link_to "Logout", destroy_member_session_path, method: :delete, class: "navbar-item" %>
+      </div>
+    <% elsif admin_signed_in? %>
+      <div class="navbar-start">
+        <%= link_to "Members", admin_root_path, class: "navbar-item" %>
+        <%= link_to "Events", admin_events_path, class: "navbar-item" %>
+        <%= link_to "Genres", admin_genres_path, class: "navbar-item" %>
+        <%= link_to "Logout", destroy_admin_session_path, method: :delete, class: "navbar-item" %>
+      </div>
+    <% else %>
+      <div class="navbar-start">
+        <%= link_to "Sign Up", new_member_registration_path, class: "navbar-item" %>
+        <%= link_to "Log In", new_member_session_path, class: "navbar-item" %>
+      </div>
+    <% end %>
+  </div>
+</nav>
+
+<script>
+$(document).ready(function() {
+  $(".navbar-burger").click(function() {
+    $(".navbar-burger").toggleClass("is-active");
+    $(".navbar-menu").toggleClass("is-active");
+  });
+});
+</script>

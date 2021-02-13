@@ -31,7 +31,7 @@
 </div>
 
 <!--自分の投稿タイムライン-->
-<div class="timeline">
+<section class="timeline">
   <h4>マイタイムライン</h4>
    <p class="notice">
    <%= notice %>
@@ -57,7 +57,7 @@
     <hr><br>
     </tr>
    <% end %>
-</div>
+</section>
 
 <!--投稿フォーム-->
 <% if current_member.id == @member.id %>

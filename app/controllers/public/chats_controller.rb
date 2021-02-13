@@ -1,4 +1,5 @@
 class Public::ChatsController < ApplicationController
+  before_action :authenticate_member!,except: [:top]
 
   def show
     @member = Member.find(params[:id])
@@ -19,11 +20,14 @@ class Public::ChatsController < ApplicationController
 
   def create
     @chat = current_member.chats.new(chat_params)
-    if @chat.save
-      redirect_to request.referer
-    else
-      redirect_to request.referer
-    end
+    @chat.save
+    @chats = Chat.where(room_id: @chat.room_id)
+    #binding.pry
+    #if @chat.save
+      #redirect_to request.referer
+    #else
+      #redirect_to request.referer
+    #end
     #binding.pry
   end
 
