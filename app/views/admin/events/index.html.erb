@@ -26,10 +26,10 @@
           <td><%= event.fee.to_i.to_s(:delimited) %> 円</td>
           <td><%= event.event_members.count %>名</td>
           <td>
-            <% if event.is_finished == false %>
-              開催中
+            <% if event.finished_at < DateTime.now %>
+            　終了
             <% else %>
-              終了
+              開催予定
             <% end %>
           </td>
         </tr>
