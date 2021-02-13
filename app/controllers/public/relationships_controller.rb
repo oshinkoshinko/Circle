@@ -1,4 +1,6 @@
 class Public::RelationshipsController < ApplicationController
+  before_action :authenticate_member!,except: [:top]
+
   def create
     #ajax用に@member追加 paramsで送られてきたのはmember_id
     @member = Member.find(params[:member_id])

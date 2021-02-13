@@ -1,4 +1,5 @@
 class Public::PostRequestsController < ApplicationController
+  before_action :authenticate_member!,except: [:top]
 
   #自分へのリクエスト一覧画面
   def waiting

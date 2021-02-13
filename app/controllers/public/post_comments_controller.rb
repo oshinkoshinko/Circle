@@ -1,4 +1,5 @@
 class Public::PostCommentsController < ApplicationController
+  before_action :authenticate_member!,except: [:top]
 
   def show
    @post = Post.find(params[:id])

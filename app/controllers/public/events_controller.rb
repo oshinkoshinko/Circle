@@ -1,4 +1,5 @@
 class Public::EventsController < ApplicationController
+  before_action :authenticate_member!,except: [:top]
 
   def index
     #検索値を取得

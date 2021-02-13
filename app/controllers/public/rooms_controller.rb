@@ -1,4 +1,5 @@
 class Public::RoomsController < ApplicationController
+  before_action :authenticate_member!,except: [:top]
 
   def index
     #ログインユーザが存在するchat_roomを取得
