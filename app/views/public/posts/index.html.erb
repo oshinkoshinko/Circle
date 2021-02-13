@@ -16,7 +16,7 @@
   <h4>タイムライン</h4>
   <div class="timeline">
   <% @posts.each do |post| %>
-    <tr>
+    <tr id="post_<%= post.id %>">
     <%= link_to member_path(post.member.id) do %>
       <%= attachment_image_tag post.member, :profile_image, :fill, 30, 30, format: 'jpeg', fallback: "no_image.jpg", size: "30x30", class: "is-rounded" %><br>
       <%= post.member.account_name %>
@@ -36,6 +36,9 @@
         <i class="far fa-trash-alt"></i>
       <% end %>
     <% else %>
+      <!--<td class="request-btn">-->
+        <!--<%#= render "public/post_requests/request-btn", post: post %>-->
+      <!--</td>-->
       <% if post.requested_by?(current_member) %>
         <%= button_to "リクエストを取り消す", post_post_requests_path(post.id), method: :delete, remote: true %>
           <!--投稿に対するリクエストのなかでログインユーザのリクエストが承認されたかどうか-->
