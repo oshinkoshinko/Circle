@@ -51,9 +51,18 @@
               <% end %>
             </td>
           <% else %>
-            <!--非同期通信-->
             <td class="request-btn" id="post_<%= post.id %>">
-              <%= render "public/post_requests/request-btn", post: post %>
+              <% if post.requested_by?(current_member) %>
+                <%= button_to "リクエストを取り消す", post_post_requests_path(post.id), method: :delete, remote: true %>
+                <!--投稿に対するリクエストのなかでログインユーザのリクエストが承認されたかどうか-->
+                <% if post.post_requests.find_by(member: current_member).is_accepted? %>
+                  Accepted!
+                <% else %>
+                  Waiting acceptance...
+                <% end %>
+              <% else %>
+                <%= button_to "リクエスト", post_post_requests_path(post.id), method: :post, remote: true %>
+              <% end %>
             </td>
           <% end %>
         </tr>
