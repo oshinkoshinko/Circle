@@ -16,7 +16,17 @@
   margin-bottom: 30px;
 }
 
-.card-container {
+#container {
+  height: 500px;
+}
+
+#new-card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#finished-card {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;

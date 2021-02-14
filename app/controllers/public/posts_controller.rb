@@ -12,14 +12,9 @@ class Public::PostsController < ApplicationController
  def create
     @post = Post.new(post_params)
     @post.member_id = current_member.id
-    if @post.save
-      redirect_to request.referer, notice: "投稿されました！"
-    else
-      @member = current_member
-      @posts = Post.where(member_id: @member.id).order("created_at DESC")
-      @genres = Genre.all
-      render 'public/members/show'
-    end
+    @post.save
+    #非同期通信
+    @posts = Post.where(member_id: current_member.id).order("created_at DESC")
  end
 
   def edit
@@ -40,7 +35,8 @@ class Public::PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
-    redirect_to request.referer
+    #非同期通信
+    @posts = Post.where(member_id: current_member.id).order("created_at DESC")
   end
 
   private
