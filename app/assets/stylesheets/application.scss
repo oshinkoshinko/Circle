@@ -37,6 +37,8 @@ header {
   background-color: #0d8358;
   color: #EDEDED;
   letter-spacing: 2px;
+  position: fixed;
+  z-index: 5000;
 }
 
 footer {
@@ -81,3 +83,6 @@ a {
     vertical-align: top;
 }
 
+.navbar-item .image {
+  display: flex;
+}
