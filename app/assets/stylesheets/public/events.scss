@@ -22,3 +22,16 @@
   width: 20%;
   margin: 10px;
 }
+
+#feedback-card {
+  display: flexbox;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 80%;
+  margin: 0 auto;
+}
+
+#feedback .card-image {
+  display: flexbox;
+  margin: 0 auto;
+}

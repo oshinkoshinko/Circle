@@ -41,3 +41,16 @@ document.addEventListener("turbolinks:load", function() {
     });
   });
 })
+
+document.addEventListener("turbolinks:load", function() {
+  $(function() {
+    $('#feedback-card').slick({
+      autoplay: true,
+      slidesToShow: 4,
+      adaptiveHeight: true,
+      autoplaySpeed: 1500,
+      arrows: true,
+      dots: true
+    });
+  });
+})
