@@ -13,8 +13,9 @@ class Public::PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.member_id = current_member.id
     @post.save
+    redirect_to request.referer
     #非同期通信
-    @posts = Post.where(member_id: current_member.id).order("created_at DESC")
+    #@posts = Post.where(member_id: current_member.id).order("created_at DESC")
  end
 
   def edit
@@ -35,8 +36,9 @@ class Public::PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
+    redirect_to request.referer
     #非同期通信
-    @posts = Post.where(member_id: current_member.id).order("created_at DESC")
+    #@posts = Post.where(member_id: current_member.id).order("created_at DESC")
   end
 
   private
