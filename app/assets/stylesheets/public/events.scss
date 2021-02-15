@@ -2,17 +2,36 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.new-event-list {
-  width: 100%;
-  height: 100px;
-  overflow: scroll;
-  margin-bottom: 30px;
+#new-card {
+  display: flexbox;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 80%;
+  margin: 0 auto;
 }
 
-.finished-event-list {
-  width: 100%;
-  height: 100px;
-  overflow: scroll;
-  margin-bottom: 30px;
+#finished-card {
+  display: flexbox;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 80%;
+  margin: 0 auto;
 }
 
+.card {
+  width: 20%;
+  margin: 10px;
+}
+
+#feedback-card {
+  display: flexbox;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 80%;
+  margin: 0 auto;
+}
+
+#feedback .card-image {
+  display: flexbox;
+  margin: 0 auto;
+}

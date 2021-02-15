@@ -19,7 +19,7 @@ class Public::PostRequestsController < ApplicationController
     @post_request.save
     #通知機能↓
     @post.create_notification_request!(current_member)
-
+    #非同期通信保留の為
     redirect_to request.referer
   end
 
@@ -28,6 +28,7 @@ class Public::PostRequestsController < ApplicationController
     @post_request = current_member.post_requests.find_by(post_id: @post.id)
     @post_request.destroy
     #@post_request.is_requested = false
+    #非同期通信保留の為、不要
     redirect_to request.referer
   end
 

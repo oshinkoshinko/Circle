@@ -17,7 +17,11 @@
       <div class="navbar-end">
         <%= link_to "Home", root_path, class: "navbar-item" %>
         <div class="navbar-item has-dropdown is-hoverable">
-          <%= link_to "Me", member_path(current_member), class: "navbar-link" %>
+          <%= link_to member_path(current_member), class: "navbar-link" do %>
+              <figure class="image is-24x24">
+                  <%= attachment_image_tag current_member, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg", size:"50x50", class: "is-rounded" %>
+              </figure>　Me
+          <% end %>
           <div class="navbar-dropdown is boxed">
             <%= link_to "My Page", member_path(current_member), class: "navbar-item" %>
             <%= link_to "My Event", events_myevent_path, class: "navbar-item" %>

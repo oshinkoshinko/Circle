@@ -1,3 +1,24 @@
-トップページ
 
-<%= link_to 'ゲストログイン（閲覧用）', members_guest_sign_in_path, method: :post %>
+<% unless member_signed_in? %>
+  <%= link_to 'ゲストログイン（閲覧用）', members_guest_sign_in_path, method: :post %>
+<% end %>
+
+<section id="about">
+    <div class="columns main">
+      <div class="illust illust1 column is-5">
+        <%= image_tag "/assets/illust01.png", size:"" %>
+      </div>
+      <div class="illust illust2 column is-7 is-offset-1">
+        <%= image_tag "/assets/illust02.png", size:"" %>
+      </div>
+      <div class="box1">
+        <h1 class="about-title">
+          <span class="circle">"Circle"</span> make a Chance</h1>
+        <p class="about-sub-title">昨日の他人を、一生の友人へ。Circleでキッカケ作り。</p>
+        <p class="about-sub-title">一人も楽しい、みんなとならもっと楽しい。</p>
+      </div>
+      <div class="illust illust3">
+        <%= image_tag "/assets/people01.png", size:"150x150" %>
+      </div>
+    </div>
+</section>

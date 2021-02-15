@@ -1,3 +1,63 @@
 // Place all the styles related to the public::homes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#about {
+  position: relative;
+}
+
+.illust1 {
+  animation: img_box_9955 2.7s linear infinite;
+  transform-origin: 50% 50%;
+  margin: 1rem 0 !important;
+}
+
+@keyframes img_box_9955 {
+  0% { transform: translateY(0) }
+  33.33333% { transform: translateY(-10px) }
+  66.66667% { transform: translateY(0) }
+  100% { transform: translateY(0) }
+}
+
+.illust2 {
+  animation: img_box_9955 3s linear infinite;
+  transform-origin: 50% 50%;
+  margin: 1rem 0 !important;
+}
+
+.illust3 {
+  position: absolute;
+  display: block;
+  width: 30%;
+  height: auto;
+  top: 75%;
+  left: 25%;
+  animation: img_box_9955 4s linear infinite;
+  transform-origin: 50% 50%;
+  margin: 1rem 0 !important;
+}
+
+.box1 {
+  position: absolute;
+  display: block;
+  width: 70%;
+  height: auto;
+  top: 60%;
+  left: 10%;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 10px;
+  text-align: left;
+  z-index: 50;
+}
+
+.about-title {
+  font-size: 50px;
+}
+
+.circle {
+  font-weight: bold;
+}
+
+.about-sub-title {
+  margin-left: 30px;
+}

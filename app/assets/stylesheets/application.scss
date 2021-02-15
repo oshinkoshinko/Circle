@@ -16,6 +16,8 @@
  @import 'font-awesome-sprockets';
  @import 'font-awesome';
  @import 'bulma';
+ @import "slick-theme";
+ @import "slick";
 
 * {
   margin: 0;
@@ -35,6 +37,8 @@ header {
   background-color: #0d8358;
   color: #EDEDED;
   letter-spacing: 2px;
+  //position: fixed;
+  //z-index: 5000;
 }
 
 footer {
@@ -57,10 +61,7 @@ footer {
   text-align: right;
 }
 
-#map {
-  height: 500px;
-  width: 50%;
-}
+
 
 //リンク
 a {
@@ -80,4 +81,12 @@ a {
     margin-bottom: -1px;
     padding: 0.5em 1em;
     vertical-align: top;
+}
+
+.navbar-item .image {
+  display: flex;
+}
+
+.back .button {
+  width: 50px;
 }

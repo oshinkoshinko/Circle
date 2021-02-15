@@ -31,39 +31,51 @@
 </div>
 
 <!--自分の投稿タイムライン-->
-<section class="timeline">
+<div class="timeline-container">
   <h4>マイタイムライン</h4>
-   <p class="notice">
+  <p class="notice">
    <%= notice %>
-   </p>
-   <% @posts.each do |post| %>
-    <tr>
-    <%= attachment_image_tag post.member, :profile_image, :fill, 30, 30, format: 'jpeg', fallback: "no_image.jpg", size:"30x30" %>
-  　<%= post.body %>
-  　@<%= post.address %>
-    /ジャンル：<%= post.genre.name %>
-    <%= time_ago_in_words(post.created_at) %>前
-    <%= link_to post_comment_path(post.id) do %>
-      <i class="far fa-comment-dots"></i>
-    <% end %>
-    <% if current_member.id == post.member.id %>
-      <%= link_to edit_post_path(post.id) do %>
-        <i class="fas fa-wrench"></i>
-      <% end %>
-      <%= link_to post_path(post.id), method: :delete do %>
-        <i class="far fa-trash-alt"></i>
-      <% end %>
-    <% end %>
-    <hr><br>
-    </tr>
-   <% end %>
-</section>
-
+  </p>
+    <table class="my-timeline">
+      <% @posts.each do |post| %>
+        <tr>
+          <td>
+            <%= attachment_image_tag post.member, :profile_image, :fill, 30, 30, format: 'jpeg', fallback: "no_image.jpg", size:"30x30" %>
+          </td>
+          <td>
+            <%= post.body %>
+          </td>
+          <td>
+            @<%= post.address %>
+          </td>
+          <td>
+            /ジャンル：<%= post.genre.name %>
+          </td>
+          <td>
+            <%= time_ago_in_words(post.created_at) %>前
+          </td>
+          <td>
+            <%= link_to post_comment_path(post.id) do %>
+              <i class="far fa-comment-dots"></i>
+            <% end %>
+            <% if current_member.id == post.member.id %>
+              <%= link_to edit_post_path(post.id) do %>
+                <i class="fas fa-wrench"></i>
+              <% end %>
+              <%= link_to post_path(post.id), method: :delete, remote:true do %>
+                <i class="far fa-trash-alt"></i>
+              <% end %>
+            <% end %>
+          </td>
+        </tr>
+     <% end %>
+    </table>
+ </div>
 <!--投稿フォーム-->
 <% if current_member.id == @member.id %>
 <div class="post-form">
   <h4>新規投稿</h4>
-  <%= form_with model: @post, local: true do |f| %>
+  <%= form_with model: @post do |f| %>
     <%= render 'layouts/error', model: f.object%>
     <%= f.text_area :body %>
     <%= f.collection_select(:genre_id, @genres, :id, :name) %><br>
@@ -72,5 +84,3 @@
   <% end %>
 </div>
 <% end %>
-
-
