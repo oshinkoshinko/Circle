@@ -15,6 +15,7 @@ class Member < ApplicationRecord
   has_many :follower_member, through: :followed, source: :follower, dependent: :destroy
   has_many :chats, dependent: :destroy
   has_many :chat_rooms, dependent: :destroy
+  has_many :rooms, through: :chat_rooms
   has_many :active_notifications, class_name: 'Notification', foreign_key: 'visitor_id', dependent: :destroy
   has_many :passive_notifications, class_name: 'Notification', foreign_key: 'visited_id', dependent: :destroy
 

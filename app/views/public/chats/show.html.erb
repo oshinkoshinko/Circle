@@ -1,5 +1,6 @@
 <div class="chat-to">
-  <h4><%= @member.account_name %>さんとのチャットルーム</h4>
+  <!--rooms_helperでチャット相手の定義付け-->
+  <h4><%= opponent_member_name(@room) %>さんとのチャットルーム</h4>
 </div>
 <div id="message">
   <%= render 'public/chats/messages', chats: @chats %>

@@ -1,3 +1,14 @@
-  <div class="inquiry-btn">
-    <%= link_to "お問い合わせ", new_inquiry_path, method: :get, class: "button is-dark is-small" %>
+<div class="container">
+  <div class="content">
+    <div class="has-text-left">
+      <%= link_to root_path, local:true do %>
+        <%= image_tag "/Circle_logo.png", size:"85x50" %>
+      <% end %>
+    </div>
+    <div class="has-text-right">
+      <div class="inquiry-btn">
+        <%= link_to "お問い合わせ", new_inquiry_path, method: :get, class: "button is-dark is-small" %>
+      </div>
+    </div>
   </div>
+</div>

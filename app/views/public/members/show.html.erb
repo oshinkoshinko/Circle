@@ -20,7 +20,9 @@
   </div>
   <%= @member.introduction %><br>
   <% if current_member.id == @member.id %>
-    <%= link_to '編集', edit_member_path(@member) %>
+    <%= link_to edit_member_path(@member) do%>
+      <i class="fas fa-user-cog"></i>
+    <% end %>
   <% else %>
     <%= link_to chat_path(@member) do %>
       <button type="button" class="btn btn-secondary rounded-circle p-0" style="width:2rem;height:2rem;">

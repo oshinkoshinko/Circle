@@ -29,18 +29,19 @@ body {
   min-height: 100vh;
 }
 
-header {
-  width: 100%;
-  background-color: #0d8358;
+.navbar {
+  background-color: white;
   color: #EDEDED;
   letter-spacing: 2px;
+  position: sticky;
+  top: 0;
   //position: fixed;
   //z-index: 5000;
 }
 
-footer {
+.footer {
   width: 100%;
-  background-color: #0d8358;
+  background-color: white;
   color: #EDEDED;
   height: 100px;
   letter-spacing: 2px;

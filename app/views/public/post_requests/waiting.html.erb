@@ -1,44 +1,118 @@
-<section class="request">
-  <h4>承認待ちリクエスト</h4>
-  <div class="waiting-list">
+<section class="request columns is-desktop">
+  <div class="waiting-list column">
+      <h4>Waiting Acceptance</h4>
     <% @requested_posts.each do |requested| %>
-      <%= requested.post.body %>
-      requested by
-      <%= link_to member_path(requested.member.id) do %>
-        <%= attachment_image_tag requested.member, :profile_image, :fill, 30, 30, format: 'jpeg', fallback: "no_image.jpg", size: "30x30" %>
-        <%= requested.member.account_name %>
-      <% end %>
-      <%= button_to "承認", post_post_requests_path(requested.post.id), method: :patch, remote: true, params: {id: requested.id, is_accepted: true, is_requested: true} %>
-      <hr><br>
+      <article class="box media" style="margin-bottom: 0px; margin-top: 0px;">
+        <figure class="media-left is-square is-48-48">
+          <p class="image">
+            <%= link_to member_path(requested.member.id) do %>
+              <%= attachment_image_tag requested.member, :profile_image, :fill, 30, 30, format: 'jpeg', fallback: "no_image.jpg", size: "30x30", class: "is-rounded" %><br>
+            <% end %>
+          </p>
+        </figure>
+        <div class="media-content">
+          <div class="content">
+            <strong><%= requested.member.account_name %></strong>
+            <small>To:<%= requested.post.body %></small>
+          </div>
+          <%= button_to post_post_requests_path(requested.post.id), method: :patch, remote: true, params: {id: requested.id, is_accepted: true, is_requested: true} do %>
+            <button class="button is-primary is-small">
+              <span class="icon">
+                <i class="far fa-handshake"></i>
+              </span>
+              <span>Accept</span>
+            </button>
+          <% end %>
+        </div>
+        <div class="media-right">
+          <small><%= time_ago_in_words(requested.created_at) %>前</small>
+        </div>
+      </article>
     <% end %>
   </div>
-  <h4>承認済みリクエスト</h4>
-  <div class="accept-list">
+  <div class="accept-list column">
+    <h4>Accepted</h4>
     <% @accept_posts.each do |accept| %>
-      <%= accept.post.body %>
-      requested by
-      <%= link_to member_path(accept.member.id) do %>
-        <%= attachment_image_tag accept.member, :profile_image, :fill, 30, 30, format: 'jpeg', fallback: "no_image.jpg", size: "30x30" %>
-        <%= accept.member.account_name %>
-      <% end %>
-      <%= button_to "拒否", post_post_requests_path(accept.post.id), method: :patch, remote: true, params: {id: accept.id, is_accepted: false, is_requested: true} %>
-      <hr><br>
+      <article class="box media" style="margin-bottom: 0px; margin-top: 0px;">
+        <figure class="media-left is-square is-48-48">
+          <p class="image">
+            <%= link_to member_path(accept.member.id) do %>
+              <%= attachment_image_tag accept.member, :profile_image, :fill, 30, 30, format: 'jpeg', fallback: "no_image.jpg", size: "30x30", class: "is-rounded" %><br>
+            <% end %>
+          </p>
+        </figure>
+        <div class="media-content">
+          <div class="content">
+            <strong><%= accept.member.account_name %></strong>
+            <small>To:<%= accept.post.body %></small>
+          </div>
+          <%= button_to post_post_requests_path(accept.post.id), method: :patch, remote: true, params: {id: accept.id, is_accepted: false, is_requested: true} do %>
+            <button class="button is-warning is-small">
+              <span class="icon">
+                <i class="fas fa-handshake-slash"></i>
+              </span>
+              <span>Cancel Accept</span>
+            </button>
+          <% end %>
+        </div>
+        <div class="media-right">
+          <small><%= time_ago_in_words(accept.created_at) %>前</small>
+        </div>
+      </article>
     <% end %>
   </div>
-  <h4>リクエスト中</h4>
-  <div class="requesting-list">
+  <div class="requesting-list column">
+    <h4>Requesting</h4>
     <% @requesting_posts.each do |requesting| %>
-      <%= link_to member_path(requesting.post.member.id) do %>
-        <%= attachment_image_tag requesting.post.member, :profile_image, :fill, 30, 30, format: 'jpeg', fallback: "no_image.jpg", size: "30x30" %><br>
-        <%= requesting.post.member.account_name %>
-      <% end %>
-      <%= requesting.post.body %><br>
-      <% if requesting.is_accepted == true %>
-        Accepted!
-      <% else %>
-        Waiting acceptance...
-      <% end %>
-      <hr>
+      <article class="box media" style="margin-bottom: 0px; margin-top: 0px;">
+        <figure class="media-left is-square is-48-48">
+          <p class="image">
+            <%= link_to member_path(requesting.post.member.id) do %>
+              <%= attachment_image_tag requesting.post.member, :profile_image, :fill, 30, 30, format: 'jpeg', fallback: "no_image.jpg", size: "30x30" %><br>
+            <% end %>
+          </p>
+        </figure>
+        <div class="media-content">
+          <div class="content">
+            <strong><%= requesting.post.member.account_name %></strong>
+            <small>To:<%= requesting.post.body %></small>
+            <small>
+              <% if requesting.post.requested_by?(current_member) %>
+                <%= link_to post_post_requests_path(requesting.post.id), method: :delete, remote: true do %>
+                  <button class="button is-warning is-small">
+                    <span class="icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M12.99 9.18c0-.06.01-.12.01-.18 0-2.21-1.79-4-4-4-.06 0-.12.01-.18.01l4.17 4.17zm-6.1-3.56L4.27 3 3 4.27l2.62 2.62C5.23 7.5 5 8.22 5 9c0 2.21 1.79 4 4 4 .78 0 1.5-.23 2.11-.62L19.73 21 21 19.73l-8.62-8.62-5.49-5.49zM9 15c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4zm7.76-9.64l-1.68 1.69c.84 1.18.84 2.71 0 3.89l1.68 1.69c2.02-2.02 2.02-5.07 0-7.27zM20.07 2l-1.63 1.63c2.77 3.02 2.77 7.56 0 10.74L20.07 16c3.9-3.89 3.91-9.95 0-14z"/></svg>
+                    </span>
+                    <span>Cancel Request</span>
+                  </button><br>
+                <% end %>
+                <!--投稿に対するリクエストのなかでログインユーザのリクエストが承認されたかどうか-->
+                <% if requesting.post.post_requests.find_by(member: current_member).is_accepted? %>
+                  <strong>Accepted!</strong>
+                  <%= link_to chat_path(requesting.post.member) do %>
+                    <i class="far fa-paper-plane"></i>
+                  <% end %>
+                <% else %>
+                  Waiting Acceptance...
+                <% end %>
+              <% end %>
+            </small>
+          </div>
+        </div>
+      </article>
     <% end %>
+    <!--<%# @requesting_posts.each do |requesting| %>-->
+    <!--  <%#= link_to member_path(requesting.post.member.id) do %>-->
+    <!--    <%#= attachment_image_tag requesting.post.member, :profile_image, :fill, 30, 30, format: 'jpeg', fallback: "no_image.jpg", size: "30x30" %><br>-->
+    <!--    <%#= requesting.post.member.account_name %>-->
+    <!--  <%# end %>-->
+    <!--  <%#= requesting.post.body %><br>-->
+    <!--  <%# if requesting.is_accepted == true %>-->
+    <!--    Accepted!-->
+    <!--  <%# else %>-->
+    <!--    Waiting acceptance...-->
+    <!--  <%# end %>-->
+    <!--  <hr>-->
+    <!--<%# end %>-->
   </div>
 </section>
