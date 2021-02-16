@@ -13,61 +13,54 @@
     <% end %>
   </div>
 
+
+
   <h4>タイムライン</h4>
   <div class="timeline">
-    <table>
-      <% @posts.each do |post| %>
-        <tr>
-          <td>
+    <% @posts.each do |post| %>
+      <article class="box media" style="margin-bottom: 0px; margin-top: 0px;">
+        <figure class="media-left is-square is-48-48">
+          <p class="image">
             <%= link_to member_path(post.member.id) do %>
-              <%= attachment_image_tag post.member, :profile_image, :fill, 30, 30, format: 'jpeg', fallback: "no_image.jpg", size: "30x30", class: "is-rounded" %><br>
-              <%= post.member.account_name %>
+              <%= attachment_image_tag post.member, :profile_image, :fill, 60, 60, format: 'jpeg', fallback: "no_image.jpg", size: "20x20", class: "is-rounded" %><br>
             <% end %>
-          </td>
-          <td>
-  　         <%= post.body %>
-  　       </td>
-  　       <td>
-  　         @<%= post.address %>
-  　       </td>
-  　       <td>
-            /ジャンル：<%= post.genre.name %>
-          </td>
-          <td>
-            <%= time_ago_in_words(post.created_at) %>前
-          </td>
-          <td>
-            <%= link_to post_comment_path(post.id) do %>
-              <i class="far fa-comment-dots"></i>
-            <% end %>
-          </td>
-          <% if current_member.id == post.member.id %>
-            <td>
-              <%= link_to edit_post_path(post.id) do %>
-                <i class="fas fa-wrench"></i>
+            <%= post.member.account_name %>
+          </p>
+        </figure>
+        <div class="media-content">
+          <div class="content">
+            <p><%= post.body %> @<%= post.address %> <%= time_ago_in_words(post.created_at) %>前</p>
+            <small>
+              <%= link_to post_comment_path(post.id) do %>
+                <i class="far fa-comment-dots"></i>
               <% end %>
-              <%= link_to post_path(post.id), method: :delete do %>
-                <i class="far fa-trash-alt"></i>
-              <% end %>
-            </td>
-          <% else %>
-            <td class="request-btn" id="post_<%= post.id %>">
-              <% if post.requested_by?(current_member) %>
-                <%= button_to "リクエストを取り消す", post_post_requests_path(post.id), method: :delete, remote: true %>
-                <!--投稿に対するリクエストのなかでログインユーザのリクエストが承認されたかどうか-->
-                <% if post.post_requests.find_by(member: current_member).is_accepted? %>
-                  Accepted!
-                <% else %>
-                  Waiting acceptance...
+              <% if current_member.id == post.member.id %>
+                <%= link_to edit_post_path(post.id) do %>
+                  <i class="fas fa-wrench"></i>
+                <% end %>
+                <%= link_to post_path(post.id), method: :delete do %>
+                  <i class="far fa-trash-alt"></i>
                 <% end %>
               <% else %>
-                <%= button_to "リクエスト", post_post_requests_path(post.id), method: :post, remote: true %>
+                <!--<small class="request-btn" id="post_<%#= post.id %>">-->
+                  <% if post.requested_by?(current_member) %>
+                    <%= button_to "リクエストを取り消す", post_post_requests_path(post.id), method: :delete, remote: true %>
+                    <!--投稿に対するリクエストのなかでログインユーザのリクエストが承認されたかどうか-->
+                      <% if post.post_requests.find_by(member: current_member).is_accepted? %>
+                        Accepted!
+                      <% else %>
+                        Waiting acceptance...
+                      <% end %>
+                  <% else %>
+                    <%= button_to "リクエスト", post_post_requests_path(post.id), method: :post, remote: true %>
+                  <% end %>
+                <!--</small>-->
               <% end %>
-            </td>
-          <% end %>
-        </tr>
-      <% end %>
-    </table>
+            </small>
+          </div>
+        </div>
+      </article>
+    <% end %>
   </div>
 </section>
 
