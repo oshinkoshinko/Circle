@@ -1,16 +1,21 @@
 <section class="events-index">
-  <div class="genre-search-form">
-    <%= search_form_for @q do |f| %>
-      <%= f.collection_select :genre_id_eq, @genres, :id, :name, :include_blank => 'ジャンル検索' %>
-      <%= f.submit %>
-    <% end %>
-  </div>
-
-  <div class="address-search-form">
-    <%= search_form_for @q do |f| %>
-    <%= f.search_field :place_cont, placeholder: "場所で検索" %>
-    <%= f.submit %>
-    <% end %>
+  <div class="search-form">
+    <div class="genre-search-form field">
+      <p class="control">
+        <%= search_form_for @q do |f| %>
+          <span class="select is-small">
+            <%= f.collection_select :genre_id_eq, @genres, :id, :name, :include_blank => '🔍 ジャンル' %>
+          </span>
+          <%= f.submit "Search", class: "button is-info is-small" %>
+        <% end %>
+      </p>
+    </div>
+    <div class="address-search-form field">
+      <%= search_form_for @q do |f| %>
+        <%= f.search_field :place_cont, placeholder: "🔍 場所", class: "is-small" %>
+        <%= f.submit "Search", class: "button is-info is-small" %>
+      <% end %>
+    </div>
   </div>
   <div class="new-event-btn">
     <%= button_to "イベントを作る", new_event_path, method: :get %>
