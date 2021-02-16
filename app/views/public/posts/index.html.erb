@@ -1,15 +1,19 @@
 <div class="posts-index">
   <div class="search-form">
-    <div class="genre-search-form">
-      <%= search_form_for @q do |f| %>
-        <%= f.collection_select :genre_id_eq, @genres, :id, :name, :include_blank => 'ジャンル検索' %>
-        <%= f.submit %>
-      <% end %>
+    <div class="genre-search-form field">
+      <p class="control">
+        <%= search_form_for @q do |f| %>
+          <span class="select is-small">
+            <%= f.collection_select :genre_id_eq, @genres, :id, :name, :include_blank => '🔍 ジャンル' %>
+          </span>
+          <%= f.submit "Search", class: "button is-info is-small" %>
+        <% end %>
+      </p>
     </div>
-    <div class="address-search-form">
+    <div class="address-search-form field">
       <%= search_form_for @q do |f| %>
-      <%= f.search_field :address_cont, placeholder: "場所で検索" %>
-      <%= f.submit %>
+        <%= f.search_field :address_cont, placeholder: "🔍 場所", class: "is-small" %>
+        <%= f.submit "Search", class: "button is-info is-small" %>
       <% end %>
     </div>
   </div>
