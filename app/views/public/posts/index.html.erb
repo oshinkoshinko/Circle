@@ -13,7 +13,7 @@
     <% end %>
   </div>
 
-  <h4>タイムライン</h4>
+  <h4>All activities(within 24h)</h4>
   <div class="timeline">
     <% @posts.each do |post| %>
       <article class="box media" style="margin-bottom: 0px; margin-top: 0px;">
@@ -27,7 +27,12 @@
         </figure>
         <div class="media-content">
           <div class="content">
-            <p><%= post.body %> @<%= post.address %> <%= time_ago_in_words(post.created_at) %>前</p>
+            <p><%= post.body %><br>
+            <i class="fas fa-map-marker-alt"></i>
+              <small><%= post.address %></small><br>
+            <i class="fas fa-tags"></i>
+            <small><%= post.genre.name %></small>
+            </p>
             <small>
               <%= link_to post_comment_path(post.id) do %>
                 <i class="far fa-comment-dots"></i>
@@ -75,6 +80,9 @@
               <% end %>
             </small>
           </div>
+        </div>
+        <div class="media-right">
+          <small><%= time_ago_in_words(post.created_at) %>前</small>
         </div>
       </article>
     <% end %>
