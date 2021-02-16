@@ -15,12 +15,14 @@
   <div id="navbarExampleTransparentExample" class="navbar-menu">
     <% if member_signed_in? %>
       <div class="navbar-end">
-        <%= link_to "Home", root_path, class: "navbar-item" %>
+        <%= link_to root_path, class: "navbar-item" do %>
+          <span style="margin-right: 3px;">Home</span><i class="fas fa-home"></i>
+        <% end %>
         <div class="navbar-item has-dropdown is-hoverable">
           <%= link_to member_path(current_member), class: "navbar-link" do %>
-              <figure class="image is-24x24">
+            Me<figure class="image is-24x24">
                   <%= attachment_image_tag current_member, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg", size:"50x50", class: "is-rounded" %>
-              </figure>　Me
+              </figure>
           <% end %>
           <div class="navbar-dropdown is boxed">
             <%= link_to "My Page", member_path(current_member), class: "navbar-item" %>
@@ -28,21 +30,27 @@
           </div>
         </div>
         <div class="navbar-item has-dropdown is-hoverable">
-          <%= link_to "Timeline", posts_path, class: "navbar-link" %>
+          <%= link_to posts_path, class: "navbar-link" do %>
+            <span style="margin-right: 3px;">Timeline</span><i class="fas fa-map-marker-alt"></i>
+          <% end %>
           <div class="navbar-dropdown is boxed">
             <%= link_to "All Activities", posts_path, class: "navbar-item" %>
             <%= link_to "All Events", events_path, class: "navbar-item" %>
           </div>
         </div>
         <div class="navbar-item has-dropdown is-hoverable">
-          <%= link_to "Infomation", notifications_path, class: "navbar-link" %>
+          <%= link_to notifications_path, class: "navbar-link" do %>
+            <span style="margin-right: 3px;">Information</span><i class="far fa-bell"></i>
+          <% end %>
           <div class="navbar-dropdown is boxed">
             <%= link_to "Requests", post_requests_waiting_path, class: "navbar-item" %>
             <%= link_to "Messages", rooms_path, class: "navbar-item" %>
             <%= link_to "News", notifications_path, class: "navbar-item" %>
           </div>
         </div>
-        <%= link_to "Logout", destroy_member_session_path, method: :delete, class: "navbar-item" %>
+        <%= link_to destroy_member_session_path, method: :delete, class: "navbar-item" do %>
+          <span style="margin-right: 3px;">Logout</span><i class="fas fa-sign-out-alt"></i>
+        <% end %>
       </div>
     <% elsif admin_signed_in? %>
       <div class="navbar-start">
