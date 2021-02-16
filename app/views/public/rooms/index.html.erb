@@ -3,8 +3,21 @@
   <div class="chat-room">
     <% @rooms.each do |room| %>
       <%= link_to chat_path(opponent_member(room)) do %>
-        <%= opponent_member_name(room) %>
-        <%= most_new_message_preview(room) %>
+        <article class="box media">
+          <figure class="media-left is-square">
+            <p class="image is-48x48">
+              <%= attachment_image_tag opponent_member(room), :profile_image, :fill, 50, 50, format: "jpeg", fallback: "no_image.jpg", size:'50x50', class: "is-rounded" %>
+            </p>
+          </figure>
+          <div class="media-content">
+            <p><strong><%= opponent_member_name(room) %></strong>
+                <%= most_new_message_preview(room) %>
+            </p>
+          </div>
+          <div class="media-right">
+            <small><%= time_ago_in_words(room.chats.last.created_at) %>前</small>
+          </div>
+        </article>
       <% end %>
     <% end %>
   </div>
