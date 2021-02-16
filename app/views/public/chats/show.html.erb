@@ -1,5 +1,5 @@
 <div class="chat-to">
-  <h4><%= @member.account_name %>さんとのチャットルーム</h4>
+  <h4><%= opponent_member_name(@room) %>さんとのチャットルーム</h4>
 </div>
 <div id="message">
   <%= render 'public/chats/messages', chats: @chats %>
