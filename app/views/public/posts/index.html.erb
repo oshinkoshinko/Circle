@@ -1,52 +1,52 @@
-<section class="Timeline">
-  <div class="genre-search-form">
-    <%= search_form_for @q do |f| %>
-      <%= f.collection_select :genre_id_eq, @genres, :id, :name, :include_blank => 'ジャンル検索' %>
+<div class="posts-index">
+  <div class="search-form">
+    <div class="genre-search-form">
+      <%= search_form_for @q do |f| %>
+        <%= f.collection_select :genre_id_eq, @genres, :id, :name, :include_blank => 'ジャンル検索' %>
+        <%= f.submit %>
+      <% end %>
+    </div>
+    <div class="address-search-form">
+      <%= search_form_for @q do |f| %>
+      <%= f.search_field :address_cont, placeholder: "場所で検索" %>
       <%= f.submit %>
-    <% end %>
+      <% end %>
+    </div>
   </div>
-
-  <div class="address-search-form">
-    <%= search_form_for @q do |f| %>
-    <%= f.search_field :address_cont, placeholder: "場所で検索" %>
-    <%= f.submit %>
-    <% end %>
-  </div>
-
-  <h4>All activities(within 24h)</h4>
-  <div class="timeline">
-    <% @posts.each do |post| %>
-      <article class="box media" style="margin-bottom: 0px; margin-top: 0px;">
-        <figure class="media-left is-square is-48-48">
-          <p class="image">
-            <%= link_to member_path(post.member.id) do %>
-              <%= attachment_image_tag post.member, :profile_image, :fill, 60, 60, format: 'jpeg', fallback: "no_image.jpg", size: "20x20", class: "is-rounded" %><br>
-            <% end %>
-            <%= post.member.account_name %>
-          </p>
-        </figure>
-        <div class="media-content">
-          <div class="content">
-            <p><%= post.body %><br>
-            <i class="fas fa-map-
-            marker-alt"></i>
-              <small><%= post.address %></small><br>
-            <i class="fas fa-tags"></i>
-            <small><%= post.genre.name %></small>
-            </p>
-            <small>
-              <%= link_to post_comment_path(post.id) do %>
-                <i class="far fa-comment-dots"></i>
+  <div class="columns is-desktop">
+    <div class="timeline column">
+      <h4>All activities(within 24h)</h4>
+      <% @posts.each do |post| %>
+        <article class="box media" style="margin-bottom: 0px; margin-top: 0px;">
+          <figure class="media-left is-square is-48-48">
+            <p class="image">
+              <%= link_to member_path(post.member.id) do %>
+                <%= attachment_image_tag post.member, :profile_image, :fill, 60, 60, format: 'jpeg', fallback: "no_image.jpg", size: "20x20", class: "is-rounded" %><br>
               <% end %>
-              <% if current_member.id == post.member.id %>
-                <%= link_to edit_post_path(post.id) do %>
-                  <i class="fas fa-wrench"></i>
+              <%= post.member.account_name %>
+            </p>
+          </figure>
+          <div class="media-content">
+            <div class="content">
+              <p><%= post.body %><br>
+                <i class="fas fa-map-marker-alt"></i>
+              <small><%= post.address %></small><br>
+                <i class="fas fa-tags"></i>
+              <small><%= post.genre.name %></small>
+              </p>
+              <small>
+                <%= link_to post_comment_path(post.id) do %>
+                  <i class="far fa-comment-dots"></i>
                 <% end %>
-                <%= link_to post_path(post.id), method: :delete do %>
-                  <i class="far fa-trash-alt"></i>
-                <% end %>
-              <% else %>
-                <!--<small class="request-btn" id="post_<%#= post.id %>">-->
+                <% if current_member.id == post.member.id %>
+                  <%= link_to edit_post_path(post.id) do %>
+                    <i class="fas fa-wrench"></i>
+                  <% end %>
+                  <%= link_to post_path(post.id), method: :delete do %>
+                    <i class="far fa-trash-alt"></i>
+                  <% end %>
+                <% else %>
+                  <!--<small class="request-btn" id="post_<%#= post.id %>">-->
                   <!--リクエスト時に表示-->
                   <% if post.requested_by?(current_member) %>
                     <%= link_to post_post_requests_path(post.id), method: :delete, remote: true do %>
@@ -87,10 +87,11 @@
         </div>
       </article>
     <% end %>
+    </div>
+    <div id="map" class="column"></div>
   </div>
-</section>
+</div>
 
-    <div id="map"></div>
 
 <script>
 
