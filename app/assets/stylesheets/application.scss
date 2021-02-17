@@ -33,17 +33,18 @@ body {
   background-color: white;
   color: #EDEDED;
   letter-spacing: 2px;
+  width: 100%;
   position: sticky;
   top: 0;
-  //position: fixed;
-  //z-index: 5000;
+  position: fixed;
+  z-index: 5000;
 }
 
-.footer {
+footer {
   width: 100%;
-  background-color: white;
+  background-color: #cbd1ca;
   color: #EDEDED;
-  height: 100px;
+  height: auto;
   letter-spacing: 2px;
 }
 
@@ -53,13 +54,12 @@ body {
   font-family: "Noto Sans JP",Roboto,"Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;
   letter-spacing: 1px;
   flex: 1;
+  margin-top: 60px;
 }
 
 .nav-list {
   text-align: right;
 }
-
-
 
 //リンク
 a {
