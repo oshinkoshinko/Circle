@@ -39,6 +39,8 @@
               <i class="far fa-paper-plane"></i>　メッセージを送る
             <% end %>
           <% end %>
+          <a class="button is-small is-primary new-post-btn" style="margin-left:30px;" id="show_action">
+            <i class="fas fa-plus-circle"></i>　新規投稿</a>
         </div>
       </div>
     </div>
@@ -118,16 +120,28 @@
     <% end %>
   </div>
 </div>
-<!--投稿フォーム-->
-<% if current_member.id == @member.id %>
-<div class="post-form">
-  <h4>新規投稿</h4>
-  <%= form_with model: @post do |f| %>
-    <%= render 'layouts/error', model: f.object%>
-    <%= f.text_area :body %>
-    <%= f.collection_select(:genre_id, @genres, :id, :name) %><br>
-    <%= f.text_field :address, placeholder: "位置情報", value: "" %>
-    <%= f.submit "投稿" %>
-  <% end %>
-</div>
-<% end %>
+
+<!--新規投稿モーダルウインドウ-->
+  <div class="modal">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+      <div class="notification is-primary">
+        <% if current_member.id == @member.id %>
+          <div class="post-form">
+            <h4><strong>新規投稿</strong></h4>
+              <%= form_with model: @post do |f| %>
+                <%= render 'layouts/error', model: f.object%>
+                <%= f.text_area :body %>
+                <%= f.collection_select(:genre_id, @genres, :id, :name) %><br>
+                <%= f.text_field :address, placeholder: "位置情報", value: "" %>
+                <%= f.submit "投稿" %>
+              <% end %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  <button class="modal-close is-large" aria-label="close"></button>
+  </div>
+  <script async type="text/javascript" src="../js/bulma.js"></script>
+  <script async type="text/javascript" src="../js/form.js"></script>
+

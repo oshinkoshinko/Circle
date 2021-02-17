@@ -16,6 +16,18 @@
 //= require turbolinks
 //= require_tree .
 
+//マイページ新規投稿モーダルウインドウ
+document.addEventListener("turbolinks:load", function() {
+  $("#show_action").on("click", function() {
+    $("div.modal").addClass("is-active");
+    })
+
+  $('div.modal-background,button.modal-close').on('click', function() {
+    $("div.modal").removeClass("is-active");
+  })
+})
+
+//イベント一覧ページslick用
 document.addEventListener("turbolinks:load", function() {
   $(function() {
     $('#new-card').slick({
