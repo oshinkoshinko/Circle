@@ -1,8 +1,7 @@
 <section class="notifications">
   <h4>通知一覧</h4>
-    <%= link_to notifications_path, method: :delete do %>
-        <i class="fas fa-trash" style="color: black;"></i>
-        <h7 style="color: black;">全て削除する</h7>
+    <%= link_to notifications_path, method: :delete, class: "button is-light is-small" do %>
+        <i class="fas fa-trash">　全て削除する</i>
     <% end %><hr>
   <div class="notification-list">
     <% notifications = @notifications.where.not(visitor_id: current_member.id) %>

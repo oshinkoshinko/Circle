@@ -88,3 +88,23 @@ a {
 .back .button {
   width: 50px;
 }
+
+.info-bar {
+  position: relative;
+}
+
+.info-alert {
+  position: absolute;
+  top: 20%;
+  left: 73%;
+  z-index: 5;
+}
+
+.info-count {
+  position: absolute;
+  top: 19%;
+  left: 75.5%;
+  font-size: 5px;
+  color: white;
+  z-index: 10;
+}

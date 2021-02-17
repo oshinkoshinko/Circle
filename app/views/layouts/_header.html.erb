@@ -38,7 +38,11 @@
             <%= link_to "All Events", events_path, class: "navbar-item" %>
           </div>
         </div>
-        <div class="navbar-item has-dropdown is-hoverable">
+        <div class="info-bar navbar-item has-dropdown is-hoverable">
+          <% if unchecked_notifications.any? %>
+            <i class="info-alert fa fa-circle is-hidden-mobile" style="color: #fc4949;"></i>
+            <p class="info-count is-hidden-mobile"><%= unchecked_notifications.count %></p>
+          <% end %>
           <%= link_to notifications_path, class: "navbar-link" do %>
             <span style="margin-right: 3px;">Information</span><i class="fas fa-bell" style="color: #FFD151;"></i>
           <% end %>
