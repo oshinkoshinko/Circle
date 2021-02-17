@@ -34,13 +34,13 @@
             <%= link_to edit_member_path(@member), class: "button is-light is-small" do%>
               <i class="fas fa-user-cog"></i>　プロフィールを編集
             <% end %>
+            <a class="button is-small is-primary new-post-btn" style="margin-left:30px;" id="show_action">
+            <i class="fas fa-plus-circle"></i>　<strong>新規投稿</strong></a>
           <% else %>
             <%= link_to chat_path(@member), class: "button is-normal is-small" do %>
               <i class="far fa-paper-plane"></i>　メッセージを送る
             <% end %>
           <% end %>
-          <a class="button is-small is-primary new-post-btn" style="margin-left:30px;" id="show_action">
-            <i class="fas fa-plus-circle"></i>　新規投稿</a>
         </div>
       </div>
     </div>
@@ -125,17 +125,23 @@
   <div class="modal">
     <div class="modal-background"></div>
     <div class="modal-content">
-      <div class="notification is-primary">
+      <div class="notification is-white">
         <% if current_member.id == @member.id %>
           <div class="post-form">
             <h4><strong>新規投稿</strong></h4>
+              <div class="field">
+                <p class="control">
               <%= form_with model: @post do |f| %>
                 <%= render 'layouts/error', model: f.object%>
-                <%= f.text_area :body %>
-                <%= f.collection_select(:genre_id, @genres, :id, :name) %><br>
-                <%= f.text_field :address, placeholder: "位置情報", value: "" %>
-                <%= f.submit "投稿" %>
+                <%= f.text_area :body, :size=>"30x5" %>
+                <span class="select is-normal" style="margin-top: 46px;">
+                <%= f.collection_select :genre_id, @genres, :id, :name, :include_blank => '🔍 ジャンル'  %>
+                </span><br>
+                <%= f.text_field :address, placeholder: "位置情報", value: "", class: "is-small" %>
+                <%= f.submit "投稿", class: "button is-primary is-small" %>
               <% end %>
+                </p>
+              </div>
           </div>
         <% end %>
       </div>
