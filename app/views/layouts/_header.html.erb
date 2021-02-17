@@ -31,7 +31,7 @@
         </div>
         <div class="navbar-item has-dropdown is-hoverable">
           <%= link_to posts_path, class: "navbar-link" do %>
-            <span style="margin-right: 3px;">Timeline</span><i class="fas fa-map-marker-alt"></i>
+            <span style="margin-right: 3px;">Timeline</span><i class="fas fa-map-marker-alt" style="color: red;"></i>
           <% end %>
           <div class="navbar-dropdown is boxed">
             <%= link_to "All Activities", posts_path, class: "navbar-item" %>
@@ -40,7 +40,7 @@
         </div>
         <div class="navbar-item has-dropdown is-hoverable">
           <%= link_to notifications_path, class: "navbar-link" do %>
-            <span style="margin-right: 3px;">Information</span><i class="far fa-bell"></i>
+            <span style="margin-right: 3px;">Information</span><i class="fas fa-bell" style="color: #FFD151;"></i>
           <% end %>
           <div class="navbar-dropdown is boxed">
             <%= link_to "Requests", post_requests_waiting_path, class: "navbar-item" %>
