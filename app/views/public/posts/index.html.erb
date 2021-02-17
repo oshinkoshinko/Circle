@@ -22,7 +22,7 @@
       <h4>All activities(within 24h)</h4>
       <div class="timeline-content">
       <% @posts.each do |post| %>
-        <article class="box media" style="margin-bottom: 0px; margin-top: 0px;">
+        <article class="box media" style="margin-bottom: 0px; margin-top: 0px; border-radius: 0px;">
           <figure class="media-left is-square is-48-48">
             <p class="image">
               <%= link_to member_path(post.member.id) do %>
