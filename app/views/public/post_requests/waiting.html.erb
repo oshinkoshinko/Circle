@@ -88,7 +88,7 @@
                 <% end %>
                 <!--投稿に対するリクエストのなかでログインユーザのリクエストが承認されたかどうか-->
                 <% if requesting.post.post_requests.find_by(member: current_member).is_accepted? %>
-                  <strong>Accepted!</strong>
+                  <strong>Accepted!</strong><br>
                   <%= link_to chat_path(requesting.post.member) do %>
                     <i class="far fa-paper-plane"></i>
                   <% end %>

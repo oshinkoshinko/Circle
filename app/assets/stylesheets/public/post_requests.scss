@@ -2,18 +2,27 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.request {
+// .request {
 //   display: flex;
 //   justify-content: center;
- }
+// }
 
 // .waiting-list {
 //   //width: 30%;
 //   //height: auto;
-//   overflow: scroll;
-//   margin-bottom: 30px;
-//   margin-right: 10px;
+//   // overflow: scroll;
+//   // margin-bottom: 30px;
+//   // margin-right: 10px;
 // }
+
+.waiting-list h4 {
+  background: #0094D6;
+  color: #FFF;
+  margin: 0;
+  display:inline-block;
+  padding: .3em .5em;
+  border-radius: 10px 10px 0 0;
+}
 
 // .accept-list {
 //   //width: 30%;
@@ -23,6 +32,15 @@
 //   margin-right: 10px;
 // }
 
+.accept-list h4 {
+  background: #0094D6;
+  color: #FFF;
+  margin: 0;
+  display:inline-block;
+  padding: .3em .5em;
+  border-radius: 10px 10px 0 0;
+}
+
 // .requesting-list {
 //   //width: 30%;
 //   //height: auto;
@@ -31,3 +49,11 @@
 //   margin-right: 10px;
 // }
 
+.requesting-list h4 {
+  background: #0094D6;
+  color: #FFF;
+  margin: 0;
+  display:inline-block;
+  padding: .3em .5em;
+  border-radius: 10px 10px 0 0;
+}

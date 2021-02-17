@@ -20,6 +20,7 @@
   <div class="columns is-desktop">
     <div class="timeline column">
       <h4>All activities(within 24h)</h4>
+      <div class="timeline-content">
       <% @posts.each do |post| %>
         <article class="box media" style="margin-bottom: 0px; margin-top: 0px;">
           <figure class="media-left is-square is-48-48">
@@ -63,7 +64,7 @@
                     <% end %>
                     <!--投稿に対するリクエストのなかでログインユーザのリクエストが承認されたかどうか-->
                       <% if post.post_requests.find_by(member: current_member).is_accepted? %>
-                        <strong>Accepted!</strong>
+                        <strong>Accepted!</strong><br>
                         <%= link_to chat_path(post.member) do %>
                           <i class="far fa-paper-plane"></i>
                         <% end %>
@@ -92,7 +93,11 @@
       </article>
     <% end %>
     </div>
+    </div>
+    <div class="map-content column">
+      <h4>Map</h4>
     <div id="map" class="column"></div>
+    </div>
   </div>
 </div>
 
