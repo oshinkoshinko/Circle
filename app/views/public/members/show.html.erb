@@ -3,7 +3,7 @@
   <article class="box media" style="margin: -12px -12px 0px; border-radius: 0px;">
     <figure class="media-left is-square is-48-48">
       <p class="prof-image">
-        <%= attachment_image_tag @member, :profile_image, :fill, 30, 30, format: 'jpeg', fallback: "no_image.jpg", size: "100x100" %><br>
+        <%= attachment_image_tag @member, :profile_image, :fill, 1000, 1000, format: 'jpeg', fallback: "no_image.jpg", size: "100x100" %><br>
       </p>
       <strong>
         <%= @member.account_name %>
@@ -14,22 +14,22 @@
         <p class="introduction" style="margin-top: 20px;"><%= @member.introduction %></p>
         <div class="counts">
           <div class="follow_count" style="margin-right: 15px">
-            フォロー数: <%= render 'public/relationships/following_count', member: @member %>
+            フォロー <%= render 'public/relationships/following_count', member: @member %>
           </div>
           <div class="follower_count" style="margin-right: 15px">
-            フォロワー数: <%= render 'public/relationships/follower_count', member: @member %>
-          </div>
-          <div class="follow_form">
-            <% unless current_member == @member %>
-              <% unless current_member.following?(@member) %>
-                <%= render 'public/relationships/follow_btn', member: @member %>
-              <% else %>
-                <%= render 'public/relationships/unfollow_btn', member: @member %>
-              <% end %>
-            <% end %>
+            フォロワー <%= render 'public/relationships/follower_count', member: @member %>
           </div>
         </div>
-        <div class="option-form">
+        <div class="follow_form" style="margin-top: 10px;">
+          <% unless current_member == @member %>
+            <% unless current_member.following?(@member) %>
+              <%= render 'public/relationships/follow_btn', member: @member %>
+            <% else %>
+              <%= render 'public/relationships/unfollow_btn', member: @member %>
+            <% end %>
+          <% end %>
+        </div>
+        <div class="option-form" style="margin-top: 10px;">
           <% if current_member.id == @member.id %>
             <%= link_to edit_member_path(@member), class: "button is-light is-small" do%>
               <i class="fas fa-user-cog"></i>　プロフィールを編集
@@ -45,46 +45,79 @@
   </article>
 </div>
 <!--自分の投稿タイムライン-->
-<div class="timeline-container">
-  <h4>マイタイムライン</h4>
-  <p class="notice">
-   <%= notice %>
-  </p>
-    <table class="my-timeline">
-      <% @posts.each do |post| %>
-        <tr>
-          <td>
-            <%= attachment_image_tag post.member, :profile_image, :fill, 30, 30, format: 'jpeg', fallback: "no_image.jpg", size:"30x30" %>
-          </td>
-          <td>
-            <%= post.body %>
-          </td>
-          <td>
-            @<%= post.address %>
-          </td>
-          <td>
-            /ジャンル：<%= post.genre.name %>
-          </td>
-          <td>
-            <%= time_ago_in_words(post.created_at) %>前
-          </td>
-          <td>
-            <%= link_to post_comment_path(post.id) do %>
-              <i class="far fa-comment-dots"></i>
+<div class="timeline column" style="margin-left: -12px; margin-right: -12px; margin-top: -23px;">
+  <div class="timeline-content">
+    <% @posts.each do |post| %>
+      <article class="box media" style="margin-bottom: 0px; margin-top: 0px; border-radius: 0px;">
+        <figure class="media-left is-square is-48-48">
+          <p class="image">
+            <%= link_to member_path(post.member.id) do %>
+              <%= attachment_image_tag post.member, :profile_image, :fill, 65, 65, format: 'jpeg', fallback: "no_image.jpg", size: "20x20", class: "is-rounded" %><br>
             <% end %>
-            <% if current_member.id == post.member.id %>
-              <%= link_to edit_post_path(post.id) do %>
-                <i class="fas fa-wrench"></i>
+          </p>
+        </figure>
+        <div class="media-content">
+          <div class="content">
+            <p><%= post.body %><br>
+              <i class="fas fa-map-marker-alt"></i>
+              <small><%= post.address %></small><br>
+              <i class="fas fa-tags"></i>
+              <small><%= post.genre.name %></small>
+            </p>
+            <small>
+              <%= link_to post_comment_path(post.id) do %>
+                <i class="far fa-comment-dots"></i>
               <% end %>
-              <%= link_to post_path(post.id), method: :delete, remote:true do %>
-                <i class="far fa-trash-alt"></i>
+              <% if current_member.id == post.member.id %>
+                <%= link_to edit_post_path(post.id) do %>
+                  <i class="fas fa-wrench"></i>
+                <% end %>
+                <%= link_to post_path(post.id), method: :delete do %>
+                  <i class="far fa-trash-alt"></i>
+                <% end %>
+              <% else %>
+                <!--<small class="request-btn" id="post_<%#= post.id %>">-->
+                <!--リクエスト時に表示-->
+                <% if post.requested_by?(current_member) %>
+                  <%= link_to post_post_requests_path(post.id), method: :delete, remote: true do %>
+                    <button class="button is-warning is-small">
+                      <span class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M12.99 9.18c0-.06.01-.12.01-.18 0-2.21-1.79-4-4-4-.06 0-.12.01-.18.01l4.17 4.17zm-6.1-3.56L4.27 3 3 4.27l2.62 2.62C5.23 7.5 5 8.22 5 9c0 2.21 1.79 4 4 4 .78 0 1.5-.23 2.11-.62L19.73 21 21 19.73l-8.62-8.62-5.49-5.49zM9 15c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4zm7.76-9.64l-1.68 1.69c.84 1.18.84 2.71 0 3.89l1.68 1.69c2.02-2.02 2.02-5.07 0-7.27zM20.07 2l-1.63 1.63c2.77 3.02 2.77 7.56 0 10.74L20.07 16c3.9-3.89 3.91-9.95 0-14z"/></svg>
+                      </span>
+                        <span>Cancel Request</span>
+                    </button><br>
+                  <% end %>
+                  <!--投稿に対するリクエストのなかでログインユーザのリクエストが承認されたかどうか-->
+                  <% if post.post_requests.find_by(member: current_member).is_accepted? %>
+                    <strong>Accepted!</strong><br>
+                      <%= link_to chat_path(post.member) do %>
+                        <i class="far fa-paper-plane"></i>
+                      <% end %>
+                  <% else %>
+                    Waiting Acceptance...
+                  <% end %>
+                <% else %>
+                <!--未リクエスト時に表示-->
+                  <%= link_to post_post_requests_path(post.id), method: :post, remote: true do %>
+                    <button class="button is-primary is-small">
+                      <span class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><circle cx="9" cy="9" r="4"/><path d="M9 15c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4zm7.76-9.64l-1.68 1.69c.84 1.18.84 2.71 0 3.89l1.68 1.69c2.02-2.02 2.02-5.07 0-7.27zM20.07 2l-1.63 1.63c2.77 3.02 2.77 7.56 0 10.74L20.07 16c3.9-3.89 3.91-9.95 0-14z"/></svg>
+                      </span>
+                      <span>Request</span>
+                    </button>
+                  <% end %>
+                <% end %>
               <% end %>
-            <% end %>
-          </td>
-        </tr>
-     <% end %>
-    </table>
- </div>
+            </small>
+          </div>
+        </div>
+        <div class="media-right">
+          <small><%= time_ago_in_words(post.created_at) %>前</small>
+        </div>
+      </article>
+    <% end %>
+  </div>
+</div>
 <!--投稿フォーム-->
 <% if current_member.id == @member.id %>
 <div class="post-form">
