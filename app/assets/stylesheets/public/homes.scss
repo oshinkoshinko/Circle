@@ -30,8 +30,8 @@
   display: block;
   width: 30%;
   height: auto;
-  top: 75%;
-  left: 25%;
+  top: 60%;
+  left: 30%;
   animation: img_box_9955 4s linear infinite;
   transform-origin: 50% 50%;
   margin: 1rem 0 !important;
@@ -40,7 +40,7 @@
 .box1 {
   position: absolute;
   display: block;
-  width: 70%;
+  width: 75%;
   height: auto;
   top: 10%;
   left: 10%;
@@ -48,6 +48,7 @@
   padding: 10px;
   text-align: left;
   z-index: 50;
+  letter-spacing: 3px;
 }
 
 .about-title {
