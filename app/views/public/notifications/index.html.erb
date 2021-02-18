@@ -1,8 +1,5 @@
 <section class="notifications">
   <h4>通知一覧</h4>
-    <%= link_to notifications_path, method: :delete, class: "button is-light is-small" do %>
-        <i class="fas fa-trash">　全て削除する</i>
-    <% end %><hr>
   <div class="notification-list">
     <% notifications = @notifications.where.not(visitor_id: current_member.id) %>
     <% if notifications.exists? %>
@@ -10,6 +7,11 @@
       <%= paginate notifications %>
     <% else %>
       <p>通知はありません。</p>
+    <% end %>
+  </div>
+  <div class="all-destroy-btn">
+    <%= link_to notifications_path, method: :delete, class: "button is-light is-small" do %>
+        <i class="fas fa-trash">　全て削除する</i>
     <% end %>
   </div>
 </section>

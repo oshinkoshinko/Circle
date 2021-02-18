@@ -15,6 +15,7 @@
     </div>
   </div>
   <!--モバイル用フッター-->
+  <% if member_signed_in? %>
   <div class="mobile-footer is-hidden-desktop is-hidden-tablet">
     <div class="map-icon">
       <%= link_to posts_path do %>
@@ -42,4 +43,5 @@
       <% end %>
     </div>
   </div>
+  <% end %>
 </footer>

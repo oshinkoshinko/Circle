@@ -1,5 +1,6 @@
 <% visitor = notification.visitor %>
 <% visited = notification.visited %>
+<article class="box media" style="margin-bottom: -16px; border-radius: 0px;">
   <span>
     <%= link_to member_path(visitor), local:true do %>
       <%= visitor.account_name %>
@@ -11,6 +12,9 @@
       <% when 'request' then %>
         あなたの投稿にリクエストを送りました。
         <%= notification.post.body %>
+      <!--<%# when 'accept' then %>-->
+      <!--  あなたのリクエストを承認しました。-->
+      <!--  <%#= notification.post.body %>-->
       <% when 'comment' then %>
         <% if notification.post.member_id == visited.id %>
           あなたの投稿
@@ -21,3 +25,4 @@
     <% end %>
     <%= time_ago_in_words(notification.created_at).downcase %>前<br>
   </span>
+</article>
