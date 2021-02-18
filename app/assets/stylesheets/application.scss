@@ -159,3 +159,14 @@ a {
   font-size: 2.3em;
   color: #383838;
 }
+
+.footer-content {
+  display: flex;
+  position: relative;
+}
+
+.inquiry-btn {
+  position: absolute;
+  top: 30%;
+  left: 80%;
+}
