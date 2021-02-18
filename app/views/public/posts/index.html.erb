@@ -6,26 +6,27 @@
           <span class="select is-small">
             <%= f.collection_select :genre_id_eq, @genres, :id, :name, :include_blank => '🔍 ジャンル' %>
           </span>
-          <%= f.submit "Search", class: "button is-info is-small" %>
+          <%= f.submit "検索", class: "button is-info is-small" %>
         <% end %>
       </p>
     </div>
     <div class="address-search-form field">
       <%= search_form_for @q do |f| %>
         <%= f.search_field :address_cont, placeholder: "🔍 場所", class: "is-small" %>
-        <%= f.submit "Search", class: "button is-info is-small" %>
+        <%= f.submit "検索", class: "button is-info is-small" %>
       <% end %>
     </div>
   </div>
   <div class="columns is-desktop">
     <div class="timeline column">
-      <h4>All activities(within 24h)</h4>
+      <h4>今日のみんなの動き</h4>
+      <div class="timeline-content">
       <% @posts.each do |post| %>
-        <article class="box media" style="margin-bottom: 0px; margin-top: 0px;">
+        <article class="box media" style="margin-bottom: 0px; margin-top: 0px; border-radius: 0px;">
           <figure class="media-left is-square is-48-48">
             <p class="image">
               <%= link_to member_path(post.member.id) do %>
-                <%= attachment_image_tag post.member, :profile_image, :fill, 60, 60, format: 'jpeg', fallback: "no_image.jpg", size: "20x20", class: "is-rounded" %><br>
+                <%= attachment_image_tag post.member, :profile_image, :fill, 65, 65, format: 'jpeg', fallback: "no_image.jpg", size: "20x20", style: "border-radius: 50%;" %><br>
               <% end %>
               <%= post.member.account_name %>
             </p>
@@ -40,7 +41,7 @@
               </p>
               <small>
                 <%= link_to post_comment_path(post.id) do %>
-                  <i class="far fa-comment-dots"></i>
+                  <i class="far fa-comment-dots"></i> <%= post.post_comments.count %>件
                 <% end %>
                 <% if current_member.id == post.member.id %>
                   <%= link_to edit_post_path(post.id) do %>
@@ -58,17 +59,17 @@
                         <span class="icon">
                           <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M12.99 9.18c0-.06.01-.12.01-.18 0-2.21-1.79-4-4-4-.06 0-.12.01-.18.01l4.17 4.17zm-6.1-3.56L4.27 3 3 4.27l2.62 2.62C5.23 7.5 5 8.22 5 9c0 2.21 1.79 4 4 4 .78 0 1.5-.23 2.11-.62L19.73 21 21 19.73l-8.62-8.62-5.49-5.49zM9 15c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4zm7.76-9.64l-1.68 1.69c.84 1.18.84 2.71 0 3.89l1.68 1.69c2.02-2.02 2.02-5.07 0-7.27zM20.07 2l-1.63 1.63c2.77 3.02 2.77 7.56 0 10.74L20.07 16c3.9-3.89 3.91-9.95 0-14z"/></svg>
                         </span>
-                        <span>Cancel Request</span>
+                        <span>　リクエストを取り消す</span>
                       </button><br>
                     <% end %>
                     <!--投稿に対するリクエストのなかでログインユーザのリクエストが承認されたかどうか-->
                       <% if post.post_requests.find_by(member: current_member).is_accepted? %>
-                        <strong>Accepted!</strong>
-                        <%= link_to chat_path(post.member) do %>
-                          <i class="far fa-paper-plane"></i>
+                        <strong>承認されました！</strong><br>
+                        <%= link_to chat_path(post.member) ,class: "button is-info is-small" do %>
+                          <i class="far fa-paper-plane">　メッセージを送ろう</i>
                         <% end %>
                       <% else %>
-                        Waiting Acceptance...
+                        承認待ち...
                       <% end %>
                   <% else %>
                   <!--未リクエスト時に表示-->
@@ -77,7 +78,7 @@
                         <span class="icon">
                           <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><circle cx="9" cy="9" r="4"/><path d="M9 15c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4zm7.76-9.64l-1.68 1.69c.84 1.18.84 2.71 0 3.89l1.68 1.69c2.02-2.02 2.02-5.07 0-7.27zM20.07 2l-1.63 1.63c2.77 3.02 2.77 7.56 0 10.74L20.07 16c3.9-3.89 3.91-9.95 0-14z"/></svg>
                         </span>
-                        <span>Request</span>
+                        <span>　リクエストを送る</span>
                       </button>
                     <% end %>
                   <% end %>
@@ -92,7 +93,11 @@
       </article>
     <% end %>
     </div>
+    </div>
+    <div class="map-content column">
+      <h4>みんなの場所</h4>
     <div id="map" class="column"></div>
+    </div>
   </div>
 </div>
 

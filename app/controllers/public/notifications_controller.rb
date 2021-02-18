@@ -8,4 +8,10 @@ class Public::NotificationsController < ApplicationController
     end
   end
 
+  def destroy_all
+    #通知を全削除
+      @notifications = current_member.passive_notifications.destroy_all
+      redirect_to notifications_path
+  end
+
 end

@@ -1,8 +1,9 @@
-<section class="event">
-  <h4>イベント詳細</h4>
+<section class="events">
+  <div class="event-content">
+    <h4>イベント詳細</h4>
     <div class="event-info">
       <%= link_to member_path(@event.member.id) do %>
-        <%= attachment_image_tag @event.member, :profile_image, :fill, 30, 30, format: 'jpeg', fallback: "no_image.jpg", size:"30x30" %>
+        <%= attachment_image_tag @event.member, :profile_image, :fill, 30, 30, format: 'jpeg', fallback: "no_image.jpg", size:"30x30", style: "border-radius: 50%;" %>
         <%= @event.member.account_name %>
       <% end %>さんのイベント<br>
       <div class="join-members">
@@ -13,7 +14,7 @@
         <% end %>
         <% @event_members.each do |event_member| %>
           <%= link_to member_path(event_member.member), local:true do %>
-            <%= attachment_image_tag event_member.member, :profile_image, :fill, 30, 30, format: 'jpeg', fallback: "no_image.jpg", size:"30x30" %>
+            <%= attachment_image_tag event_member.member, :profile_image, :fill, 30, 30, format: 'jpeg', fallback: "no_image.jpg", size:"30x30", style: "border-radius: 50%;" %>
           <% end %>
         <% end %><br>
       </div>
@@ -29,7 +30,7 @@
       </div>
     </div>
     <div class="event-image">
-      <%= attachment_image_tag @event, :event_image, :fill, 50, 25, format: "jpeg", fallback: "event_image.jpg", size:'300x200' %>
+      <%= attachment_image_tag @event, :event_image, :fill, 50, 25, format: "jpeg", fallback: "event.png", size:'300x200' %>
     </div>
     <div class="apply-btn">
       <% if current_member != @event.member %>
@@ -37,15 +38,15 @@
         <% if @event.expired_at > DateTime.now %>
           <!--申し込んだ人には非表示にする-->
           <% if @event.applied_by?(current_member) %>
-            <%= button_to "キャンセル", event_event_member_path(@event.id, @event_member.id), method: :delete %>
+            <%= link_to "キャンセル", event_event_member_path(@event.id, @event_member.id), method: :delete, "data-confirm" => "本当にキャンセルしますか？", class: "button is-warning is-small" %>
           <% else %>
-            <%= button_to "申し込む", new_event_event_member_path(@event.id), method: :get, params: {member_id: current_member.id} %>
+            <%= link_to "申し込む", new_event_event_member_path(@event.id), method: :get, params: {member_id: current_member.id}, class: "button is-info is-small" %>
           <% end %>
         <% end %>
       <% else %>
         <!--開催者には編集リンクを表示 イベント応募締め切り後は編集不可-->
         <% if @event.expired_at > DateTime.now %>
-          <%= button_to "編集", edit_event_path(@event.id), method: :get %>
+          <%= link_to "編集する", edit_event_path(@event.id), method: :get, class: "button is-light is-small" %>
         <% end %>
       <% end %>
     </div>
@@ -79,6 +80,6 @@
           </div>
         <% end %>
       <% end %>
-      </div>
     </div>
+  </div>
 </section>

@@ -45,6 +45,7 @@ Rails.application.routes.draw do
    get 'rooms' => 'rooms#index'
    get 'searches' => 'searches#index'
    resources :notifications, only: [:index]
+   delete 'notifications' => 'notifications#destroy_all'
   end
 
   resources :inquiries, only: [:new, :create]

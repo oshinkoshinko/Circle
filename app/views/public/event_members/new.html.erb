@@ -13,7 +13,7 @@
       <%= form_with url: event_event_members_path, model: @event_member, method: :post, local:true do |f| %>
         <%= f.hidden_field :event_id, :value => @event.id %>
         <%= f.hidden_field :member_id, :value => current_member.id %>
-        <%= f.submit "確定" %>
+        <%= f.submit "確定", class: "button is-info is-small" %>
       <% end %>
     </div>
 </section>

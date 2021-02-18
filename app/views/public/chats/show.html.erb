@@ -5,11 +5,15 @@
 <div id="message">
   <%= render 'public/chats/messages', chats: @chats %>
 </div>
-<div class="message-form">
+<div class="message-area">
+  <div class="message-form">
     <%= form_with model: @chat do |f| %>
-    <%= render 'layouts/error', model: f.object%>
-    <%= f.text_field :message %>
-    <%= f.hidden_field :room_id %>
+    <%= render 'layouts/error', model: f.object %>
+      <%= f.text_area :message, :size=>"30x2" %>
+      <%= f.hidden_field :room_id %>
+      <%= f.button :type => "submit", class: "button" do %>
+        <i class="fas fa-paper-plane"></i>
+      <% end %>
     <% end %>
+  </div>
 </div>
-

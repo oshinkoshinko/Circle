@@ -1,3 +1,25 @@
 // Place all the styles related to the public/notifications controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.notifications h4 {
+  background: #0094D6;
+  color: #FFF;
+  font-size: 13px;
+  margin: 0;
+  display:inline-block;
+  padding: 10px;
+  border-radius: 10px 10px 0 0;
+}
+
+.notification-list {
+  width: 100%;
+  height: 500px;
+  overflow: scroll;
+  //margin-top: 30px;
+}
+
+.all-destroy-btn {
+  text-align: right;
+  margin: 30px 10px auto auto;
+}

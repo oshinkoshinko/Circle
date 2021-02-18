@@ -2,32 +2,53 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.request {
-//   display: flex;
-//   justify-content: center;
- }
+.requested-content {
+  width: 100%;
+  height: 300px;
+  overflow: scroll;
+  margin-bottom: 5px;
+}
 
-// .waiting-list {
-//   //width: 30%;
-//   //height: auto;
-//   overflow: scroll;
-//   margin-bottom: 30px;
-//   margin-right: 10px;
-// }
+.waiting-list h4 {
+  background: #0094D6;
+  color: #FFF;
+  font-size: 13px;
+  margin: 0;
+  display:inline-block;
+  padding: 10px;
+  border-radius: 10px 10px 0 0;
+}
 
-// .accept-list {
-//   //width: 30%;
-//   //height: auto;
-//   overflow: scroll;
-//   margin-bottom: 30px;
-//   margin-right: 10px;
-// }
+.accepted-content {
+  width: 100%;
+  height: 300px;
+  overflow: scroll;
+  margin-bottom: 5px;
+}
 
-// .requesting-list {
-//   //width: 30%;
-//   //height: auto;
-//   overflow: scroll;
-//   margin-bottom: 30px;
-//   margin-right: 10px;
-// }
+.accept-list h4 {
+  background: #0094D6;
+  color: #FFF;
+  font-size: 13px;
+  margin: 0;
+  display:inline-block;
+  padding: 10px;
+  border-radius: 10px 10px 0 0;
+}
 
+.requesting-content {
+  width: 100%;
+  height: 300px;
+  overflow: scroll;
+  margin-bottom: 5px;
+}
+
+.requesting-list h4 {
+  background: #0094D6;
+  color: #FFF;
+  font-size: 13px;
+  margin: 0;
+  display:inline-block;
+  padding: 10px;
+  border-radius: 10px 10px 0 0;
+}

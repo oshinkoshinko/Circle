@@ -1,16 +1,22 @@
 <div class="following-list">
-  <h4>following</h4>
-  <% if @members.exists? %>
-    <% @members.each do |member| %>
-      <div>
-      <%= link_to member_path(member) do %>
-      <%= attachment_image_tag member, :profile_image, :fill, 30, 30, fallback: "no_image.jpg", size: "30x30" %>
+  <h4>フォロー中</h4>
+    <div class="following-member">
+      <% if @members.exists? %>
+        <% @members.each do |member| %>
+          <article class="box media" style="margin: 0px -12px 0px; border-radius: 0px;">
+            <figure class="media-left is-square is-48-48">
+              <%= link_to member_path(member) do %>
+                <%= attachment_image_tag member, :profile_image, :fill, 30, 30, fallback: "no_image.jpg", size: "30x30", style: "border-radius: 50%;" %>
+              <% end %>
+            </figure>
+            <div class="media-content">
+              <strong><%= member.account_name %></strong>
+              <small><%= member.introduction %></small>
+            </div>
+          </article>
+        <% end %>
+      <% else %>
+        <p>ユーザーはいません</p>
       <% end %>
-      <%= member.account_name %>
-      <%= member.introduction %>
-      </div><hr><br>
-    <% end %>
-  <% else %>
-    <p>ユーザーがいません</p>
-  <% end %>
+  </div>
 </div>

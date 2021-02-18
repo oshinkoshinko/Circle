@@ -37,7 +37,24 @@ class Post < ApplicationRecord
     end
   end
 
-  #通知機能(リクエスト承認)できれば付けたい
+  # #通知機能(リクエスト承認)できれば付けたい
+  # def update_notification_request!(current_member)
+  #   # すでに承認されているか検索 ?(プレースホルダー)で値を指定
+  #   temp = Notification.where(["visitor_id = ? and visited_id = ? and post_id = ? and action = ? ", current_member.id, member_id, id, 'accept'])
+  #   # リクエストされていない場合のみ、通知レコードを作成
+  #   if temp.blank?
+  #     notification = current_member.active_notifications.new(
+  #       post_id: id,
+  #       visited_id: member_id,
+  #       action: 'accept'
+  #     )
+  #     # 自分の投稿に対するリクエストの場合は、通知済みとする
+  #     if notification.visitor_id == notification.visited_id
+  #       notification.checked = true
+  #     end
+  #     notification.save if notification.valid?
+  #   end
+  # end
 
   #通知機能(コメント)
   def create_notification_comment!(current_member, post_comment_id)
