@@ -68,7 +68,7 @@
             </p>
             <small>
               <%= link_to post_comment_path(post.id) do %>
-                <i class="far fa-comment-dots"></i>
+                <i class="far fa-comment-dots"></i> <%= post.post_comments.count %>件
               <% end %>
               <% if current_member.id == post.member.id %>
                 <%= link_to edit_post_path(post.id) do %>
