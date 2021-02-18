@@ -20,15 +20,14 @@
   </head>
 
   <body>
+    <!--<div id="wrap">-->
     <header>
       <%= render "layouts/header" %>
     </header>
     <div class="main">
       <%= yield %>
-      <!--<div class="back">-->
-      <!--  <button class="button is-rounded is-small" onclick="window.history.back();">戻る</button>-->
-      <!--</div>-->
     </div>
     <%= render "layouts/footer" %>
+    <!--</div>-->
   </body>
 </html>

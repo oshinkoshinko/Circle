@@ -27,6 +27,8 @@ body {
   display: flex;
   flex-flow: column;
   min-height: 100vh;
+  height: 100%;
+  position: relative;
 }
 
 .navbar {
@@ -46,6 +48,9 @@ footer {
   color: #EDEDED;
   height: auto;
   letter-spacing: 2px;
+  position: fixed;
+  bottom: 0;
+  z-index: 5000;
 }
 
 .main {
@@ -55,6 +60,8 @@ footer {
   letter-spacing: 1px;
   flex: 1;
   margin-top: 60px;
+  padding-bottom: auto;
+  margin-bottom: 55px;
 }
 
 .nav-list {
