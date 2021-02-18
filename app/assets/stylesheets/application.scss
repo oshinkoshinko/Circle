@@ -85,14 +85,12 @@ a {
   display: flex;
 }
 
-.back .button {
-  width: 50px;
-}
-
+//header ベルアイコン info-alert, info-countの位置調整用
 .info-bar {
   position: relative;
 }
 
+//header ベルアイコン
 .info-alert {
   position: absolute;
   top: 20%;
@@ -100,6 +98,7 @@ a {
   z-index: 5;
 }
 
+//header informationの数
 .info-count {
   position: absolute;
   top: 19%;
@@ -107,4 +106,37 @@ a {
   font-size: 5px;
   color: white;
   z-index: 10;
+}
+
+//mobile用フッター
+.mobile-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+
+//footer地図アイコン
+.map {
+  font-size: 2.5em;
+  color: #383838;
+
+}
+
+//footerイベントアイコン
+.event {
+  font-size: 2.5em;
+  color: #383838;
+}
+
+//footerマイページアイコン
+.person {
+  font-size: 2.5em;
+  color: #383838;
+}
+
+//footer受信ボックスアイコン
+.message-box {
+  font-size: 2.3em;
+  color: #383838;
 }
