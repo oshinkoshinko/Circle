@@ -16,13 +16,14 @@
     <% if member_signed_in? %>
       <div class="navbar-end">
         <%= link_to root_path, class: "navbar-item" do %>
-          <span style="margin-right: 3px;">Top</span><i class="fas fa-home"></i>
+          <span style="margin-right: 3px;"><strong>Top</strong></span><i class="fas fa-home"></i>
         <% end %>
         <div class="navbar-item has-dropdown is-hoverable">
           <%= link_to member_path(current_member), class: "navbar-link" do %>
-            Me<figure class="image is-24x24">
-                  <%= attachment_image_tag current_member, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg", size:"50x50", class: "is-rounded" %>
-              </figure>
+            <strong>Me</strong>
+            <figure class="image is-24x24">
+              <%= attachment_image_tag current_member, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg", size:"50x50", class: "is-rounded" %>
+            </figure>
           <% end %>
           <div class="navbar-dropdown is boxed">
             <%= link_to "My Page", member_path(current_member), class: "navbar-item" %>
@@ -31,7 +32,7 @@
         </div>
         <div class="navbar-item has-dropdown is-hoverable">
           <%= link_to posts_path, class: "navbar-link" do %>
-            <span style="margin-right: 3px;">Timeline</span><i class="fas fa-map-marker-alt" style="color: red;"></i>
+            <span style="margin-right: 3px;"><strong>Timeline</strong></span><i class="fas fa-map-marker-alt" style="color: red;"></i>
           <% end %>
           <div class="navbar-dropdown is boxed">
             <%= link_to "All Activities", posts_path, class: "navbar-item" %>
@@ -44,7 +45,7 @@
             <p class="info-count is-hidden-mobile"><%= unchecked_notifications.count %></p>
           <% end %>
           <%= link_to notifications_path, class: "navbar-link" do %>
-            <span style="margin-right: 3px;">Information</span><i class="fas fa-bell" style="color: #FFD151;"></i>
+            <span style="margin-right: 3px;"><strong>Information</strong></span><i class="fas fa-bell" style="color: #FFD151;"></i>
           <% end %>
           <div class="navbar-dropdown is boxed">
             <%= link_to "Requests", post_requests_waiting_path, class: "navbar-item" %>
@@ -53,7 +54,7 @@
           </div>
         </div>
         <%= link_to destroy_member_session_path, method: :delete, class: "navbar-item" do %>
-          <span style="margin-right: 3px;">Logout</span><i class="fas fa-sign-out-alt"></i>
+          <span style="margin-right: 3px;"><strong>Logout</strong></span><i class="fas fa-sign-out-alt"></i>
         <% end %>
       </div>
     <% elsif admin_signed_in? %>
