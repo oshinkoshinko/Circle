@@ -6,9 +6,9 @@
       <h3>メールアドレス</h3>
       <%= f.email_field :email %>
       <h3>お問い合わせ内容</h3>
-      <%= f.text_area :message %>
+      <%= f.text_area :message, :size=>"50x5" %>
     <div>
-      <p><%= f.submit "送信" %></p>
+      <p><%= f.submit "送信", class: "button is-info is-small" %></p>
     </div>
     <% end %>
   </div>
