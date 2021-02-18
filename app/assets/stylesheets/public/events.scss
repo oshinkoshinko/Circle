@@ -2,6 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.events {
+  text-align: center;
+}
+
+.event-content {
+  text-align: left;
+}
+
 .events-index h4 {
   position: relative;
   padding: 1.5rem;
