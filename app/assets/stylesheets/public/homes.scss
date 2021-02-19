@@ -102,6 +102,7 @@
 
 .service-box {
   margin-left: 20px;
+  margin-right: 20px;
 }
 
 .how-to-title {
@@ -132,4 +133,18 @@
 }
 .how-to-Jp:after {
   margin-left: 5px;
+}
+
+//step1
+.step {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.step-title {
+  font-weight: bold;
+}
+
+.step-info {
+  padding-top: 30px;
 }
