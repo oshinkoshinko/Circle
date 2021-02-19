@@ -13,6 +13,7 @@
   margin: 1rem 0 !important;
 }
 
+//イメージ動き
 @keyframes img_box_9955 {
   0% { transform: translateY(0) }
   33.33333% { transform: translateY(-10px) }
@@ -45,7 +46,7 @@
   height: auto;
   top: 10%;
   left: 10%;
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.5);
   padding: 10px;
   text-align: left;
   z-index: 50;
@@ -72,7 +73,7 @@
   height: auto;
   top: 20%;
   left: 10%;
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.5);
   padding: 10px;
   text-align: left;
   z-index: 50;
@@ -80,18 +81,30 @@
 }
 
 //view more
-.view-more {
-  margin-bottom: 30px;
+.view-more-desktop {
   text-align: center;
   z-index: 1000;
+  animation: img_box_9955 0.5s linear 2;
+  transform-origin: 50% 50%;
+}
+
+.view-more-mobile {
+  margin-top: 100px;
+  text-align: center;
+  z-index: 1000;
+  animation: img_box_9955 0.5s linear 2;
+  transform-origin: 50% 50%;
 }
 
 .view-more-word {
+  font-weight: bold;
   margin-top: 35px;
 }
 
 .view-more-icon {
+  color: #F1D144;
   font-size: 2.5em;
+  margin-top: -5px;
 }
 
 //アプリ使い方
@@ -150,7 +163,6 @@
 }
 
 //step2
-
 .service-step2 {
   background-color: #FFFFFF;
   color: #383838;
@@ -158,4 +170,10 @@
 
 .step2-illust {
   margin-left: 30px;
+}
+
+//step3
+.service-step3 {
+  background-color: #3265CE;
+  color: #FFFFFF;
 }

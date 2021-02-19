@@ -8,7 +8,7 @@
     <div class="illust illust1 column is-5">
       <%= image_tag "/illust01.png", size:"" %>
     </div>
-    <div class="illust illust2 column is-7 is-offset-1">
+    <div class="illust illust2 column is-7 is-offset-1 is-hidden-mobile">
       <%= image_tag "/illust02.png", size:"" %>
     </div>
     <div class="about-box">
@@ -21,12 +21,16 @@
       <%= image_tag "/people01.png", size:"150x150" %>
     </div>
   </div>
-  <div class="view-more">
+  <div class="view-more-desktop is-hidden-mobile">
+    <p class="view-more-word">view more</p>
+    <i class="fas fa-angle-down view-more-icon"></i>
+  </div>
+  <div class="view-more-mobile is-hidden-desktop is-hidden-tablet">
     <p class="view-more-word">view more</p>
     <i class="fas fa-angle-down view-more-icon"></i>
   </div>
 </section>
-<section id="service">
+<section class="service">
   <div class="service-step1 columns main">
     <div class="column service-box">
       <div class="how-to-box">
@@ -50,7 +54,7 @@
     </div>
   </div>
 </section>
-<section id="service">
+<section class="service">
   <div class="service-step2 columns main">
     <div class="step2-illust column is-hidden-mobile">
       <%= image_tag "/step2-image.png", size:"250x250" %>
@@ -61,13 +65,30 @@
         <h1 class="step-title">声かけリクエストを送ろう</h1>
       </div>
       <p class="step-info">
-        近くの人にリクエストを送って、お話できるかcheck!<br>
+        近くの人にリクエストを送って、声かけOKかcheck!<br>
         あの人、同じこと勉強してるのに急に声かけるのはハードル高いなあ...<br>
         Circleならボタン一つでリクエスト！
       </p>
     </div>
     <div class="step2-illust column is-hidden-desktop is-hidden-tablet">
       <%= image_tag "/step2-image.png", size:"250x300" %>
+    </div>
+  </div>
+</section>
+<section class="service">
+  <div class="service-step3 columns main">
+    <div class="column service-box">
+      <div class="step-box3">
+        <h1 class="step">Step3</h1>
+        <h1 class="step-title">実際に声をかけてみよう</h1>
+      </div>
+      <p class="step-info">
+        リクエストが承認されたら、実際に話しかけてみよう！<br>
+        新たな出会いが新たなアイデア、新たな人脈を創出することでしょう
+      </p>
+    </div>
+    <div class="step3-illust column">
+      <%= image_tag "/step3-image.png", size:"" %>
     </div>
   </div>
 </section>
