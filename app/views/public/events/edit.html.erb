@@ -1,5 +1,6 @@
 <section class="event-edit">
   <div class="event-edit-form">
+    <h4>イベント編集</h4>
     <div class="event-form">
       <%= form_with model: @event, method: :patch, local:true do |f| %>
         <%= render 'layouts/error', model: f.object%>
