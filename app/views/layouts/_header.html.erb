@@ -1,3 +1,4 @@
+<!--ヘッダーメニュー-->
 <nav class="navbar is-transparent">
   <div class="navbar-brand">
     <%= link_to root_path, local:true do %>
@@ -56,21 +57,22 @@
         <% end %>
       </div>
     <% elsif admin_signed_in? %>
-      <div class="navbar-start">
+      <div class="navbar-end">
         <%= link_to "Members", admin_root_path, class: "navbar-item" %>
         <%= link_to "Events", admin_events_path, class: "navbar-item" %>
         <%= link_to "Genres", admin_genres_path, class: "navbar-item" %>
         <%= link_to "Logout", destroy_admin_session_path, method: :delete, class: "navbar-item" %>
       </div>
     <% else %>
-      <div class="navbar-start">
-        <%= link_to "Sign Up", new_member_registration_path, class: "navbar-item" %>
-        <%= link_to "Log In", new_member_session_path, class: "navbar-item" %>
+      <div class="navbar-end">
+        <strong><%= link_to "Sign Up", new_member_registration_path, class: "navbar-item" %></strong>
+        <strong><%= link_to "Log In", new_member_session_path, class: "navbar-item" %></strong>
       </div>
     <% end %>
   </div>
 </nav>
 
+<!--ハンバーガーメニュー用-->
 <script>
 $(document).ready(function() {
   $(".navbar-burger").click(function() {

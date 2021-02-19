@@ -1,15 +1,12 @@
 // Place all the styles related to the public/events controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
-.events {
-  text-align: center;
+.card {
+  width: 20%;
+  margin: 10px;
 }
 
-.event-content {
-  text-align: left;
-}
-
+//イベント一覧ページ
 .events-index h4 {
   position: relative;
   padding: 1.5rem;
@@ -18,7 +15,7 @@
 
 .events-index h4:before {
   position: absolute;
-  bottom: -10px;
+  bottom: 10px;
   left: calc(50% - 30px);
   width: 60px;
   height: 5px;
@@ -43,9 +40,31 @@
   margin: 0 auto;
 }
 
-.card {
-  width: 20%;
-  margin: 10px;
+//イベント詳細ページ
+.events {
+  text-align: center;
+}
+
+.event-content {
+  display: inline-block;
+  text-align: left;
+}
+
+.event-content h4 {
+  position: relative;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.event-content h4:before {
+  position: absolute;
+  bottom: 10px;
+  left: calc(50% - 30px);
+  width: 60px;
+  height: 5px;
+  content: '';
+  border-radius: 3px;
+  background: #276DDA;
 }
 
 #feedback-card {
@@ -61,6 +80,34 @@
   margin: 0 auto;
 }
 
+//イベント編集ページ
+.event-edit {
+  text-align: center;
+}
+
+.event-edit-form {
+  display: inline-block;
+  text-align: left;
+}
+
+.event-edit-form h4 {
+  position: relative;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.event-edit-form h4:before {
+  position: absolute;
+  bottom: 10px;
+  left: calc(50% - 30px);
+  width: 60px;
+  height: 5px;
+  content: '';
+  border-radius: 3px;
+  background: #276DDA;
+}
+
+//マイイベントページ
 .new-event-btn {
   margin-top: 10px;
   margin-bottom: 20px;
@@ -133,3 +180,31 @@
   padding: 10px;
   border-radius: 10px 10px 0 0;
 }
+
+//イベント開催ページ
+.new-event h4 {
+  position: relative;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.new-event h4:before {
+  position: absolute;
+  bottom: 10px;
+  left: calc(50% - 30px);
+  width: 60px;
+  height: 5px;
+  content: '';
+  border-radius: 3px;
+  background: #276DDA;
+}
+
+.new-event {
+  text-align: center;
+}
+
+.event-form {
+  display: inline-block;
+  text-align: left;
+}
+

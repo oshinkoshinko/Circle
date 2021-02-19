@@ -34,8 +34,10 @@
             <%= link_to edit_member_path(@member), class: "button is-light is-small" do%>
               <i class="fas fa-user-cog"></i>　プロフィールを編集
             <% end %>
+            <!--投稿モーダルウインドウ-->
             <a class="button is-small is-primary new-post-btn" style="margin-left:30px;" id="show_action">
-            <i class="fas fa-plus-circle"></i>　<strong>新規投稿</strong></a>
+              <i class="fas fa-plus-circle"></i>　<strong>新規投稿</strong>
+            </a>
           <% else %>
             <%= link_to chat_path(@member), class: "button is-normal is-small" do %>
               <i class="far fa-paper-plane"></i>　メッセージを送る
@@ -78,7 +80,6 @@
                   <i class="far fa-trash-alt"></i>
                 <% end %>
               <% else %>
-                <!--<small class="request-btn" id="post_<%#= post.id %>">-->
                 <!--リクエスト時に表示-->
                 <% if post.requested_by?(current_member) %>
                   <%= link_to post_post_requests_path(post.id), method: :delete, remote: true do %>
@@ -148,6 +149,8 @@
     </div>
   <button class="modal-close is-large" aria-label="close"></button>
   </div>
+
+  <!--bulmaモーダルウインドウ用js読み込み-->
   <script async type="text/javascript" src="../js/bulma.js"></script>
   <script async type="text/javascript" src="../js/form.js"></script>
 

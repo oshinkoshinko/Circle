@@ -21,6 +21,9 @@
     <div class="timeline column">
       <h4>今日のみんなの動き</h4>
       <div class="timeline-content">
+      <% unless @posts.any? %>
+        <p>24時間以内の投稿がありません。</p>
+      <% end %>
       <% @posts.each do |post| %>
         <article class="box media" style="margin-bottom: 0px; margin-top: 0px; border-radius: 0px;">
           <figure class="media-left is-square is-48-48">

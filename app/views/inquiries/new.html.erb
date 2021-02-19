@@ -1,14 +1,22 @@
-  <div class="contact_form text-center">
-    <%= form_with model: @inquiry, local:true do |f| %>
-    <%= render 'layouts/error', model: f.object %>
+  <div class="contact">
+   <% if flash[:email] %>
+     <p id="notice">
+       <%= flash[:email] %>
+     </p>
+   <% end %>
+    <h2 style="margin-bottom: 30px;">お問い合わせ</h2>
+    <div class="contact-form">
+      <%= form_with model: @inquiry, local:true do |f| %>
+        <%= render 'layouts/error', model: f.object %>
       <h3>お名前</h3>
       <%= f.text_field :name %>
       <h3>メールアドレス</h3>
       <%= f.email_field :email %>
       <h3>お問い合わせ内容</h3>
       <%= f.text_area :message, :size=>"50x5" %>
-    <div>
-      <p><%= f.submit "送信", class: "button is-info is-small" %></p>
+      <div>
+        <p><%= f.submit "送信", class: "button is-info is-small" %></p>
+      </div>
+      <% end %>
     </div>
-    <% end %>
   </div>

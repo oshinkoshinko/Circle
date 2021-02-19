@@ -23,7 +23,7 @@
 <!--comment投稿フォーム-->
 <div id="comment-form" class="comment-form-area">
   <%= form_with model: @post_comment do |f| %>
-    <%= f.text_area :comment, placeholder: "コメントを書きましょう", :size=>"30x2" %>
+    <%= f.text_area :comment, placeholder: "コメントを書きましょう", :size=>"40x2" %>
     <!--post_idをpost_commentに渡す-->
     <%= f.hidden_field :post_id, :value => @post.id %>
     <%= f.submit "コメント", class: "button is-info is-small", style: "margin-top: 6px;" %>

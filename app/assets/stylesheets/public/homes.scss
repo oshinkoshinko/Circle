@@ -6,12 +6,19 @@
   position: relative;
 }
 
+.guest-btn {
+  text-align: center;
+  padding-top: 50px;
+}
+
+//アプリキャッチフレーズ
 .illust1 {
   animation: img_box_9955 2.7s linear infinite;
   transform-origin: 50% 50%;
   margin: 1rem 0 !important;
 }
 
+//イメージ動き
 @keyframes img_box_9955 {
   0% { transform: translateY(0) }
   33.33333% { transform: translateY(-10px) }
@@ -37,14 +44,14 @@
   margin: 1rem 0 !important;
 }
 
-.box1 {
+.about-box {
   position: absolute;
   display: block;
   width: 75%;
   height: auto;
   top: 10%;
   left: 10%;
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.5);
   padding: 10px;
   text-align: left;
   z-index: 50;
@@ -64,16 +71,152 @@
 }
 
 @media screen and (max-width: 650px) {
-　.box1 {
+　.about-box {
   position: absolute;
   display: block;
   width: 90%;
   height: auto;
   top: 20%;
   left: 10%;
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.5);
   padding: 10px;
   text-align: left;
   z-index: 50;
   }
+}
+
+//view more
+.view-more-desktop {
+  margin-top: -85px;
+  text-align: center;
+  z-index: 1000;
+  animation: img_box_9955 0.5s linear 2;
+  transform-origin: 50% 50%;
+}
+
+.view-more-mobile {
+  margin-top: 100px;
+  text-align: center;
+  z-index: 1000;
+  animation: img_box_9955 0.5s linear 2;
+  transform-origin: 50% 50%;
+}
+
+.view-more-word {
+  font-weight: bold;
+  margin-top: 35px;
+}
+
+.view-more-icon {
+  color: #F1D144;
+  font-size: 2.5em;
+  margin-top: -5px;
+}
+
+//アプリ使い方
+.service-step1 {
+  background-color: #3265CE;
+  color: #FFFFFF;
+}
+
+.service-box {
+  margin-left: 20px;
+  margin-right: 20px;
+  position: relative;
+}
+
+.how-to-title {
+  display: flex;
+  align-items: center;
+}
+
+.how-to-Eng {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.how-to-Jp {
+  font-weight: bold;
+  margin-left: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.how-to-Jp:before, .how-to-Jp:after {
+  border-top: 1px solid;
+  content: "";
+  width: 20px;
+}
+.how-to-Jp:before {
+  margin-right: 5px;
+}
+.how-to-Jp:after {
+  margin-left: 5px;
+}
+
+//step1
+.step {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.step-title {
+  font-weight: bold;
+}
+
+.step-info {
+  padding-top: 30px;
+}
+
+.step1-image02 {
+  //service-box基準
+  position: absolute;
+  top: 60%;
+  left: 70%;
+}
+
+//step2
+.service-step2 {
+  background-color: #FFFFFF;
+  color: #383838;
+}
+
+.step2-illust {
+  margin-left: 30px;
+  position: relative;
+}
+
+.step2-image02 {
+  position: absolute;
+  top: 0%;
+  left: 45%;
+}
+
+//step3
+.service-step3 {
+  background-color: #3265CE;
+  color: #FFFFFF;
+  padding-top: 50px;
+}
+
+.step3-image02 {
+  position: absolute;
+  top: 30%;
+  left: 45%;
+}
+
+//event
+.service-event {
+  background-color: #FFFFFF;
+  color: #383838;
+}
+
+.service-event-info {
+  margin-top: 30px;
+}
+
+//携帯用問い合わせボタン
+.inquiry-btn-mobile {
+  text-align: center;
 }

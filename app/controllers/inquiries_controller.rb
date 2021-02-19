@@ -9,7 +9,7 @@ class InquiriesController < ApplicationController
     if @inquiry.save
       InquiryMailer.send_mail(@inquiry).deliver
       redirect_to new_inquiry_path
-      flash[:email] = "Your message was successfully sent."
+      flash[:email] = "お問い合わせ内容が送付されました。"
     else
       render 'new'
     end
