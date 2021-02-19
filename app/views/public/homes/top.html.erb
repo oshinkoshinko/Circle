@@ -50,7 +50,13 @@
         <i class="fas fa-map-marker-alt" style="color: red;"></i>
         all activitiesでみんなの動きと位置をcheck!<br>
         あなたの近くに同じ趣味や同じ勉強をしている人がいるかも！
-      </p>
+      </p><br>
+      <div class="step-detail is-hidden-mobile">
+        <p>「あ！あの人も〇〇の勉強してる！」「あの人たちに混ざってみたいなあ...」</p><br>
+        <p>そんな風に思ったことありませんか？</p><br>
+        <p>あなたの周りにはきっかけさえあれば仲良くなれる人がたくさんいます</p>
+        <p class="step1-image02"><%= image_tag "/step1-image02.png", size:"150x100" %></p>
+      </div>
     </div>
     <div class="step1-illust column">
       <%= image_tag "/step1-image.png", size:"" %>
@@ -61,17 +67,20 @@
   <div class="service-step2 columns main">
     <div class="step2-illust column is-hidden-mobile">
       <%= image_tag "/step2-image.png", size:"250x250" %>
+      <p class="step2-image02">
+      <%= image_tag "/step2-image02.png", size:"250x250" %>
+      </p>
     </div>
     <div class="column service-box">
       <div class="step-box2">
         <h1 class="step">Step2</h1>
         <h1 class="step-title">声かけリクエストを送ろう</h1>
       </div>
-      <p class="step-info">
-        近くの人にリクエストを送って、声かけOKかcheck!<br>
-        あの人、自分と同じことしてるのに急に声かけるのはハードル高いなあ...<br>
-        Circleならボタン一つでリクエスト！
-      </p>
+      <div class="step-info">
+        <p>近くの人にリクエストを送って、声かけOKかcheck!</p><br>
+        <p>あの人、自分と同じことしてるのに急に声かけるのはハードル高いなあ...</p><br>
+        <p>Circleならボタン一つでリクエスト！</p>
+      </div>
     </div>
     <div class="step2-illust column is-hidden-desktop is-hidden-tablet">
       <%= image_tag "/step2-image.png", size:"250x300" %>
@@ -85,10 +94,13 @@
         <h1 class="step">Step3</h1>
         <h1 class="step-title">実際に声をかけてみよう</h1>
       </div>
-      <p class="step-info">
-        リクエストが承認されたら、実際に話しかけてみよう！<br>
-        新たな出会いが新たなアイデア、新たな人脈を創出することでしょう！
-      </p>
+      <div class="step-info">
+        <p>リクエストが承認されたら、実際に話しかけてみよう！</p><br>
+        <p>新たな出会いが新たなアイデア・新たな人脈を生むでしょう！</p>
+        <p class="step3-image02 is-hidden-mobile">
+          <%= image_tag "/step3-image02.png", size:"300x150" %>
+        </p>
+      </div>
     </div>
     <div class="step3-illust column">
       <%= image_tag "/step3-image.png", size:"" %>
@@ -119,6 +131,6 @@
     </div>
   </div>
 </section>
-<div class="inquiry-btn-mobile is-hidden-desltop is-hidden-tablet">
+<div class="inquiry-btn-mobile is-hidden-desktop is-hidden-tablet">
   <%= link_to "お問い合わせ", new_inquiry_path, method: :get, class: "button is-dark is-light is-rounded" %>
 </div>

@@ -122,6 +122,7 @@
 .service-box {
   margin-left: 20px;
   margin-right: 20px;
+  position: relative;
 }
 
 .how-to-title {
@@ -168,6 +169,13 @@
   padding-top: 30px;
 }
 
+.step1-image02 {
+  //service-box基準
+  position: absolute;
+  top: 60%;
+  left: 70%;
+}
+
 //step2
 .service-step2 {
   background-color: #FFFFFF;
@@ -176,12 +184,26 @@
 
 .step2-illust {
   margin-left: 30px;
+  position: relative;
+}
+
+.step2-image02 {
+  position: absolute;
+  top: 0%;
+  left: 45%;
 }
 
 //step3
 .service-step3 {
   background-color: #3265CE;
   color: #FFFFFF;
+  padding-top: 50px;
+}
+
+.step3-image02 {
+  position: absolute;
+  top: 30%;
+  left: 45%;
 }
 
 //event
