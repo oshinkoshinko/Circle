@@ -6,6 +6,11 @@
   position: relative;
 }
 
+.guest-btn {
+  text-align: center;
+  padding-top: 50px;
+}
+
 //アプリキャッチフレーズ
 .illust1 {
   animation: img_box_9955 2.7s linear infinite;
@@ -82,6 +87,7 @@
 
 //view more
 .view-more-desktop {
+  margin-top: -85px;
   text-align: center;
   z-index: 1000;
   animation: img_box_9955 0.5s linear 2;

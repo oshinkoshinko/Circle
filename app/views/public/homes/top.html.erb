@@ -1,6 +1,8 @@
 
 <% unless member_signed_in? %>
-  <%= link_to 'ゲストログイン（閲覧用）', members_guest_sign_in_path, method: :post %>
+  <div class="guest-btn">
+    <strong><%= link_to 'ゲストログイン（閲覧用）', members_guest_sign_in_path, method: :post, class: "button is-primary is-light" %></strong>
+  </div>
 <% end %>
 <!--アプリキャッチフレーズ-->
 <section id="about">
