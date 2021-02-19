@@ -1,2 +1,2 @@
 $(".follow_form").html("<%= j(render 'public/relationships/follow_btn', member: @member) %>");
-$(".follower_count").html("フォロワー数 <%= j(render 'public/relationships/follower_count', member: @member) %>");
+$(".follower_count").html("フォロワー <%= j(render 'public/relationships/follower_count', member: @member) %>");
