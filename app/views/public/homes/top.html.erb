@@ -2,7 +2,7 @@
 <% unless member_signed_in? %>
   <%= link_to 'ゲストログイン（閲覧用）', members_guest_sign_in_path, method: :post %>
 <% end %>
-
+<!--アプリキャッチフレーズ-->
 <section id="about">
   <div class="columns main">
     <div class="illust illust1 column is-5">
@@ -30,6 +30,7 @@
     <i class="fas fa-angle-down view-more-icon"></i>
   </div>
 </section>
+<!--アプリ使い方-->
 <section class="service">
   <div class="service-step1 columns main">
     <div class="column service-box">
@@ -84,11 +85,35 @@
       </div>
       <p class="step-info">
         リクエストが承認されたら、実際に話しかけてみよう！<br>
-        新たな出会いが新たなアイデア、新たな人脈を創出することでしょう
+        新たな出会いが新たなアイデア、新たな人脈を創出することでしょう！
       </p>
     </div>
     <div class="step3-illust column">
       <%= image_tag "/step3-image.png", size:"" %>
+    </div>
+  </div>
+</section>
+<!--イベント機能紹介-->
+<section class="service">
+  <div class="service-event columns main">
+    <div class="column service-box">
+      <div class="how-to-box">
+        <div class="how-to-title">
+          <h1 class="how-to-Eng">Event</h1>
+          <h1 class="how-to-Jp">イベントを楽しもう</h1></h1>
+        </div>
+      </div>
+      <p class="service-event-info">
+        好きなイベントを開催して、仲間を集めよう！<br>
+        気になるイベントに参加して、輪を広げよう！<br>
+      </p>
+      <p class="event-payment-info">
+        参加費は完全手渡し制だから、<br>
+        カードや銀行振り込みが怖い人も安心！
+      </p>
+    </div>
+    <div class="step1-illust column">
+      <%= image_tag "/event-image.png", size:"" %>
     </div>
   </div>
 </section>
