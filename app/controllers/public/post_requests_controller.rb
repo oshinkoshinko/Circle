@@ -27,18 +27,13 @@ class Public::PostRequestsController < ApplicationController
     @post = Post.find(params[:post_id])
     @post_request = current_member.post_requests.find_by(post_id: @post.id)
     @post_request.destroy
-    #@post_request.is_requested = false
-    #非同期通信保留の為、不要
+    #非同期通信保留の為
     redirect_to request.referer
   end
 
   def update
     @post_request = PostRequest.find(params[:id])
     @post_request.update(is_accepted: params[:is_accepted], is_requested: params[:is_requested])
-
-    #承認通知機能できれば付けたい
-    #@post_request.post.update_notification_request!(current_member)
-
     redirect_to request.referer
   end
 
