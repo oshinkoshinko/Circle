@@ -22,13 +22,6 @@ class Public::ChatsController < ApplicationController
     @chat = current_member.chats.new(chat_params)
     @chat.save
     @chats = Chat.where(room_id: @chat.room_id)
-    #binding.pry
-    #if @chat.save
-      #redirect_to request.referer
-    #else
-      #redirect_to request.referer
-    #end
-    #binding.pry
   end
 
   def destroy
