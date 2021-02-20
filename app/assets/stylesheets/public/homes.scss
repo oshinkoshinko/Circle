@@ -6,10 +6,36 @@
   position: relative;
 }
 
+//ゲストログイン
 .guest-btn {
   text-align: center;
   padding-top: 50px;
+  position: relative;
 }
+
+.guest-btn:hover .please {
+  display: inline;
+}
+
+.please {
+  position   : absolute;
+  display: none;
+  padding: 2px;
+  background-color: #FFE7FC;
+  opacity: 0.9;
+  top: 120%;
+  width:270px;
+  left : 0;
+  right: 0;
+  margin: 0 auto;
+  font-size: 80%;
+}
+.please:after{
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  content: "";
+}
+
 
 //アプリキャッチフレーズ
 .illust1 {
