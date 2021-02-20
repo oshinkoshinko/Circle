@@ -12,6 +12,7 @@
 .face-icon {
   float: left;
   margin-right: -50px;
+  margin-top: 10px;
   width: 40px;
 }
 
@@ -23,7 +24,7 @@
 .says {
   display: inline-block;
   position: relative;
-  margin: 0 0 0 50px;
+  margin: 10px 0 0 50px;
   padding: 10px;
   max-width: 250px;
   border-radius: 12px;
@@ -54,6 +55,7 @@
   border-radius: 12px;
   background: #30e852;
   font-size: 15px;
+  text-align: left;
 }
 
 .mycomment p:after {
