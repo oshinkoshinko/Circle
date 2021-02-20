@@ -38,9 +38,9 @@
         <% if @event.expired_at > DateTime.now %>
           <!--申し込んだ人には非表示にする-->
           <% if @event.applied_by?(current_member) %>
-            <%= link_to "キャンセル", event_event_member_path(@event.id, @event_member.id), method: :delete, "data-confirm" => "本当にキャンセルしますか？", class: "button is-warning is-small" %>
+            <%= link_to "キャンセル", event_event_member_path(@event.id, @event_member.id), method: :delete, "data-confirm" => "本当にキャンセルしますか？", class: "button is-warning is-small", style: "margin-left: 73%;"  %>
           <% else %>
-            <%= link_to "申し込む", new_event_event_member_path(@event.id), method: :get, params: {member_id: current_member.id}, class: "button is-info is-small" %>
+            <%= link_to "申し込む", new_event_event_member_path(@event.id), method: :get, params: {member_id: current_member.id}, class: "button is-info is-small", style: "margin-left: 80%;"  %>
           <% end %>
         <% end %>
       <% else %>
