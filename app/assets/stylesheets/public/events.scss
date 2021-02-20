@@ -67,6 +67,7 @@
   background: #276DDA;
 }
 
+//イベント詳細フィードバック
 #feedback-card {
   display: flexbox;
   flex-wrap: wrap;
@@ -75,9 +76,9 @@
   margin: 0 auto;
 }
 
-#feedback .card-image {
-  display: flexbox;
-  margin: 0 auto;
+.feedback-image {
+  margin-left: 37%;
+  margin-top: 10%;
 }
 
 //イベント編集ページ
