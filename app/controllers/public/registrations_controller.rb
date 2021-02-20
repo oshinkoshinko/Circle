@@ -15,8 +15,9 @@ class Public::RegistrationsController < Devise::RegistrationsController
   # end
 
   def create
-    super
-      UserNotifierMailer.send_signup_email(@member).deliver_now
+    super do
+      UserNotifierMailer.send_signup_email(@member).deliver_now if @member.persisted?
+    end
   end
   # GET /resource/edit
   # def edit
