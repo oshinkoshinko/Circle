@@ -134,7 +134,7 @@
                 <p class="control">
               <%= form_with model: @post do |f| %>
                 <%= render 'layouts/error', model: f.object%>
-                <%= f.text_area :body, :size=>"30x5" %>
+                <%= f.text_area :body, :size=>"30x5" %><br>
                 <span class="select is-normal">
                 <%= f.collection_select :genre_id, @genres, :id, :name, :include_blank => '🔍 ジャンル'  %>
                 </span><br>
