@@ -7,7 +7,7 @@
       <%= f.text_area :body, :size=>"40x3" %>
       <p><%= f.collection_select(:genre_id, @genres, :id, :name) %></p>
       <%= f.text_field :address, placeholder: "位置情報", class: "is-small" %>
-      <%= f.submit "編集する", class: "button is-light is-small" %>
+      <%= f.submit "更新する", class: "button is-light is-small" %>
     <% end %>
   </div>
 </div>

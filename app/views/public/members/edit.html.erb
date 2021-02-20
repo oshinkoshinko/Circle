@@ -1,15 +1,17 @@
-<div class="profile-edit-form">
-  <h4>編集</h4>
-  <%= form_with model: @member, local:true do |f| %>
-  <h6>アカウント名</h6>
-  <%= f.text_field :account_name %><br>
-  <h6>ひと言</h6>
-  <%= f.text_area :introduction, :size=>"50x4" %><br>
-  <%= attachment_image_tag @member, :profile_image, :fill, 60, 60, format: "jpeg", fallback: "no_image.jpg" %><br>
-  <%= f.attachment_field :profile_image, placeholder: "プロフィール画像" %><br>
-  <%= f.submit "編集", class: "button is-light is-small", style: "margin-top: 30px;" %>
-  <% end %>
-</div>
-<div class="unsubscribe-link">
-  <%= link_to "退会はこちら", members_withdraw_path, class: "button is-light is-small" %>
+<div class="profile-edit">
+  <div class="profile-edit-form">
+    <h4>編集</h4>
+    <%= form_with model: @member, local:true do |f| %>
+    <h6>アカウント名</h6>
+    <%= f.text_field :account_name %><br>
+    <h6>ひと言</h6>
+    <%= f.text_area :introduction, :size=>"40x4" %><br>
+    <%= attachment_image_tag @member, :profile_image, :fill, 60, 60, format: "jpeg", fallback: "no_image.jpg" %><br>
+    <%= f.attachment_field :profile_image, placeholder: "プロフィール画像" %><br>
+    <%= f.submit "更新する", class: "button is-light", style: "margin-top: 30px;" %>
+    <% end %>
+  </div>
+  <div class="unsubscribe-link">
+    <%= link_to "退会はこちら", members_withdraw_path, class: "button is-light is-small" %>
+  </div>
 </div>

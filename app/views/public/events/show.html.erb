@@ -46,7 +46,7 @@
       <% else %>
         <!--開催者には編集リンクを表示 イベント応募締め切り後は編集不可-->
         <% if @event.expired_at > DateTime.now %>
-          <%= link_to "編集する", edit_event_path(@event.id), method: :get, class: "button is-light is-small" %>
+          <%= link_to "編集する", edit_event_path(@event.id), method: :get, class: "button is-light" %>
         <% end %>
       <% end %>
     </div>

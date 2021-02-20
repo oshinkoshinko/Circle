@@ -1,3 +1,32 @@
 // Place all the styles related to the public/EventMembers controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+//イベント申し込みページ
+
+.apply {
+  text-align: center;
+}
+
+.apply-form {
+  display: inline-block;
+  text-align: left;
+}
+
+.apply-form h4 {
+  position: relative;
+  padding: 1.5rem;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.apply-form h4:before {
+  position: absolute;
+  bottom: 10px;
+  left: calc(50% - 30px);
+  width: 60px;
+  height: 5px;
+  content: '';
+  border-radius: 3px;
+  background: #276DDA;
+}

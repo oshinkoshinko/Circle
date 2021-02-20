@@ -166,8 +166,24 @@ a {
   position: relative;
 }
 
+//お問い合わせ
 .inquiry-btn {
   position: absolute;
   top: 30%;
   left: 80%;
+}
+
+//入力フォーム
+textarea {
+  font-size: 16px;
+}
+
+//text_field
+input {
+  font-size: 16px;
+}
+
+//select_tag
+select {
+  font-size: 16px;
 }
