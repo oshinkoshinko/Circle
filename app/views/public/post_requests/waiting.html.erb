@@ -4,10 +4,10 @@
     <div class="requested-content">
     <% @requested_posts.each do |requested| %>
       <article class="box media" style="margin-bottom: 0px; margin-top: 0px;">
-        <figure class="media-left is-square is-48-48">
+        <figure class="media-left is-square is-48-48" style="width: 15%;">
           <p class="image">
             <%= link_to member_path(requested.member.id) do %>
-              <%= attachment_image_tag requested.member, :profile_image, :fill, 30, 30, format: 'jpeg', fallback: "no_image.jpg", size: "30x30", style: "border-radius: 50%;" %><br>
+              <%= attachment_image_tag requested.member, :profile_image, :fill, 65, 65, format: 'jpeg', fallback: "no_image.jpg", size: "30x30", style: "border-radius: 50%;" %><br>
             <% end %>
           </p>
         </figure>
@@ -18,10 +18,7 @@
           </div>
           <%= button_to post_post_requests_path(requested.post.id), method: :patch, remote: true, params: {id: requested.id, is_accepted: true, is_requested: true} do %>
             <button class="button is-primary is-small">
-              <span class="icon">
-                <i class="far fa-handshake"></i>
-              </span>
-              <span>　承認する</span>
+              <i class="far fa-handshake"></i>　承認する
             </button>
           <% end %>
         </div>
@@ -37,10 +34,10 @@
     <div class="accepted-content">
     <% @accept_posts.each do |accept| %>
       <article class="box media" style="margin-bottom: 0px; margin-top: 0px;">
-        <figure class="media-left is-square is-48-48">
+        <figure class="media-left is-square is-48-48" style="width: 15%;">
           <p class="image">
             <%= link_to member_path(accept.member.id) do %>
-              <%= attachment_image_tag accept.member, :profile_image, :fill, 30, 30, format: 'jpeg', fallback: "no_image.jpg", size: "30x30", style: "border-radius: 50%;" %><br>
+              <%= attachment_image_tag accept.member, :profile_image, :fill, 65, 65, format: 'jpeg', fallback: "no_image.jpg", size: "30x30", style: "border-radius: 50%;" %><br>
             <% end %>
           </p>
         </figure>
@@ -51,10 +48,7 @@
           </div>
           <%= button_to post_post_requests_path(accept.post.id), method: :patch, remote: true, params: {id: accept.id, is_accepted: false, is_requested: true} do %>
             <button class="button is-warning is-small">
-              <span class="icon">
-                <i class="fas fa-handshake-slash"></i>
-              </span>
-              <span>　承認を取り消す</span>
+                <i class="fas fa-handshake-slash"></i>　承認を取り消す
             </button>
           <% end %>
         </div>
@@ -70,10 +64,10 @@
     <div class="requesting-content">
     <% @requesting_posts.each do |requesting| %>
       <article class="box media" style="margin-bottom: 0px; margin-top: 0px;">
-        <figure class="media-left is-square is-48-48">
+        <figure class="media-left is-square is-48-48" style="width: 15%;">
           <p class="image">
             <%= link_to member_path(requesting.post.member.id) do %>
-              <%= attachment_image_tag requesting.post.member, :profile_image, :fill, 30, 30, format: 'jpeg', fallback: "no_image.jpg", size: "30x30", style: "border-radius: 50%;"  %><br>
+              <%= attachment_image_tag requesting.post.member, :profile_image, :fill, 65, 65, format: 'jpeg', fallback: "no_image.jpg", size: "30x30", style: "border-radius: 50%;"  %><br>
             <% end %>
           </p>
         </figure>
