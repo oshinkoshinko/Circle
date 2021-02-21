@@ -263,6 +263,9 @@ ja:
         unconfirmed_email: 未確認Eメール
         unlock_token: ロック解除用トークン
         updated_at: 更新日
+        # 追加分
+        name: 名前
+        account_name: アカウント名
     models:
       member: ユーザー
   devise:

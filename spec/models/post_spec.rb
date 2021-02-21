@@ -14,7 +14,7 @@ describe Post do
       post.valid?
       expect(post.errors[:address]).to include("を入力してください")
     end
-    it " ジャンルを選択していない場合は登録できないこと" do
+    it " ジャンルがない場合は登録できないこと" do
       post = build(:post, genre_id:"")
       post.valid?
       expect(post.errors[:genre_id]).to include("を入力してください")
