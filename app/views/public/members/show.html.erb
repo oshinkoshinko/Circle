@@ -62,7 +62,7 @@
         </figure>
         <div class="media-content">
           <div class="content">
-            <p><%= post.body %><br>
+            <p><%= safe_join(post.body.split("\n"),tag(:br)) %><br>
               <i class="fas fa-map-marker-alt"></i>
               <small><%= post.address %></small><br>
               <i class="fas fa-tags"></i>
