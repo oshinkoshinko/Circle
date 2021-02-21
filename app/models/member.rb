@@ -20,7 +20,7 @@ class Member < ApplicationRecord
   has_many :passive_notifications, class_name: 'Notification', foreign_key: 'visited_id', dependent: :destroy
 
   validates :name, presence: true
-  validates :account_name, presence: true
+  validates :account_name, presence: true, uniqueness: true
   validates :password_confirmation, presence: true, on: :create
 
   def follow(member_id)
