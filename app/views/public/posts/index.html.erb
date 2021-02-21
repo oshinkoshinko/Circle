@@ -20,6 +20,12 @@
   <div class="columns is-desktop">
     <div class="timeline column">
       <h4>今日のみんなの動き</h4>
+      <!--地図へのアンカーリンク(携帯のみ)-->
+      <p class="map-anchor button is-rounded is-hidden-tablet">
+        <%= link_to "#map" do %>
+          <i class="fas fa-chevron-circle-down"></i>Map
+        <% end %>
+      </p>
       <div class="timeline-content">
       <% unless @posts.any? %>
         <p>24時間以内の投稿がありません。</p>
