@@ -21,7 +21,7 @@ class Member < ApplicationRecord
 
   validates :name, presence: true
   validates :account_name, presence: true
-  validates :password_confirmation, presence: true
+  validates :password_confirmation, presence: true, on: :create
 
   def follow(member_id)
     follower.create(followed_id: member_id)

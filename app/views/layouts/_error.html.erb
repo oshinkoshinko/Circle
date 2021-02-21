@@ -1,6 +1,8 @@
 <% if model.errors.any? %>
-  ※<%= model.errors.count %>件の未入力箇所があります。<br>
-  <% model.errors.full_messages.each do |message| %>
-    <%= message %><br>
-  <% end %>
+  <div class="error-alert">
+    ※<%= model.errors.count %>件の未入力箇所があります。<br>
+    <% model.errors.full_messages.each do |message| %>
+      <%= message %><br>
+    <% end %>
+  </div>
 <% end %>
