@@ -12,22 +12,22 @@ ja:
 ja:
   activerecord:
     models:
-      post: 投稿
+      post: "投稿"
     attributes:
       post:
-        body: 投稿内容
-        address: 場所
-        genre: ジャンル
+        body: "投稿内容"
+        address: "場所"
+        genre: "ジャンル"
 ja:
   activerecord:
     models:
-      event: イベント
+      event: "イベント"
     attributes:
       event:
-        name: イベント名
-        content: イベント内容
-        place: 開催地
-        fee: 参加費
+        name: "イベント名"
+        content: "イベント内容"
+        place: "開催地"
+        fee: "参加費"
 
 ja:
   activerecord:
@@ -266,6 +266,17 @@ ja:
         # 追加分
         name: 名前
         account_name: アカウント名
+      post:
+        body: 投稿内容
+        address: 場所
+        genre: ジャンル
+      event:
+        name: イベント名
+        content: イベント内容
+        place: 開催地
+        fee: 参加費
+      event_member:
+        feedback: フィードバック
     models:
       member: ユーザー
   devise:

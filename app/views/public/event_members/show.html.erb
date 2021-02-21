@@ -14,6 +14,7 @@
     <div class="feedback-form">
       <h4>フィードバック入力フォーム</h4>
       <%= form_with url: event_event_member_path, model: @event_member, method: :patch, local:true do |f| %>
+      <%= render 'layouts/error', model: f.object%>
         <%= f.text_area :feedback, :size=>"40x3" %><br>
         <!--自然言語処理でフィードバックからネガポジ判定予定-->
         <%= f.submit "送信", class: "button is-info", style: "margin-left: 80%;" %>

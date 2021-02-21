@@ -20,8 +20,12 @@ class Public::EventMembersController < ApplicationController
 
   def update
     @event_member = EventMember.find(params[:id])
-    @event_member.update(event_member_params)
-    redirect_to events_myevent_path
+    if @event_member.update(event_member_params)
+      redirect_to event_path(@event_member.event_id)
+    else
+      @event = Event.find(params[:event_id])
+      render 'show'
+    end
   end
 
   def destroy
