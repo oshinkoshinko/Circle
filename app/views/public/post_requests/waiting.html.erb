@@ -95,7 +95,7 @@
                 <% if requesting.post.post_requests.find_by(member: current_member).is_accepted? %>
                   <strong>承認されました!</strong><br>
                   <%= link_to chat_path(requesting.post.member), class: "button is-info is-small" do %>
-                    <i class="far fa-paper-plane">　メッセージを送ろう</i>
+                    <i class="far fa-paper-plane"></i>　メッセージを送ろう
                   <% end %>
                 <% else %>
                   承認待ち...
