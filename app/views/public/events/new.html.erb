@@ -4,15 +4,15 @@
     <%= form_with model: @event, local:true do |f| %>
       <%= render 'layouts/error', model: f.object%>
       <%= f.label :name, "イベント名" %><br>
-      <%= f.text_field :name %><br>
+      <%= f.text_field :name, :size=>"40x1" %><br>
       <%= f.label :started_at, "開催日時" %><br>
       <%= f.datetime_select :started_at %><br>
       <%= f.label :finished_at, "終了日時" %><br>
       <%= f.datetime_select :finished_at %><br>
       <%= f.label :content, "イベント内容" %><br>
-      <%= f.text_area :content %><br>
+      <%= f.text_area :content, :size=>"40x3" %><br>
       <%= f.label :place, "場所" %><br>
-      <%= f.text_field :place %><br>
+      <%= f.text_field :place, :size=>"40x1" %><br>
       <%= f.label :genre_id, "ジャンル" %><br>
       <%= f.collection_select(:genre_id, @genres, :id, :name) %><br>
       <%= f.label :fee, "参加費" %><br>
