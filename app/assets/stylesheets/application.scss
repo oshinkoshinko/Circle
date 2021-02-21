@@ -68,7 +68,7 @@ footer {
 }
 
 .main {
-  font-family: "Noto Sans JP",Roboto,"Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;
+  font-family: "Noto Sans JP",Roboto,"Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN","Hiragino Sans","Font Awesome 5 Free",Meiryo,sans-serif;
   letter-spacing: 1px;
   flex: 1;
   margin-top: 60px;
@@ -166,8 +166,80 @@ a {
   position: relative;
 }
 
+//お問い合わせ
 .inquiry-btn {
   position: absolute;
   top: 30%;
   left: 80%;
+}
+
+//入力フォーム
+textarea {
+  font-size: 16px;
+}
+
+//text_field
+input {
+  font-size: 16px;
+}
+
+//select_tag
+select {
+  font-size: 16px;
+}
+
+//アカウント登録
+.signup {
+  text-align: center;
+}
+
+.signup-form {
+  display: inline-block;
+  text-align: left;
+}
+
+.signup-form h4 {
+  position: relative;
+  padding: 1.5rem;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.signup-form h4:before {
+  position: absolute;
+  bottom: 10px;
+  left: calc(50% - 30px);
+  width: 60px;
+  height: 5px;
+  content: '';
+  border-radius: 3px;
+  background: #276DDA;
+}
+
+//ログイン
+.login {
+  text-align: center;
+}
+
+.login-form {
+  display: inline-block;
+  text-align: left;
+}
+
+.login-form h4 {
+  position: relative;
+  padding: 1.5rem;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.login-form h4:before {
+  position: absolute;
+  bottom: 10px;
+  left: calc(50% - 30px);
+  width: 60px;
+  height: 5px;
+  content: '';
+  border-radius: 3px;
+  background: #276DDA;
 }

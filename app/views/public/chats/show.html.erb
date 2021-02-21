@@ -9,7 +9,7 @@
   <div class="message-form">
     <%= form_with model: @chat do |f| %>
     <%= render 'layouts/error', model: f.object %>
-      <%= f.text_area :message, :size=>"40x2" %>
+      <%= f.text_area :message, :size=>"40x3", :width=>"100%" %>
       <%= f.hidden_field :room_id %>
       <%= f.button :type => "submit", class: "button" do %>
         <i class="fas fa-paper-plane"></i>

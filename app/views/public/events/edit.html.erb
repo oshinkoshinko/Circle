@@ -28,11 +28,11 @@
         <%= f.attachment_field :event_image, placeholder: "イベントイメージ" %><br>
         <%= f.label :expired_at, "応募締切日時" %><br>
         <%= f.datetime_select :expired_at %><br>
-        <%= f.submit "更新", class: "button is-primary is-small" %>
+        <%= f.submit "更新する", class: "button is-primary", style: "margin-top: 30px; margin-left: 73%;" %>
       <% end %>
     </div>
     <div class="event-destroy-btn">
-      <%= link_to "イベントを中止する", event_path(@event), "data-confirm" => "本当に中止しますか？", method: :delete, class: "button is-warning is-small" %>
+      <%= link_to "中止する", event_path(@event), "data-confirm" => "本当に中止しますか？", method: :delete, class: "button is-warning", style: "margin-top: 30px; margin-left: 73%;"  %>
     </div>
   </div>
 </section>

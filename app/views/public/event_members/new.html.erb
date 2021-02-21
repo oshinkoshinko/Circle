@@ -1,5 +1,6 @@
-<section class="Apply-form">
-  <h4>申し込みフォーム</h4>
+<div class="apply">
+  <div class="apply-form">
+    <h4>申し込みフォーム</h4>
     <div class="apply-detail">
       イベント名　　<%= @event.name %><br>
       開催日時　　　<%= @event.started_at.strftime("%Y年%-m月%-d日 %H時%M分") %><br>
@@ -16,4 +17,5 @@
         <%= f.submit "確定", class: "button is-info is-small" %>
       <% end %>
     </div>
-</section>
+  </div>
+</div>

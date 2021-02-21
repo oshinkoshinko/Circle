@@ -13,9 +13,9 @@
       <h3>メールアドレス</h3>
       <%= f.email_field :email %>
       <h3>お問い合わせ内容</h3>
-      <%= f.text_area :message, :size=>"50x5" %>
+      <%= f.text_area :message, :size=>"40x5" %>
       <div>
-        <p><%= f.submit "送信", class: "button is-info is-small" %></p>
+        <p><%= f.submit "送信", class: "button is-info", style: "margin-top: 30px; margin-left: 80%;"  %></p>
       </div>
       <% end %>
     </div>

@@ -24,6 +24,33 @@
   margin-top: 200px;
 }
 
+.profile-edit {
+  text-align: center;
+}
+
+.profile-edit-form {
+  display: inline-block;
+  text-align: left;
+}
+
+.profile-edit-form h4 {
+  position: relative;
+  padding: 1.5rem;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.profile-edit-form h4:before {
+  position: absolute;
+  bottom: 10px;
+  left: calc(50% - 30px);
+  width: 60px;
+  height: 5px;
+  content: '';
+  border-radius: 3px;
+  background: #276DDA;
+}
+
 //退会ページ
 .unsubscribe-form {
   text-align: center;

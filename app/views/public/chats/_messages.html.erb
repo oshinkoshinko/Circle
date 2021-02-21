@@ -2,7 +2,7 @@
   <% chats.each do |chat| %>
     <% if chat.member_id == current_member.id %>
       <div class="chat-sender">
-        <div class="mycomment"><p><%= chat.message %></p></div>
+        <div class="mycomment"><p><%= safe_join(chat.message.split("\n"),tag(:br)) %></p></div>
       </div>
     <% else %>
       <div class="chat-receiver">
@@ -12,7 +12,7 @@
           <% end %>
         </div>
         <div class="chatting">
-          <div class="says"><p><%= chat.message %></p></div>
+          <div class="says"><p><%= safe_join(chat.message.split("\n"),tag(:br)) %></p></div>
         </div>
       </div>
     <% end %>
