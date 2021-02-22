@@ -7,7 +7,7 @@ class Public::PostsController < ApplicationController
     @genres = Genre.all
     #24時間以内の投稿のみ表示
     @posts = @q.result(distinct: true).order("created_at DESC").where(created_at: 24.hours.ago..Time.now)
-  end
+ end
 
  def create
     @post = Post.new(post_params)

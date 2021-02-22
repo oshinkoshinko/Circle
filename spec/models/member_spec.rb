@@ -14,6 +14,24 @@ describe Member do
       member.valid?
       expect(member.errors[:account_name]).to include("を入力してください")
     end
+    it "重複したアカウント名は登録できないこと" do
+      Member.create(
+        name: "テスト次郎",
+        account_name: "テス太",
+        email: "test2@test.com",
+        password: "test2test2",
+        password_confirmation: "test2test2"
+        )
+      member = Member.new(
+        name: "テスト次郎",
+        account_name: "テス太",
+        email: "test2@test.com",
+        password: "test2test2",
+        password_confirmation: "test2test2"
+        )
+      member.valid?
+      expect(member.errors[:account_name]).to include("はすでに存在します")
+    end
     it " メールアドレスがない場合は登録できないこと" do
       member = build(:member, email:"")
       member.valid?
