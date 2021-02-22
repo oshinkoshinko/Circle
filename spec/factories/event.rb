@@ -8,8 +8,8 @@ FactoryBot.define do
     started_at { "2021-02-10 00:00:00"}
     finished_at { "2021-02-11 00:00:00" }
     expired_at { "2021-02-01 00:00:00" }
-    # association :owner
-    # association :genre
+    association :member
+    association :genre
   end
 
 end
