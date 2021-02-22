@@ -2,14 +2,14 @@ FactoryBot.define do
 
   factory :event do
     name  {"チーム開発"}
-    content {"チームでECサイトを作ろう"}
+    content {"チームでECサイトを作ろう！"}
     place {"新宿"}
     fee {"100"}
-    genre_id { 1 }
-    member_id { 2 }
-    started_at { 202101010000 }
-    finished_at { 202101010000 }
-    expired_at { 202101010000 }
+    started_at { "2021-02-10 00:00:00"}
+    finished_at { "2021-02-11 00:00:00" }
+    expired_at { "2021-02-01 00:00:00" }
+    # association :owner
+    # association :genre
   end
 
 end

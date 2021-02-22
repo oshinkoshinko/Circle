@@ -2,8 +2,9 @@ FactoryBot.define do
 
   factory :member do
     name  {"テスト太郎"}
-    account_name  {"テス太"}
-    email {"test@test.com"}
+    #sequenceでオブジェクト作成ごとにカウンタを増やし、ユニークにする
+    sequence(:account_name)  { |n| "テス太#{n}"}
+    sequence(:email) { |n| "test#{n}@test.com"}
     password {"testtest"}
     password_confirmation {"testtest"}
   end
