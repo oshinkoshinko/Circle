@@ -275,6 +275,7 @@ ja:
         content: イベント内容
         place: 開催地
         fee: 参加費
+        started_at: 同じ開催日時
       event_member:
         feedback: フィードバック
     models:

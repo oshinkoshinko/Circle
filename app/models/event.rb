@@ -7,7 +7,7 @@ class Event < ApplicationRecord
   validates :content, presence: true
   validates :place, presence: true
   validates :fee, presence: true
-  validates :started_at, presence: true
+  validates :started_at, presence: true, uniqueness: { scope: :member_id }
   validates :finished_at, presence: true
   validates :expired_at, presence: true
   validates :genre_id, presence: true
