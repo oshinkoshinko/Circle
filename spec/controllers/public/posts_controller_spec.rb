@@ -2,8 +2,9 @@ require 'rails_helper'
 
 RSpec.describe Public::PostsController, type: :controller do
   before do
+    @genre = create(:genre)
     @member = FactoryBot.create(:member)
-    @post = FactoryBot.create(:post)
+    @post = FactoryBot.create(:post, {member: @member, genre: @genre})
   end
 
   describe "#index" do
@@ -56,7 +57,7 @@ RSpec.describe Public::PostsController, type: :controller do
               member_id: 1,
             }
           }
-        expect(response).to redirect_to request.referer
+        expect(response).to(redirect_to(member_path(@member)))
       end
     end
     context "未登録ユーザとして" do
@@ -138,20 +139,14 @@ RSpec.describe Public::PostsController, type: :controller do
       it "正常に投稿を削除できるか" do
         sign_in @member
         expect {
-          delete :destroy, params: {id: @post.id}
-        }.to change(@member.post, :count).by(-1)
+          delete :destroy, {params: {id: @post.id}}
+        }.to change(@member.posts, :count).by(-1)
       end
-      it "更新後にマイページにリダイレクトされているか" do
+      it "削除後に現在のページにリダイレクトされているか" do
         sign_in @member
-        post_params = {body: "更新しました"}
-        patch :update, params: {id: @post.id, post: post_params}
-        expect(response).to redirect_to member_path(@member.id)
-      end
-      it "フォームが空白の時に更新できなくなっているか" do
-        sign_in @member
-        post_params = {body: ""}
-        patch :update, params: {id: @post.id, post: post_params}
-        expect(@post.reload.body).to eq "railsを勉強します！"
+        delete :destroy, {params: {id: @post.id}}
+        expect(response).to(redirect_to(member_path(@member)))
+#        expect(response).to redirect_to  allow(controller.request).to receive(:referer).and_return("bla")
       end
     end
     context "未登録ユーザとして" do
