@@ -260,26 +260,30 @@
   height: 50px;
 }
 
-//イベント写真未登録
+//マイイベント　イベント写真未登録
 .join-event-list img.attachment.event.event_image.fallback {
   width: 120px;
   height: 80px;
+  padding: 5px;
 }
 
 .host-event-list img.attachment.event.event_image.fallback {
   width: 120px;
   height: 80px;
+  padding: 5px;
 }
 
-//イベント写真登録
+//マイイベント　イベント写真登録
 .join-event-list img.attachment.event.event_image {
   width: 120px;
   height: 80px;
+  padding: 5px;
 }
 
 .host-event-list img.attachment.event.event_image {
   width: 120px;
   height: 80px;
+  padding: 5px;
 }
 
 //イベント詳細　イベント写真未登録
