@@ -2,6 +2,7 @@
   <div class="profile-edit-form">
     <h4>編集</h4>
     <%= form_with model: @member, local:true do |f| %>
+    <%= render 'layouts/error', model: f.object %>
     <h6>アカウント名</h6>
     <%= f.text_field :account_name %><br>
     <h6>ひと言</h6>

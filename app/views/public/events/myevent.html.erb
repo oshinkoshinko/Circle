@@ -44,7 +44,11 @@
             終了日時：<%= joined_event.event.finished_at.strftime("%Y年%-m月%-d日 %H時%M分") %><br>
           </small>
           <div>
-          <%= link_to "評価する", event_event_member_path(joined_event.event_id, joined_event.id), method: :get, class: "button is-info is-small" %>
+          <% if joined_event.feedback == nil %>
+            <%= link_to "評価する", event_event_member_path(joined_event.event_id, joined_event.id), method: :get, class: "button is-info is-small" %>
+          <% else %>
+            <%= link_to "評価を編集する", event_event_member_path(joined_event.event_id, joined_event.id), method: :get, class: "button is-light is-small" %>
+          <% end %>
           </div>
         </div>
       </article>

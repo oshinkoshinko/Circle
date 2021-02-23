@@ -8,6 +8,7 @@ class Post < ApplicationRecord
 
   validates :body, presence: true
   validates :address, presence: true
+  validates :genre_id, presence: true
 
   #Google map表示用 経度緯度取得
   geocoded_by :address
