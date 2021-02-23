@@ -1,7 +1,7 @@
   <% post_comments.each do |post_comment| %>
     <article class="media">
     <%= link_to member_path(post_comment.member.id) do %>
-    <figure class="media-left" style="width: 40%;">
+    <figure class="media-left" style="width: 80%;">
       <p class="image">
         <%= attachment_image_tag post_comment.member, :profile_image, :fill, 50, 50, format: 'jpeg', fallback: "no_image.jpg", size:"30x30", style: "border-radius: 50%;" %>
       </p>
