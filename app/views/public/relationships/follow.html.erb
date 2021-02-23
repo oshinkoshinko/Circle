@@ -6,7 +6,7 @@
           <article class="box media" style="margin: 0px -12px 0px; border-radius: 0px;">
             <figure class="media-left is-square is-48-48">
               <%= link_to member_path(member) do %>
-                <%= attachment_image_tag member, :profile_image, :fill, 30, 30, fallback: "no_image.jpg", size: "30x30", style: "border-radius: 50%;" %>
+                <%= attachment_image_tag member, :profile_image, :fill, 100, 100, fallback: "no_image.jpg", size: "30x30", style: "border-radius: 50%;" %>
               <% end %>
             </figure>
             <div class="media-content">

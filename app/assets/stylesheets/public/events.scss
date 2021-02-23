@@ -251,11 +251,33 @@
 //イベント詳細ページ未登録プロフィール写真
 .events img.attachment.member.profile_image.fallback {
   width: 30px;
-  haight: 30px;
+  height: 30px;
 }
 
 //イベント詳細ページ登録プロフィール写真
 .feedback-list img.attachment.member.profile_image.fallback {
   width: 50px;
-  haight: 50px;
+  height: 50px;
+}
+
+//イベント写真未登録
+.join-event-list img.attachment.event.event_image.fallback {
+  width: 120px;
+  height: 80px;
+}
+
+.host-event-list img.attachment.event.event_image.fallback {
+  width: 120px;
+  height: 80px;
+}
+
+//イベント写真登録
+.join-event-list img.attachment.event.event_image {
+  width: 120px;
+  height: 80px;
+}
+
+.host-event-list img.attachment.event.event_image {
+  width: 120px;
+  height: 80px;
 }

@@ -4,7 +4,7 @@
     <figure class="media-left is-48-48">
       <p class="image">
         <%= link_to member_path(@post.member.id) do %>
-          <%= attachment_image_tag @post.member, :profile_image, :fill, 60, 60, format: 'jpeg', fallback: "no-prof-image.png", style: "border-radius: 50%;" %>
+          <%= attachment_image_tag @post.member, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no-prof-image.png", style: "border-radius: 50%;" %>
         <% end %>
       </p>
     </figure>

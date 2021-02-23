@@ -1,4 +1,5 @@
 <section class="events-index">
+  <!--検索ウインドウ-->
   <div class="search-form">
     <div class="genre-search-form field">
       <p class="control">
@@ -26,9 +27,9 @@
       <% if new_event.expired_at > DateTime.now %>
         <div class="card">
           <div class="card-image">
-            <figure class="image is-4by3">
+            <figure class="image">
               <%= link_to event_path(new_event), local:true do %>
-                <%= attachment_image_tag new_event, :event_image, :fill, 50, 25, format: "jpeg", fallback: "event.png", size:'50x25' %>
+                <%= attachment_image_tag new_event, :event_image, :fill, 500, 500, format: "jpeg", fallback: "event.png" %>
               <% end %>
             </figure>
           </div>
@@ -37,7 +38,7 @@
               <div class="media-left">
                 <figure class="image is-48x48 is-square">
                   <%= link_to member_path(new_event.member.id), local:true do %>
-                    <%= attachment_image_tag new_event.member, :profile_image, :fill, 50, 50, format: "jpeg", fallback: "no-prof-image.png", size:'50x50', style: "border-radius: 50%;" %>
+                    <%= attachment_image_tag new_event.member, :profile_image, :fill, 50, 50, format: "jpeg", fallback: "no-prof-image.png", style: "border-radius: 50%;" %>
                   <% end %>
                 </figure>
               </div>
@@ -64,7 +65,7 @@
           <div class="card-image">
             <figure class="image is-4by3">
               <%= link_to event_path(finished_event), local:true do %>
-                <%= attachment_image_tag finished_event, :event_image, :fill, 50, 25, format: "jpeg", fallback: "event.png", size:'50x25' %>
+                <%= attachment_image_tag finished_event, :event_image, :fill, 500, 500, format: "jpeg", fallback: "event.png" %>
               <% end %>
             </figure>
           </div>
@@ -73,7 +74,7 @@
               <div class="media-left">
                 <figure class="image is-48x48 is-square">
                   <%= link_to member_path(finished_event.member.id), local:true do %>
-                    <%= attachment_image_tag finished_event.member, :profile_image, :fill, 50, 50, format: "jpeg", fallback: "no-prof-image.png", size:'50x50', style: "border-radius: 50%;" %>
+                    <%= attachment_image_tag finished_event.member, :profile_image, :fill, 50, 50, format: "jpeg", fallback: "no-prof-image.png", style: "border-radius: 50%;" %>
                   <% end %>
                 </figure>
               </div>

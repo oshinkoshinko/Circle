@@ -74,17 +74,29 @@
   //会員詳細ページ 未登録プロフィール写真
   .prof-image img.attachment.member.profile_image.fallback {
     width: 100px;
-    haight: 100px;
+    height: 100px;
   }
 
   //会員詳細ページ タイムライン 未登録プロフィール写真
   .timeline img.attachment.member.profile_image.fallback {
     width: 50px;
-    haight: 50px;
+    height: 50px;
   }
 
   //会員詳細ページ タイムライン 登録プロフィール写真
   .timeline img.attachment.member.profile_image {
     width: 50px;
-    haight: 50px;
+    height: 50px;
+  }
+
+  //会員編集ページ 登録プロフィール写真
+  .profile-edit img.attachment.member.profile_image {
+    width: 100px;
+    height: 100px;
+  }
+
+  //会員編集ページ 登録プロフィール写真
+  .profile-edit img.attachment.member.profile_image.fallback {
+    width: 100px;
+    height: 100px;
   }
