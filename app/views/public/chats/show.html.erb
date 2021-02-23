@@ -1,15 +1,22 @@
-<div class="chat-to">
+<!--PC用チャット相手名-->
+<div class="chat-to is-hidden-mobile">
   <!--rooms_helperでチャット相手の定義付け-->
   <h4><%= opponent_member_name(@room) %>さんとのチャットルーム</h4>
 </div>
+<!--携帯用チャット相手名-->
+<div class="chat-to is-hidden-tablet is-hidden-desktop">
+  <small style="font-size: 10px;"><%= opponent_member_name(@room) %>さんとのチャットルーム</small>
+</div>
+<!--メッセージ本文-->
 <div id="message">
   <%= render 'public/chats/messages', chats: @chats %>
 </div>
+<!--メッセージフォーム-->
 <div class="message-area">
   <div class="message-form">
     <%= form_with model: @chat do |f| %>
     <%= render 'layouts/error', model: f.object %>
-      <%= f.text_area :message, :size=>"40x3", :width=>"100%" %>
+      <%= f.text_area :message, :size=>"40x2", :width=>"100%" %>
       <%= f.hidden_field :room_id %>
       <%= f.button :type => "submit", class: "button" do %>
         <i class="fas fa-paper-plane"></i>
