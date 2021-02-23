@@ -43,7 +43,7 @@ class Public::PostsController < ApplicationController
       redirect_to member_path(current_member)
     end
     #非同期通信
-    #@posts = Post.where(member_id: current_member.id).order("created_at DESC")
+    # @posts = Post.where(member_id: current_member.id).order("created_at DESC")
   end
 
   private

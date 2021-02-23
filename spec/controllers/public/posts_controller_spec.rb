@@ -34,7 +34,6 @@ RSpec.describe Public::PostsController, type: :controller do
   describe "#create" do
     context "認証済みのユーザーとして" do
       it "投稿できるか" do
-        # post_params = FactoryBot.attributes_for(:post)
         sign_in @member
         expect {
           post :create, params: {
@@ -98,7 +97,6 @@ RSpec.describe Public::PostsController, type: :controller do
   describe "#update" do
     context "認証済みのユーザーとして" do
       it "正常に更新できるか" do
-        # post_params = FactoryBot.attributes_for(:post)
         sign_in @member
         post_params = {body: "更新しました"}
         patch :update, params: {id: @post.id, post: post_params}
@@ -146,16 +144,15 @@ RSpec.describe Public::PostsController, type: :controller do
         sign_in @member
         delete :destroy, {params: {id: @post.id}}
         expect(response).to(redirect_to(member_path(@member)))
-#        expect(response).to redirect_to  allow(controller.request).to receive(:referer).and_return("bla")
       end
     end
     context "未登録ユーザとして" do
       it "302レスポンスを返すか" do
-        get :edit, params: {id: @post.id}
+        delete :destroy, params: {id: @post.id}
         expect(response).to have_http_status "302"
       end
       it "サインイン画面にリダイレクトするか" do
-        get :edit, params: {id: @post.id}
+        delete :destroy, params: {id: @post.id}
         expect(response).to redirect_to "/members/sign_in"
       end
     end
