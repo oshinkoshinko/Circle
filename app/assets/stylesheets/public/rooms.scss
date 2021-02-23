@@ -17,3 +17,15 @@
   height: 500px;
   overflow: scroll;
 }
+
+//未登録プロフィール写真
+.chat-list img.attachment.member.profile_image.fallback {
+  width: 50px;
+  haight: 50px;
+}
+
+//登録プロフィール写真
+.chat-list img.attachment.member.profile_image {
+  width: 50px;
+  haight: 50px;
+}

@@ -3,7 +3,7 @@
     <h4>イベント詳細</h4>
     <div class="event-info">
       <%= link_to member_path(@event.member.id) do %>
-        <%= attachment_image_tag @event.member, :profile_image, :fill, 30, 30, format: 'jpeg', fallback: "no_image.jpg", size:"30x30", style: "border-radius: 50%;" %>
+        <%= attachment_image_tag @event.member, :profile_image, :fill, 30, 30, format: 'jpeg', fallback: "no-prof-image.png", size:"30x30", style: "border-radius: 50%;" %>
         <%= @event.member.account_name %>
       <% end %>さんのイベント<br>
       <div class="join-members">
@@ -14,7 +14,7 @@
         <% end %>
         <% @event_members.each do |event_member| %>
           <%= link_to member_path(event_member.member), local:true do %>
-            <%= attachment_image_tag event_member.member, :profile_image, :fill, 30, 30, format: 'jpeg', fallback: "no_image.jpg", size:"30x30", style: "border-radius: 50%;" %>
+            <%= attachment_image_tag event_member.member, :profile_image, :fill, 30, 30, format: 'jpeg', fallback: "no-prof-image.png", size:"30x30", style: "border-radius: 50%;" %>
           <% end %>
         <% end %><br>
       </div>
@@ -64,7 +64,7 @@
         <div class="card">
           <div class="card-image">
             <%= link_to member_path(event_member.member), local:true do %>
-              <p class="feedback-image"><%= attachment_image_tag event_member.member, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg", size:"50x25", style: "border-radius: 50%;" %></p>
+              <p class="feedback-image"><%= attachment_image_tag event_member.member, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no-prof-image.png", size:"50x50", style: "border-radius: 50%;" %></p>
             <% end %>
           </div>
           <div class="card-content">

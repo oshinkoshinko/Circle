@@ -8,7 +8,7 @@
       <div class="chat-receiver">
         <div class="face-icon">
           <%= link_to member_path(chat.member) do %>
-            <%= attachment_image_tag chat.member, :profile_image, :fill, 30, 30, fallback: "no_image.jpg", size:"30x30", style: "border-radius: 50%;" %>
+            <%= attachment_image_tag chat.member, :profile_image, :fill, 30, 30, fallback: "no-prof-image.png", size:"30x30", style: "border-radius: 50%;" %>
           <% end %>
         </div>
         <div class="chatting">

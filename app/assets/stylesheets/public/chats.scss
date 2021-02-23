@@ -85,3 +85,15 @@
   overflow: scroll;
   margin-bottom: 5px;
 }
+
+//チャットページ未登録プロフィール写真
+.chats img.attachment.member.profile_image.fallback {
+  width: 30px;
+  haight: 30px;
+}
+
+//チャットページ登録プロフィール写真
+.chats img.attachment.member.profile_image.fallback {
+  width: 30px;
+  haight: 30px;
+}

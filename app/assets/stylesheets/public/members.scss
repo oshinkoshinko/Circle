@@ -70,3 +70,21 @@
   z-index: 1;
   background-color: white;
 }
+
+  //会員詳細ページ 未登録プロフィール写真
+  .prof-image img.attachment.member.profile_image.fallback {
+    width: 100px;
+    haight: 100px;
+  }
+
+  //会員詳細ページ タイムライン 未登録プロフィール写真
+  .timeline img.attachment.member.profile_image.fallback {
+    width: 50px;
+    haight: 50px;
+  }
+
+  //会員詳細ページ タイムライン 登録プロフィール写真
+  .timeline img.attachment.member.profile_image {
+    width: 50px;
+    haight: 50px;
+  }

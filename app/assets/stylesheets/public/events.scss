@@ -247,3 +247,15 @@
   z-index: 1;
   background-color: white;
 }
+
+//イベント詳細ページ未登録プロフィール写真
+.events img.attachment.member.profile_image.fallback {
+  width: 30px;
+  haight: 30px;
+}
+
+//イベント詳細ページ登録プロフィール写真
+.feedback-list img.attachment.member.profile_image.fallback {
+  width: 50px;
+  haight: 50px;
+}
