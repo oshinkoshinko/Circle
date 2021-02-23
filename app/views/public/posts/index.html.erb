@@ -136,7 +136,7 @@ var map
               title: contentString
           });
           var infoWindow = new google.maps.InfoWindow({
-              content: "<%= post.body %> by <a href='/members/<%= post.member.id %>'><%= post.member.account_name %></a><br><%= time_ago_in_words(post.created_at) %>前"
+              content: "<%= post.body %> by <a href='/members/<%= post.member.id %>'><%= post.member.account_name %></a><br><%= post.address %><br><%= time_ago_in_words(post.created_at) %>前"
           });
           //情報ウインドウを開くイベントアクション
           google.maps.event.addListener(marker, 'click', function() {
