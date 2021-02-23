@@ -20,8 +20,8 @@
         <div class="navbar-item has-dropdown is-hoverable">
           <%= link_to member_path(current_member), class: "navbar-link" do %>
             <strong>Me</strong>
-            <figure class="image is-24x24">
-              <%= attachment_image_tag current_member, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg", size:"50x50", class: "is-rounded" %>
+            <figure class="is-hidden-mobile">
+              <%= attachment_image_tag current_member, :profile_image, :fill, 50, 50, format: 'jpeg', fallback: "no-prof-image.png", size:"50x50", style: "border-radius: 50%;" %>
             </figure>
           <% end %>
           <div class="navbar-dropdown is boxed">
