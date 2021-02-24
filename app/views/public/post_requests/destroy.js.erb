@@ -1,1 +1,2 @@
 $("#post_<%= @post.id %>").html("<%= escape_javascript(render(partial: 'public/post_requests/request-btn', locals: { post: @post })) %>");
+$("#request-btn").html("<%= escape_javascript(render(partial: 'public/post_requests/waiting-request-btn', locals: { requesting_posts: @requesting_posts })) %>");

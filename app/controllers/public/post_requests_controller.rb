@@ -20,15 +20,17 @@ class Public::PostRequestsController < ApplicationController
     #通知機能↓
     @post.create_notification_request!(current_member)
     #非同期通信保留の為
-    redirect_to request.referer
+    # redirect_to request.referer
   end
 
   def destroy
     @post = Post.find(params[:post_id])
     @post_request = current_member.post_requests.find_by(post_id: @post.id)
     @post_request.destroy
+    #非同期通信js
+    @requesting_posts = PostRequest.where(member_id: current_member.id).order("created_at DESC")
     #非同期通信保留の為
-    redirect_to request.referer
+    # redirect_to request.referer
   end
 
   def update
