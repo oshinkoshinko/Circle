@@ -1,6 +1,7 @@
 <section class="chat-list">
   <h4>チャットルーム</h4>
   <div class="chat-room">
+    <!--チャット相手一覧 変数定義rooms_helperに記載あり-->
     <% @rooms.each do |room| %>
       <%= link_to chat_path(opponent_member(room)) do %>
         <article class="box media" style="border-radius: 0px;">
@@ -15,7 +16,7 @@
             </p>
           </div>
           <div class="media-right">
-            <small><%= time_ago_in_words(room.chats.last.created_at) %>前</small>
+            <small><%= time_ago_in_words(room.chats.first.created_at) %>前</small>
           </div>
         </article>
       <% end %>
