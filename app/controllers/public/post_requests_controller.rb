@@ -25,7 +25,8 @@ class Public::PostRequestsController < ApplicationController
     @post = Post.find(params[:post_id])
     @post_request = current_member.post_requests.find_by(post_id: @post.id)
     @post_request.destroy
-    #非同期通信js
+
+    #非同期通信js用変数
     @requesting_posts = PostRequest.where(member_id: current_member.id).order("created_at DESC")
   end
 
@@ -34,7 +35,7 @@ class Public::PostRequestsController < ApplicationController
     @post_request.update(is_accepted: params[:is_accepted], is_requested: params[:is_requested])
     # redirect_to request.referer
 
-    #非同期
+    #非同期通信js用変数
     #自分の投稿データを取得
     @posts = Post.where(member_id: current_member.id)
     #自分の投稿データのなかでリクエストされたものを取得

@@ -16,7 +16,7 @@
  @import 'font-awesome-sprockets';
  @import 'font-awesome';
  @import 'bulma';
- 
+
 * {
   margin: 0;
   padding: 0;
@@ -263,6 +263,11 @@ img.attachment.member.profile_image.fallback {
 
 //メニューバー　プロフィール写真
 .navbar-menu img.attachment.member.profile_image.fallback {
-  width: 30px;
-  height: 30px;
+  width: 25px;
+  height: 25px;
+}
+
+.navbar-menu img.attachment.member.profile_image {
+  width: 25px;
+  height: 25px;
 }
