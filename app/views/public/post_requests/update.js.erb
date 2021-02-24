@@ -1,0 +1,2 @@
+$("#accept-btn").html("<%= escape_javascript(render(partial: 'public/post_requests/accept-btn', locals: { requested_posts: @requested_posts })) %>");
+$("#cancel-accept-btn").html("<%= escape_javascript(render(partial: 'public/post_requests/cancel-accept-btn', locals: { accept_posts: @accept_posts })) %>");
