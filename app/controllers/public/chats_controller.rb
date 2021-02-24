@@ -27,6 +27,16 @@ class Public::ChatsController < ApplicationController
   def destroy
   end
 
+  def correct_member
+    @chat = Chat.find(params[:id])
+    @member = Member.find_by(id: @chat.member.id)
+    if @member != current_member
+    redirect_to root_path
+    end
+  end
+
+  private
+
   def chat_params
     params.require(:chat).permit(:message, :room_id)
   end

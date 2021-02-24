@@ -1,5 +1,6 @@
 class Public::PostsController < ApplicationController
   before_action :authenticate_member!,except: [:top]
+  before_action :correct_member, only: [:edit, :update, :destroy]
 
  def index
     #検索窓用変数定義
@@ -44,6 +45,14 @@ class Public::PostsController < ApplicationController
     end
     #非同期通信
     # @posts = Post.where(member_id: current_member.id).order("created_at DESC")
+  end
+
+  def correct_member
+    @post = Post.find(params[:id])
+    @member = Member.find_by(id: @post.member.id)
+    if @member != current_member
+    redirect_to root_path
+    end
   end
 
   private

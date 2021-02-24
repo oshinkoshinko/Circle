@@ -1,5 +1,6 @@
 class Public::EventMembersController < ApplicationController
   before_action :authenticate_member!,except: [:top]
+  before_action :correct_member, only: [:show]
 
   def new
     @event = Event.find(params[:event_id])
@@ -36,6 +37,14 @@ class Public::EventMembersController < ApplicationController
   end
 
   def complete
+  end
+
+  def correct_member
+    @event_member = EventMember.find(params[:id])
+    @member = Member.find_by(id: @event_member.member.id)
+    if @member != current_member
+    redirect_to root_path
+    end
   end
 
   def event_member_params
