@@ -123,11 +123,11 @@ RSpec.describe Public::PostsController, type: :controller do
     end
     context "未登録ユーザとして" do
       it "302レスポンスを返すか" do
-        get :edit, params: {id: @post.id}
+        get :update, params: {id: @post.id}
         expect(response).to have_http_status "302"
       end
       it "サインイン画面にリダイレクトするか" do
-        get :edit, params: {id: @post.id}
+        get :update, params: {id: @post.id}
         expect(response).to redirect_to "/members/sign_in"
       end
     end
