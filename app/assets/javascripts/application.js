@@ -59,7 +59,8 @@ document.addEventListener("turbolinks:load", function() {
         breakpoint: 480,
         settings: {
         slidesToShow: 1,
-        slidesToScroll: 1
+        slidesToScroll: 1,
+        dots: false
         }
       }]
     });
@@ -96,7 +97,8 @@ document.addEventListener("turbolinks:load", function() {
         breakpoint: 480,
         settings: {
         slidesToShow: 1,
-        slidesToScroll: 1
+        slidesToScroll: 1,
+        dots: false
         }
       }]
     });

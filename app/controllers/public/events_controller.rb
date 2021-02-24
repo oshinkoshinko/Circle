@@ -1,5 +1,6 @@
 class Public::EventsController < ApplicationController
   before_action :authenticate_member!,except: [:top]
+  before_action :correct_member, only: [:edit, :update, :destroy]
 
   def index
     #検索値を取得
@@ -67,6 +68,14 @@ class Public::EventsController < ApplicationController
     @active_events = Event.where(member_id: current_member.id).order("started_at ASC")
     #ログインユーザの開催済みイベント取得
     @finished_events = Event.where(member_id: current_member.id).order("finished_at DESC")
+  end
+
+  def correct_member
+    @event = Event.find(params[:id])
+    @member = Member.find_by(id: @event.member.id)
+    if @member != current_member
+    redirect_to root_path
+    end
   end
 
   private

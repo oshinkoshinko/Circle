@@ -1,5 +1,6 @@
 class Public::MembersController < ApplicationController
   before_action :authenticate_member!,except: [:top]
+  before_action :correct_member, only: [:edit]
 
   def show
     @member = Member.find(params[:id])
@@ -30,6 +31,13 @@ class Public::MembersController < ApplicationController
     @member.update(is_deleted: true)
     reset_session
     redirect_to root_path
+  end
+
+  def correct_member
+    @member = Member.find_by(id: params[:id])
+    if @member != current_member
+    redirect_to root_path
+    end
   end
 
   private

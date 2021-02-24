@@ -16,6 +16,7 @@
  @import 'font-awesome-sprockets';
  @import 'font-awesome';
  @import 'bulma';
+
 * {
   margin: 0;
   padding: 0;
@@ -254,8 +255,19 @@ select {
     padding:12px; font-weight:850;
   }
 
-  //未登録プロフィール写真
-  img.attachment.member.profile_image.fallback {
-    width: 50px;
-    height: 50px;
-  }
+//未登録プロフィール写真
+img.attachment.member.profile_image.fallback {
+  width: 50px;
+  height: 50px;
+}
+
+//メニューバー　プロフィール写真
+.navbar-menu img.attachment.member.profile_image.fallback {
+  width: 25px;
+  height: 25px;
+}
+
+.navbar-menu img.attachment.member.profile_image {
+  width: 25px;
+  height: 25px;
+}
