@@ -261,12 +261,13 @@ img.attachment.member.profile_image.fallback {
   height: 50px;
 }
 
-//メニューバー　プロフィール写真
+//メニューバー　プロフィール写真未登録時
 .navbar-menu img.attachment.member.profile_image.fallback {
   width: 25px;
   height: 25px;
 }
 
+//メニューバー　プロフィール写真登録時
 .navbar-menu img.attachment.member.profile_image {
   width: 25px;
   height: 25px;
