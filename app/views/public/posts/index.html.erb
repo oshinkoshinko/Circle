@@ -103,8 +103,9 @@ var map
           (function(){
           var contentString = "住所：<%= post.address %>";
 
+          //ランダム関数を緯度経度に足すことで同じ座標をずらして表示
           var marker = new google.maps.Marker({
-              position:{lat: <%= post.latitude %>, lng: <%= post.longitude %>},
+              position:{lat: <%= post.latitude + rand(0.00001..0.00005) %>, lng: <%= post.longitude + rand(0.00001..0.00005) %>},
               map: map,
               title: contentString
           });

@@ -1,0 +1,937 @@
+
+Public::EventMembersController
+  #new
+    認証済みのユーザーとして
+[31m      正常なレスポンスか (FAILED - 1)[0m
+[31m      200レスポンスが返ってきているか (FAILED - 2)[0m
+    未登録ユーザとして
+[31m      302レスポンスを返すか (FAILED - 3)[0m
+[31m      サインイン画面にリダイレクトするか (FAILED - 4)[0m
+  #show
+    認証済みのユーザーとして
+[31m      正常なレスポンスか (FAILED - 5)[0m
+[31m      200レスポンスが返ってきているか (FAILED - 6)[0m
+    未登録ユーザとして
+[31m      302レスポンスを返すか (FAILED - 7)[0m
+[31m      サインイン画面にリダイレクトするか (FAILED - 8)[0m
+  #complete
+    認証済みのユーザーとして
+[31m      正常なレスポンスか (FAILED - 9)[0m
+[31m      200レスポンスが返ってきているか (FAILED - 10)[0m
+    未登録ユーザとして
+[31m      302レスポンスを返すか (FAILED - 11)[0m
+[31m      サインイン画面にリダイレクトするか (FAILED - 12)[0m
+  #create
+    認証済みのユーザーとして
+[31m      イベント作成できるか (FAILED - 13)[0m
+[31m      投稿後にマイページにリダイレクトされているか (FAILED - 14)[0m
+    未登録ユーザとして
+[31m      302レスポンスを返すか (FAILED - 15)[0m
+[31m      サインイン画面にリダイレクトするか (FAILED - 16)[0m
+  #edit
+    認証済みのユーザーとして
+[31m      正常なレスポンスか (FAILED - 17)[0m
+[31m      200レスポンスが返ってきているか (FAILED - 18)[0m
+    未登録ユーザとして
+[31m      302レスポンスを返すか (FAILED - 19)[0m
+[31m      サインイン画面にリダイレクトするか (FAILED - 20)[0m
+  #update
+    認証済みのユーザーとして
+[31m      正常に更新できるか (FAILED - 21)[0m
+[31m      更新後にマイイベントにリダイレクトされているか (FAILED - 22)[0m
+[31m      フォームが空白の時に更新できなくなっているか (FAILED - 23)[0m
+[31m      フォームが空白の時に更新できず、再度編集ページにリダイレクトされるか (FAILED - 24)[0m
+    未登録ユーザとして
+[31m      302レスポンスを返すか (FAILED - 25)[0m
+[31m      サインイン画面にリダイレクトするか (FAILED - 26)[0m
+  #destroy
+    認証済みのユーザーとして
+[31m      正常に投稿を削除できるか (FAILED - 27)[0m
+[31m      削除後に現在のページにリダイレクトされているか (FAILED - 28)[0m
+    未登録ユーザとして
+[31m      302レスポンスを返すか (FAILED - 29)[0m
+[31m      サインイン画面にリダイレクトするか (FAILED - 30)[0m
+  #myevent
+    認証済みのユーザーとして
+[31m      正常なレスポンスか (FAILED - 31)[0m
+[31m      200レスポンスが返ってきているか (FAILED - 32)[0m
+    未登録ユーザとして
+[31m      302レスポンスを返すか (FAILED - 33)[0m
+[31m      サインイン画面にリダイレクトするか (FAILED - 34)[0m
+
+Public::EventsController
+  #index
+    認証済みのユーザーとして
+[32m      正常なレスポンスか[0m
+[32m      200レスポンスが返ってきているか[0m
+    未登録ユーザとして
+[32m      302レスポンスを返すか[0m
+[32m      サインイン画面にリダイレクトするか[0m
+  #new
+    認証済みのユーザーとして
+[32m      正常なレスポンスか[0m
+[32m      200レスポンスが返ってきているか[0m
+    未登録ユーザとして
+[32m      302レスポンスを返すか[0m
+[32m      サインイン画面にリダイレクトするか[0m
+  #create
+    認証済みのユーザーとして
+[32m      イベント作成できるか[0m
+[32m      投稿後にマイページにリダイレクトされているか[0m
+    未登録ユーザとして
+[32m      302レスポンスを返すか[0m
+[32m      サインイン画面にリダイレクトするか[0m
+  #edit
+    認証済みのユーザーとして
+[32m      正常なレスポンスか[0m
+[32m      200レスポンスが返ってきているか[0m
+    未登録ユーザとして
+[32m      302レスポンスを返すか[0m
+[32m      サインイン画面にリダイレクトするか[0m
+  #update
+    認証済みのユーザーとして
+[32m      正常に更新できるか[0m
+[32m      更新後にマイイベントにリダイレクトされているか[0m
+[32m      フォームが空白の時に更新できなくなっているか[0m
+[32m      フォームが空白の時に更新できず、再度編集ページにリダイレクトされるか[0m
+    未登録ユーザとして
+[32m      302レスポンスを返すか[0m
+[32m      サインイン画面にリダイレクトするか[0m
+  #destroy
+    認証済みのユーザーとして
+[32m      正常に投稿を削除できるか[0m
+[32m      削除後に現在のページにリダイレクトされているか[0m
+    未登録ユーザとして
+[32m      302レスポンスを返すか[0m
+[32m      サインイン画面にリダイレクトするか[0m
+  #myevent
+    認証済みのユーザーとして
+[32m      正常なレスポンスか[0m
+[32m      200レスポンスが返ってきているか[0m
+    未登録ユーザとして
+[32m      302レスポンスを返すか[0m
+[32m      サインイン画面にリダイレクトするか[0m
+
+Public::HomesController
+  #top
+[32m    正常にレスポンスを返すこと[0m
+
+Public::MembersController
+  #show
+    認証済みのユーザーとして
+[32m      正常なレスポンスか[0m
+[32m      200レスポンスが返ってきているか[0m
+    未登録ユーザとして
+[32m      302レスポンスを返すか[0m
+[32m      サインイン画面にリダイレクトするか[0m
+  #edit
+    認証済みのユーザーとして
+[32m      正常なレスポンスか[0m
+[32m      200レスポンスが返ってきているか[0m
+    未登録ユーザとして
+[32m      302レスポンスを返すか[0m
+[32m      サインイン画面にリダイレクトするか[0m
+  #update
+    認証済みのユーザーとして
+[32m      正常に更新できるか[0m
+[32m      更新後にマイページにリダイレクトされているか[0m
+[32m      フォームが空白の時に更新できなくなっているか[0m
+[32m      フォームが空白の時に更新できず、再度編集ページにリダイレクトされるか[0m
+    未登録ユーザとして
+[32m      302レスポンスを返すか[0m
+[32m      サインイン画面にリダイレクトするか[0m
+  #withdraw
+    認証済みのユーザーとして
+[32m      正常なレスポンスか[0m
+[32m      200レスポンスが返ってきているか[0m
+    未登録ユーザとして
+[32m      302レスポンスを返すか[0m
+[32m      サインイン画面にリダイレクトするか[0m
+  #unsubscribe
+    認証済みのユーザーとして
+[32m      正常に更新できるか[0m
+[32m      更新後にマイページにリダイレクトされているか[0m
+    未登録ユーザとして
+[32m      302レスポンスを返すか[0m
+[32m      サインイン画面にリダイレクトするか[0m
+
+Public::PostCommentsController
+  #show
+    認証済みのユーザーとして
+[32m      正常なレスポンスか[0m
+[32m      200レスポンスが返ってきているか[0m
+    未登録ユーザとして
+[32m      302レスポンスを返すか[0m
+[32m      サインイン画面にリダイレクトするか[0m
+  #create
+    認証済みのユーザーとして
+[32m      投稿できるか[0m
+    未登録ユーザとして
+[32m      302レスポンスを返すか[0m
+[32m      サインイン画面にリダイレクトするか[0m
+  #destroy
+    認証済みのユーザーとして
+[32m      正常に投稿を削除できるか[0m
+    未登録ユーザとして
+[32m      302レスポンスを返すか[0m
+[32m      サインイン画面にリダイレクトするか[0m
+
+Public::PostsController
+  #index
+    認証済みのユーザーとして
+[32m      正常なレスポンスか[0m
+[32m      200レスポンスが返ってきているか[0m
+    未登録ユーザとして
+[32m      302レスポンスを返すか[0m
+[32m      サインイン画面にリダイレクトするか[0m
+  #create
+    認証済みのユーザーとして
+[32m      投稿できるか[0m
+[32m      投稿後にマイページにリダイレクトされているか[0m
+    未登録ユーザとして
+[32m      302レスポンスを返すか[0m
+[32m      サインイン画面にリダイレクトするか[0m
+  #edit
+    認証済みのユーザーとして
+[32m      正常なレスポンスか[0m
+[32m      200レスポンスが返ってきているか[0m
+    未登録ユーザとして
+[32m      302レスポンスを返すか[0m
+[32m      サインイン画面にリダイレクトするか[0m
+  #update
+    認証済みのユーザーとして
+[32m      正常に更新できるか[0m
+[32m      更新後にマイページにリダイレクトされているか[0m
+[32m      フォームが空白の時に更新できなくなっているか[0m
+[32m      フォームが空白の時に更新できず、再度編集ページにリダイレクトされるか[0m
+    未登録ユーザとして
+[32m      302レスポンスを返すか[0m
+[32m      サインイン画面にリダイレクトするか[0m
+  #destroy
+    認証済みのユーザーとして
+[32m      正常に投稿を削除できるか[0m
+[32m      削除後に現在のページにリダイレクトされているか[0m
+    未登録ユーザとして
+[32m      302レスポンスを返すか[0m
+[32m      サインイン画面にリダイレクトするか[0m
+
+Chat
+  #create
+[32m    メッセージがない場合は登録できないこと[0m
+
+Event
+  #create
+[32m    イベント名がない場合は登録できないこと[0m
+[32m    イベント内容がない場合は登録できないこと[0m
+[32m    場所がない場合は登録できないこと[0m
+[32m    参加費がない場合は登録できないこと[0m
+[32m    同一ユーザーが同じイベント開催日時を設定できないこと[0m
+[32m    他のユーザーが同じ開催日時を使うことは許可すること[0m
+
+Member
+  #create
+[32m    名前がない場合は登録できないこと[0m
+[32m    アカウント名がない場合は登録できないこと[0m
+[32m    重複したアカウント名は登録できないこと[0m
+[32m    メールアドレスがない場合は登録できないこと[0m
+[32m    パスワードがない場合は登録できないこと[0m
+[32m    確認用パスワードがない場合は登録できないこと[0m
+
+PostComment
+  #create
+[32m    コメントがない場合は登録できないこと[0m
+
+Post
+  #create
+[32m    内容がない場合は登録できないこと[0m
+[32m    場所がない場合は登録できないこと[0m
+[32m    ジャンルがない場合は登録できないこと[0m
+
+Failures:
+
+  1) Public::EventMembersController#new 認証済みのユーザーとして 正常なレスポンスか
+     [31mFailure/Error: [0m@event_member = [1;34;4mFactoryBot[0m.create([33m:event_member[0m, {[35mmember[0m: @member, [35mevent[0m: @event})[0m
+     [31m[0m
+     [31mNoMethodError:[0m
+     [31m  undefined method `post=' for #<EventMember:0x00000000068e4a08>[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:16:in `public_send'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:16:in `block (2 levels) in object'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:15:in `each'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:15:in `block in object'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:14:in `tap'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:14:in `object'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/evaluation.rb:13:in `object'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/strategy/create.rb:9:in `result'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/factory.rb:43:in `run'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/factory_runner.rb:29:in `block in run'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/factory_runner.rb:28:in `run'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/strategy_syntax_method_registrar.rb:28:in `block in define_singular_strategy_method'[0m
+     [36m# ./spec/controllers/public/event_members_controller_spec.rb:8:in `block (2 levels) in <top (required)>'[0m
+
+  2) Public::EventMembersController#new 認証済みのユーザーとして 200レスポンスが返ってきているか
+     [31mFailure/Error: [0m@event_member = [1;34;4mFactoryBot[0m.create([33m:event_member[0m, {[35mmember[0m: @member, [35mevent[0m: @event})[0m
+     [31m[0m
+     [31mNoMethodError:[0m
+     [31m  undefined method `post=' for #<EventMember:0x0000000008228438>[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:16:in `public_send'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:16:in `block (2 levels) in object'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:15:in `each'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:15:in `block in object'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:14:in `tap'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:14:in `object'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/evaluation.rb:13:in `object'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/strategy/create.rb:9:in `result'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/factory.rb:43:in `run'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/factory_runner.rb:29:in `block in run'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/factory_runner.rb:28:in `run'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/strategy_syntax_method_registrar.rb:28:in `block in define_singular_strategy_method'[0m
+     [36m# ./spec/controllers/public/event_members_controller_spec.rb:8:in `block (2 levels) in <top (required)>'[0m
+
+  3) Public::EventMembersController#new 未登録ユーザとして 302レスポンスを返すか
+     [31mFailure/Error: [0m@event_member = [1;34;4mFactoryBot[0m.create([33m:event_member[0m, {[35mmember[0m: @member, [35mevent[0m: @event})[0m
+     [31m[0m
+     [31mNoMethodError:[0m
+     [31m  undefined method `post=' for #<EventMember:0x00000000082e62f8>[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:16:in `public_send'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:16:in `block (2 levels) in object'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:15:in `each'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:15:in `block in object'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:14:in `tap'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:14:in `object'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/evaluation.rb:13:in `object'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/strategy/create.rb:9:in `result'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/factory.rb:43:in `run'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/factory_runner.rb:29:in `block in run'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/factory_runner.rb:28:in `run'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/strategy_syntax_method_registrar.rb:28:in `block in define_singular_strategy_method'[0m
+     [36m# ./spec/controllers/public/event_members_controller_spec.rb:8:in `block (2 levels) in <top (required)>'[0m
+
+  4) Public::EventMembersController#new 未登録ユーザとして サインイン画面にリダイレクトするか
+     [31mFailure/Error: [0m@event_member = [1;34;4mFactoryBot[0m.create([33m:event_member[0m, {[35mmember[0m: @member, [35mevent[0m: @event})[0m
+     [31m[0m
+     [31mNoMethodError:[0m
+     [31m  undefined method `post=' for #<EventMember:0x0000000008394290>[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:16:in `public_send'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:16:in `block (2 levels) in object'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:15:in `each'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:15:in `block in object'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:14:in `tap'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:14:in `object'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/evaluation.rb:13:in `object'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/strategy/create.rb:9:in `result'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/factory.rb:43:in `run'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/factory_runner.rb:29:in `block in run'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/factory_runner.rb:28:in `run'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/strategy_syntax_method_registrar.rb:28:in `block in define_singular_strategy_method'[0m
+     [36m# ./spec/controllers/public/event_members_controller_spec.rb:8:in `block (2 levels) in <top (required)>'[0m
+
+  5) Public::EventMembersController#show 認証済みのユーザーとして 正常なレスポンスか
+     [31mFailure/Error: [0m@event_member = [1;34;4mFactoryBot[0m.create([33m:event_member[0m, {[35mmember[0m: @member, [35mevent[0m: @event})[0m
+     [31m[0m
+     [31mNoMethodError:[0m
+     [31m  undefined method `post=' for #<EventMember:0x000000000844c1d8>[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:16:in `public_send'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:16:in `block (2 levels) in object'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:15:in `each'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:15:in `block in object'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:14:in `tap'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:14:in `object'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/evaluation.rb:13:in `object'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/strategy/create.rb:9:in `result'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/factory.rb:43:in `run'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/factory_runner.rb:29:in `block in run'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/factory_runner.rb:28:in `run'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/strategy_syntax_method_registrar.rb:28:in `block in define_singular_strategy_method'[0m
+     [36m# ./spec/controllers/public/event_members_controller_spec.rb:8:in `block (2 levels) in <top (required)>'[0m
+
+  6) Public::EventMembersController#show 認証済みのユーザーとして 200レスポンスが返ってきているか
+     [31mFailure/Error: [0m@event_member = [1;34;4mFactoryBot[0m.create([33m:event_member[0m, {[35mmember[0m: @member, [35mevent[0m: @event})[0m
+     [31m[0m
+     [31mNoMethodError:[0m
+     [31m  undefined method `post=' for #<EventMember:0x00000000084fae40>[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:16:in `public_send'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:16:in `block (2 levels) in object'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:15:in `each'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:15:in `block in object'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:14:in `tap'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:14:in `object'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/evaluation.rb:13:in `object'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/strategy/create.rb:9:in `result'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/factory.rb:43:in `run'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/factory_runner.rb:29:in `block in run'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/factory_runner.rb:28:in `run'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/strategy_syntax_method_registrar.rb:28:in `block in define_singular_strategy_method'[0m
+     [36m# ./spec/controllers/public/event_members_controller_spec.rb:8:in `block (2 levels) in <top (required)>'[0m
+
+  7) Public::EventMembersController#show 未登録ユーザとして 302レスポンスを返すか
+     [31mFailure/Error: [0m@event_member = [1;34;4mFactoryBot[0m.create([33m:event_member[0m, {[35mmember[0m: @member, [35mevent[0m: @event})[0m
+     [31m[0m
+     [31mNoMethodError:[0m
+     [31m  undefined method `post=' for #<EventMember:0x00000000085b7428>[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:16:in `public_send'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:16:in `block (2 levels) in object'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:15:in `each'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:15:in `block in object'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:14:in `tap'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:14:in `object'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/evaluation.rb:13:in `object'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/strategy/create.rb:9:in `result'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/factory.rb:43:in `run'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/factory_runner.rb:29:in `block in run'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/factory_runner.rb:28:in `run'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/strategy_syntax_method_registrar.rb:28:in `block in define_singular_strategy_method'[0m
+     [36m# ./spec/controllers/public/event_members_controller_spec.rb:8:in `block (2 levels) in <top (required)>'[0m
+
+  8) Public::EventMembersController#show 未登録ユーザとして サインイン画面にリダイレクトするか
+     [31mFailure/Error: [0m@event_member = [1;34;4mFactoryBot[0m.create([33m:event_member[0m, {[35mmember[0m: @member, [35mevent[0m: @event})[0m
+     [31m[0m
+     [31mNoMethodError:[0m
+     [31m  undefined method `post=' for #<EventMember:0x000000000864c3e8>[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:16:in `public_send'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:16:in `block (2 levels) in object'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:15:in `each'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:15:in `block in object'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:14:in `tap'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:14:in `object'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/evaluation.rb:13:in `object'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/strategy/create.rb:9:in `result'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/factory.rb:43:in `run'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/factory_runner.rb:29:in `block in run'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/factory_runner.rb:28:in `run'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/strategy_syntax_method_registrar.rb:28:in `block in define_singular_strategy_method'[0m
+     [36m# ./spec/controllers/public/event_members_controller_spec.rb:8:in `block (2 levels) in <top (required)>'[0m
+
+  9) Public::EventMembersController#complete 認証済みのユーザーとして 正常なレスポンスか
+     [31mFailure/Error: [0m@event_member = [1;34;4mFactoryBot[0m.create([33m:event_member[0m, {[35mmember[0m: @member, [35mevent[0m: @event})[0m
+     [31m[0m
+     [31mNoMethodError:[0m
+     [31m  undefined method `post=' for #<EventMember:0x00000000086fcd88>[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:16:in `public_send'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:16:in `block (2 levels) in object'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:15:in `each'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:15:in `block in object'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:14:in `tap'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:14:in `object'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/evaluation.rb:13:in `object'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/strategy/create.rb:9:in `result'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/factory.rb:43:in `run'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/factory_runner.rb:29:in `block in run'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/factory_runner.rb:28:in `run'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/strategy_syntax_method_registrar.rb:28:in `block in define_singular_strategy_method'[0m
+     [36m# ./spec/controllers/public/event_members_controller_spec.rb:8:in `block (2 levels) in <top (required)>'[0m
+
+  10) Public::EventMembersController#complete 認証済みのユーザーとして 200レスポンスが返ってきているか
+      [31mFailure/Error: [0m@event_member = [1;34;4mFactoryBot[0m.create([33m:event_member[0m, {[35mmember[0m: @member, [35mevent[0m: @event})[0m
+      [31m[0m
+      [31mNoMethodError:[0m
+      [31m  undefined method `post=' for #<EventMember:0x00000000087a8200>[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:16:in `public_send'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:16:in `block (2 levels) in object'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:15:in `each'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:15:in `block in object'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:14:in `tap'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:14:in `object'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/evaluation.rb:13:in `object'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/strategy/create.rb:9:in `result'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/factory.rb:43:in `run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/factory_runner.rb:29:in `block in run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/factory_runner.rb:28:in `run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/strategy_syntax_method_registrar.rb:28:in `block in define_singular_strategy_method'[0m
+      [36m# ./spec/controllers/public/event_members_controller_spec.rb:8:in `block (2 levels) in <top (required)>'[0m
+
+  11) Public::EventMembersController#complete 未登録ユーザとして 302レスポンスを返すか
+      [31mFailure/Error: [0m@event_member = [1;34;4mFactoryBot[0m.create([33m:event_member[0m, {[35mmember[0m: @member, [35mevent[0m: @event})[0m
+      [31m[0m
+      [31mNoMethodError:[0m
+      [31m  undefined method `post=' for #<EventMember:0x00000000088628a8>[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:16:in `public_send'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:16:in `block (2 levels) in object'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:15:in `each'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:15:in `block in object'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:14:in `tap'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:14:in `object'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/evaluation.rb:13:in `object'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/strategy/create.rb:9:in `result'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/factory.rb:43:in `run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/factory_runner.rb:29:in `block in run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/factory_runner.rb:28:in `run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/strategy_syntax_method_registrar.rb:28:in `block in define_singular_strategy_method'[0m
+      [36m# ./spec/controllers/public/event_members_controller_spec.rb:8:in `block (2 levels) in <top (required)>'[0m
+
+  12) Public::EventMembersController#complete 未登録ユーザとして サインイン画面にリダイレクトするか
+      [31mFailure/Error: [0m@event_member = [1;34;4mFactoryBot[0m.create([33m:event_member[0m, {[35mmember[0m: @member, [35mevent[0m: @event})[0m
+      [31m[0m
+      [31mNoMethodError:[0m
+      [31m  undefined method `post=' for #<EventMember:0x0000000008918130>[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:16:in `public_send'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:16:in `block (2 levels) in object'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:15:in `each'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:15:in `block in object'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:14:in `tap'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:14:in `object'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/evaluation.rb:13:in `object'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/strategy/create.rb:9:in `result'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/factory.rb:43:in `run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/factory_runner.rb:29:in `block in run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/factory_runner.rb:28:in `run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/strategy_syntax_method_registrar.rb:28:in `block in define_singular_strategy_method'[0m
+      [36m# ./spec/controllers/public/event_members_controller_spec.rb:8:in `block (2 levels) in <top (required)>'[0m
+
+  13) Public::EventMembersController#create 認証済みのユーザーとして イベント作成できるか
+      [31mFailure/Error: [0m@event_member = [1;34;4mFactoryBot[0m.create([33m:event_member[0m, {[35mmember[0m: @member, [35mevent[0m: @event})[0m
+      [31m[0m
+      [31mNoMethodError:[0m
+      [31m  undefined method `post=' for #<EventMember:0x00000000089cdf30>[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:16:in `public_send'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:16:in `block (2 levels) in object'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:15:in `each'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:15:in `block in object'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:14:in `tap'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:14:in `object'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/evaluation.rb:13:in `object'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/strategy/create.rb:9:in `result'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/factory.rb:43:in `run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/factory_runner.rb:29:in `block in run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/factory_runner.rb:28:in `run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/strategy_syntax_method_registrar.rb:28:in `block in define_singular_strategy_method'[0m
+      [36m# ./spec/controllers/public/event_members_controller_spec.rb:8:in `block (2 levels) in <top (required)>'[0m
+
+  14) Public::EventMembersController#create 認証済みのユーザーとして 投稿後にマイページにリダイレクトされているか
+      [31mFailure/Error: [0m@event_member = [1;34;4mFactoryBot[0m.create([33m:event_member[0m, {[35mmember[0m: @member, [35mevent[0m: @event})[0m
+      [31m[0m
+      [31mNoMethodError:[0m
+      [31m  undefined method `post=' for #<EventMember:0x0000000008a8baa8>[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:16:in `public_send'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:16:in `block (2 levels) in object'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:15:in `each'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:15:in `block in object'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:14:in `tap'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:14:in `object'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/evaluation.rb:13:in `object'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/strategy/create.rb:9:in `result'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/factory.rb:43:in `run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/factory_runner.rb:29:in `block in run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/factory_runner.rb:28:in `run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/strategy_syntax_method_registrar.rb:28:in `block in define_singular_strategy_method'[0m
+      [36m# ./spec/controllers/public/event_members_controller_spec.rb:8:in `block (2 levels) in <top (required)>'[0m
+
+  15) Public::EventMembersController#create 未登録ユーザとして 302レスポンスを返すか
+      [31mFailure/Error: [0m@event_member = [1;34;4mFactoryBot[0m.create([33m:event_member[0m, {[35mmember[0m: @member, [35mevent[0m: @event})[0m
+      [31m[0m
+      [31mNoMethodError:[0m
+      [31m  undefined method `post=' for #<EventMember:0x0000000008b30260>[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:16:in `public_send'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:16:in `block (2 levels) in object'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:15:in `each'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:15:in `block in object'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:14:in `tap'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:14:in `object'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/evaluation.rb:13:in `object'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/strategy/create.rb:9:in `result'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/factory.rb:43:in `run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/factory_runner.rb:29:in `block in run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/factory_runner.rb:28:in `run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/strategy_syntax_method_registrar.rb:28:in `block in define_singular_strategy_method'[0m
+      [36m# ./spec/controllers/public/event_members_controller_spec.rb:8:in `block (2 levels) in <top (required)>'[0m
+
+  16) Public::EventMembersController#create 未登録ユーザとして サインイン画面にリダイレクトするか
+      [31mFailure/Error: [0m@event_member = [1;34;4mFactoryBot[0m.create([33m:event_member[0m, {[35mmember[0m: @member, [35mevent[0m: @event})[0m
+      [31m[0m
+      [31mNoMethodError:[0m
+      [31m  undefined method `post=' for #<EventMember:0x0000000008be7a50>[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:16:in `public_send'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:16:in `block (2 levels) in object'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:15:in `each'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:15:in `block in object'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:14:in `tap'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:14:in `object'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/evaluation.rb:13:in `object'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/strategy/create.rb:9:in `result'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/factory.rb:43:in `run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/factory_runner.rb:29:in `block in run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/factory_runner.rb:28:in `run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/strategy_syntax_method_registrar.rb:28:in `block in define_singular_strategy_method'[0m
+      [36m# ./spec/controllers/public/event_members_controller_spec.rb:8:in `block (2 levels) in <top (required)>'[0m
+
+  17) Public::EventMembersController#edit 認証済みのユーザーとして 正常なレスポンスか
+      [31mFailure/Error: [0m@event_member = [1;34;4mFactoryBot[0m.create([33m:event_member[0m, {[35mmember[0m: @member, [35mevent[0m: @event})[0m
+      [31m[0m
+      [31mNoMethodError:[0m
+      [31m  undefined method `post=' for #<EventMember:0x0000000008c94980>[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:16:in `public_send'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:16:in `block (2 levels) in object'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:15:in `each'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:15:in `block in object'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:14:in `tap'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:14:in `object'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/evaluation.rb:13:in `object'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/strategy/create.rb:9:in `result'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/factory.rb:43:in `run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/factory_runner.rb:29:in `block in run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/factory_runner.rb:28:in `run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/strategy_syntax_method_registrar.rb:28:in `block in define_singular_strategy_method'[0m
+      [36m# ./spec/controllers/public/event_members_controller_spec.rb:8:in `block (2 levels) in <top (required)>'[0m
+
+  18) Public::EventMembersController#edit 認証済みのユーザーとして 200レスポンスが返ってきているか
+      [31mFailure/Error: [0m@event_member = [1;34;4mFactoryBot[0m.create([33m:event_member[0m, {[35mmember[0m: @member, [35mevent[0m: @event})[0m
+      [31m[0m
+      [31mNoMethodError:[0m
+      [31m  undefined method `post=' for #<EventMember:0x0000000008d4fe10>[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:16:in `public_send'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:16:in `block (2 levels) in object'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:15:in `each'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:15:in `block in object'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:14:in `tap'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:14:in `object'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/evaluation.rb:13:in `object'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/strategy/create.rb:9:in `result'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/factory.rb:43:in `run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/factory_runner.rb:29:in `block in run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/factory_runner.rb:28:in `run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/strategy_syntax_method_registrar.rb:28:in `block in define_singular_strategy_method'[0m
+      [36m# ./spec/controllers/public/event_members_controller_spec.rb:8:in `block (2 levels) in <top (required)>'[0m
+
+  19) Public::EventMembersController#edit 未登録ユーザとして 302レスポンスを返すか
+      [31mFailure/Error: [0m@event_member = [1;34;4mFactoryBot[0m.create([33m:event_member[0m, {[35mmember[0m: @member, [35mevent[0m: @event})[0m
+      [31m[0m
+      [31mNoMethodError:[0m
+      [31m  undefined method `post=' for #<EventMember:0x0000000008dff018>[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:16:in `public_send'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:16:in `block (2 levels) in object'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:15:in `each'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:15:in `block in object'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:14:in `tap'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:14:in `object'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/evaluation.rb:13:in `object'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/strategy/create.rb:9:in `result'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/factory.rb:43:in `run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/factory_runner.rb:29:in `block in run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/factory_runner.rb:28:in `run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/strategy_syntax_method_registrar.rb:28:in `block in define_singular_strategy_method'[0m
+      [36m# ./spec/controllers/public/event_members_controller_spec.rb:8:in `block (2 levels) in <top (required)>'[0m
+
+  20) Public::EventMembersController#edit 未登録ユーザとして サインイン画面にリダイレクトするか
+      [31mFailure/Error: [0m@event_member = [1;34;4mFactoryBot[0m.create([33m:event_member[0m, {[35mmember[0m: @member, [35mevent[0m: @event})[0m
+      [31m[0m
+      [31mNoMethodError:[0m
+      [31m  undefined method `post=' for #<EventMember:0x0000000008eadcf8>[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:16:in `public_send'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:16:in `block (2 levels) in object'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:15:in `each'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:15:in `block in object'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:14:in `tap'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:14:in `object'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/evaluation.rb:13:in `object'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/strategy/create.rb:9:in `result'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/factory.rb:43:in `run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/factory_runner.rb:29:in `block in run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/factory_runner.rb:28:in `run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/strategy_syntax_method_registrar.rb:28:in `block in define_singular_strategy_method'[0m
+      [36m# ./spec/controllers/public/event_members_controller_spec.rb:8:in `block (2 levels) in <top (required)>'[0m
+
+  21) Public::EventMembersController#update 認証済みのユーザーとして 正常に更新できるか
+      [31mFailure/Error: [0m@event_member = [1;34;4mFactoryBot[0m.create([33m:event_member[0m, {[35mmember[0m: @member, [35mevent[0m: @event})[0m
+      [31m[0m
+      [31mNoMethodError:[0m
+      [31m  undefined method `post=' for #<EventMember:0x0000000008f73b10>[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:16:in `public_send'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:16:in `block (2 levels) in object'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:15:in `each'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:15:in `block in object'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:14:in `tap'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:14:in `object'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/evaluation.rb:13:in `object'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/strategy/create.rb:9:in `result'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/factory.rb:43:in `run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/factory_runner.rb:29:in `block in run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/factory_runner.rb:28:in `run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/strategy_syntax_method_registrar.rb:28:in `block in define_singular_strategy_method'[0m
+      [36m# ./spec/controllers/public/event_members_controller_spec.rb:8:in `block (2 levels) in <top (required)>'[0m
+
+  22) Public::EventMembersController#update 認証済みのユーザーとして 更新後にマイイベントにリダイレクトされているか
+      [31mFailure/Error: [0m@event_member = [1;34;4mFactoryBot[0m.create([33m:event_member[0m, {[35mmember[0m: @member, [35mevent[0m: @event})[0m
+      [31m[0m
+      [31mNoMethodError:[0m
+      [31m  undefined method `post=' for #<EventMember:0x000000000901a7a8>[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:16:in `public_send'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:16:in `block (2 levels) in object'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:15:in `each'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:15:in `block in object'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:14:in `tap'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:14:in `object'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/evaluation.rb:13:in `object'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/strategy/create.rb:9:in `result'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/factory.rb:43:in `run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/factory_runner.rb:29:in `block in run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/factory_runner.rb:28:in `run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/strategy_syntax_method_registrar.rb:28:in `block in define_singular_strategy_method'[0m
+      [36m# ./spec/controllers/public/event_members_controller_spec.rb:8:in `block (2 levels) in <top (required)>'[0m
+
+  23) Public::EventMembersController#update 認証済みのユーザーとして フォームが空白の時に更新できなくなっているか
+      [31mFailure/Error: [0m@event_member = [1;34;4mFactoryBot[0m.create([33m:event_member[0m, {[35mmember[0m: @member, [35mevent[0m: @event})[0m
+      [31m[0m
+      [31mNoMethodError:[0m
+      [31m  undefined method `post=' for #<EventMember:0x00000000090cd830>[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:16:in `public_send'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:16:in `block (2 levels) in object'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:15:in `each'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:15:in `block in object'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:14:in `tap'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:14:in `object'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/evaluation.rb:13:in `object'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/strategy/create.rb:9:in `result'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/factory.rb:43:in `run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/factory_runner.rb:29:in `block in run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/factory_runner.rb:28:in `run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/strategy_syntax_method_registrar.rb:28:in `block in define_singular_strategy_method'[0m
+      [36m# ./spec/controllers/public/event_members_controller_spec.rb:8:in `block (2 levels) in <top (required)>'[0m
+
+  24) Public::EventMembersController#update 認証済みのユーザーとして フォームが空白の時に更新できず、再度編集ページにリダイレクトされるか
+      [31mFailure/Error: [0m@event_member = [1;34;4mFactoryBot[0m.create([33m:event_member[0m, {[35mmember[0m: @member, [35mevent[0m: @event})[0m
+      [31m[0m
+      [31mNoMethodError:[0m
+      [31m  undefined method `post=' for #<EventMember:0x0000000009176430>[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:16:in `public_send'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:16:in `block (2 levels) in object'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:15:in `each'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:15:in `block in object'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:14:in `tap'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:14:in `object'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/evaluation.rb:13:in `object'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/strategy/create.rb:9:in `result'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/factory.rb:43:in `run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/factory_runner.rb:29:in `block in run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/factory_runner.rb:28:in `run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/strategy_syntax_method_registrar.rb:28:in `block in define_singular_strategy_method'[0m
+      [36m# ./spec/controllers/public/event_members_controller_spec.rb:8:in `block (2 levels) in <top (required)>'[0m
+
+  25) Public::EventMembersController#update 未登録ユーザとして 302レスポンスを返すか
+      [31mFailure/Error: [0m@event_member = [1;34;4mFactoryBot[0m.create([33m:event_member[0m, {[35mmember[0m: @member, [35mevent[0m: @event})[0m
+      [31m[0m
+      [31mNoMethodError:[0m
+      [31m  undefined method `post=' for #<EventMember:0x0000000009236258>[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:16:in `public_send'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:16:in `block (2 levels) in object'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:15:in `each'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:15:in `block in object'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:14:in `tap'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:14:in `object'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/evaluation.rb:13:in `object'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/strategy/create.rb:9:in `result'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/factory.rb:43:in `run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/factory_runner.rb:29:in `block in run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/factory_runner.rb:28:in `run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/strategy_syntax_method_registrar.rb:28:in `block in define_singular_strategy_method'[0m
+      [36m# ./spec/controllers/public/event_members_controller_spec.rb:8:in `block (2 levels) in <top (required)>'[0m
+
+  26) Public::EventMembersController#update 未登録ユーザとして サインイン画面にリダイレクトするか
+      [31mFailure/Error: [0m@event_member = [1;34;4mFactoryBot[0m.create([33m:event_member[0m, {[35mmember[0m: @member, [35mevent[0m: @event})[0m
+      [31m[0m
+      [31mNoMethodError:[0m
+      [31m  undefined method `post=' for #<EventMember:0x0000000003228dc0>[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:16:in `public_send'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:16:in `block (2 levels) in object'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:15:in `each'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:15:in `block in object'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:14:in `tap'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:14:in `object'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/evaluation.rb:13:in `object'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/strategy/create.rb:9:in `result'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/factory.rb:43:in `run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/factory_runner.rb:29:in `block in run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/factory_runner.rb:28:in `run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/strategy_syntax_method_registrar.rb:28:in `block in define_singular_strategy_method'[0m
+      [36m# ./spec/controllers/public/event_members_controller_spec.rb:8:in `block (2 levels) in <top (required)>'[0m
+
+  27) Public::EventMembersController#destroy 認証済みのユーザーとして 正常に投稿を削除できるか
+      [31mFailure/Error: [0m@event_member = [1;34;4mFactoryBot[0m.create([33m:event_member[0m, {[35mmember[0m: @member, [35mevent[0m: @event})[0m
+      [31m[0m
+      [31mNoMethodError:[0m
+      [31m  undefined method `post=' for #<EventMember:0x0000000005b133e8>[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:16:in `public_send'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:16:in `block (2 levels) in object'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:15:in `each'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:15:in `block in object'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:14:in `tap'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:14:in `object'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/evaluation.rb:13:in `object'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/strategy/create.rb:9:in `result'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/factory.rb:43:in `run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/factory_runner.rb:29:in `block in run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/factory_runner.rb:28:in `run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/strategy_syntax_method_registrar.rb:28:in `block in define_singular_strategy_method'[0m
+      [36m# ./spec/controllers/public/event_members_controller_spec.rb:8:in `block (2 levels) in <top (required)>'[0m
+
+  28) Public::EventMembersController#destroy 認証済みのユーザーとして 削除後に現在のページにリダイレクトされているか
+      [31mFailure/Error: [0m@event_member = [1;34;4mFactoryBot[0m.create([33m:event_member[0m, {[35mmember[0m: @member, [35mevent[0m: @event})[0m
+      [31m[0m
+      [31mNoMethodError:[0m
+      [31m  undefined method `post=' for #<EventMember:0x00000000063723b8>[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:16:in `public_send'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:16:in `block (2 levels) in object'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:15:in `each'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:15:in `block in object'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:14:in `tap'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:14:in `object'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/evaluation.rb:13:in `object'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/strategy/create.rb:9:in `result'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/factory.rb:43:in `run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/factory_runner.rb:29:in `block in run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/factory_runner.rb:28:in `run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/strategy_syntax_method_registrar.rb:28:in `block in define_singular_strategy_method'[0m
+      [36m# ./spec/controllers/public/event_members_controller_spec.rb:8:in `block (2 levels) in <top (required)>'[0m
+
+  29) Public::EventMembersController#destroy 未登録ユーザとして 302レスポンスを返すか
+      [31mFailure/Error: [0m@event_member = [1;34;4mFactoryBot[0m.create([33m:event_member[0m, {[35mmember[0m: @member, [35mevent[0m: @event})[0m
+      [31m[0m
+      [31mNoMethodError:[0m
+      [31m  undefined method `post=' for #<EventMember:0x00000000068424b0>[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:16:in `public_send'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:16:in `block (2 levels) in object'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:15:in `each'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:15:in `block in object'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:14:in `tap'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:14:in `object'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/evaluation.rb:13:in `object'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/strategy/create.rb:9:in `result'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/factory.rb:43:in `run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/factory_runner.rb:29:in `block in run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/factory_runner.rb:28:in `run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/strategy_syntax_method_registrar.rb:28:in `block in define_singular_strategy_method'[0m
+      [36m# ./spec/controllers/public/event_members_controller_spec.rb:8:in `block (2 levels) in <top (required)>'[0m
+
+  30) Public::EventMembersController#destroy 未登録ユーザとして サインイン画面にリダイレクトするか
+      [31mFailure/Error: [0m@event_member = [1;34;4mFactoryBot[0m.create([33m:event_member[0m, {[35mmember[0m: @member, [35mevent[0m: @event})[0m
+      [31m[0m
+      [31mNoMethodError:[0m
+      [31m  undefined method `post=' for #<EventMember:0x0000000006e922e8>[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:16:in `public_send'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:16:in `block (2 levels) in object'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:15:in `each'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:15:in `block in object'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:14:in `tap'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:14:in `object'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/evaluation.rb:13:in `object'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/strategy/create.rb:9:in `result'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/factory.rb:43:in `run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/factory_runner.rb:29:in `block in run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/factory_runner.rb:28:in `run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/strategy_syntax_method_registrar.rb:28:in `block in define_singular_strategy_method'[0m
+      [36m# ./spec/controllers/public/event_members_controller_spec.rb:8:in `block (2 levels) in <top (required)>'[0m
+
+  31) Public::EventMembersController#myevent 認証済みのユーザーとして 正常なレスポンスか
+      [31mFailure/Error: [0m@event_member = [1;34;4mFactoryBot[0m.create([33m:event_member[0m, {[35mmember[0m: @member, [35mevent[0m: @event})[0m
+      [31m[0m
+      [31mNoMethodError:[0m
+      [31m  undefined method `post=' for #<EventMember:0x0000000007d825a0>[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:16:in `public_send'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:16:in `block (2 levels) in object'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:15:in `each'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:15:in `block in object'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:14:in `tap'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:14:in `object'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/evaluation.rb:13:in `object'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/strategy/create.rb:9:in `result'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/factory.rb:43:in `run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/factory_runner.rb:29:in `block in run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/factory_runner.rb:28:in `run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/strategy_syntax_method_registrar.rb:28:in `block in define_singular_strategy_method'[0m
+      [36m# ./spec/controllers/public/event_members_controller_spec.rb:8:in `block (2 levels) in <top (required)>'[0m
+
+  32) Public::EventMembersController#myevent 認証済みのユーザーとして 200レスポンスが返ってきているか
+      [31mFailure/Error: [0m@event_member = [1;34;4mFactoryBot[0m.create([33m:event_member[0m, {[35mmember[0m: @member, [35mevent[0m: @event})[0m
+      [31m[0m
+      [31mNoMethodError:[0m
+      [31m  undefined method `post=' for #<EventMember:0x00000000080eb688>[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:16:in `public_send'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:16:in `block (2 levels) in object'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:15:in `each'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:15:in `block in object'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:14:in `tap'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:14:in `object'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/evaluation.rb:13:in `object'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/strategy/create.rb:9:in `result'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/factory.rb:43:in `run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/factory_runner.rb:29:in `block in run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/factory_runner.rb:28:in `run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/strategy_syntax_method_registrar.rb:28:in `block in define_singular_strategy_method'[0m
+      [36m# ./spec/controllers/public/event_members_controller_spec.rb:8:in `block (2 levels) in <top (required)>'[0m
+
+  33) Public::EventMembersController#myevent 未登録ユーザとして 302レスポンスを返すか
+      [31mFailure/Error: [0m@event_member = [1;34;4mFactoryBot[0m.create([33m:event_member[0m, {[35mmember[0m: @member, [35mevent[0m: @event})[0m
+      [31m[0m
+      [31mNoMethodError:[0m
+      [31m  undefined method `post=' for #<EventMember:0x0000000008232780>[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:16:in `public_send'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:16:in `block (2 levels) in object'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:15:in `each'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:15:in `block in object'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:14:in `tap'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:14:in `object'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/evaluation.rb:13:in `object'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/strategy/create.rb:9:in `result'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/factory.rb:43:in `run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/factory_runner.rb:29:in `block in run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/factory_runner.rb:28:in `run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/strategy_syntax_method_registrar.rb:28:in `block in define_singular_strategy_method'[0m
+      [36m# ./spec/controllers/public/event_members_controller_spec.rb:8:in `block (2 levels) in <top (required)>'[0m
+
+  34) Public::EventMembersController#myevent 未登録ユーザとして サインイン画面にリダイレクトするか
+      [31mFailure/Error: [0m@event_member = [1;34;4mFactoryBot[0m.create([33m:event_member[0m, {[35mmember[0m: @member, [35mevent[0m: @event})[0m
+      [31m[0m
+      [31mNoMethodError:[0m
+      [31m  undefined method `post=' for #<EventMember:0x00000000082efbc8>[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:16:in `public_send'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:16:in `block (2 levels) in object'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:15:in `each'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:15:in `block in object'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:14:in `tap'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/attribute_assigner.rb:14:in `object'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/evaluation.rb:13:in `object'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/strategy/create.rb:9:in `result'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/factory.rb:43:in `run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/factory_runner.rb:29:in `block in run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/factory_runner.rb:28:in `run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/factory_bot-6.1.0/lib/factory_bot/strategy_syntax_method_registrar.rb:28:in `block in define_singular_strategy_method'[0m
+      [36m# ./spec/controllers/public/event_members_controller_spec.rb:8:in `block (2 levels) in <top (required)>'[0m
+
+Finished in 9.47 seconds (files took 1.98 seconds to load)
+[31m136 examples, 34 failures[0m
+
+Failed examples:
+
+[31mrspec ./spec/controllers/public/event_members_controller_spec.rb:13[0m [36m# Public::EventMembersController#new 認証済みのユーザーとして 正常なレスポンスか[0m
+[31mrspec ./spec/controllers/public/event_members_controller_spec.rb:18[0m [36m# Public::EventMembersController#new 認証済みのユーザーとして 200レスポンスが返ってきているか[0m
+[31mrspec ./spec/controllers/public/event_members_controller_spec.rb:25[0m [36m# Public::EventMembersController#new 未登録ユーザとして 302レスポンスを返すか[0m
+[31mrspec ./spec/controllers/public/event_members_controller_spec.rb:29[0m [36m# Public::EventMembersController#new 未登録ユーザとして サインイン画面にリダイレクトするか[0m
+[31mrspec ./spec/controllers/public/event_members_controller_spec.rb:37[0m [36m# Public::EventMembersController#show 認証済みのユーザーとして 正常なレスポンスか[0m
+[31mrspec ./spec/controllers/public/event_members_controller_spec.rb:42[0m [36m# Public::EventMembersController#show 認証済みのユーザーとして 200レスポンスが返ってきているか[0m
+[31mrspec ./spec/controllers/public/event_members_controller_spec.rb:49[0m [36m# Public::EventMembersController#show 未登録ユーザとして 302レスポンスを返すか[0m
+[31mrspec ./spec/controllers/public/event_members_controller_spec.rb:53[0m [36m# Public::EventMembersController#show 未登録ユーザとして サインイン画面にリダイレクトするか[0m
+[31mrspec ./spec/controllers/public/event_members_controller_spec.rb:61[0m [36m# Public::EventMembersController#complete 認証済みのユーザーとして 正常なレスポンスか[0m
+[31mrspec ./spec/controllers/public/event_members_controller_spec.rb:66[0m [36m# Public::EventMembersController#complete 認証済みのユーザーとして 200レスポンスが返ってきているか[0m
+[31mrspec ./spec/controllers/public/event_members_controller_spec.rb:73[0m [36m# Public::EventMembersController#complete 未登録ユーザとして 302レスポンスを返すか[0m
+[31mrspec ./spec/controllers/public/event_members_controller_spec.rb:77[0m [36m# Public::EventMembersController#complete 未登録ユーザとして サインイン画面にリダイレクトするか[0m
+[31mrspec ./spec/controllers/public/event_members_controller_spec.rb:85[0m [36m# Public::EventMembersController#create 認証済みのユーザーとして イベント作成できるか[0m
+[31mrspec ./spec/controllers/public/event_members_controller_spec.rb:103[0m [36m# Public::EventMembersController#create 認証済みのユーザーとして 投稿後にマイページにリダイレクトされているか[0m
+[31mrspec ./spec/controllers/public/event_members_controller_spec.rb:122[0m [36m# Public::EventMembersController#create 未登録ユーザとして 302レスポンスを返すか[0m
+[31mrspec ./spec/controllers/public/event_members_controller_spec.rb:126[0m [36m# Public::EventMembersController#create 未登録ユーザとして サインイン画面にリダイレクトするか[0m
+[31mrspec ./spec/controllers/public/event_members_controller_spec.rb:134[0m [36m# Public::EventMembersController#edit 認証済みのユーザーとして 正常なレスポンスか[0m
+[31mrspec ./spec/controllers/public/event_members_controller_spec.rb:139[0m [36m# Public::EventMembersController#edit 認証済みのユーザーとして 200レスポンスが返ってきているか[0m
+[31mrspec ./spec/controllers/public/event_members_controller_spec.rb:146[0m [36m# Public::EventMembersController#edit 未登録ユーザとして 302レスポンスを返すか[0m
+[31mrspec ./spec/controllers/public/event_members_controller_spec.rb:150[0m [36m# Public::EventMembersController#edit 未登録ユーザとして サインイン画面にリダイレクトするか[0m
+[31mrspec ./spec/controllers/public/event_members_controller_spec.rb:158[0m [36m# Public::EventMembersController#update 認証済みのユーザーとして 正常に更新できるか[0m
+[31mrspec ./spec/controllers/public/event_members_controller_spec.rb:164[0m [36m# Public::EventMembersController#update 認証済みのユーザーとして 更新後にマイイベントにリダイレクトされているか[0m
+[31mrspec ./spec/controllers/public/event_members_controller_spec.rb:170[0m [36m# Public::EventMembersController#update 認証済みのユーザーとして フォームが空白の時に更新できなくなっているか[0m
+[31mrspec ./spec/controllers/public/event_members_controller_spec.rb:176[0m [36m# Public::EventMembersController#update 認証済みのユーザーとして フォームが空白の時に更新できず、再度編集ページにリダイレクトされるか[0m
+[31mrspec ./spec/controllers/public/event_members_controller_spec.rb:184[0m [36m# Public::EventMembersController#update 未登録ユーザとして 302レスポンスを返すか[0m
+[31mrspec ./spec/controllers/public/event_members_controller_spec.rb:188[0m [36m# Public::EventMembersController#update 未登録ユーザとして サインイン画面にリダイレクトするか[0m
+[31mrspec ./spec/controllers/public/event_members_controller_spec.rb:196[0m [36m# Public::EventMembersController#destroy 認証済みのユーザーとして 正常に投稿を削除できるか[0m
+[31mrspec ./spec/controllers/public/event_members_controller_spec.rb:202[0m [36m# Public::EventMembersController#destroy 認証済みのユーザーとして 削除後に現在のページにリダイレクトされているか[0m
+[31mrspec ./spec/controllers/public/event_members_controller_spec.rb:209[0m [36m# Public::EventMembersController#destroy 未登録ユーザとして 302レスポンスを返すか[0m
+[31mrspec ./spec/controllers/public/event_members_controller_spec.rb:213[0m [36m# Public::EventMembersController#destroy 未登録ユーザとして サインイン画面にリダイレクトするか[0m
+[31mrspec ./spec/controllers/public/event_members_controller_spec.rb:221[0m [36m# Public::EventMembersController#myevent 認証済みのユーザーとして 正常なレスポンスか[0m
+[31mrspec ./spec/controllers/public/event_members_controller_spec.rb:226[0m [36m# Public::EventMembersController#myevent 認証済みのユーザーとして 200レスポンスが返ってきているか[0m
+[31mrspec ./spec/controllers/public/event_members_controller_spec.rb:233[0m [36m# Public::EventMembersController#myevent 未登録ユーザとして 302レスポンスを返すか[0m
+[31mrspec ./spec/controllers/public/event_members_controller_spec.rb:237[0m [36m# Public::EventMembersController#myevent 未登録ユーザとして サインイン画面にリダイレクトするか[0m
+
