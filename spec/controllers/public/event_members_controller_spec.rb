@@ -88,7 +88,7 @@ RSpec.describe Public::EventMembersController, type: :controller do
           post :create, params: {
             event_member: {
               feedback: "良いイベントでした",
-              rate: "3",
+              rate: 3,
               event_id: 1,
               member_id: 1,
             }
@@ -100,9 +100,9 @@ RSpec.describe Public::EventMembersController, type: :controller do
           post :create, params: {
             event_member: {
               feedback: "良いイベントでした",
-              rate: "3",
-              event_id: 1,
-              member_id: 1,
+              rate: 3,
+              event_id: @event.id,
+              member_id: @member.id,
             }
           }
         expect(response).to(redirect_to(event_event_members_complete_path))
