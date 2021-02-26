@@ -49,7 +49,7 @@
               </div>
             </div>
             <div class="content is-size-7">
-              <%= new_event.content %>
+              <%= safe_join(new_event.content.split("\n"),tag(:br)) %><br>
               <time><%= new_event.started_at.strftime("%Y年%-m月%-d日 %H時%M分") %> 開催</time>
             </div>
           </div>
@@ -85,7 +85,7 @@
               </div>
             </div>
             <div class="content is-size-7">
-              <%= finished_event.content %>
+              <%= safe_join(finished_event.content.split("\n"),tag(:br)) %><br>
               <time><%= finished_event.finished_at.strftime("%Y年%-m月%-d日 %H時%M分") %> 終了</time>
             </div>
           </div>
