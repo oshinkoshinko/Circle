@@ -106,7 +106,7 @@ RSpec.describe Public::PostsController, type: :controller do
         sign_in @member
         post_params = {body: "更新しました"}
         patch :update, params: {id: @post.id, post: post_params}
-        expect(response).to redirect_to member_path(@member.id)
+        expect(response).to redirect_to posts_path
       end
       it "フォームが空白の時に更新できなくなっているか" do
         sign_in @member
