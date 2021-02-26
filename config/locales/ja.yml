@@ -278,6 +278,8 @@ ja:
         started_at: 同じ開催日時
       event_member:
         feedback: フィードバック
+      genre:
+        name: ジャンル名
     models:
       member: ユーザー
   devise:
