@@ -18,9 +18,11 @@
       <% end %>
     </div>
   </div>
+  <!--イベント開催ボタン-->
   <div class="new-event-btn has-text-centered">
     <%= link_to "イベントを開催する", new_event_path, method: :get, class: "button is-primary is-small" %>
   </div>
+  <!--開催イベント一覧カード-->
   <h4 style="margin-top: 20px; margin-bottom:20px"><span>開催イベント</span></h4>
   <div id="new-card">
     <% @new_events.each do |new_event| %>
@@ -57,6 +59,7 @@
       <% end %>
     <% end %>
   </div>
+  <!--開催終了イベント一覧カード-->
   <h4 style="margin-top: 20px; margin-bottom:20px"><span>開催終了イベント</h4></span>
   <div id="finished-card">
     <% @finished_events.each do |finished_event| %>

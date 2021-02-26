@@ -1,5 +1,6 @@
 <section class="events">
   <div class="event-content">
+    <!--イベント内容-->
     <h4>イベント詳細</h4>
     <div class="event-info">
       <%= link_to member_path(@event.member.id) do %>
@@ -32,6 +33,7 @@
     <div class="event-image">
       <%= attachment_image_tag @event, :event_image, :fill, 500, 500, format: "jpeg", fallback: "event.png", size:'300x200' %>
     </div>
+    <!--申込ボタン-->
     <div class="apply-btn">
       <% if current_member != @event.member %>
         <!--応募締め切り時間前かどうか-->
@@ -71,7 +73,7 @@
             <%= link_to member_path(event_member.member), local:true do %>
               <%= event_member.member.account_name %>さん<br>
             <% end %>
-            <%= event_member.feedback %>
+            <%= safe_join(event_member.feedback.split("\n"),tag(:br)) %>
             <% if current_member.id == event_member.member.id %>
               <%= link_to event_event_member_path(event_member.event.id, event_member.id) do %>
                 <i class="fas fa-wrench"></i>
@@ -81,5 +83,6 @@
         </div>
       <% end %>
     <% end %>
+    </div>
   </div>
 </section>

@@ -102,7 +102,7 @@ RSpec.describe Public::PostsController, type: :controller do
         patch :update, params: {id: @post.id, post: post_params}
         expect(@post.reload.body).to eq "更新しました"
       end
-      it "更新後にマイページにリダイレクトされているか" do
+      it "更新後に投稿一覧にリダイレクトされているか" do
         sign_in @member
         post_params = {body: "更新しました"}
         patch :update, params: {id: @post.id, post: post_params}

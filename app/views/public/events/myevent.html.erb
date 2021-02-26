@@ -1,8 +1,10 @@
-  <div class="new-event-btn has-text-centered">
-    <%= link_to "イベントを開催する", new_event_path, local:true, class: "button is-primary is-small" %>
-  </div>
-
+<!--イベント開催ボタン-->
+<div class="new-event-btn has-text-centered">
+  <%= link_to "イベントを開催する", new_event_path, local:true, class: "button is-primary is-small" %>
+</div>
+<!--参加イベント一覧-->
 <section class="join-event-list columns is-desktop">
+  <!--参加予定イベント-->
   <div class="join-event column">
     <h4>参加予定イベント</h4>
     <div class="join-event-content">
@@ -24,6 +26,7 @@
     <% end %>
     </div>
   </div>
+  <!--参加済みイベント-->
   <div class="joined-event column">
     <h4>参加済みイベント</h4>
     <div class="joined-event-content">
@@ -53,7 +56,9 @@
     </div>
   </div>
 </section>
+<!--開催イベント一覧-->
 <section class="host-event-list columns is-desktop">
+  <!--自分で開催するイベント一覧-->
   <div class="host-event column">
     <h4>開催予定イベント</h4>
     <div class="host-event-content">
@@ -78,6 +83,7 @@
     <% end %>
     </div>
   </div>
+  <!--自分で開催し終えたイベント一覧-->
   <div class="finished-event column">
     <h4>開催済みイベント</h4>
     <div class="finished-event-content">
