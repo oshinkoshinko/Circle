@@ -22,6 +22,7 @@ class Member < ApplicationRecord
   validates :name, presence: true
   validates :account_name, presence: true, uniqueness: true
   validates :password_confirmation, presence: true, on: :create
+  validates :introduction, length: { maximum: 150 }
 
   def follow(member_id)
     follower.create(followed_id: member_id)

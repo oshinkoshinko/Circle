@@ -266,6 +266,7 @@ ja:
         # 追加分
         name: 名前
         account_name: アカウント名
+        introduction: 自己紹介文
       post:
         body: 投稿内容
         address: 場所

@@ -86,12 +86,7 @@ RSpec.describe Public::EventMembersController, type: :controller do
         sign_in @member
         expect {
           post :create, params: {
-            event_member: {
-              feedback: "良いイベントでした",
-              rate: 3,
-              event_id: 1,
-              member_id: 1,
-            }
+            event_member: event_member_params
           }
         }.to change(@event.event_members, :count).by(1)
       end

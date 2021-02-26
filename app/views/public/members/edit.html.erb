@@ -5,7 +5,7 @@
     <%= render 'layouts/error', model: f.object %>
     <h6>アカウント名</h6>
     <%= f.text_field :account_name %><br>
-    <h6>ひと言</h6>
+    <h6>自己紹介</h6>
     <%= f.text_area :introduction, :size=>"40x4" %><br>
     <%= attachment_image_tag @member, :profile_image, :fill, 500, 500, format: "jpeg", fallback: "no-prof-image.png", style: "border-radius: 50%;" %><br>
     <%= f.attachment_field :profile_image, placeholder: "プロフィール画像" %><br>
