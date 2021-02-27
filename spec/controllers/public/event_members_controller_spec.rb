@@ -121,68 +121,44 @@ RSpec.describe Public::EventMembersController, type: :controller do
       end
     end
   end
-  # describe "#edit" do
-  #   context "認証済みのユーザーとして" do
-  #     it "正常なレスポンスか" do
-  #       sign_in @member
-  #       get :edit, params: {id: @event.id}
-  #       expect(response).to be_success
-  #     end
-  #     it "200レスポンスが返ってきているか" do
-  #       sign_in @member
-  #       get :edit, params: {id: @event.id}
-  #       expect(response).to have_http_status "200"
-  #     end
-  #   end
-  #   context "未登録ユーザとして" do
-  #     it "302レスポンスを返すか" do
-  #       get :edit, params: {id: @event.id}
-  #       expect(response).to have_http_status "302"
-  #     end
-  #     it "サインイン画面にリダイレクトするか" do
-  #       get :edit, params: {id: @event.id}
-  #       expect(response).to redirect_to "/members/sign_in"
-  #     end
-  #   end
-  # end
-  # describe "#update" do
-  #   context "認証済みのユーザーとして" do
-  #     it "正常に更新できるか" do
-  #       sign_in @member
-  #       event_params = {content: "イベント内容更新しました"}
-  #       patch :update, params: {id: @event.id, event: event_params}
-  #       expect(@event.reload.content).to eq "イベント内容更新しました"
-  #     end
-  #     it "更新後にマイイベントにリダイレクトされているか" do
-  #       sign_in @member
-  #       event_params = {content: "イベント内容更新しました"}
-  #       patch :update, params: {id: @event.id, event: event_params}
-  #       expect(response).to redirect_to events_myevent_path
-  #     end
-  #     it "フォームが空白の時に更新できなくなっているか" do
-  #       sign_in @member
-  #       event_params = {content: ""}
-  #       patch :update, params: {id: @event.id, event: event_params}
-  #       expect(@event.reload.content).to eq "チームでECサイトを作ろう！"
-  #     end
-  #     it "フォームが空白の時に更新できず、再度編集ページにリダイレクトされるか" do
-  #       sign_in @member
-  #       event_params = {content: ""}
-  #       patch :update, params: {id: @event.id, event: event_params}
-  #       expect(response).to render_template(:edit)
-  #     end
-  #   end
-  #   context "未登録ユーザとして" do
-  #     it "302レスポンスを返すか" do
-  #       patch :update, params: {id: @event.id}
-  #       expect(response).to have_http_status "302"
-  #     end
-  #     it "サインイン画面にリダイレクトするか" do
-  #       patch :update, params: {id: @event.id}
-  #       expect(response).to redirect_to "/members/sign_in"
-  #     end
-  #   end
-  # end
+  describe "#update" do
+    context "認証済みのユーザーとして" do
+      it "正常に更新できるか" do
+        sign_in @member
+        event_member_params = {feedback: "フィードバックを更新しました"}
+        patch :update, params: {id: @event_member.id, event_id: @event.id, event_member: event_member_params}
+        expect(@event_member.reload.feedback).to eq "フィードバックを更新しました"
+      end
+      it "更新後にイベント詳細ページにリダイレクトされているか" do
+        sign_in @member
+        event_member_params = {feedback: "フィードバックを更新しました"}
+        patch :update, params: {id: @event_member.id, event_id: @event.id, event_member: event_member_params}
+        expect(response).to redirect_to event_path(@event_member.event_id)
+      end
+      it "フォームが空白の時に更新できなくなっているか" do
+        sign_in @member
+        event_member_params = {feedback: ""}
+        patch :update, params: {id: @event_member.id, event_id: @event.id, event_member: event_member_params}
+        expect(@event_member.reload.feedback).to eq "良いイベントでした"
+      end
+      it "フォームが空白の時に更新できず、再度フィードバックページにリダイレクトされるか" do
+        sign_in @member
+        event_member_params = {feedback: ""}
+        patch :update, params: {id: @event_member.id, event_id: @event.id, event_member: event_member_params}
+        expect(response).to render_template(:show)
+      end
+    end
+    context "未登録ユーザとして" do
+      it "302レスポンスを返すか" do
+        patch :update, params: {id: @event_member.id, event_id: @event.id}
+        expect(response).to have_http_status "302"
+      end
+      it "サインイン画面にリダイレクトするか" do
+        patch :update, params: {id: @event_member.id, event_id: @event.id}
+        expect(response).to redirect_to "/members/sign_in"
+      end
+    end
+  end
   # describe "#destroy" do
   #   context "認証済みのユーザーとして" do
   #     it "正常に投稿を削除できるか" do
