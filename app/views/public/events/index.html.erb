@@ -18,9 +18,11 @@
       <% end %>
     </div>
   </div>
+  <!--イベント開催ボタン-->
   <div class="new-event-btn has-text-centered">
-    <%= link_to "イベントを作る", new_event_path, method: :get, class: "button is-primary is-small" %>
+    <%= link_to "イベントを開催する", new_event_path, method: :get, class: "button is-primary is-small" %>
   </div>
+  <!--開催イベント一覧カード-->
   <h4 style="margin-top: 20px; margin-bottom:20px"><span>開催イベント</span></h4>
   <div id="new-card">
     <% @new_events.each do |new_event| %>
@@ -49,7 +51,7 @@
               </div>
             </div>
             <div class="content is-size-7">
-              <%= new_event.content %>
+              <%= safe_join(new_event.content.split("\n"),tag(:br)) %><br>
               <time><%= new_event.started_at.strftime("%Y年%-m月%-d日 %H時%M分") %> 開催</time>
             </div>
           </div>
@@ -57,6 +59,7 @@
       <% end %>
     <% end %>
   </div>
+  <!--開催終了イベント一覧カード-->
   <h4 style="margin-top: 20px; margin-bottom:20px"><span>開催終了イベント</h4></span>
   <div id="finished-card">
     <% @finished_events.each do |finished_event| %>
@@ -85,7 +88,7 @@
               </div>
             </div>
             <div class="content is-size-7">
-              <%= finished_event.content %>
+              <%= safe_join(finished_event.content.split("\n"),tag(:br)) %><br>
               <time><%= finished_event.finished_at.strftime("%Y年%-m月%-d日 %H時%M分") %> 終了</time>
             </div>
           </div>

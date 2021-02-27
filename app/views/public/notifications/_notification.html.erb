@@ -12,9 +12,6 @@
       <% when 'request' then %>
         あなたの投稿にリクエストを送りました。
         <%= notification.post.body %>
-      <!--<%# when 'accept' then %>-->
-      <!--  あなたのリクエストを承認しました。-->
-      <!--  <%#= notification.post.body %>-->
       <% when 'comment' then %>
         <% if notification.post.member_id == visited.id %>
           あなたの投稿

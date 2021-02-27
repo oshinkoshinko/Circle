@@ -1,11 +1,11 @@
-
+<!--ゲストログインボタン-->
 <% unless member_signed_in? %>
   <div class="guest-btn">
     <strong><%= link_to 'ゲストログイン（閲覧用）', members_guest_sign_in_path, method: :post, class: "button is-primary is-light" %></strong>
     <span class="please">感想やアドバイス頂けると嬉しいです!</span>
   </div>
 <% end %>
-<!--アプリキャッチフレーズ-->
+<!--アプリキャッチフレーズ　タイトル-->
 <section id="about">
   <div class="columns main">
     <div class="illust illust1 column is-5">
@@ -35,6 +35,7 @@
 </section>
 <!--アプリ使い方-->
 <section class="service">
+  <!--使い方ステップ１-->
   <div class="service-step1 columns main">
     <div class="column service-box">
       <div class="how-to-box">
@@ -65,6 +66,7 @@
   </div>
 </section>
 <section class="service">
+  <!--使い方ステップ２-->
   <div class="service-step2 columns main">
     <div class="step2-illust column is-hidden-mobile">
       <%= image_tag "/step2-image.png", size:"250x250" %>
@@ -89,6 +91,7 @@
   </div>
 </section>
 <section class="service">
+  <!--使い方ステップ３-->
   <div class="service-step3 columns main">
     <div class="column service-box">
       <div class="step-box3">
@@ -132,6 +135,7 @@
     </div>
   </div>
 </section>
+<!--お問い合わせボタン(携帯用)-->
 <div class="inquiry-btn-mobile is-hidden-desktop is-hidden-tablet">
   <%= link_to "お問い合わせ", new_inquiry_path, method: :get, class: "button is-dark is-light is-rounded" %>
 </div>

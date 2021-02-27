@@ -43,7 +43,6 @@ Rails.application.routes.draw do
    get 'chats/:id' => 'chats#show'
    resources :chats, only: [:create, :destroy]
    get 'rooms' => 'rooms#index'
-   get 'searches' => 'searches#index'
    resources :notifications, only: [:index]
    delete 'notifications' => 'notifications#destroy_all'
   end

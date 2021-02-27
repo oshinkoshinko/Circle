@@ -6,7 +6,7 @@ class Post < ApplicationRecord
   has_many :post_requests, dependent: :destroy
   has_many :notifications, dependent: :destroy
 
-  validates :body, presence: true
+  validates :body, presence: true, length: { maximum: 140 }
   validates :address, presence: true
   validates :genre_id, presence: true
 

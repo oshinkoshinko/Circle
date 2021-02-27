@@ -1,4 +1,4 @@
-<!--post内容-->
+<!--コメントする投稿内容-->
 <div class="post-comment">
   <article class="box media">
     <figure class="media-left is-48-48">
@@ -20,7 +20,7 @@
     </div>
   </article>
 </div>
-<!--comment投稿フォーム-->
+<!--コメントフォーム-->
 <div id="comment-form" class="comment-form-area">
   <%= form_with model: @post_comment do |f| %>
     <%= f.text_area :comment, placeholder: "コメントを書きましょう", :size=>"40x2" %>

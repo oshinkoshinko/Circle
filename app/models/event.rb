@@ -3,8 +3,8 @@ class Event < ApplicationRecord
   belongs_to :genre
   has_many :event_members, dependent: :destroy
 
-  validates :name, presence: true
-  validates :content, presence: true
+  validates :name, presence: true, length: { maximum: 20 }
+  validates :content, presence: true, length: { maximum: 200 }
   validates :place, presence: true
   validates :fee, presence: true
   validates :started_at, presence: true, uniqueness: { scope: :member_id }

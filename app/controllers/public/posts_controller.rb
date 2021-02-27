@@ -28,7 +28,7 @@ class Public::PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
     if @post.update(post_params)
-      redirect_to member_path(current_member.id)
+      redirect_to posts_path
     else
       @genres = Genre.all
       render 'edit'

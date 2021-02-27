@@ -8,6 +8,7 @@
     </div>
   <h4>ジャンル作成</h4>
   <%= form_with model: [:admin, @genre], method: :post, local:true do |f| %>
+  　<%= render 'layouts/error', model: f.object%>
     <div class="genre-form">
       <%= f.text_field :name, :placeholder => "ジャンル名" %>
       <%= f.submit '登録' %>

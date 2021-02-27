@@ -1,3 +1,4 @@
+<!--イベント申し込みページ-->
 <div class="apply">
   <div class="apply-form">
     <h4>申し込みフォーム</h4>
@@ -11,7 +12,7 @@
       応募締切　　　<%= @event.expired_at.strftime("%Y年%-m月%-d日 %H時%M分") %><br>
     </div>
     <div class="confirm-btn">
-      <%= form_with url: event_event_members_path, model: @event_member, method: :post, local:true do |f| %>
+      <%= form_with url: event_event_members_path(@event.id), model: @event_member, method: :post, local:true do |f| %>
         <%= f.hidden_field :event_id, :value => @event.id %>
         <%= f.hidden_field :member_id, :value => current_member.id %>
         <%= f.submit "確定", class: "button is-info is-small" %>
