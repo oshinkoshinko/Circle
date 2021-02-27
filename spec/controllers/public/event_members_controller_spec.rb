@@ -13,7 +13,7 @@ RSpec.describe Public::EventMembersController, type: :controller do
       it "正常なレスポンスか" do
         sign_in @member
         get :new, params: {event_id: @event.id}
-        expect(response).to be_success
+        expect(response).to be_successful
       end
       it "200レスポンスが返ってきているか" do
         sign_in @member
@@ -37,7 +37,7 @@ RSpec.describe Public::EventMembersController, type: :controller do
       it "正常なレスポンスか" do
         sign_in @member
         get :show, params: {event_id: @event.id, id: @event_member.id}
-        expect(response).to be_success
+        expect(response).to be_successful
       end
       it "200レスポンスが返ってきているか" do
         sign_in @member
@@ -61,7 +61,7 @@ RSpec.describe Public::EventMembersController, type: :controller do
       it "正常なレスポンスか" do
         sign_in @member
         get :complete, params: {event_id: @event.id}
-        expect(response).to be_success
+        expect(response).to be_successful
       end
       it "200レスポンスが返ってきているか" do
         sign_in @member

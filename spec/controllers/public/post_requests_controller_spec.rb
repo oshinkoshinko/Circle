@@ -13,7 +13,7 @@ RSpec.describe Public::PostRequestsController, type: :controller do
       it "正常なレスポンスか" do
         sign_in @member
         get :waiting
-        expect(response).to be_success
+        expect(response).to be_successful
       end
       it "200レスポンスが返ってきているか" do
         sign_in @member
@@ -41,8 +41,8 @@ RSpec.describe Public::PostRequestsController, type: :controller do
             post_request: {
               is_requested: "true",
               is_accepted: "false",
-              member_id: 1,
-              post_id: 1,
+              member_id: @member.id,
+              post_id: @post.id,
             },
             post_id: @post.id
           }, xhr: true

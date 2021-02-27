@@ -13,7 +13,7 @@ RSpec.describe Public::PostCommentsController, type: :controller do
       it "正常なレスポンスか" do
         sign_in @member
         get :show, params: {id: @post.id}
-        expect(response).to be_success
+        expect(response).to be_successful
       end
       it "200レスポンスが返ってきているか" do
         sign_in @member
@@ -40,8 +40,8 @@ RSpec.describe Public::PostCommentsController, type: :controller do
           post :create, params: {
             post_comment: {
               comment: "コメントしたよ",
-              member_id: 1,
-              post_id: 1,
+              member_id: @member.id,
+              post_id: @post.id,
             }
           }, xhr: true
         }.to change(@post.post_comments, :count).by(1)
