@@ -159,53 +159,29 @@ RSpec.describe Public::EventMembersController, type: :controller do
       end
     end
   end
-  # describe "#destroy" do
-  #   context "認証済みのユーザーとして" do
-  #     it "正常に投稿を削除できるか" do
-  #       sign_in @member
-  #       expect {
-  #         delete :destroy, {params: {id: @event.id}}
-  #       }.to change(@member.events, :count).by(-1)
-  #     end
-  #     it "削除後に現在のページにリダイレクトされているか" do
-  #       sign_in @member
-  #       delete :destroy, {params: {id: @event.id}}
-  #       expect(response).to(redirect_to(events_myevent_path))
-  #     end
-  #   end
-  #   context "未登録ユーザとして" do
-  #     it "302レスポンスを返すか" do
-  #       delete :destroy, params: {id: @event.id}
-  #       expect(response).to have_http_status "302"
-  #     end
-  #     it "サインイン画面にリダイレクトするか" do
-  #       delete :destroy, params: {id: @event.id}
-  #       expect(response).to redirect_to "/members/sign_in"
-  #     end
-  #   end
-  # end
-  # describe "#myevent" do
-  #   context "認証済みのユーザーとして" do
-  #     it "正常なレスポンスか" do
-  #       sign_in @member
-  #       get :myevent
-  #       expect(response).to be_success
-  #     end
-  #     it "200レスポンスが返ってきているか" do
-  #       sign_in @member
-  #       get :myevent
-  #       expect(response).to have_http_status "200"
-  #     end
-  #   end
-  #   context "未登録ユーザとして" do
-  #     it "302レスポンスを返すか" do
-  #       get :myevent
-  #       expect(response).to have_http_status "302"
-  #     end
-  #     it "サインイン画面にリダイレクトするか" do
-  #       get :myevent
-  #       expect(response).to redirect_to "/members/sign_in"
-  #     end
-  #   end
-  # end
+  describe "#destroy" do
+    context "認証済みのユーザーとして" do
+      it "正常に投稿を削除できるか" do
+        sign_in @member
+        expect {
+          delete :destroy, {params: {id: @event_member.id,event_id: @event.id}}
+        }.to change(@member.event_members, :count).by(-1)
+      end
+      it "削除後にマイイベントページにリダイレクトされているか" do
+        sign_in @member
+        delete :destroy, {params: {id: @event_member.id,event_id: @event.id}}
+        expect(response).to(redirect_to(events_myevent_path))
+      end
+    end
+    context "未登録ユーザとして" do
+      it "302レスポンスを返すか" do
+        delete :destroy, params: {id: @event_member.id,event_id: @event.id}
+        expect(response).to have_http_status "302"
+      end
+      it "サインイン画面にリダイレクトするか" do
+        delete :destroy, params: {id: @event_member.id,event_id: @event.id}
+        expect(response).to redirect_to "/members/sign_in"
+      end
+    end
+  end
 end
