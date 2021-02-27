@@ -86,11 +86,17 @@ RSpec.describe Public::EventMembersController, type: :controller do
         sign_in @member
         expect {
           post :create, params: {
-            event_member: event_member_params
+            event_member: {
+              feedback: "良いイベントでした",
+              rate: 3,
+              event_id: @event.id,
+              member_id: @member.id,
+            },
+            event_id: @event.id
           }
         }.to change(@event.event_members, :count).by(1)
       end
-      it "投稿後にマイページにリダイレクトされているか" do
+      it "申し込み後に完了ページにリダイレクトされているか" do
         sign_in @member
           post :create, params: {
             event_member: {
@@ -98,18 +104,19 @@ RSpec.describe Public::EventMembersController, type: :controller do
               rate: 3,
               event_id: @event.id,
               member_id: @member.id,
-            }
+            },
+            event_id: @event.id
           }
         expect(response).to(redirect_to(event_event_members_complete_path))
       end
     end
     context "未登録ユーザとして" do
       it "302レスポンスを返すか" do
-        post :create
+        post :create, params: {event_id: @event.id}
         expect(response).to have_http_status "302"
       end
       it "サインイン画面にリダイレクトするか" do
-        post :create
+        post :create, params: {event_id: @event.id}
         expect(response).to redirect_to "/members/sign_in"
       end
     end
