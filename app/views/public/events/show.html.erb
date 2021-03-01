@@ -11,8 +11,10 @@
         <% if @event.finished_at > DateTime.now %>
           ただいまの参加人数は<%= @event_members.count %>人です。<br>
         <% else %>
-          参加人数は<%= @event_members.count %>人でした。<br>
-          平均評価は<%= @event.event_members.average(:score).round(2) %>です。<br>
+          <span>参加人数は<%= @event_members.count %>人でした。</span><br>
+          <% unless @event.event_members.average(:score) == nil %>
+          <span>平均評価は<%= @event.event_members.average(:score).round(2) %>です。</span><br>
+          <% end %>
         <% end %>
         <% @event_members.each do |event_member| %>
           <%= link_to member_path(event_member.member), local:true do %>
