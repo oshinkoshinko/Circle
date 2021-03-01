@@ -12,6 +12,7 @@
           ただいまの参加人数は<%= @event_members.count %>人です。<br>
         <% else %>
           参加人数は<%= @event_members.count %>人でした。<br>
+          平均評価は<%= @event.event_members.average(:score).round(2) %>です。<br>
         <% end %>
         <% @event_members.each do |event_member| %>
           <%= link_to member_path(event_member.member), local:true do %>
@@ -19,6 +20,7 @@
           <% end %>
         <% end %><br>
       </div>
+      <!--イベント詳細-->
       <div class="event-detail">
         イベント名　　<%= @event.name %><br>
         開催日時　　　<%= @event.started_at.strftime("%Y年%-m月%-d日 %H時%M分") %><br>
@@ -80,7 +82,19 @@
               <% end %>
             <% end %>
           </div>
-          <span class="feedback-rate">評価[<%= event_member.score %>]</span>
+          <!--フィードバックを自然言語処理でネガポジ判定-->
+          <span class="feedback-rate">感情評価
+          <% if 0.6 <= event_member.score %>
+            <%= event_member.score %><i class="fas fa-grin-squint" style="color: #ff8c00;"></i>
+          <% elsif 0.2 <= event_member.score %>
+            <%= event_member.score %><i class="fas fa-grin-beam" style="color: #ffd151;"></i>
+          <% elsif -0.1 <= event_member.score %>
+            <%= event_member.score %><i class="fas fa-smile" style="color: F5CA2D;"></i>
+          <% elsif -0.5 <= event_member.score %>
+            <%= event_member.score %><i class="fas fa-frown" style="color: #9EB2F5;"></i>
+          <% else %>
+            <%= event_member.score %><i class="fas fa-angry" style="color: #FC3300;"></i>
+          <% end %></span>
         </div>
       <% end %>
     <% end %>
