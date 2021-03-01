@@ -12,7 +12,7 @@ RSpec.describe Public::EventsController, type: :controller do
       it "正常なレスポンスか" do
         sign_in @member
         get :index
-        expect(response).to be_success
+        expect(response).to be_successful
       end
       it "200レスポンスが返ってきているか" do
         sign_in @member
@@ -36,7 +36,7 @@ RSpec.describe Public::EventsController, type: :controller do
       it "正常なレスポンスか" do
         sign_in @member
         get :new
-        expect(response).to be_success
+        expect(response).to be_successful
       end
       it "200レスポンスが返ってきているか" do
         sign_in @member
@@ -69,8 +69,8 @@ RSpec.describe Public::EventsController, type: :controller do
               started_at: "2099-02-27 00:00:00",
               finished_at: "2099-02-28 00:00:00",
               expired_at: "2099-02-27 00:00:00",
-              genre_id: 1,
-              member_id: 1,
+              genre_id: @genre.id,
+              member_id: @member.id,
             }
           }
         }.to change(@member.events, :count).by(1)
@@ -86,8 +86,8 @@ RSpec.describe Public::EventsController, type: :controller do
               started_at: "2099-02-27 00:00:00",
               finished_at: "2099-02-28 00:00:00",
               expired_at: "2099-02-27 00:00:00",
-              genre_id: 1,
-              member_id: 1,
+              genre_id: @genre.id,
+              member_id: @member.id,
             }
           }
         expect(response).to(redirect_to(events_myevent_path))
@@ -109,7 +109,7 @@ RSpec.describe Public::EventsController, type: :controller do
       it "正常なレスポンスか" do
         sign_in @member
         get :edit, params: {id: @event.id}
-        expect(response).to be_success
+        expect(response).to be_successful
       end
       it "200レスポンスが返ってきているか" do
         sign_in @member
@@ -196,7 +196,7 @@ RSpec.describe Public::EventsController, type: :controller do
       it "正常なレスポンスか" do
         sign_in @member
         get :myevent
-        expect(response).to be_success
+        expect(response).to be_successful
       end
       it "200レスポンスが返ってきているか" do
         sign_in @member

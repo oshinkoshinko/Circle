@@ -1,7 +1,6 @@
 FactoryBot.define do
 
-  factory :chat do
-    message  {"チャットいいですね！"}
+  factory :chat_room do
     association :member
     association :room
   end

@@ -10,7 +10,7 @@ RSpec.describe Public::MembersController, type: :controller do
       it "正常なレスポンスか" do
         sign_in @member
         get :show, params: {id: @member.id}
-        expect(response).to be_success
+        expect(response).to be_successful
       end
       it "200レスポンスが返ってきているか" do
         sign_in @member
@@ -34,7 +34,7 @@ RSpec.describe Public::MembersController, type: :controller do
       it "正常なレスポンスか" do
         sign_in @member
         get :edit, params: {id: @member.id}
-        expect(response).to be_success
+        expect(response).to be_successful
       end
       it "200レスポンスが返ってきているか" do
         sign_in @member
@@ -96,7 +96,7 @@ RSpec.describe Public::MembersController, type: :controller do
       it "正常なレスポンスか" do
         sign_in @member
         get :withdraw, params: {id: @member.id}
-        expect(response).to be_success
+        expect(response).to be_successful
       end
       it "200レスポンスが返ってきているか" do
         sign_in @member
