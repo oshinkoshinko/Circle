@@ -21,6 +21,7 @@ class Public::EventMembersController < ApplicationController
 
   def update
     @event_member = EventMember.find(params[:id])
+    @event_member.score = Language.get_data(event_member_params[:feedback])
     if @event_member.update(event_member_params)
       redirect_to event_path(@event_member.event_id)
     else
@@ -48,7 +49,7 @@ class Public::EventMembersController < ApplicationController
   end
 
   def event_member_params
-    params.require(:event_member).permit(:member_id, :event_id, :feedback, :rate)
+    params.require(:event_member).permit(:member_id, :event_id, :feedback, :score)
   end
 
 end

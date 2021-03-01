@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_13_075325) do
+ActiveRecord::Schema.define(version: 2021_03_01_024324) do
+
+  create_table "actions", force: :cascade do |t|
+    t.integer "member_id"
+    t.integer "genre_id"
+    t.string "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -43,7 +51,7 @@ ActiveRecord::Schema.define(version: 2021_02_13_075325) do
     t.integer "event_id"
     t.integer "member_id"
     t.string "feedback"
-    t.integer "rate"
+    t.decimal "score", precision: 5, scale: 3
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
