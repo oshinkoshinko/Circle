@@ -11,7 +11,7 @@
     </figure>
     <div class="media-content">
       <div class="content">
-        <p class="introduction" style="margin-top: 20px;"><%= safe_join(@member.introduction.split("\n"),tag(:br)) %></p>
+        <p class="introduction" style="margin-top: 20px;"><%= safe_join("#{@member.introduction}".split("\n"),tag(:br)) %></p>
         <div class="counts">
           <div class="follow_count" style="margin-right: 15px">
             フォロー <%= render 'public/relationships/following_count', member: @member %>
