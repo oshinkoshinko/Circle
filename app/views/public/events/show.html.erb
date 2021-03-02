@@ -13,7 +13,7 @@
         <% else %>
           <span>参加人数は<%= @event_members.count %>人でした。</span><br>
           <% unless @event.event_members.average(:score) == nil %>
-          <span>平均評価は<%= @event.event_members.average(:score).round(2) %>です。</span><br>
+          <span>平均評価は<%= @event.event_members.average(:score).round(2) * 10 %>点です。(-9〜9点)</span><br>
           <% end %>
         <% end %>
         <% @event_members.each do |event_member| %>
@@ -87,15 +87,15 @@
           <!--フィードバックを自然言語処理でネガポジ判定-->
           <span class="feedback-rate">感情評価
           <% if 0.6 <= event_member.score %>
-            <%= event_member.score %><i class="fas fa-grin-squint" style="color: #ff8c00;"></i>
+            <%= event_member.score * 10 %><i class="fas fa-grin-squint" style="color: #ff8c00;"></i>
           <% elsif 0.2 <= event_member.score %>
-            <%= event_member.score %><i class="fas fa-grin-beam" style="color: #ffd151;"></i>
+            <%= event_member.score * 10%><i class="fas fa-grin-beam" style="color: #ffd151;"></i>
           <% elsif -0.1 <= event_member.score %>
-            <%= event_member.score %><i class="fas fa-smile" style="color: #F5CA2D;"></i>
+            <%= event_member.score * 10%><i class="fas fa-smile" style="color: #F5CA2D;"></i>
           <% elsif -0.5 <= event_member.score %>
-            <%= event_member.score %><i class="fas fa-frown" style="color: #9EB2F5;"></i>
+            <%= event_member.score * 10%><i class="fas fa-frown" style="color: #9EB2F5;"></i>
           <% else %>
-            <%= event_member.score %><i class="fas fa-angry" style="color: #FC3300;"></i>
+            <%= event_member.score * 10%><i class="fas fa-angry" style="color: #FC3300;"></i>
           <% end %></span>
         </div>
       <% end %>
