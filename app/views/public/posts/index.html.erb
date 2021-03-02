@@ -52,14 +52,14 @@
               </p>
               <small>
                 <%= link_to post_comment_path(post.id) do %>
-                  <i class="far fa-comment-dots"></i> <%= post.post_comments.count %>件
+                  <i class="far fa-comment-dots comment-icon"></i> <%= post.post_comments.count %>件
                 <% end %>
                 <% if current_member.id == post.member.id %>
                   <%= link_to edit_post_path(post.id) do %>
-                    <i class="fas fa-wrench"></i>
+                    <i class="fas fa-wrench post-edit-icon"></i>
                   <% end %>
                   <%= link_to post_path(post.id), method: :delete do %>
-                    <i class="far fa-trash-alt"></i>
+                    <i class="far fa-trash-alt post-delete-icon"></i>
                   <% end %>
                 <% else %>
                   <!--非同期用-->

@@ -13,7 +13,7 @@
     <%= safe_join(post_comment.comment.split("\n"),tag(:br)) %>
     <% if current_member.id == post_comment.member.id %>
       <%= link_to post_comment_path(post_comment.id), method: :delete, remote:true do %>
-        <i class="far fa-trash-alt"></i>
+        <i class="far fa-trash-alt comment-delete-icon"></i>
       <% end %>
     <% end %>
   </div>
