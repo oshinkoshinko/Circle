@@ -37,7 +37,7 @@
     <div class="event-image">
       <%= attachment_image_tag @event, :event_image, :fill, 500, 500, format: "jpeg", fallback: "event.png", size:'300x200' %>
     </div>
-    <!--申込ボタン-->
+    <!--イベント申込ボタン-->
     <div class="apply-btn">
       <% if current_member != @event.member %>
         <!--応募締め切り時間前かどうか-->

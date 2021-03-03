@@ -38,6 +38,12 @@
             <a class="button is-small is-primary new-post-btn" style="margin-left:30px;" id="show_action">
               <i class="fas fa-plus-circle"></i>　<strong>新規投稿</strong>
             </a>
+            <!--投稿エラーメッセージ-->
+            <% if flash[:alert] %>
+              <p class="post-alert">
+                <%= flash[:alert] %>
+              </p>
+            <% end %>
           <% else %>
             <%= link_to chat_path(@member), class: "button is-normal is-small" do %>
               <i class="far fa-paper-plane"></i>　メッセージを送る
@@ -106,15 +112,15 @@
             <h4><strong>新規投稿</strong></h4>
               <div class="field">
                 <p class="control">
-              <%= form_with model: @post do |f| %>
-                <%= render 'layouts/error', model: f.object%>
-                <%= f.text_area :body, :size=>"30x5" %><br>
-                <span class="select is-normal">
-                <%= f.collection_select :genre_id, @genres, :id, :name, :include_blank => '🔍 ジャンル'  %>
-                </span><br>
-                <%= f.text_field :address, placeholder: "位置情報", value: "", class: "is-small" %>
-                <%= f.submit "投稿", class: "button is-primary", style: "margin-top: 30px; margin-left: 73%;" %>
-              <% end %>
+                  <%= form_with model: @post do |f| %>
+                    <%= render 'layouts/error', model: f.object%>
+                    <%= f.text_area :body, :size=>"30x5" %><br>
+                    <span class="select is-normal">
+                    <%= f.collection_select :genre_id, @genres, :id, :name, :include_blank => '🔍 ジャンル'  %>
+                    </span><br>
+                    <%= f.text_field :address, placeholder: "位置情報", value: "", class: "is-small" %>
+                    <%= f.submit "投稿", class: "button is-primary", style: "margin-top: 30px; margin-left: 73%;" %>
+                  <% end %>
                 </p>
               </div>
           </div>

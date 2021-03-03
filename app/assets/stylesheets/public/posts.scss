@@ -107,6 +107,17 @@
   display: inline-block;
 }
 
+.post-alert {
+    color:#262626;
+    background:#FFEBE8;
+    text-align: center;
+    border:2px solid #990000;
+    padding:5px;
+    font-weight:850;
+    font-size: 12px;
+    margin-top: 5px;
+  }
+
 //投稿一覧ページプロフィール写真
 .posts-index img.attachment.member.profile_image {
   width: 50px;
