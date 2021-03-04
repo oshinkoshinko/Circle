@@ -42,11 +42,6 @@ describe Member do
       member.valid?
       expect(member.errors[:password]).to include("を入力してください")
     end
-    it " 確認用パスワードがない場合は登録できないこと" do
-      member = build(:member, password_confirmation:"")
-      member.valid?
-      expect(member.errors[:password_confirmation]).to include("を入力してください")
-    end
   end
 
 end

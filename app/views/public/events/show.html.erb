@@ -22,7 +22,6 @@
           <% end %>
         <% end %><br>
       </div>
-      <!--イベント詳細-->
       <div class="event-detail">
         イベント名　　<%= @event.name %><br>
         開催日時　　　<%= @event.started_at.strftime("%Y年%-m月%-d日 %H時%M分") %><br>
@@ -97,6 +96,7 @@
           <% else %>
             <%= event_member.score * 10%><i class="fas fa-angry" style="color: #FC3300;"></i>
           <% end %></span>
+          <!--<%#= how_much_score(event_member.score) %>-->
         </div>
       <% end %>
     <% end %>
