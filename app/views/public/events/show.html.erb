@@ -83,20 +83,11 @@
               <% end %>
             <% end %>
           </div>
-          <!--フィードバックを自然言語処理でネガポジ判定-->
+          <!--フィードバックを自然言語処理でネガポジ判定 events_helperで条件分岐-->
           <span class="feedback-rate">感情評価
-          <% if 0.6 <= event_member.score %>
-            <%= event_member.score * 10 %><i class="fas fa-grin-squint" style="color: #ff8c00;"></i>
-          <% elsif 0.2 <= event_member.score %>
-            <%= event_member.score * 10%><i class="fas fa-grin-beam" style="color: #ffd151;"></i>
-          <% elsif -0.1 <= event_member.score %>
-            <%= event_member.score * 10%><i class="fas fa-smile" style="color: #F5CA2D;"></i>
-          <% elsif -0.5 <= event_member.score %>
-            <%= event_member.score * 10%><i class="fas fa-frown" style="color: #9EB2F5;"></i>
-          <% else %>
-            <%= event_member.score * 10%><i class="fas fa-angry" style="color: #FC3300;"></i>
-          <% end %></span>
-          <!--<%#= how_much_score(event_member.score) %>-->
+          <% how_much_score(event_member.score) %>
+          <%= event_member.score * 10 %>
+          <i class="fas fa-<%= @font %>" style="color: <%= @color %>;"></i>
         </div>
       <% end %>
     <% end %>

@@ -63,7 +63,7 @@ RSpec.describe Public::RelationshipsController, type: :controller do
             relationship: {
               member_id: @other_member.id,
             },
-            member_id: @member.id
+            member_id: @other_member.id
           }, xhr: true
         }.to change(@member.following_member, :count).by(1)
       end
@@ -83,12 +83,13 @@ RSpec.describe Public::RelationshipsController, type: :controller do
     context "認証済みのユーザーとして" do
       it "正常にフォローを解除できるか" do
         sign_in @member
+        @member.follow(@other_member.id)
         expect {
           delete :destroy, params: {
             relationship: {
-              member_id: @other_member.id,
+              member_id: @other_member.id
             },
-            member_id: @other_member.id,
+            member_id: @other_member.id
           }, xhr: true
         }.to change(@member.following_member, :count).by(-1)
       end
