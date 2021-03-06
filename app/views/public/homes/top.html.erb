@@ -25,16 +25,22 @@
     </div>
   </div>
   <div class="view-more-desktop is-hidden-mobile">
-    <p class="view-more-word">view more</p>
+    <p class="view-more-word">
+      view more
+    </p>
     <i class="fas fa-angle-down view-more-icon"></i>
   </div>
   <div class="view-more-mobile is-hidden-desktop is-hidden-tablet">
-    <p class="view-more-word">view more</p>
-    <i class="fas fa-angle-down view-more-icon"></i>
+    <%= link_to "#service" do %>
+      <p class="view-more-word">
+        view more
+      </p>
+      <i class="fas fa-angle-down view-more-icon"></i>
+    <% end %>
   </div>
 </section>
 <!--アプリ使い方-->
-<section class="service">
+<section class="service" id="service">
   <!--使い方ステップ１-->
   <div class="service-step1 columns main">
     <div class="column service-box">
