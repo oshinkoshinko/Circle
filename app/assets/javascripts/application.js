@@ -142,15 +142,11 @@ document.addEventListener("turbolinks:load", function() {
   });
 })
 
-//ブラウザ戻るボタン無効化
+//ブラウザバック時にリロード
 document.addEventListener("turbolinks:load", function() {
-  history.pushState(null, null, null);
-    $(window).on("popstate", function (event) {
-      if (!event.originalEvent.state) {
-      history.pushState(null, null, null);
-      return;
-    }
-  });
+   $(window).on('popstate', function() {
+      location.reload(true);
+   });
 })
 
 //投稿一覧ページアンカースクロール
