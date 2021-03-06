@@ -1,30 +1,38 @@
-<!--リクエスト一覧-->
-<section class="request columns is-desktop">
-  <div class="waiting-list column">
-    <h4>承認待ちリクエスト</h4>
-    <div class="requested-content">
-      <!--非同期リクエスト承認ボタン-->
-      <div id="accept-btn">
-        <%= render "public/post_requests/accept-btn", requested_posts: @requested_posts %>
+
+
+<div class="wrap">
+  <ul id="tab-menu">
+    <li><a href="#tab1" class="active">リクエスト中</a></li>
+    <li><a href="#tab2" class="">承認待ち</a></li>
+    <li><a href="#tab3" class="">承認済み</a></li>
+  </ul>
+
+  <div id="tab-contents" class="request columns">
+    <!--リクエスト中一覧-->
+    <div id="tab1" class="tab column">
+      <div class="requesting-content">
+        <!--非同期リクエストボタン-->
+        <div id="request-btn">
+          <%= render "public/post_requests/waiting-request-btn", requesting_posts: @requesting_posts %>
+        </div>
+      </div>
+    </div>
+        <!--承認待ちリクエスト一覧-->
+    <div id="tab2" class="tab column">
+      <div class="requested-content">
+        <!--非同期リクエスト承認ボタン-->
+        <div id="accept-btn">
+          <%= render "public/post_requests/accept-btn", requested_posts: @requested_posts %>
+        </div>
+      </div>
+    </div>
+        <!--承認済みリクエスト中一覧-->
+    <div id="tab3" class="tab column">
+      <div class="accepted-content">
+        <!--非同期リクエスト承認キャンセルボタン-->
+        <div id="cancel-accept-btn">
+          <%= render "public/post_requests/cancel-accept-btn", accept_posts: @accept_posts %>
+        </div>
       </div>
     </div>
   </div>
-  <div class="accept-list column">
-    <h4>承認済みリクエスト</h4>
-    <div class="accepted-content">
-      <!--非同期リクエスト承認キャンセルボタン-->
-      <div id="cancel-accept-btn">
-        <%= render "public/post_requests/cancel-accept-btn", accept_posts: @accept_posts %>
-      </div>
-    </div>
-  </div>
-  <div class="requesting-list column">
-    <h4>リクエスト中</h4>
-    <div class="requesting-content">
-      <!--非同期リクエストボタン-->
-      <div id="request-btn">
-        <%= render "public/post_requests/waiting-request-btn", requesting_posts: @requesting_posts %>
-      </div>
-    </div>
-  </div>
-</section>

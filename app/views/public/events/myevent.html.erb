@@ -26,7 +26,7 @@
               <div class="content">
                 <strong><%= join_event.event.name %></strong>
               </div>
-              <small>開催日時：<%= join_event.event.started_at.strftime("%Y年%-m月%-d日 %H時%M分") %></small>
+              <small>開催日時<br><%= join_event.event.started_at.strftime("%Y年%-m月%-d日 %H時%M分") %></small>
             </div>
         </article>
         <% end %>
@@ -47,7 +47,7 @@
             <div class="content">
               <strong><%= joined_event.event.name %></strong>
             </div>
-            <small>終了日時：<%= joined_event.event.finished_at.strftime("%Y年%-m月%-d日 %H時%M分") %></small>
+            <small>終了日時<br><%= joined_event.event.finished_at.strftime("%Y年%-m月%-d日 %H時%M分") %></small>
             <div>
             <% if joined_event.feedback == nil %>
               <%= link_to "評価する", event_event_member_path(joined_event.event_id, joined_event.id), method: :get, class: "button is-info is-small" %>
@@ -75,7 +75,7 @@
             <div class="content">
               <strong><%= active_event.name %></strong>
             </div>
-            <small>開催日時：<%= active_event.started_at.strftime("%Y年%-m月%-d日 %H時%M分") %></small><br>
+            <small>開催日時<br><%= active_event.started_at.strftime("%Y年%-m月%-d日 %H時%M分") %></small><br>
             <%= link_to edit_event_path(active_event.id), class: "button is-light is-small" do %>
               <i class="fas fa-wrench"></i>　編集する
             <% end %>
@@ -99,7 +99,7 @@
             <div class="content">
               <strong><%= finished_event.name %></strong>
             </div>
-            <small>終了日時：<%= finished_event.finished_at.strftime("%Y年%-m月%-d日 %H時%M分") %></small>
+            <small>終了日時<br><%= finished_event.finished_at.strftime("%Y年%-m月%-d日 %H時%M分") %></small>
           </div>
         </article>
         <% end %>
