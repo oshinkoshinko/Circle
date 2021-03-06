@@ -4,12 +4,12 @@ class Public::PostRequestsController < ApplicationController
   #自分へのリクエスト一覧画面
   def waiting
     #自分の投稿データを取得
-    @posts = Post.where(member_id: current_member.id)
+    @posts = Post.where(member_id: current_member.id).includes(:member)
     #自分の投稿データのなかでリクエストされたものを取得
-    @requested_posts = PostRequest.where(post_id: @posts.ids, is_accepted: false).order("created_at DESC")
-    @accept_posts = PostRequest.where(post_id: @posts.ids, is_accepted: true).order("created_at DESC")
+    @requested_posts = PostRequest.where(post_id: @posts.ids, is_accepted: false).order("created_at DESC").includes(:post, :member)
+    @accept_posts = PostRequest.where(post_id: @posts.ids, is_accepted: true).order("created_at DESC").includes(:post, :member)
     #リクエストした投稿データを取得
-    @requesting_posts = PostRequest.where(member_id: current_member.id).order("created_at DESC")
+    @requesting_posts = PostRequest.where(member_id: current_member.id).order("created_at DESC").includes(:post, :member)
   end
 
   def create
