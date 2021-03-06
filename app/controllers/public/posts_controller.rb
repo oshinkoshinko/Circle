@@ -7,7 +7,7 @@ class Public::PostsController < ApplicationController
     @q = Post.ransack(params[:q])
     @genres = Genre.all
     #24時間以内の投稿のみ表示
-    @posts = @q.result(distinct: true).order("created_at DESC").where(created_at: 24.hours.ago..Time.now)
+    @posts = @q.result(distinct: true).order("created_at DESC").where(created_at: 24.hours.ago..Time.now).includes(:member, :genre, :post_comments, :post_requests)
  end
 
  def create
