@@ -142,27 +142,38 @@ document.addEventListener("turbolinks:load", function() {
   });
 })
 
-//ブラウザ戻るボタン無効化
+//ブラウザバック時にリロード
 document.addEventListener("turbolinks:load", function() {
-  history.pushState(null, null, null);
-    $(window).on("popstate", function (event) {
-      if (!event.originalEvent.state) {
-      history.pushState(null, null, null);
-      return;
-    }
-  });
+   $(window).on('popstate', function() {
+      location.reload(true);
+   });
 })
 
 //投稿一覧ページアンカースクロール
 document.addEventListener("turbolinks:load", function() {
   $(function () {
     $('a[href^="#"]').click(function () {
-        var speed = 500;
-        var href= $(this).attr("href");
-        var target = $(href == "#" || href == "" ? 'html' : href);
-        var position = target.offset().top;
+        const speed = 500;
+        const href= $(this).attr("href");
+        const target = $(href == "#" || href == "" ? 'html' : href);
+        const position = target.offset().top;
         $("html, body").animate({scrollTop:position}, speed, 'swing');
         return false;
     });
   });
+})
+
+//マイイベントタブメニュー
+document.addEventListener("turbolinks:load", function() {
+$('#tab-contents .tab[id != "tab1"]').hide();
+})
+
+document.addEventListener("turbolinks:load", function() {
+$('#tab-menu a').on('click', function(event) {
+  $("#tab-contents .tab").hide();
+  $("#tab-menu .active").removeClass("active");
+  $(this).addClass("active");
+  $($(this).attr("href")).show();
+  event.preventDefault();
+});
 })

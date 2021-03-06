@@ -13,7 +13,7 @@
         <% else %>
           <span>参加人数は<%= @event_members.count %>人でした。</span><br>
           <% unless @event.event_members.average(:score) == nil %>
-          <span>平均評価は<%= @event.event_members.average(:score).round(2) %>です。</span><br>
+          <span>平均評価は<%= @event.event_members.average(:score).round(2) * 10 %>点です。(-9〜9点)</span><br>
           <% end %>
         <% end %>
         <% @event_members.each do |event_member| %>
@@ -22,7 +22,6 @@
           <% end %>
         <% end %><br>
       </div>
-      <!--イベント詳細-->
       <div class="event-detail">
         イベント名　　<%= @event.name %><br>
         開催日時　　　<%= @event.started_at.strftime("%Y年%-m月%-d日 %H時%M分") %><br>
@@ -37,7 +36,7 @@
     <div class="event-image">
       <%= attachment_image_tag @event, :event_image, :fill, 500, 500, format: "jpeg", fallback: "event.png", size:'300x200' %>
     </div>
-    <!--申込ボタン-->
+    <!--イベント申込ボタン-->
     <div class="apply-btn">
       <% if current_member != @event.member %>
         <!--応募締め切り時間前かどうか-->
@@ -84,19 +83,12 @@
               <% end %>
             <% end %>
           </div>
-          <!--フィードバックを自然言語処理でネガポジ判定-->
+          <!--フィードバックを自然言語処理でネガポジ判定 events_helperで条件分岐-->
           <span class="feedback-rate">感情評価
-          <% if 0.6 <= event_member.score %>
-            <%= event_member.score %><i class="fas fa-grin-squint" style="color: #ff8c00;"></i>
-          <% elsif 0.2 <= event_member.score %>
-            <%= event_member.score %><i class="fas fa-grin-beam" style="color: #ffd151;"></i>
-          <% elsif -0.1 <= event_member.score %>
-            <%= event_member.score %><i class="fas fa-smile" style="color: #F5CA2D;"></i>
-          <% elsif -0.5 <= event_member.score %>
-            <%= event_member.score %><i class="fas fa-frown" style="color: #9EB2F5;"></i>
-          <% else %>
-            <%= event_member.score %><i class="fas fa-angry" style="color: #FC3300;"></i>
-          <% end %></span>
+          <% how_much_score(event_member.score) %>
+          <%= event_member.score * 10 %>
+          <i class="fas fa-<%= @font %>" style="color: <%= @color %>;"></i>
+          </span>
         </div>
       <% end %>
     <% end %>

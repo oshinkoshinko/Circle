@@ -2,107 +2,109 @@
 <div class="new-event-btn has-text-centered">
   <%= link_to "イベントを開催する", new_event_path, local:true, class: "button is-primary is-small" %>
 </div>
-<!--参加イベント一覧-->
-<section class="join-event-list columns is-desktop">
-  <!--参加予定イベント-->
-  <div class="join-event column">
-    <h4>参加予定イベント</h4>
-    <div class="join-event-content">
-    <% @join_events.each do |join_event| %>
+
+<div class="wrap">
+  <ul id="tab-menu">
+    <li><a href="#tab1" class="active">参加予定</a></li>
+    <li><a href="#tab2" class="">参加済み</a></li>
+    <li><a href="#tab3" class="">開催予定</a></li>
+    <li><a href="#tab4" class="">開催済み</a></li>
+  </ul>
+
+  <div id="tab-contents" class="join-event-list columns">
+    <!--参加予定イベント一覧-->
+    <div id="tab1" class="tab column">
+      <div class="join-event-content">
+      <% @join_events.each do |join_event| %>
         <% if join_event.event.finished_at > DateTime.now %>
-      <article class="box media" style="margin-bottom: 0px; margin-top: 0px;">
-        <!--イベント終了時刻を過ぎていないイベントのみ-->
-          <%= link_to event_path(join_event.event), local:true do %>
-            <%= attachment_image_tag join_event.event, :event_image, :fill, 500, 500, format: "jpeg", fallback: "event.png" %>
+        <article class="box media" style="margin-bottom: 0px; margin-top: 0px;">
+          <!--イベント終了時刻を過ぎていないイベントのみ-->
+            <%= link_to event_path(join_event.event), local:true do %>
+              <%= attachment_image_tag join_event.event, :event_image, :fill, 500, 500, format: "jpeg", fallback: "event.png" %>
+            <% end %>
+            <div class="media-content">
+              <div class="content">
+                <strong><%= join_event.event.name %></strong>
+              </div>
+              <small>開催日時<br><%= join_event.event.started_at.strftime("%Y年%-m月%-d日 %H時%M分") %></small>
+            </div>
+        </article>
+        <% end %>
+      <% end %>
+      </div>
+    </div>
+    <!--参加済みイベント一覧-->
+    <div id="tab2" class="tab column">
+      <div class="joined-event-content">
+      <% @join_events.each do |joined_event| %>
+      <!--イベント終了時刻を過ぎたイベントのみ-->
+        <% if joined_event.event.finished_at < DateTime.now %>
+        <article class="box media" style="margin-bottom: 0px; margin-top: 0px;">
+          <%= link_to event_path(joined_event.event), local:true do %>
+            <%= attachment_image_tag joined_event.event, :event_image, :fill, 500, 500, format: "jpeg", fallback: "event.png" %>
           <% end %>
           <div class="media-content">
             <div class="content">
-              <strong><%= join_event.event.name %></strong>
+              <strong><%= joined_event.event.name %></strong>
             </div>
-            <small>開催日時：<%= join_event.event.started_at.strftime("%Y年%-m月%-d日 %H時%M分") %></small>
+            <small>終了日時<br><%= joined_event.event.finished_at.strftime("%Y年%-m月%-d日 %H時%M分") %></small>
+            <div>
+            <% if joined_event.feedback == nil %>
+              <%= link_to "評価する", event_event_member_path(joined_event.event_id, joined_event.id), method: :get, class: "button is-info is-small" %>
+            <% else %>
+              <%= link_to "評価を編集する", event_event_member_path(joined_event.event_id, joined_event.id), method: :get, class: "button is-light is-small" %>
+            <% end %>
+            </div>
           </div>
-      </article>
+        </article>
         <% end %>
-    <% end %>
+      <% end %>
+      </div>
     </div>
-  </div>
-  <!--参加済みイベント-->
-  <div class="joined-event column">
-    <h4>参加済みイベント</h4>
-    <div class="joined-event-content">
-    <% @join_events.each do |joined_event| %>
-      <!--イベント終了時刻を過ぎたイベントのみ-->
-      <% if joined_event.event.finished_at < DateTime.now %>
-      <article class="box media" style="margin-bottom: 0px; margin-top: 0px;">
-        <%= link_to event_path(joined_event.event), local:true do %>
-          <%= attachment_image_tag joined_event.event, :event_image, :fill, 500, 500, format: "jpeg", fallback: "event.png" %>
-        <% end %>
-        <div class="media-content">
-          <div class="content">
-            <strong><%= joined_event.event.name %></strong>
-          </div>
-          <small>終了日時：<%= joined_event.event.finished_at.strftime("%Y年%-m月%-d日 %H時%M分") %></small>
-          <div>
-          <% if joined_event.feedback == nil %>
-            <%= link_to "評価する", event_event_member_path(joined_event.event_id, joined_event.id), method: :get, class: "button is-info is-small" %>
-          <% else %>
-            <%= link_to "評価を編集する", event_event_member_path(joined_event.event_id, joined_event.id), method: :get, class: "button is-light is-small" %>
+    <!--開催予定イベント一覧-->
+    <div id="tab3" class="tab column">
+      <div class="host-event-content">
+      <% @active_events.each do |active_event| %>
+        <% if active_event.finished_at > DateTime.now %>
+        <article class="box media" style="margin-bottom: 0px; margin-top: 0px;">
+        <!--イベント終了時刻を過ぎていないイベントのみ-->
+          <%= link_to event_path(active_event), local:true do %>
+            <%= attachment_image_tag active_event, :event_image, :fill, 500, 500, format: "jpeg", fallback: "event.png" %>
           <% end %>
+          <div class="media-content">
+            <div class="content">
+              <strong><%= active_event.name %></strong>
+            </div>
+            <small>開催日時<br><%= active_event.started_at.strftime("%Y年%-m月%-d日 %H時%M分") %></small><br>
+            <%= link_to edit_event_path(active_event.id), class: "button is-light is-small" do %>
+              <i class="fas fa-wrench"></i>　編集する
+            <% end %>
           </div>
-        </div>
-      </article>
-      <% end %>
-    <% end %>
-    </div>
-  </div>
-</section>
-<!--開催イベント一覧-->
-<section class="host-event-list columns is-desktop">
-  <!--自分で開催するイベント一覧-->
-  <div class="host-event column">
-    <h4>開催予定イベント</h4>
-    <div class="host-event-content">
-    <% @active_events.each do |active_event| %>
-      <% if active_event.finished_at > DateTime.now %>
-      <article class="box media" style="margin-bottom: 0px; margin-top: 0px;">
-      <!--イベント終了時刻を過ぎていないイベントのみ-->
-        <%= link_to event_path(active_event), local:true do %>
-          <%= attachment_image_tag active_event, :event_image, :fill, 500, 500, format: "jpeg", fallback: "event.png" %>
+        </article>
         <% end %>
-        <div class="media-content">
-          <div class="content">
-            <strong><%= active_event.name %></strong>
-          </div>
-          <small>開催日時：<%= active_event.started_at.strftime("%Y年%-m月%-d日 %H時%M分") %></small><br>
-          <%= link_to edit_event_path(active_event.id), class: "button is-light is-small" do %>
-            <i class="fas fa-wrench"></i>　編集する
+      <% end %>
+      </div>
+    </div>
+    <!--開催済みイベント一覧-->
+    <div id="tab4" class="tab column">
+      <div class="finished-event-content">
+      <% @finished_events.each do |finished_event| %>
+        <% if finished_event.finished_at < DateTime.now %>
+        <article class="box media" style="margin-bottom: 0px; margin-top: 0px;">
+        <!--イベント終了時刻を過ぎているイベントのみ-->
+          <%= link_to event_path(finished_event), local:true do %>
+            <%= attachment_image_tag finished_event, :event_image, :fill, 500, 500, format: "jpeg", fallback: "event.png" %>
           <% end %>
-        </div>
-      </article>
-      <% end %>
-    <% end %>
-    </div>
-  </div>
-  <!--自分で開催し終えたイベント一覧-->
-  <div class="finished-event column">
-    <h4>開催済みイベント</h4>
-    <div class="finished-event-content">
-    <% @finished_events.each do |finished_event| %>
-      <% if finished_event.finished_at < DateTime.now %>
-      <article class="box media" style="margin-bottom: 0px; margin-top: 0px;">
-      <!--イベント終了時刻を過ぎているイベントのみ-->
-        <%= link_to event_path(finished_event), local:true do %>
-          <%= attachment_image_tag finished_event, :event_image, :fill, 500, 500, format: "jpeg", fallback: "event.png" %>
-        <% end %>
-        <div class="media-content">
-          <div class="content">
-            <strong><%= finished_event.name %></strong>
+          <div class="media-content">
+            <div class="content">
+              <strong><%= finished_event.name %></strong>
+            </div>
+            <small>終了日時<br><%= finished_event.finished_at.strftime("%Y年%-m月%-d日 %H時%M分") %></small>
           </div>
-          <small>終了日時：<%= finished_event.finished_at.strftime("%Y年%-m月%-d日 %H時%M分") %></small>
-        </div>
-      </article>
+        </article>
+        <% end %>
       <% end %>
-    <% end %>
+      </div>
     </div>
   </div>
-</section>
+</div>

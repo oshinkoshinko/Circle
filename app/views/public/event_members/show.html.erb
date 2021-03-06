@@ -1,6 +1,7 @@
 <div class="feedback">
   <div class="feedback-page">
     <h4>フィードバック</h4>
+    <!--イベント詳細-->
     <div class="event-detail">
       イベント名　　<%= @event.name %><br>
       開催日時　　　<%= @event.started_at.strftime("%Y年%-m月%-d日 %H時%M分") %><br>
@@ -11,13 +12,12 @@
     <div class="event-image">
       <%= attachment_image_tag @event, :event_image, :fill, 500, 500, format: "jpeg", fallback: "event.png", size:'300x200' %>
     </div>
-    <!--フィードバック入力-->
+    <!--フィードバック入力フォーム-->
     <div class="feedback-form">
       <h4>フィードバック入力フォーム</h4>
       <%= form_with url: event_event_member_path, model: @event_member, method: :patch, local:true do |f| %>
         <%= render 'layouts/error', model: f.object%>
         <%= f.text_area :feedback, :size=>"40x3" %><br>
-        <!--自然言語処理でフィードバックからネガポジ判定予定-->
         <%= f.submit "送信", class: "button is-info", style: "margin-left: 80%;" %>
       <% end %>
     </div>

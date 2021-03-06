@@ -24,17 +24,25 @@
       <%= image_tag "/people01.png", size:"150x150" %>
     </div>
   </div>
+  <!--デスクトップ用view-more-->
   <div class="view-more-desktop is-hidden-mobile">
-    <p class="view-more-word">view more</p>
+    <p class="view-more-word">
+      view more
+    </p>
     <i class="fas fa-angle-down view-more-icon"></i>
   </div>
+  <!--モバイル用view-more-->
   <div class="view-more-mobile is-hidden-desktop is-hidden-tablet">
-    <p class="view-more-word">view more</p>
-    <i class="fas fa-angle-down view-more-icon"></i>
+    <%= link_to "#service" do %>
+      <p class="view-more-word">
+        view more
+      </p>
+      <i class="fas fa-angle-down view-more-icon"></i>
+    <% end %>
   </div>
 </section>
 <!--アプリ使い方-->
-<section class="service">
+<section class="service" id="service">
   <!--使い方ステップ１-->
   <div class="service-step1 columns main">
     <div class="column service-box">
@@ -46,11 +54,11 @@
       </div>
       <div class="step-box1">
         <h1 class="step">Step1</h1>
-        <h1 class="step-title">同じ仲間を見つけよう</h1>
+        <h1 class="step-title">近くの同じ仲間を見つけよう</h1>
       </div>
       <p class="step-info">
         <i class="fas fa-map-marker-alt" style="color: red;"></i>
-        All Activitiesでみんなの動きと位置をcheck!<br>
+        Timelineでみんなの動きと位置をcheck!<br>
         あなたの近くに同じ趣味や同じ勉強をしている人がいるかも！
       </p><br>
       <div class="step-detail is-hidden-mobile">
@@ -80,9 +88,10 @@
         <h1 class="step-title">声かけリクエストを送ろう</h1>
       </div>
       <div class="step-info">
-        <p>近くの人にリクエストを送って、声かけOKかcheck!</p><br>
-        <p>あの人、自分と同じことしてるのに急に声かけるのはハードル高いなあ...</p><br>
-        <p>Circleならボタン一つでリクエスト！</p>
+        <p>気になる人にリクエストを送って、声をかけても良いかCheck!</p><br>
+        <p>「あの人、自分と同じことしてるのに急に話しかけるのはハードル高いなあ...」</p><br>
+        <p>「急に話しかけて変な空気になったらどうしよう...」</p><br>
+        <p>Circleならボタン一つで確認するだけなので、無駄な心配御無用！</p>
       </div>
     </div>
     <div class="step2-illust column is-hidden-desktop is-hidden-tablet">
@@ -99,7 +108,7 @@
         <h1 class="step-title">実際に声をかけてみよう</h1>
       </div>
       <div class="step-info">
-        <p>リクエストが承認されたら、実際に話しかけてみよう！</p><br>
+        <p>リクエストが承認されたら、チャットで挨拶をして実際に現実世界で声をかけてみよう！</p><br>
         <p>新たな出会いが新たなアイデア・新たな人脈を生むでしょう！</p>
         <p class="step3-image02 is-hidden-mobile">
           <%= image_tag "/step3-image02.png", size:"300x150" %>

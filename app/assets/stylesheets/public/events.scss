@@ -141,7 +141,7 @@
 
 .join-event-content {
   width: 100%;
-  height: 150px;
+  height: 400px;
   overflow: scroll;
   margin-bottom: 5px;
 }
@@ -158,7 +158,7 @@
 
 .joined-event-content {
   width: 100%;
-  height: 150px;
+  height: 400px;
   overflow: scroll;
   margin-bottom: 5px;
 }
@@ -175,7 +175,7 @@
 
 .host-event-content {
   width: 100%;
-  height: 150px;
+  height: 400px;
   overflow: scroll;
   margin-bottom: 5px;
 }
@@ -192,7 +192,7 @@
 
 .finished-event-content {
   width: 100%;
-  height: 150px;
+  height: 400px;
   overflow: scroll;
   margin-bottom: 5px;
 }
@@ -290,5 +290,50 @@
 .event-image img.attachment.event.event_image {
   width: 300px;
   height: 200px;
+}
+
+//マイイベント　タブメニュー
+.wrap {
+  width: 100%;
+  margin: 0 auto;
+}
+
+#tab-menu {
+  display: flex;
+}
+
+#tab-menu li {
+  list-style-type: none;
+  width: 25%;
+}
+
+#tab-menu li a {
+  color: #383838;
+  font-size: 13px;
+  text-decoration: none;
+  display: block;
+  padding: 17px;
+  text-align: center;
+  background: #fff;
+  border: 1px solid #EDEDED;
+  border-bottom: none;
+}
+
+#tab-menu .active {
+  background: #0094D6;
+  color: #fff;
+}
+
+#tab-contents {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#tab-contents .tab {
+  width: 100%;
+  padding: 10px;
+  background: #fff;
+  border: 1px solid #EDEDED;
+  border-top: none;
 }
 

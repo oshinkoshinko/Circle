@@ -117,8 +117,9 @@
   margin-top: -85px;
   text-align: center;
   z-index: 1000;
-  animation: img_box_9955 0.5s linear 2;
+  animation: img_box_9955 0.9s linear infinite;
   transform-origin: 50% 50%;
+  height: 50px;
 }
 
 .view-more-mobile {
@@ -132,6 +133,7 @@
 .view-more-word {
   font-weight: bold;
   margin-top: 35px;
+  z-index:1000;
 }
 
 .view-more-icon {

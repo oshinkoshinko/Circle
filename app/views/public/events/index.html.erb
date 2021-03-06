@@ -46,13 +46,15 @@
               </div>
               <div class="media-content">
                 <p class="is-6 is-size-7">
-                  <%= new_event.member.account_name %>
+                  <%= new_event.member.account_name %>さん主催
                 </p>
               </div>
             </div>
             <div class="content is-size-7">
-              <%= safe_join(new_event.content.split("\n"),tag(:br)) %><br>
-              <time><%= new_event.started_at.strftime("%Y年%-m月%-d日 %H時%M分") %> 開催</time>
+              <%= link_to event_path(new_event), local:true do %>
+                <%= new_event.name %><br>
+              <% end %>
+              <small><time><%= new_event.started_at.strftime("%Y年%-m月%-d日 %H時%M分") %> 開催</time></small>
             </div>
           </div>
         </div>
@@ -83,13 +85,15 @@
               </div>
               <div class="media-content">
                 <p class="is-6 is-size-7">
-                  <%= finished_event.member.account_name %>
+                  <%= finished_event.member.account_name %>さん主催
                 </p>
               </div>
             </div>
             <div class="content is-size-7">
-              <%= safe_join(finished_event.content.split("\n"),tag(:br)) %><br>
-              <time><%= finished_event.finished_at.strftime("%Y年%-m月%-d日 %H時%M分") %> 終了</time>
+              <%= link_to event_path(finished_event), local:true do %>
+                <%= finished_event.name %><br>
+              <% end %>
+              <small><time><%= finished_event.finished_at.strftime("%Y年%-m月%-d日 %H時%M分") %> 終了</time></small>
             </div>
           </div>
         </div>

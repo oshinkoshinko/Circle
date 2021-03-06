@@ -1,0 +1,10 @@
+ <div>
+  <h4>ジャンル編集</h4>
+  <%= form_with model: [:admin, @genre], method: :patch, local:true do |f| %>
+  　<%= render 'layouts/error', model: f.object%>
+    <div class="genre-form">
+      <%= f.text_field :name, :placeholder => "ジャンル名" %>
+      <%= f.submit '編集' %>
+    </div>
+  <% end %>
+</div>

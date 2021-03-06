@@ -7,17 +7,18 @@ class Public::PostsController < ApplicationController
     @q = Post.ransack(params[:q])
     @genres = Genre.all
     #24時間以内の投稿のみ表示
-    @posts = @q.result(distinct: true).order("created_at DESC").where(created_at: 24.hours.ago..Time.now)
+    @posts = @q.result(distinct: true).order("created_at DESC").where(created_at: 24.hours.ago..Time.now).includes(:member, :genre, :post_comments, :post_requests)
  end
 
  def create
     @post = Post.new(post_params)
     @post.member_id = current_member.id
-    @post.save
-    #redirect_to request.referer
-    redirect_to member_path(current_member)
-    #非同期通信
-    #@posts = Post.where(member_id: current_member.id).order("created_at DESC")
+    if @post.save
+      redirect_to member_path(current_member)
+    else
+      flash[:alert] = '投稿に失敗しました。'
+      redirect_to request.referer
+    end
  end
 
   def edit
@@ -43,8 +44,6 @@ class Public::PostsController < ApplicationController
     else
       redirect_to member_path(current_member)
     end
-    #非同期通信
-    # @posts = Post.where(member_id: current_member.id).order("created_at DESC")
   end
 
   def correct_member
