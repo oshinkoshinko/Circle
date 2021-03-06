@@ -90,7 +90,7 @@
               </div>
             </div>
             <div class="content is-size-7">
-              <%= link_to member_path(finished_event.member.id), local:true do %>
+              <%= link_to event_path(finished_event), local:true do %>
                 <%= finished_event.name %><br>
               <% end %>
               <small><time><%= finished_event.finished_at.strftime("%Y年%-m月%-d日 %H時%M分") %> 終了</time></small>
