@@ -162,3 +162,18 @@ document.addEventListener("turbolinks:load", function() {
     });
   });
 })
+
+//マイイベントタブメニュー
+document.addEventListener("turbolinks:load", function() {
+$('#tab-contents .tab[id != "tab1"]').hide();
+})
+
+document.addEventListener("turbolinks:load", function() {
+$('#tab-menu a').on('click', function(event) {
+  $("#tab-contents .tab").hide();
+  $("#tab-menu .active").removeClass("active");
+  $(this).addClass("active");
+  $($(this).attr("href")).show();
+  event.preventDefault();
+});
+})
