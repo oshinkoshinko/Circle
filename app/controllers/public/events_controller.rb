@@ -8,9 +8,9 @@ class Public::EventsController < ApplicationController
     #ジャンル検索用変数
     @genres = Genre.all
     #イベント取得(開催中ステータス)
-    @new_events = @q.result(distinct: true).order("started_at ASC")
+    @new_events = @q.result(distinct: true).order("started_at ASC").includes(:member)
     #開催済みイベント取得
-    @finished_events = Event.all.order("finished_at DESC")
+    @finished_events = Event.all.order("finished_at DESC").includes(:member)
 
   end
 
@@ -63,7 +63,7 @@ class Public::EventsController < ApplicationController
 
   def myevent
     #参加イベント取得
-    @join_events = EventMember.where(member_id: current_member.id)
+    @join_events = EventMember.where(member_id: current_member.id).includes(:event)
     #ログインユーザの開催予定イベント取得
     @active_events = Event.where(member_id: current_member.id).order("started_at ASC")
     #ログインユーザの開催済みイベント取得
