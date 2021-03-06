@@ -3,6 +3,7 @@
     <div class="genre-list">
       <% @genres.each do |genre| %>
         <%= genre.name %>
+        <%= link_to "編集", edit_admin_genre_path(genre), method: :get %>
         <%= link_to "削除", admin_genre_path(genre), method: :delete %><br>
       <% end %>
     </div>
