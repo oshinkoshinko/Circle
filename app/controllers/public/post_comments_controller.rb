@@ -5,7 +5,7 @@ class Public::PostCommentsController < ApplicationController
    @post = Post.find(params[:id])
    @post_comment = PostComment.new
    #コメント一覧表示用インスタンス
-   @post_comments = PostComment.where(post_id: params[:id])
+   @post_comments = PostComment.where(post_id: params[:id]).includes(:member, :post)
   end
 
   def create
