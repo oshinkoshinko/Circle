@@ -10,8 +10,7 @@ class Public::EventsController < ApplicationController
     #イベント取得(開催中ステータス)
     @new_events = @q.result(distinct: true).order("started_at ASC").includes(:member)
     #開催済みイベント取得
-    @finished_events = Event.all.order("finished_at DESC").includes(:member)
-
+    @finished_events = @q.result(distinct: true).order("finished_at DESC").includes(:member)
   end
 
   def new
