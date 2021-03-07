@@ -134,9 +134,21 @@
 }
 
 //マイイベントページ
+.btn-wrap {
+  display: flex;
+  justify-content: center;
+}
+
 .new-event-btn {
   margin-top: 10px;
   margin-bottom: 20px;
+  margin-right: 20px;
+}
+
+.event-index-btn {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  margin-left: 20px;
 }
 
 .join-event-content {
