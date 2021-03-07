@@ -78,14 +78,13 @@
               <%= render "public/post_comments/comment_btn", post: post %>
               <% if current_member.id == post.member.id %>
                 <%= render "public/posts/post_edit_btn", post: post %>
-                <%= link_to post_path(post.id), method: :delete do %>
-                  <i class="far fa-trash-alt post-delete-icon"></i>
-                <% end %>
+                <%= render "public/posts/post_delete_btn", post: post %>
               <% else %>
                 <!--非同期通信 リクエストボタン-->
                 <div class="request-btn" id="post_<%= post.id %>">
                   <%= render "public/post_requests/request-btn", post: post %>
                 </div>
+                <!--非同期閉じ-->
               <% end %>
             </small>
           </div>
