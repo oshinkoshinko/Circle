@@ -53,9 +53,7 @@
               <small>
                 <%= render "public/post_comments/comment_btn", post: post %>
                 <% if current_member.id == post.member.id %>
-                  <%= link_to edit_post_path(post.id) do %>
-                    <i class="fas fa-wrench post-edit-icon"></i>
-                  <% end %>
+                  <%= render "public/posts/post_edit_btn", post: post %>
                   <%= link_to post_path(post.id), method: :delete do %>
                     <i class="far fa-trash-alt post-delete-icon"></i>
                   <% end %>
