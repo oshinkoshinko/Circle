@@ -1,8 +1,15 @@
-<!--イベント開催ボタン-->
-<div class="new-event-btn has-text-centered">
-  <%= link_to "イベントを開催する", new_event_path, local:true, class: "button is-primary is-small" %>
+<div class="btn-wrap">
+  <!--イベント開催ボタン-->
+  <div class="new-event-btn has-text-centered">
+    <%= link_to "イベントを開催する", new_event_path, local:true, class: "button is-primary is-small" %>
+  </div>
+  <!--イベント一覧リンクボタン-->
+  <div class="event-index-btn has-text-centered">
+    <%= link_to "イベントを探す", events_path, local:true, class: "button is-info is-small" %>
+  </div>
 </div>
 
+<!--タブメニュー-->
 <div class="wrap">
   <ul id="tab-menu">
     <li><a href="#tab1" class="active">参加予定</a></li>

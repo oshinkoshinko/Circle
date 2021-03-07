@@ -78,7 +78,7 @@
   height: auto;
   top: 10%;
   left: 10%;
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.6);
   padding: 10px;
   text-align: left;
   z-index: 50;
@@ -95,6 +95,7 @@
 
 .about-sub-title {
   margin-left: 30px;
+  font-weight: 800;
 }
 
 @media screen and (max-width: 650px) {

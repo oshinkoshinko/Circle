@@ -51,18 +51,12 @@
               <small><%= post.genre.name %></small>
               </p>
               <small>
-                <%= link_to post_comment_path(post.id) do %>
-                  <i class="far fa-comment-dots comment-icon"></i> <%= post.post_comments.count %>件
-                <% end %>
+                <%= render "public/post_comments/comment_btn", post: post %>
                 <% if current_member.id == post.member.id %>
-                  <%= link_to edit_post_path(post.id) do %>
-                    <i class="fas fa-wrench post-edit-icon"></i>
-                  <% end %>
-                  <%= link_to post_path(post.id), method: :delete do %>
-                    <i class="far fa-trash-alt post-delete-icon"></i>
-                  <% end %>
+                  <%= render "public/posts/post_edit_btn", post: post %>
+                  <%= render "public/posts/post_delete_btn", post: post %>
                 <% else %>
-                  <!--非同期用-->
+                  <!--非同期通信 リクエストボタ-->
                   <div class="request-btn" id="post_<%= post.id %>">
                     <%= render "public/post_requests/request-btn", post: post %>
                   </div>
