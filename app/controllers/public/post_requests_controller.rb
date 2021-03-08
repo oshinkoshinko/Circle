@@ -34,11 +34,6 @@ class Public::PostRequestsController < ApplicationController
     @post_request = PostRequest.find(params[:id])
     @post_request.update(is_accepted: params[:is_accepted], is_requested: params[:is_requested])
 
-    CreateNotification.call(
-    contents: { 'en' => 'Request accepted', 'ja' => 'リクエストが承認されました！' },
-    type: 'post_requests#update'
-    )
-
     #非同期通信js用変数
     #自分の投稿データを取得
     @posts = Post.where(member_id: current_member.id)

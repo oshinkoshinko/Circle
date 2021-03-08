@@ -20,20 +20,6 @@
 
     <%= include_gon %>
 
-    <!--OneSignal API-->
-    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
-    <script>
-      window.OneSignal = window.OneSignal || [];
-      OneSignal.push(function() {
-        OneSignal.init({
-          appId: ENV['ONESIGNAL_API'],
-          notifyButton: {
-            enable: true,
-          }
-        });
-      });
-    </script>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
