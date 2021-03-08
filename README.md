@@ -1,4 +1,6 @@
 # Circle
+![サイトロゴ](images/Circle_logo.png)
+![スクリーンショット](images/readme_image.png)
 
 ## サイト概要
 近くにいる、趣味や勉強していることが同じ人が知り合うきっかけを作るサイト。
