@@ -1,6 +1,6 @@
 # Circle
-![サイトロゴ](https://github.com/oshinkoshinko/Circle/blob/main/app/assets/images/Circle_logo.png)
-![スクリーンショット](https://github.com/oshinkoshinko/Circle/blob/main/app/assets/images/readme_image.png)
+![サイトロゴ](https://github.com/oshinkoshinko/Circle/blob/main/app/assets/images/Circle_logo.png height="150" width="450")
+![スクリーンショット](https://github.com/oshinkoshinko/Circle/blob/main/app/assets/images/readme_image.png height="150" width="450")
 
 ## サイト概要
 近くにいる、趣味や勉強していることが同じ人が知り合うきっかけを作るサイト。
