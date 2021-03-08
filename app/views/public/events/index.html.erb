@@ -54,7 +54,10 @@
               <%= link_to event_path(new_event), local:true do %>
                 <%= new_event.name %><br>
               <% end %>
-              <small><time><%= new_event.started_at.strftime("%Y年%-m月%-d日 %H時%M分") %> 開催</time></small>
+              <small>@<%= new_event.place %></small><br>
+              <small>
+                <time><%= new_event.started_at.strftime("%Y年%-m月%-d日 %H時%M分") %> 開催</time>
+              </small>
             </div>
           </div>
         </div>
@@ -93,6 +96,7 @@
               <%= link_to event_path(finished_event), local:true do %>
                 <%= finished_event.name %><br>
               <% end %>
+              <small>@<%= finished_event.place %></small><br>
               <small><time><%= finished_event.finished_at.strftime("%Y年%-m月%-d日 %H時%M分") %> 終了</time></small>
             </div>
           </div>
