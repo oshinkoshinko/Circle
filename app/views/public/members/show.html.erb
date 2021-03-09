@@ -79,7 +79,7 @@
               <% if current_member.id == post.member.id %>
                 <%= render "public/posts/post_edit_btn", post: post %>
                 <%= render "public/posts/post_delete_btn", post: post %>
-                <%= link_to "https://twitter.com/share?url=#{ request.url }&text=@#{ post.address }で、#{ post.body }なう。Circle仲間を増やそう！", class: 'btn btn-default', target: '_blank' do %>
+                <%= link_to "https://twitter.com/share?url=#{ href = request.url }&text=@#{ post.address }で、#{ post.body }なう。Circle仲間を増やそう！", class: 'btn btn-default', target: '_blank' do %>
                   <i class="fab fa-twitter twitter-icon" style="color: #3399FF;"></i>
                 <% end %>
               <% else %>
