@@ -21,10 +21,15 @@
   display: flex;
   justify-content: center;
   margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .genre-search-form {
-  margin-right: 30px;
+  margin-right: 20px;
+}
+
+.search-input-form {
+  width: 115px;
 }
 
 .timeline h4 {
