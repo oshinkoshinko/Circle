@@ -68,6 +68,7 @@ https://docs.google.com/spreadsheets/d/1nOtbKOEhYkcLXsklNgLzM1dDRuaOE5gJDA1Ie5T6
 - フォロー
 - 投稿、コメント
 - ゲストログイン
+- RSpec単体テスト (Model, Controller)
 
 ## 開発環境
 - OS：Linux2(CentOS)
