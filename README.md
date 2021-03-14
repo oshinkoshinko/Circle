@@ -1,6 +1,7 @@
 # Circle
 ![サイトロゴ](https://github.com/oshinkoshinko/Circle/blob/main/app/assets/images/Circle_logo.png)
 ![スクリーンショット](https://github.com/oshinkoshinko/Circle/blob/main/app/assets/images/readme_image.png)
+( https://circle-app.work )
 
 ## サイト概要
 近くにいる、趣味や勉強していることが同じ人が知り合うきっかけを作るサイト。
@@ -55,6 +56,18 @@
 ## 機能一覧
 https://docs.google.com/spreadsheets/d/1nOtbKOEhYkcLXsklNgLzM1dDRuaOE5gJDA1Ie5T6-9E/edit?usp=sharing
 
+### 主な機能
+- Google Maps API (ピン表示、情報ウインドウ実装)
+- Google Natural Language API (ネガポジ判定)
+- 非同期通信
+- https通信
+- Action Mailer (会員登録時メール送信)
+- お問い合わせ
+- 通知
+- チャット
+- フォロー
+- 投稿、コメント
+- ゲストログイン
 
 ## 開発環境
 - OS：Linux2(CentOS)
