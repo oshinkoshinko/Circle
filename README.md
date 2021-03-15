@@ -67,6 +67,7 @@ https://docs.google.com/spreadsheets/d/1nOtbKOEhYkcLXsklNgLzM1dDRuaOE5gJDA1Ie5T6
 - チャット
 - フォロー
 - 投稿、コメント
+- Twitterシェアリンク
 - ゲストログイン
 - RSpec単体テスト (Model, Controller)
 
