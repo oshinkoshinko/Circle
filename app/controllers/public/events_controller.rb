@@ -34,7 +34,7 @@ class Public::EventsController < ApplicationController
     @event = Event.find(params[:id])
     @genres = Genre.all
     #申し込みがあってから参加費の変更を無効にする条件分岐
-    @event_members = EventMember.where(event_id: @event.id)
+    @event_members = @event.event_members
   end
 
   def update
@@ -55,7 +55,7 @@ class Public::EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
-    @event_members = EventMember.where(event_id: @event.id)
+    @event_members = @event.event_members
     #イベント参加キャンセル用変数
     @event_member = EventMember.find_by(event_id: @event.id, member_id: current_member.id)
   end
