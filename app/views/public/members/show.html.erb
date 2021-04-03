@@ -112,11 +112,11 @@
                 <p class="control">
                   <%= form_with model: @post do |f| %>
                     <%= render 'layouts/error', model: f.object%>
-                    <%= f.text_area :body, :size=>"30x5" %><br>
+                    <%= f.text_area :body, :size=>"30x5", required: true %><br>
                     <span class="select is-normal">
-                    <%= f.collection_select :genre_id, @genres, :id, :name, :include_blank => '🔍 ジャンル'  %>
+                    <%= f.collection_select :genre_id, @genres, :id, :name, :include_blank => '🔍 ジャンル' %>
                     </span><br>
-                    <%= f.text_field :address, placeholder: "位置情報", value: "", class: "is-small" %>
+                    <%= f.text_field :address, placeholder: "位置情報", value: "", class: "is-small", required: true %>
                     <%= f.submit "投稿", class: "button is-primary", style: "margin-top: 30px; margin-left: 73%;" %>
                   <% end %>
                 </p>
