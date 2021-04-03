@@ -3,9 +3,9 @@
     <h4>投稿編集</h4>
     <%= form_with model: @post, local:true do |f| %>
       <%= render 'layouts/error', model: f.object%>
-      <%= f.text_area :body, :size=>"40x3" %>
+      <%= f.text_area :body, :size=>"40x3", required: true %>
       <p><%= f.collection_select(:genre_id, @genres, :id, :name) %></p>
-      <%= f.text_field :address, placeholder: "位置情報", class: "is-small" %><br>
+      <%= f.text_field :address, placeholder: "位置情報", class: "is-small", required: true %><br>
       <%= f.submit "更新する", class: "button is-info", style: "margin-top: 30px; margin-left: 73%;" %>
     <% end %>
   </div>
