@@ -83,3 +83,6 @@ https://docs.google.com/spreadsheets/d/1nOtbKOEhYkcLXsklNgLzM1dDRuaOE5gJDA1Ie5T6
 https://stock.adobe.com/jp/
 - undraw
 https://undraw.co/illustrations
+
+## インフラ構成
+![インフラ構成](https://github.com/oshinkoshinko/Circle/blob/main/app/assets/images/infra.png)
